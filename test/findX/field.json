@@ -1,0 +1,171 @@
+[
+    {
+        "2.22.10.73": "LX/2Nt;->A0w:LX/2ik;",
+        "2.22.18.70": "",
+        "class": [
+            "yo.smali",
+            "i.smali",
+            "dep.smali",
+            "Conversation.smali",
+            "w.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;->A00:I",
+        "2.22.18.70": "",
+        "class": [
+            "i.smali",
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2iV;->A0x:Ljava/util/concurrent/ScheduledExecutorService;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ik;->A00:LX/2NO;",
+        "2.22.18.70": "",
+        "class": [
+            "yo.smali",
+            "dep.smali",
+            "Conversation.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Ng;->A0O:Ljava/lang/String;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;->A08:LX/2Nt;",
+        "2.22.18.70": "",
+        "class": [
+            "i.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ik;->A01:Ljava/lang/String;",
+        "2.22.18.70": "",
+        "class": [
+            "yo.smali",
+            "i.smali",
+            "w.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Ng;->A0I:Ljava/lang/String;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2w7;->A02:Lcom/gbwhatsapp/TextData;",
+        "2.22.18.70": "",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;->A04:J",
+        "2.22.18.70": "",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2gX;->A0H:Z",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Ng;->A0B:Lcom/whatsapp/jid/Jid;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0QS;->A03:LX/09X;",
+        "2.22.18.70": "",
+        "class": [
+            "ezz.smali",
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ik;->A02:Z",
+        "2.22.18.70": "",
+        "class": [
+            "yo.smali",
+            "dep.smali",
+            "Conversation.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;->A01:I",
+        "2.22.18.70": "",
+        "class": [
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;->A0A:Lcom/whatsapp/jid/UserJid;",
+        "2.22.18.70": "",
+        "class": [
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0QS;->A0N:LX/2OC;",
+        "2.22.18.70": "",
+        "class": [
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Yd;->A04:[Ljava/lang/String;",
+        "2.22.18.70": "",
+        "class": [
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02F;->A00:Lcom/gbwhatsapp/Me;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ph;->A00:Ljava/lang/String;",
+        "2.22.18.70": "",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/4ca;->A01:LX/2wa;",
+        "2.22.18.70": "",
+        "class": [
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0QS;->A0M:LX/2OF;",
+        "2.22.18.70": "",
+        "class": [
+            "ezz.smali",
+            "eyy.smali"
+        ]
+    }
+]

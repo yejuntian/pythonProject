@@ -1,0 +1,579 @@
+[
+    {
+        "2.22.10.73": "LX/0OG;",
+        "2.22.18.70": "LX/02O;",
+        "class": [
+            "Auto_message.smali",
+            "ChatGenSingle.smali",
+            "IGStatusesView.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0b3;",
+        "2.22.18.70": "LX/2Xn;",
+        "class": [
+            "DialogAdd.smali",
+            "j0.smali",
+            "v.smali",
+            "a.smali",
+            "DialogAttachContent.smali",
+            "Conversation.smali",
+            "w.smali",
+            "o.smali",
+            "d.smali",
+            "i0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/09X;",
+        "2.22.18.70": "LX/00i;",
+        "class": [
+            "ezz.smali",
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0Af;",
+        "2.22.18.70": "LX/03i;",
+        "class": [
+            "m.smali",
+            "e.smali",
+            "n.smali",
+            "AutoMessageAdapter.smali",
+            "d.smali",
+            "AutoMessageView.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0UW;",
+        "2.22.18.70": "LX/03L;",
+        "class": [
+            "dep.smali",
+            "others.smali",
+            "k.smali",
+            "Conversation.smali",
+            "HomeUI.smali",
+            "j.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2za;",
+        "2.22.18.70": "LX/1Yp;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/34V;",
+        "2.22.18.70": "LX/1Zb;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02R;",
+        "2.22.18.70": "LX/0mK;",
+        "class": [
+            "YoSwipeActions.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/3f1;",
+        "2.22.18.70": "LX/2UK;",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ON;",
+        "2.22.18.70": "LX/0n3;",
+        "class": [
+            "h0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/06L;",
+        "2.22.18.70": "LX/16q;",
+        "class": [
+            "a1.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/09S;",
+        "2.22.18.70": "LX/0i6;",
+        "class": [
+            "HomeUI.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Xj;",
+        "2.22.18.70": "LX/0ux;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Ns;",
+        "2.22.18.70": "LX/0mH;",
+        "class": [
+            "yo.smali",
+            "i.smali",
+            "j0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2OF;",
+        "2.22.18.70": "LX/0sQ;",
+        "class": [
+            "ezz.smali",
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ik;",
+        "2.22.18.70": "LX/1Fr;",
+        "class": [
+            "yo.smali",
+            "i.smali",
+            "dep.smali",
+            "Conversation.smali",
+            "w.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0Oi;",
+        "2.22.18.70": "LX/1GH;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2OJ;",
+        "2.22.18.70": "LX/0lu;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2iV;",
+        "2.22.18.70": "LX/1rW;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/05X;",
+        "2.22.18.70": "LX/0wJ;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0Bg;",
+        "2.22.18.70": "LX/4oc;",
+        "class": [
+            "HomeUI.smali",
+            "x.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2OC;",
+        "2.22.18.70": "LX/0iW;",
+        "class": [
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/06x;",
+        "2.22.18.70": "LX/0ut;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0fi;",
+        "2.22.18.70": "LX/06S;",
+        "class": [
+            "OnPageSelected.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2hK;",
+        "2.22.18.70": "LX/0lW;",
+        "class": [
+            "a1.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2wa;",
+        "2.22.18.70": "LX/1S5;",
+        "class": [
+            "i.smali",
+            "m.smali",
+            "k.smali",
+            "n.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2pX;",
+        "2.22.18.70": "LX/1Kg;",
+        "class": [
+            "dep.smali",
+            "Conversation.smali",
+            "u.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02F;",
+        "2.22.18.70": "LX/0lG;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2NO;",
+        "2.22.18.70": "LX/0ix;",
+        "class": [
+            "SS.smali",
+            "yo.smali",
+            "a1.smali",
+            "b.smali",
+            "dep.smali",
+            "a.smali",
+            "Conversation.smali",
+            "z0.smali",
+            "u0.smali",
+            "n.smali",
+            "w.smali",
+            "p.smali",
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/3Ei;",
+        "2.22.18.70": "LX/1oO;",
+        "class": [
+            "i.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/01O;",
+        "2.22.18.70": "LX/00S;",
+        "class": [
+            "HsvAlphaSelectorView.smali",
+            "yo.smali",
+            "YoBubbleToggleView.smali",
+            "v.smali",
+            "HsvColorValueView.smali",
+            "HomeUI.smali",
+            "ColorSelectorView.smali",
+            "UniversalStyle.smali",
+            "Conversation.smali",
+            "HsvHueSelectorView.smali",
+            "w.smali",
+            "utils.smali",
+            "DirAdapter.smali",
+            "YoFABView.smali",
+            "Pin.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02P;",
+        "2.22.18.70": "LX/0lZ;",
+        "class": [
+            "h0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Oe;",
+        "2.22.18.70": "LX/0nM;",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/3R3;",
+        "2.22.18.70": "LX/2Ay;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/035;",
+        "2.22.18.70": "LX/01a;",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2T2;",
+        "2.22.18.70": "LX/10o;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2w7;",
+        "2.22.18.70": "LX/1LF;",
+        "class": [
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/32s;",
+        "2.22.18.70": "LX/1ZB;",
+        "class": [
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/4dZ;",
+        "2.22.18.70": "LX/3G8;",
+        "class": [
+            "i.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Xm;",
+        "2.22.18.70": "LX/178;",
+        "class": [
+            "i.smali",
+            "n.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2bg;",
+        "2.22.18.70": "LX/1Bf;",
+        "class": [
+            "n.smali",
+            "i.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Nt;",
+        "2.22.18.70": "LX/0kW;",
+        "class": [
+            "SS.smali",
+            "yo.smali",
+            "i.smali",
+            "dep.smali",
+            "j0.smali",
+            "Conversation.smali",
+            "w.smali",
+            "o.smali",
+            "u.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0bw;",
+        "2.22.18.70": "LX/03M;",
+        "class": [
+            "OnPageSelected.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02B;",
+        "2.22.18.70": "LX/0lE;",
+        "class": [
+            "u0.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2pL;",
+        "2.22.18.70": "Lcom/facebook/redex/RunnableRunnableShape6S0200000_I0_4;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2pS;",
+        "2.22.18.70": "LX/0it;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Yd;",
+        "2.22.18.70": "LX/143;",
+        "class": [
+            "eyy.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0D6;",
+        "2.22.18.70": "LX/0iu;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2TB;",
+        "2.22.18.70": "LX/169;",
+        "class": [
+            "i.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/025;",
+        "2.22.18.70": "LX/01I;",
+        "class": [
+            "yo.smali",
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Ng;",
+        "2.22.18.70": "LX/0kC;",
+        "class": [
+            "yo.smali",
+            "a1.smali",
+            "dep.smali",
+            "v0.smali",
+            "w0.smali",
+            "Conversation.smali",
+            "u0.smali",
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/32P;",
+        "2.22.18.70": "LX/1kc;",
+        "class": [
+            "h0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Qc;",
+        "2.22.18.70": "LX/0ts;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0DE;",
+        "2.22.18.70": "LX/02T;",
+        "class": [
+            "b.smali",
+            "IGStatusesView.smali",
+            "Auto_message.smali",
+            "n.smali",
+            "d.smali",
+            "AutoMessageAdapter.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/02J;",
+        "2.22.18.70": "LX/01V;",
+        "class": [
+            "n.smali",
+            "o.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/01E;",
+        "2.22.18.70": "LX/00z;",
+        "class": [
+            "yo.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0KA;",
+        "2.22.18.70": "LX/01C;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2ph;",
+        "2.22.18.70": "LX/1IA;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2gX;",
+        "2.22.18.70": "LX/1aE;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/0QS;",
+        "2.22.18.70": "LX/2DZ;",
+        "class": [
+            "exx.smali",
+            "edd.smali",
+            "a.smali",
+            "Conversation.smali",
+            "ezz.smali",
+            "eyy.smali",
+            "gnn.smali",
+            "igg.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/3GK;",
+        "2.22.18.70": "LX/28d;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/065;",
+        "2.22.18.70": "LX/0tu;",
+        "class": [
+            "dep.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/4ca;",
+        "2.22.18.70": "LX/3FU;",
+        "class": [
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/09t;",
+        "2.22.18.70": "LX/01B;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2QT;",
+        "2.22.18.70": "LX/0mS;",
+        "class": [
+            "i.smali",
+            "n.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Oo;",
+        "2.22.18.70": "LX/0iY;",
+        "class": [
+            "h0.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2Nv;",
+        "2.22.18.70": "LX/0jD;",
+        "class": [
+            "YoSwipeActions.smali"
+        ]
+    },
+    {
+        "2.22.10.73": "LX/2aJ;",
+        "2.22.18.70": "LX/1BY;",
+        "class": [
+            "h0.smali"
+        ]
+    }
+]
