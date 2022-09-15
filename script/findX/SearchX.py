@@ -4,7 +4,7 @@ import os
 import re
 
 savePath = ""
-foldPath = "../../smali_classes5"
+foldPath = "../../DecodeCode/WhatsApp_v2.22.18.70/smali_classes5"
 setList = set()
 mapList = {}
 
@@ -60,8 +60,23 @@ if __name__ == "__main__":
     findXClass(foldPath, "LX/\w*;")
     save2File(mCurPath, package_data(), "class.json")
     # 查找方法
-    findXClass(foldPath, "LX/\w*;->.*\(.*?\).+")
+    findXClass(foldPath,
+               "LX/\w*;->.*\(.*?\).+"
+                "|ConversationsFragment;->.*\(.*?\).+"
+                "|StatusPlaybackContactFragment;->.*\(.*?\).+"
+                "|HomeActivity;->A\w+\(.*?\).+"
+                "|StatusesFragment;->A\w+\(.*?\).+"
+                "|Lcom/gbwhatsapp/Conversation;->A\w+\(.*?\).+"
+               )
     save2File(mCurPath, package_data(), "method.json")
     # 查找属性
-    findXClass(foldPath, "LX/\w+;->.*:.*")
+    findXClass(foldPath,
+               "LX/\w+;->.*:.*"
+               "|ConversationsFragment;->.*:.*"
+               "|StatusPlaybackContactFragment;->.*:.*"
+               "|HomeActivity;->A\w+:.*"
+               "|StatusesFragment;->\w+:.*"
+               "|Lcom/gbwhatsapp/Conversation;->\w+:.*"
+               )
     save2File(mCurPath, package_data(), "field.json")
+    print("****************查询完毕****************")

@@ -165,7 +165,7 @@
         "class": [
             "YoSwipeActions.smali"
         ],
-        "TODO": "参数个数增加====》未完成"
+        "TODO": "参数个数增加====》已完成"
     },
     {
         "2.22.10.73": "LX/2Xm;->A0B(Landroid/view/View;LX/2Nt;LX/3Ei;Z)V",
@@ -174,7 +174,7 @@
             "o.smali",
             "i.smali"
         ],
-        "TODO": "参数个数减少====》未完成"
+        "TODO": "参数个数减少====》已完成"
     },
     {
         "2.22.10.73": "LX/01E;->A07(I)Ljava/lang/String;",
@@ -194,7 +194,7 @@
     },
     {
         "2.22.10.73": "LX/2hK;->A07Yo(LX/2NO;)V",
-        "2.22.18.70": "LX/0lW;->A07Yo(LX/0ix;)V",
+        "2.22.18.70": "LX/2vL;->A07Yo(LX/0ix;)V",
         "class": [
             "a1.smali"
         ],
@@ -223,7 +223,7 @@
     },
     {
         "2.22.10.73": "LX/2pX;->getFMessage()LX/2Nt;",
-        "2.22.18.70": "LX/1Kg;->getFMessage()LX/0kW",
+        "2.22.18.70": "LX/1Kg;->getFMessage()LX/0kW;",
         "class": [
             "u.smali",
             "dep.smali",
@@ -393,7 +393,7 @@
             "n.smali",
             "o.smali"
         ],
-        "TODO":"无AE8方法====》未完成"
+        "TODO":"无AE8方法====》已完成"
     },
     {
         "2.22.10.73": "LX/06x;->A02(LX/2NO;ZZ)V",
@@ -408,7 +408,7 @@
         "class": [
             "dep.smali"
         ],
-        "TODO":"A08方法参数改变====》未完成"
+        "TODO":"A08方法参数改变====》已完成"
     },
     {
         "2.22.10.73": "LX/05X;->A04(Landroid/content/Context;Ljava/lang/String;)LX/0Oi;",
@@ -447,7 +447,7 @@
         "class": [
             "dep.smali"
         ],
-         "TODO":"A08方法参数改变====》未完成"
+         "TODO":"A08方法参数改变====》已完成"
     },
     {
         "2.22.10.73": "LX/02R;->A0Y(LX/2Nt;Ljava/lang/String;Z)Z",
@@ -578,6 +578,6 @@
         "class": [
             "YoSwipeActions.smali"
         ],
-        "TODO":"方法参数增多====》未完成"
+        "TODO":"方法参数增多====》已完成"
     }
 ]
