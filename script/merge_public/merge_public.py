@@ -1,51 +1,52 @@
 import argparse
-import xml.etree.ElementTree as ET
 import codecs
+import xml.etree.ElementTree as ET
 
 """
-    主要作用：比较两个public.xml不同
+    主要作用：比较两个public.xml不同,
+    并把新增属性输出到目标文件中
 """
 
-# 用于存放每种类型的最大值key是类型value是最大值
+# 用于存放每种类型的最大值;key是类型,value是最大值
 max_dict = {}
-# key是类型value是名字集合
+# key是类型，value是key类型对应的数组集合
 name_dict = {}
 
 
-# 解析public.xml
 def copy_attrs(from_dir, to_dir):
     to_tree = ET.parse(to_dir)
-    for child in to_tree.getroot():
+    to_root = to_tree.getroot()
+    for child in to_root:
         if child.tag == "public" and "id" in child.attrib:
-            name = child.attrib['name']
-            type = child.attrib['type']
-            id = child.attrib['id']
-            if type in name_dict:
+            attr_name = child.attrib['name']
+            attr_type = child.attrib['type']
+            attr_id = child.attrib['id']
+            if attr_type in name_dict:
                 pass
             else:
-                name_dict[type] = []
-            name_dict[type].append(name)
+                name_dict[attr_type] = []
+            name_dict[attr_type].append(attr_name)
             # 十六进制转十进制
-            id = int(id, 16)
-            if type in max_dict:
-                if id > int(max_dict[type].attrib['id'], 16):
-                    max_dict[type] = child
+            max_id = int(attr_id, 16)
+            if attr_type in max_dict:
+                if max_id > int(max_dict[attr_type].attrib['id'], 16):
+                    max_dict[attr_type] = child
             else:
-                max_dict[type] = child
-
+                max_dict[attr_type] = child
     from_tree = ET.parse(from_dir)
-    for child in from_tree.getroot():
+    from_root = from_tree.getroot()
+    for child in from_root:
         if child.tag == "public" and "id" in child.attrib:
-            name = child.attrib['name']
-            type = child.attrib['type']
+            child_name = child.attrib['name']
+            child_type = child.attrib['type']
             # 屏蔽APKTOOL开头的name
-            if name not in name_dict[type] and "APKTOOL" not in name:
-                max = max_dict[type]
+            if child_name not in name_dict[child_type] and "APKTOOL" not in child_name:
+                max = max_dict[child_type]
                 child.set('id', str(hex(int(max.attrib['id'], 16) + 1)))
-                max_dict[type] = child
-                index = to_tree.getroot().index(max)
-                to_tree.getroot().insert(index + 1, child)
-    save_to_file(to_tree.getroot(), to_dir)
+                max_dict[child_type] = child
+                index = to_root.index(max)
+                to_root.insert(index + 1, child)
+    save_to_file(to_root, to_dir)
 
 
 def save_to_file(data_list, file_name):
@@ -60,10 +61,9 @@ def save_to_file(data_list, file_name):
 
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("from_dir")
-    # parser.add_argument("to_dir")
-    # options = parser.parse_args()
-    # copy_attrs(options.from_dir, options.to_dir)
-    copy_attrs("/Users/tianyejun/work/pythonWrokSpace/pythonProject/workSpace/public.xml",
-               "/Users/tianyejun/work/pythonWrokSpace/pythonProject/workSpace/public1.xml")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    parser.add_argument("to_dir")
+    options = parser.parse_args()
+    copy_attrs(options.from_dir, options.to_dir)
+    print(f"输出结果到：{options.to_dir}")
