@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
             class_data = load_json_data(f"{mCurPath}/script/findX/class.json")
             class_data = merge_data(class_data, method_data)
-            jsonStr = json.dumps(class_data, ensure_ascii=False, indent=4)
+            jsonStr = json.dumps(class_data, ensure_ascii=False, indent=2)
             with open(f"{mCurPath}/script/findX/class.json", "w+") as wf:
                 wf.write(jsonStr)
             break

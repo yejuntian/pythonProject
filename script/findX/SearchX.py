@@ -2,9 +2,9 @@ import codecs
 import json
 import os
 import re
+import argparse
 
 savePath = ""
-foldPath = "../../DecodeCode/WhatsApp_v2.22.18.70/smali_classes5"
 setList = set()
 mapList = {}
 
@@ -38,7 +38,7 @@ def package_data():
     for newStr in setList:
         newMap = {
             "2.22.10.73": newStr,
-            "2.22.18.70":"",
+            "2.22.18.70": "",
             "class": [str for str in mapList[newStr]]
         }
         dataList.append(newMap)
@@ -49,12 +49,17 @@ def package_data():
 
 def save2File(folder_path, dataList, fileName):
     os.chdir(folder_path)
-    jsonStr = json.dumps(dataList, ensure_ascii=False, indent=4)
+    jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with open(fileName, "w+") as wf:
         wf.write(jsonStr)
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("foldPath")
+    args = parser.parse_args()
+
+    foldPath = args.foldPath
     mCurPath = os.getcwd()
     # 查找类
     findXClass(foldPath, "LX/\w*;")
@@ -62,11 +67,11 @@ if __name__ == "__main__":
     # 查找方法
     findXClass(foldPath,
                "LX/\w*;->.*\(.*?\).+"
-                "|ConversationsFragment;->.*\(.*?\).+"
-                "|StatusPlaybackContactFragment;->.*\(.*?\).+"
-                "|HomeActivity;->A\w+\(.*?\).+"
-                "|StatusesFragment;->A\w+\(.*?\).+"
-                "|Lcom/gbwhatsapp/Conversation;->A\w+\(.*?\).+"
+               "|ConversationsFragment;->.*\(.*?\).+"
+               "|StatusPlaybackContactFragment;->.*\(.*?\).+"
+               "|HomeActivity;->A\w+\(.*?\).+"
+               "|StatusesFragment;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/Conversation;->A\w+\(.*?\).+"
                )
     save2File(mCurPath, package_data(), "method.json")
     # 查找属性
