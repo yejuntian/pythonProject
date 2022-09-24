@@ -1,14 +1,15 @@
-import os
-import xml.etree.ElementTree as ET
-import functools
-import codecs
 import argparse
+import codecs
+import functools
+import os
+import traceback
+import xml.etree.ElementTree as ET
 
 public_data_list = []
 
 """
     主要作用：对public.xml资源进行升序排序，
-    并把排序结果输出到public.sorted.xml中
+    并把排序结果输出到public_sorted.xml中
 """
 
 
@@ -49,7 +50,15 @@ def public_sort(from_path):
         # 十六进制转十进制
         public_id: str = child.attrib["id"]
         if public_id.startswith("0x"):
-            if (int(public_id, 16)) <= int("0xffffffff", 16):
+            attr_id: int
+            try:
+                attr_id = int(public_id, 16)
+            except Exception:
+                print(f"错误异常：{traceback.format_exc()}")
+                result = f'错误原因：资源ID命名错误,：<public type="{public_type}" name="{public_name}" id="{public_id}" />'
+                raise Exception(result)
+
+            if attr_id <= int("0xffffffff", 16):
                 entity = PublicEntity(public_type, public_name, public_id)
                 public_data_list.append(entity)
             else:
