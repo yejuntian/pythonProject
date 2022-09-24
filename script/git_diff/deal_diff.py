@@ -33,7 +33,7 @@ def save_data_to_file(data_list, file_name):
         wf.write(json_dump)
 
 
-def move_file_to_new_folder(data_list, cur_path, dir_name):
+def copy_file_to_new_folder(data_list, cur_path, dir_name, project_path: str):
     fold_path = f"{cur_path}/{dir_name}"
     print(f"fold_path = {fold_path}")
     # 创建目标目录
@@ -46,25 +46,37 @@ def move_file_to_new_folder(data_list, cur_path, dir_name):
         last_index = data.rfind("/")
         file_name = os.path.basename(data)
 
+        index = project_path.index(data[0:first_index])
+        old_file_path = project_path[0:index] + data
+
         new_fold_path = fold_path + data[first_index:last_index + 1]
         new_file_path = new_fold_path + file_name
+        print(f"oldFilePath = {data} new_file_path = {new_file_path}")
         if not os.path.exists(new_fold_path):
             os.makedirs(new_fold_path, exist_ok=True)
-        shutil.copy(data, new_file_path)
+        shutil.copy(old_file_path, new_file_path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    # diff文件绝对路径
     parser.add_argument("diff_path")
+    # 反编译项目绝对路径
+    parser.add_argument("project_path")
     args = parser.parse_args()
     exec_diff(args.diff_path)
     # 根据git提交类型，分别存到到不同文件中
     mCurrentPath = os.getcwd()
-    os.chdir(mCurrentPath + "/script/git_diff")
+    target_folder = mCurrentPath + "/script/git_diff"
+    os.chdir(target_folder)
     save_data_to_file(add_file_list, "add.json")
+    print(f"新增文件，输出到：{target_folder}/add.json")
     save_data_to_file(modify_file_list, "modify.json")
+    print(f"文件变化，输出到：{target_folder}/modify.json")
     save_data_to_file(del_file_list, "del.json")
+    print(f"文件删除，输出到：{target_folder}/del.json")
     save_data_to_file(other_file_list, "other.json")
-    # 移动新增文件到指定目录
-    move_file_to_new_folder(add_file_list, mCurrentPath, "outputFiles")
-    print(f"执行脚本完毕，输入结果到:${mCurrentPath}/outputFiles")
+    print(f"文件其他操作，输出到：{target_folder}/other.json")
+    # 复制新增文件到指定目录
+    copy_file_to_new_folder(add_file_list, mCurrentPath, "outputFiles", args.project_path)
+    print(f"执行脚本完毕，新增资源文件copy到:{mCurrentPath}/outputFiles")
