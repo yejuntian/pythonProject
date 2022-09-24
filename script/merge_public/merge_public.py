@@ -1,6 +1,6 @@
 import argparse
 import codecs
-import xml.etree.ElementTree as ET
+import lxml.etree as ET
 
 """
     主要作用：比较两个public.xml不同,
@@ -63,6 +63,7 @@ def save_to_file(data_list, file_name):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
+    #目标public.xml绝对地址
     parser.add_argument("to_dir")
     options = parser.parse_args()
     copy_attrs(options.from_dir, options.to_dir)
