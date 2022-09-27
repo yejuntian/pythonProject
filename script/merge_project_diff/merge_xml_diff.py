@@ -1,10 +1,13 @@
+import argparse
 import glob
 import os
 import shutil
 
-# import xml.etree.ElementTree as ET
 import lxml.etree as ET
-
+"""
+    对比两个不同项目values目录下xml不同，
+    查找diff不同处，并把diff复制到对应目标文件。
+"""
 
 def traverse_folder(project_from_dir, project_to_dir):
     rex_str = os.sep + "res" + os.sep + "values*" + os.sep + "**"
@@ -42,40 +45,34 @@ def merge_diff_attrs(from_path, to_path):
         # 源文件
         from_parse = ET.parse(from_path)
         from_root = from_parse.getroot()
-        isChange: bool = False
+        isChanged: bool = False
         for from_child in from_root:
             from_attr_name = from_child.attrib["name"]
             if from_attr_name not in to_root_map and "APKTOOL" not in from_attr_name:
                 to_root.append(from_child)
-                isChange = True
-        if isChange:
-            xml_str = convert_str(to_root)
-            save_2_file(xml_str, to_path)
+                new_add_list.append(from_child)
+                isChanged = True
+        if isChanged:
+            xml_content = convert_str(to_root)
+            save_2_file(xml_content, to_path)
 
 
 def convert_str(to_root):
-    xml_str: str = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n'
+    xml_content: str = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n'
     for child in to_root:
         attr_tag = child.tag
         text = child.text
-        xml_str += "    "
+        xml_content += "    "
         # string标签中text内容">"会被转移为'&gt'
         if attr_tag == "string" and str(text).__contains__(">"):
-            child_str = ET.tostring(child, encoding="utf-8") \
-                .decode('utf-8') \
-                .strip() \
-                .replace('&gt;', '>') \
-                .replace('/>', ' />')
-            xml_str += child_str
+            child_str = ET.tostring(child, encoding="utf-8").decode('utf-8').strip().replace('&gt;', '>')
+            xml_content += child_str
         else:
-            xml_str += ET.tostring(child, encoding='utf-8') \
-                .decode('utf-8') \
-                .strip() \
-                .replace('/>', ' />')
-        xml_str += '\n'
+            xml_content += ET.tostring(child, encoding='utf-8').decode('utf-8').strip().replace('/>', ' />')
+        xml_content += '\n'
 
-    xml_str += '</resources>\n'
-    return xml_str
+    xml_content += '</resources>\n'
+    return xml_content
 
 
 def save_2_file(data_str, target_file_path):
@@ -92,10 +89,8 @@ def save_2_file(data_str, target_file_path):
 
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("project_from_dir")
-    # parser.add_argument("project_to_dir")
-    # args = parser.parse_args()
-    # merge_diff_values(args.project_from_dir, args.project_to_dir)
-    traverse_folder("/Users/shareit/work/shareit/wa_diff_gb/wa_diff_gbv17"
-                    , "/Users/shareit/work/shareit/wa_diff_gb/wa_diff_gbv17_copy")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_from_dir")
+    parser.add_argument("project_to_dir")
+    args = parser.parse_args()
+    traverse_folder(args.project_from_dir, args.project_to_dir)
