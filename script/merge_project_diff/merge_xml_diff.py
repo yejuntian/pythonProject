@@ -2,12 +2,15 @@ import argparse
 import glob
 import os
 import shutil
-
+import traceback
 import lxml.etree as ET
+import merge_public
+
 """
     对比两个不同项目values目录下xml不同，
     查找diff不同处，并把diff复制到对应目标文件。
 """
+
 
 def traverse_folder(project_from_dir, project_to_dir):
     rex_str = os.sep + "res" + os.sep + "values*" + os.sep + "**"
@@ -24,10 +27,11 @@ def traverse_folder(project_from_dir, project_to_dir):
             os.makedirs(to_dir, exist_ok=True)
             # copy当前新文件
             shutil.copy(from_path, to_dir)
-        merge_diff_attrs(from_path, to_path)
+        merge_diff(from_path, to_path)
 
 
-def merge_diff_attrs(from_path, to_path):
+# 合并diff属性到目标文件xml中
+def merge_diff(from_path, to_path):
     if not os.path.isfile(to_path):
         shutil.copy(from_path, to_path)
     else:
@@ -54,7 +58,52 @@ def merge_diff_attrs(from_path, to_path):
                 isChanged = True
         if isChanged:
             xml_content = convert_str(to_root)
-            save_2_file(xml_content, to_path)
+            # 合并public.xml
+            if os.path.basename(to_path) == "public.xml":
+                merge_public.copy_attrs(from_path, to_path)
+            else:
+                # 合并其他xml
+                save_2_file(xml_content, to_path)
+
+
+# 把diff标签输出到其他文件中
+def merge_diff_attrs(from_path, to_path, target_project_path):
+    diff_dir = str(to_path)
+    diff_project_path = f'{target_project_path}_diff{diff_dir.replace(target_project_path, "")}'
+    diff_folder_path = os.path.dirname(diff_project_path)
+
+    # 创建目标目录文件夹,并copy文件
+    if not os.path.exists(to_path):
+        if not os.path.exists(diff_folder_path):
+            os.makedirs(diff_folder_path, exist_ok=True)
+        shutil.copy(from_path, diff_folder_path)
+    else:
+        # 目标文件
+        to_parse = ET.parse(to_path)
+        to_root = to_parse.getroot()
+        # 目标xml文件，标签集合map
+        to_root_map = {}
+        # 两个xml，diff标签集合map
+        new_add_list = []
+        for to_child in to_root:
+            to_attr_name = to_child.attrib["name"]
+            to_root_map[to_attr_name] = to_child
+
+        # 源文件
+        from_parse = ET.parse(from_path)
+        from_root = from_parse.getroot()
+        isChanged: bool = False
+        for from_child in from_root:
+            from_attr_name = from_child.attrib["name"]
+            if from_attr_name not in to_root_map and "APKTOOL" not in from_attr_name:
+                new_add_list.append(from_child)
+                isChanged = True
+        if isChanged:
+            xml_content = convert_str(new_add_list)
+
+            if not os.path.exists(diff_folder_path):
+                os.makedirs(diff_folder_path, exist_ok=True)
+            save_2_file(xml_content, diff_project_path)
 
 
 def convert_str(to_root):
@@ -78,14 +127,12 @@ def convert_str(to_root):
 def save_2_file(data_str, target_file_path):
     try:
         with open(target_file_path, 'w+') as f:
-            print(data_str)
             f.write(data_str)
     except Exception as result:
         print(f"写入{target_file_path}出现异常: {result}")
-    else:
-        print(f"写入{target_file_path}完成")
-    finally:
-        f.close()
+        print(traceback.format_exc())
+    # else:
+        # print(f"写入{target_file_path}完成")
 
 
 if __name__ == "__main__":

@@ -50,7 +50,7 @@ def copy_attrs(from_dir, to_dir):
 
 
 def save_to_file(data_list, file_name):
-    print(file_name)
+    # print(file_name)
     with codecs.open(file_name, "w+", encoding="utf-8") as wf:
         wf.write('<?xml version="1.0" encoding="utf-8"?>\n')
         wf.write('<resources>\n')
