@@ -77,4 +77,4 @@ if __name__ == "__main__":
     before = time.time()
     execute_merge_diff_file(from_dir, to_dir)
     after = time.time()
-    print(f"输出diff完成，写入到{to_dir} , 耗时{after - before} 秒")
+    print(f"输出diff完成，写入到{to_dir if is_allow == True else to_dir + '_diff'} , 耗时{after - before} 秒")
