@@ -9,7 +9,7 @@ key_path = 'script/replacepackage/replacekeys.properties'
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
-blacklist = ['.idea', 'build', 'assets', 'build', 'lib', 'META-INF',
+blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
 # 包名集合列表
 package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp"]
