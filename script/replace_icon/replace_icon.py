@@ -1,6 +1,7 @@
 import argparse
 import os
 import shutil
+import xml.etree.ElementTree as ET
 
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF',
@@ -41,11 +42,22 @@ def enable_traver(file_name, folder_name):
     return not file_name.__contains__(folder_name)
 
 
+def load_data(xml_path):
+    parse = ET.parse(xml_path)
+    root = parse.getroot()
+    data_list = []
+    for element in root:
+        data_list.append(element.text)
+    return data_list
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_project_dir")
     parser.add_argument("to_project_dir")
     args = parser.parse_args()
+
+    icon_list = load_data("script/replace_icon/res_icon.xml")
 
     replace_icon(args.from_project_dir, args.to_project_dir, blacklist)
     print(f"执行完成，输出结果保存到：{args.to_project_dir}")
