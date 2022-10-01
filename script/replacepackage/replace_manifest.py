@@ -75,7 +75,7 @@ def getSanSdkInfo(new_package):
 
 
 def write_2_file(file_path, data_str):
-    xml_data = f'<?xml version="1.0" encoding="utf-8" standalone="no"?>\n{data_str}'
+    xml_data = f'<?xml version="1.0" encoding="utf-8" standalone="no"?>{data_str}'
     try:
         with codecs.open(file_path, mode='w+', encoding="utf-8") as f:
             f.write(xml_data)
