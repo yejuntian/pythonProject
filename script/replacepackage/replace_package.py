@@ -11,8 +11,10 @@ extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
-# 包名集合列表
-package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp"]
+# 默认包名集合列表
+default_package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp"]
+# 新包名集合列表
+new_package_list = default_package_list.copy()
 
 """
     主要作用：反编译实现马甲包功能；替换默认包名为新包名。
@@ -63,10 +65,10 @@ def rename_directory(oldFolderName, newFolderName):
     curPath = os.getcwd()
     pos = curPath.rfind(r"smali")
     curPath = curPath[:pos]
-    print(f"curPath = {curPath}")
+    # print(f"curPath = {curPath}")
     os.chdir(curPath)
     fileList = glob.glob(curPath + "/" + "smali*/com/*")
-    print(fileList)
+    # print(fileList)
     for file in fileList:
         if file.rfind("/") > 0:
             dirName = file[file.rindex("/") + 1:]
@@ -83,16 +85,28 @@ if __name__ == '__main__':
     folder_path = args.folder_path
 
     default_package = input(
-        '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp", "3->com.WhatsApp2Plus", "4->com.yowhatsapp"\n')
+        '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp",'
+        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->其他包名"\n')
+    if default_package.strip() == "5":
+        user_default_package = input('请输入默认包名：\n')
+        default_package_list.append(user_default_package.strip())
+
     new_package = input(
-        '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp", "3->com.WhatsApp2Plus", "4->com.yowhatsapp"\n')
+        '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp",'
+        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->其他包名"\n')
+    if new_package.strip() == "5":
+        user_new_package = input('请输入新包名：\n')
+        new_package_list.append(user_new_package.strip())
 
     default_index = int(default_package) - 1
     new_index = int(new_package) - 1
     # 替换AndroidManifest
-    replace_manifest.replace_manifest(folder_path + "/AndroidManifest.xml", default_index, new_index)
+    replace_manifest.replace_manifest(folder_path + "/AndroidManifest.xml",
+                                      default_package_list[default_index],
+                                      new_package_list[new_index])
     # 替换包名
     mapping_string = load_replace_keys(key_path)
     execute_path(folder_path, blacklist, extends)
-    rename_directory(package_list[default_index].split(".")[-1], package_list[new_index].split(".")[-1])
+    rename_directory(default_package_list[default_index].split(".")[-1],
+                     new_package_list[new_index].split(".")[-1])
     print(f"执行完毕，输出结果保存到{folder_path}")
