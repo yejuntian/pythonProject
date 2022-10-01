@@ -45,7 +45,7 @@ def parse_manifest(file_path, new_package):
         for sub in child:
             # print('sub-tag是：', sub.tag, ',sub.attrib：', sub.attrib, ',sub.text：', sub.text)
             replace_san_sdk(sub, new_package)
-    data_str = ET.tostring(root, encoding="utf-8").decode('utf-8').replace('/>', ' />')
+    data_str = ET.tostring(root, encoding="utf-8").decode('utf-8').replace(' />', '/>')
     write_2_file(file_path, data_str)
 
 
