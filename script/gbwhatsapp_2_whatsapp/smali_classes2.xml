@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!-- gbwhatsapp目录下需要move到smali_classes2包下的目录列表-->
+    <comment>gbwhatsapp/calling</comment>
+    <comment>gbwhatsapp/fieldstats</comment>
+    <comment>gbwhatsapp/filter</comment>
+    <comment>gbwhatsapp/jid</comment>
+    <comment>gbwhatsapp/media/transcode</comment>
+    <comment>gbwhatsapp/nativelibloader</comment>
+    <comment>gbwhatsapp/protocol</comment>
+    <comment>gbwhatsapp/stickers</comment>
+    <comment>gbwhatsapp/superpack</comment>
+    <comment>gbwhatsapp/util</comment>
+    <comment>gbwhatsapp/voipcalling</comment>
+    <comment>gbwhatsapp/wamsys</comment>
+    <comment>gbwhatsapp/anr</comment>
+    <comment>gbwhatsapp/audioRecording</comment>
+    <comment>gbwhatsapp/crash/upload</comment>
+    <!-- gbwhatsapp目录下需要move到smali_classes2包下的文件列表-->
+    <comment>gbwhatsapp/checkbox/RtlCheckBox.smali</comment>
+</properties>
+

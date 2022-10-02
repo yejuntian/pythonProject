@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!-- gbwhatsapp目录下需要move到smali包下的目录列表-->
+    <comment>gbwhatsapp/aborthooks</comment>
+    <comment>gbwhatsapp/breakpad</comment>
+    <!-- gbwhatsapp目录下需要movesmali包下的文件列表-->
+    <comment>gbwhatsapp/AbstractConsumerAppShell.smali</comment>
+    <comment>gbwhatsapp/GifHelper.smali</comment>
+    <comment>gbwhatsapp/MediaData.smali</comment>
+    <comment>gbwhatsapp/Mp4Ops$LibMp4CheckAndRepairResult.smali</comment>
+    <comment>gbwhatsapp/Mp4Ops$LibMp4OperationResult.smali</comment>
+    <comment>gbwhatsapp/Mp4Ops$LibMp4StreamCheckResult.smali</comment>
+    <comment>gbwhatsapp/Mp4Ops.smali</comment>
+    <comment>gbwhatsapp/NativeMediaHandler.smali</comment>
+    <comment>gbwhatsapp/SqliteShell.smali</comment>
+    <comment>gbwhatsapp/VideoFrameConverter.smali</comment>
+</properties>
+
