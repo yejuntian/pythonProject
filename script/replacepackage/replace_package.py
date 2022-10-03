@@ -26,12 +26,12 @@ def load_replace_keys(file_path):
     map_string = []
     with codecs.open(file_path, "r", "utf-8") as rfile:
         for line in rfile.readlines():
-            if line.find("=") != -1:
-                line = line[0:line.find('#')]
-            if line.find('=') > 0:
-                strs = line.split("=")
-                map_string.append([strs[0].strip(), strs[1].strip()])
-    return map_string
+            line = line.strip()
+            if not line.__contains__("#"):
+                if line.find('=') > 0:
+                    strs = line.split("=")
+                    map_string.append([strs[0].strip(), strs[1].strip()])
+        return map_string
 
 
 def execute_path(folder_path, black_list, extends):
