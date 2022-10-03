@@ -1,3 +1,5 @@
+import codecs
+import glob
 import os
 import shutil
 import xml.etree.ElementTree as ET
@@ -9,10 +11,17 @@ smali_1_folder_list = []
 smali_2_folder_list = []
 # 默认文件夹名字
 default_folder_name = "gbwhatsapp"
+# 新包文件夹名字
+new_folder_name = "whatsapp"
 # 需要move到smali的文件夹列表
 smali_folder_list = []
 # 需要move到smali_classes2的文件夹列表
 smali_classes2_folder_list = []
+# 只匹配下面的文件类型
+extends = ["smali", "xml"]
+# 排除哪些文件夹
+blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
+             'lib', 'META-INF', 'original', 'apktool.yml']
 
 
 # 获取目录列表
@@ -35,7 +44,7 @@ def get_correct_path(old_path, folder):
 # move 文件
 def start_move_file(fileName, from_file_path, isFile):
     is_move_file = False
-    to_file_path = from_file_path.replace(default_folder_name, "whatsapp")
+    to_file_path = from_file_path.replace(default_folder_name, new_folder_name)
 
     if fileName in smali_1_folder_list:
         to_file_path = get_correct_path(to_file_path, "smali")
@@ -109,8 +118,8 @@ def moveFile_2_target_folder(file_path, isMoveSmaliFolder):
     listdir = os.listdir(file_path)
     for fileName in listdir:
         fpath = str(os.path.join(file_path, fileName))
-        to_file_path = fpath.replace(default_folder_name, "whatsapp")
-        print(f"fpath = {fpath} newfilePath = {to_file_path}")
+        to_file_path = fpath.replace(default_folder_name, new_folder_name)
+        # print(f"fpath = {fpath} newfilePath = {to_file_path}")
         if os.path.isdir(fpath):
             moveFile_2_target_folder(fpath, isMoveSmaliFolder)
             pass
@@ -125,6 +134,64 @@ def moveFile_2_target_folder(file_path, isMoveSmaliFolder):
                 shutil.move(fpath, to_file_path)
 
 
+# 获取旧包名和新包名的对应关系，并保存到map中
+def get_package_map(package):
+    data_map = {}
+    # 新包名
+    new_package1 = package[0:package.rindex(".")]
+    new_package2 = new_package1.replace("/", ".")
+    # 旧包名
+    old_package1 = new_package1.replace(new_folder_name, default_folder_name)
+    old_package2 = new_package2.replace(new_folder_name, default_folder_name)
+
+    data_map[f"L{old_package1}"] = f"L{new_package1}"
+    data_map[old_package2] = new_package2
+    # print(data_map)
+    return data_map
+
+
+# 遍历WhatsApp目录的所有文件，替换为新包名
+def replace_package():
+    filelist = glob.glob(f"{from_dir}/smali*/com/{new_folder_name}/**/*.smali", recursive=True)
+    for file_path in filelist:
+        temp_str = f"{from_dir}/smali_classes2"
+        if file_path.__contains__(temp_str):
+            package = file_path[len(temp_str) + 1:]
+            package_map = get_package_map(package)
+            # print(package_map)
+            # 遍历每个文件替换包名
+            traverse_folder_replace_package(from_dir, package_map)
+        else:
+            package = file_path[len(f"{from_dir}/smali") + 1:]
+            package_map = get_package_map(package)
+            # print(package_map)
+            # 遍历每个文件替换包名
+            traverse_folder_replace_package(from_dir, package_map)
+
+
+# 遍历每个文件替换包名
+def traverse_folder_replace_package(file_path, package_map_data):
+    listdir = os.listdir(file_path)
+    for filename in listdir:
+        fpath = str(os.path.join(file_path, filename))
+        if filename not in blacklist:
+            if os.path.isdir(fpath):
+                traverse_folder_replace_package(fpath, package_map_data)
+            elif os.path.isfile(fpath):
+                # 只extends的文件类型
+                if fpath.split('.')[-1] in extends:
+                    print('fpath=', fpath)
+                    with codecs.open(fpath, "r", "utf-8") as rfile:
+                        data = rfile.read()
+                    with codecs.open(fpath, "w", "utf-8") as wfile:
+                        replace_times = 0
+                        for key, value in package_map_data.items():
+                            replace_times += data.count(key)
+                            data = data.replace(key, value)
+                        print(r'替换次数：', replace_times)
+                        wfile.write(data)
+
+
 def convert_2_whatsapp():
     traverse_folder(dir_path)
     # 移动到smali目录
@@ -133,6 +200,8 @@ def convert_2_whatsapp():
     # 移动到smali_classes2目录
     for smali_folder in smali_classes2_folder_list:
         moveFile_2_target_folder(smali_folder, False)
+    # 替换包名
+    replace_package()
 
 
 if __name__ == "__main__":
