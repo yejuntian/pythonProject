@@ -1,9 +1,12 @@
+import argparse
 import codecs
 import glob
 import os
 import shutil
+import time
 import xml.etree.ElementTree as ET
 
+# 项目地址
 dir_path = ""
 # 需要移动到smali目录的文件列表
 smali_1_folder_list = []
@@ -152,21 +155,26 @@ def get_package_map(package):
 
 # 遍历WhatsApp目录的所有文件，替换为新包名
 def replace_package():
-    filelist = glob.glob(f"{from_dir}/smali*/com/{new_folder_name}/**/*.smali", recursive=True)
+    filelist = glob.glob(f"{dir_path}/smali*/com/{new_folder_name}/**/*.smali", recursive=True)
+    data_map = {}
     for file_path in filelist:
-        temp_str = f"{from_dir}/smali_classes2"
+        temp_str = f"{dir_path}/smali_classes2"
         if file_path.__contains__(temp_str):
             package = file_path[len(temp_str) + 1:]
             package_map = get_package_map(package)
-            # print(package_map)
-            # 遍历每个文件替换包名
-            traverse_folder_replace_package(from_dir, package_map)
+            # 组装数据
+            for key, value in package_map.items():
+                data_map[key] = value
         else:
-            package = file_path[len(f"{from_dir}/smali") + 1:]
+            package = file_path[len(f"{dir_path}/smali") + 1:]
             package_map = get_package_map(package)
-            # print(package_map)
-            # 遍历每个文件替换包名
-            traverse_folder_replace_package(from_dir, package_map)
+            # 组装数据
+            for key, value in package_map.items():
+                data_map[key] = value
+
+    if len(data_map) > 0:
+        # 遍历每个文件替换包名
+        traverse_folder_replace_package(dir_path, data_map)
 
 
 # 遍历每个文件替换包名
@@ -205,10 +213,14 @@ def convert_2_whatsapp():
 
 
 if __name__ == "__main__":
-    # smali_1_folder_list = get_dir_list("script/gbwhatsapp_2_whatsapp/smali.xml")
-    smali_1_folder_list = get_data_list("smali.xml")
-    # smali_2_folder_list = get_dir_list("script/gbwhatsapp_2_whatsapp/smali_classes2.xml")
-    smali_2_folder_list = get_data_list("smali_classes2.xml")
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.18.71"
-    dir_path = from_dir
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    dir_path = args.from_dir
+
+    before_time = time.time()
+    smali_1_folder_list = get_data_list("script/gbwhatsapp_2_whatsapp/smali.xml")
+    smali_2_folder_list = get_data_list("script/gbwhatsapp_2_whatsapp/smali_classes2.xml")
     convert_2_whatsapp()
+    after_time = time.time()
+    print(f"执行完毕，输出结果保存到：{dir_path} 共耗时{after_time - before_time} 秒")
