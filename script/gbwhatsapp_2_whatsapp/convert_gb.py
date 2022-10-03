@@ -189,15 +189,39 @@ def traverse_folder_replace_package(file_path, package_map_data):
                 # 只extends的文件类型
                 if fpath.split('.')[-1] in extends:
                     print('fpath=', fpath)
-                    with codecs.open(fpath, "r", "utf-8") as rfile:
-                        data = rfile.read()
-                    with codecs.open(fpath, "w", "utf-8") as wfile:
-                        replace_times = 0
-                        for key, value in package_map_data.items():
-                            replace_times += data.count(key)
-                            data = data.replace(key, value)
-                        print(r'替换次数：', replace_times)
-                        wfile.write(data)
+                    # 保持AndroidManifest.xml原有xml格式需要单独处理
+                    if filename == "AndroidManifest.xml":
+                        save_2_xml(fpath, package_map_data)
+                    else:
+                        save_2_file(fpath, package_map_data)
+
+
+# 保存到xml文件中
+def save_2_xml(fpath, package_map_data):
+    ET.register_namespace('android', "http://schemas.android.com/apk/res/android")
+    parse = ET.parse(fpath)
+    data = ET.tostring(parse.getroot(), encoding="utf-8").decode('utf-8').replace(' />', '/>')
+    data = f'<?xml version="1.0" encoding="utf-8" standalone="no"?>{data}'
+    with codecs.open(fpath, "w", "utf-8") as wfile:
+        replace_times = 0
+        for key, value in package_map_data.items():
+            replace_times += data.count(key)
+            data = data.replace(key, value)
+        print(r'替换次数：', replace_times)
+        wfile.write(data)
+
+
+# 保存到文件中
+def save_2_file(fpath, package_map_data):
+    with codecs.open(fpath, "r", "utf-8") as rfile:
+        data = rfile.read()
+    with codecs.open(fpath, "w", "utf-8") as wfile:
+        replace_times = 0
+        for key, value in package_map_data.items():
+            replace_times += data.count(key)
+            data = data.replace(key, value)
+        print(r'替换次数：', replace_times)
+        wfile.write(data)
 
 
 def convert_2_whatsapp():
