@@ -26,6 +26,11 @@ extends = ["smali", "xml"]
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
              'lib', 'META-INF', 'original', 'apktool.yml']
 
+"""
+    主要作用：根据smali.xml、smali_classes2.xml的配置；
+    由gbwhatsapp包move到whatsapp包下，并修改为对应的配置。
+"""
+
 
 # 获取目录列表
 def get_data_list(path):
