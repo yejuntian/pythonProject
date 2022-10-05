@@ -66,8 +66,8 @@ def getSanSdkInfo(new_package):
     if new_package.__contains__("gbwhatsapp"):  # gb
         return "6757e179-7b37-4902-a756-792898bbbbe3", "[3.8.3](383)"
     elif new_package.__contains__("obwhatsapp"):  # ob
-        # TODO 替换
-        return "6757e179-7b37-4902-a756-792898bbbbe3_ob", "[3.11.4](31104)_ob"
+        # TODO 替换,默认是gb的配置
+        return "6757e179-7b37-4902-a756-792898bbbbe3", "[3.8.3](383)"
     elif new_package.__contains__("WhatsApp2Plus"):  # plus
         return "9aa604ef-3f90-42fb-985a-f32d17d5bee3", "[3.8.3](383)"
     elif new_package.__contains__("yowhatsapp"):  # yo
