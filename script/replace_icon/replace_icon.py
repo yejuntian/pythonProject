@@ -51,7 +51,7 @@ def copyIcon(from_path, to_path, black_list):
                 if file_name in icon_list:
                     if not os.path.exists(to_path):
                         os.makedirs(to_path, exist_ok=True)
-                    print(file_name)
+                    # print(file_name)
                     shutil.copyfile(from_file_path, to_file_path)
 
 
