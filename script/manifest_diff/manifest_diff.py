@@ -26,7 +26,7 @@ def merge_manifest_diff(from_dir, to_dir):
 
 
 def parse_old_manifest(from_dir):
-    # ET.register_namespace("android", android_scheme)
+    ET.register_namespace("android", android_scheme)
     parse = ET.parse(from_dir)
     from_root = parse.getroot()
 
@@ -55,8 +55,9 @@ def parse_new_manifest(to_dir):
     for child in to_root:
         child_tag = child.tag
         # 特殊处理
-        if child_tag == "queries" and child_tag not in permission_data_list:
-            permission_list_diff.append(child)
+        if child_tag == "queries":
+            if child_tag not in permission_data_list:
+                permission_list_diff.append(child)
             continue
 
         nameSpace = "{" + android_scheme + "}"
