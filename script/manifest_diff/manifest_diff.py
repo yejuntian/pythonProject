@@ -38,8 +38,8 @@ def parse_old_manifest(from_dir):
             continue
 
         nameSpace = "{" + android_scheme + "}"
-        child_name = child.attrib[f"{nameSpace}name"]
         if child_tag != "application":
+            child_name = child.attrib[f"{nameSpace}name"]
             permission_data_list.append(child_name)
         else:
             for sub_child in child:
@@ -100,6 +100,7 @@ def save_2_file(to_dir):
         file_path = f"{dir_path}/AndroidManifest_diff.xml"
     with codecs.open(file_path, mode="w", encoding="utf-8") as wf:
         wf.write(xml_content)
+    print(f"输出AndroidManifest.xml diff完成，保存到{file_path}")
 
 
 if __name__ == "__main__":

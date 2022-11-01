@@ -43,8 +43,10 @@ def merge_diff(from_path, to_path):
         # 两个xml，diff标签集合map
         new_add_list = []
         for to_child in to_root:
-            to_attr_name = to_child.attrib["name"]
-            to_root_map[to_attr_name] = to_child
+            child_str = ET.tostring(to_child, encoding="utf-8").decode('utf-8').strip()
+            if not child_str.startswith("<!--"):
+                to_attr_name = to_child.attrib["name"]
+                to_root_map[to_attr_name] = to_child
 
         # 源文件
         from_parse = ET.parse(from_path)
