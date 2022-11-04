@@ -18,14 +18,12 @@ def copy_attrs(from_dir, to_dir):
     to_root = to_tree.getroot()
     for child in to_root:
         if child.tag == "public" and "id" in child.attrib:
-            attr_name = child.attrib['name']
-            attr_type = child.attrib['type']
-            attr_id = child.attrib['id']
-            if attr_type in name_dict:
-                pass
-            else:
-                name_dict[attr_type] = []
-            name_dict[attr_type].append(attr_name)
+            attr_name = str(child.attrib['name']).strip()
+            attr_type = child.attrib['type'].strip()
+            attr_id = child.attrib['id'].strip()
+            if attr_type not in name_dict:
+                name_dict[attr_type] = set()
+            name_dict[attr_type].add(attr_name)
             # 十六进制转十进制
             max_id = int(attr_id, 16)
             if attr_type in max_dict:
@@ -37,14 +35,14 @@ def copy_attrs(from_dir, to_dir):
     from_root = from_tree.getroot()
     for child in from_root:
         if child.tag == "public" and "id" in child.attrib:
-            child_name = child.attrib['name']
-            child_type = child.attrib['type']
+            child_name = child.attrib['name'].strip()
+            child_type = child.attrib['type'].strip()
             # 屏蔽APKTOOL开头的name
             if child_name not in name_dict[child_type] and "APKTOOL" not in child_name:
-                max = max_dict[child_type]
-                child.set('id', str(hex(int(max.attrib['id'], 16) + 1)))
+                child_max = max_dict[child_type]
+                child.set('id', str(hex(int(child_max.attrib['id'], 16) + 1)))
                 max_dict[child_type] = child
-                index = to_root.index(max)
+                index = to_root.index(child_max)
                 to_root.insert(index + 1, child)
     save_to_file(to_root, to_dir)
 
