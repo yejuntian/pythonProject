@@ -15,6 +15,8 @@ component_list_diff = []
 
 """
     主要作用：对比两个AndroidManifest.xml查找不同处，并输出diff到新的xml中。
+    from_dir:代码少的目录
+    to_dir:代码多的目录
 """
 
 

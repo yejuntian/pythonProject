@@ -2,11 +2,11 @@ import argparse
 import os
 import shutil
 import time
-
+import manifest_diff
 import merge_xml_diff
 
 # 排除哪些文件夹
-black_list_dir = ['.idea', ".git", 'build', 'AndroidManifest.xml', 'apktool.yml']
+black_list_dir = ['.idea', ".git", 'build', 'apktool.yml']
 # 目标项目的地址
 target_project_path = ""
 # 用于存放diff数据集合，key是
@@ -16,13 +16,15 @@ is_allow: bool = False
 
 """
     对比两个项目的diff之处，把新增文件和xml属性copy到目标项目中
+    project_from_dir：代码多的目录
+    project_to_dir：代码少的目录
 """
 
 
 def execute_merge_diff_file(project_from_dir, project_to_dir):
     """
-    project_from_dir:要复制的项目地址
-    project_to_dir：目标项目的地址
+    project_from_dir:要复制的项目地址(代码多)
+    project_to_dir：目标项目的地址(代码少)
     """
     list_from_dir = os.listdir(project_from_dir)
     list_to_dir = os.listdir(project_to_dir)
@@ -61,6 +63,12 @@ def execute_merge_diff_file(project_from_dir, project_to_dir):
                         merge_xml_diff.merge_diff(from_file_path, to_file_path)
                     else:
                         merge_xml_diff.merge_diff_attrs(from_file_path, to_file_path, target_project_path)
+                if from_path.__contains__("AndroidManifest"):
+                    if not is_allow:
+                        manifest_diff.merge_manifest_diff(to_file_path, from_file_path)
+                        fromDir = project_from_dir + "/AndroidManifest_diff.xml"
+                        if os.path.exists(fromDir):
+                            shutil.move(fromDir, project_to_dir + "_diff")
 
 
 if __name__ == "__main__":
