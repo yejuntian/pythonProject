@@ -7,6 +7,8 @@ import argparse
 savePath = ""
 setList = set()
 mapList = {}
+baseVersion = "2.22.18.70"
+newVersion = "2.22.22.80"
 
 
 def findXClass(folder_path, rexStr):
@@ -15,7 +17,7 @@ def findXClass(folder_path, rexStr):
     fileList = os.listdir(cwd)
     for fileName in fileList:
         fpath = os.path.join(cwd, fileName)
-        if os.path.isfile(fpath):
+        if os.path.isfile(fpath) and fpath.split('.')[-1] == "smali":
             with codecs.open(fpath, "r", "utf-8") as rfile:
                 data = rfile.read()
                 findList = re.findall(fr"{rexStr}", data)
@@ -37,8 +39,8 @@ def package_data():
     dataList = []
     for newStr in setList:
         newMap = {
-            "2.22.10.73": newStr,
-            "2.22.18.70": "",
+            baseVersion: newStr,
+            newVersion: "",
             "class": [str for str in mapList[newStr]]
         }
         dataList.append(newMap)

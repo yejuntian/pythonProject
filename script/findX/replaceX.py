@@ -3,6 +3,9 @@ import json
 import codecs
 import os
 
+baseVersion = "2.22.18.70"
+newVersion = "2.22.22.80"
+
 
 def load_json_data(file_path):
     with codecs.open(file_path, "r", "utf-8") as rfile:
@@ -22,10 +25,10 @@ def replace_x(folder_path, dataList):
             with codecs.open(file_path, "w", "utf-8") as wfile:
                 replace_times = 0
                 for item in dataList:
-                    replace_times += data.count(item["2.22.10.73"])
+                    replace_times += data.count(item[baseVersion])
                     print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
-                    data = data.replace(item["2.22.10.73"], item["2.22.18.70"])
+                    data = data.replace(item[baseVersion], item[newVersion])
                 wfile.write(data)
 
         elif os.path.isdir(file_path):
@@ -35,12 +38,12 @@ def replace_x(folder_path, dataList):
 # 组装数据
 def merge_data(class_data, method_data):
     for class_item in class_data:
-        old_class = class_item["2.22.10.73"]
+        old_class = class_item[baseVersion]
         for item in method_data:
-            item_class = item["2.22.10.73"]
-            item_class2 = item["2.22.18.70"]
+            item_class = item[baseVersion]
+            item_class2 = item[newVersion]
             if old_class == item_class.split("->")[0]:
-                class_item["2.22.18.70"] = item_class2.split("->")[0]
+                class_item[newVersion] = item_class2.split("->")[0]
                 continue
     return class_data
 
