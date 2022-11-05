@@ -1,142 +1,10 @@
 [
   {
-    "2.22.18.70": "LX/03i;->A04(Z)V",
+    "2.22.18.70": "LX/0ix;->A00(Ljava/lang/String;)LX/0ix;",
     "2.22.22.80": "",
     "class": [
+      "dep.smali",
       "n.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1Bf;->A21()LX/1Bf;",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03A;->A01()V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/02l;->A0B(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2DZ;->A06()V",
-    "2.22.22.80": "",
-    "class": [
-      "gnn.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A10(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsFragment.smali",
-      "GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ux;->A01(Landroid/content/Context;LX/0kC;IZ)I",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GS;-><init>(Ljava/lang/String;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/10o;->A04(LX/0ix;IIJ)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0zJ;->A00()Z",
-    "2.22.22.80": "",
-    "class": [
-      "ezz.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0kC;->A0L()Z",
-    "2.22.22.80": "",
-    "class": [
-      "a1.smali",
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Aj;-><init>()V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/06S;->A00(LX/03M;)V",
-    "2.22.22.80": "",
-    "class": [
-      "OnPageSelected.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i4;->A0X(LX/2AJ;LX/01I;LX/0i4;LX/01M;)LX/15b;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/01B;->A01()Landroid/content/Context;",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsFragment.smali",
-      "GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GS;->onCreate()V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0lE;->A0B(LX/0ix;)LX/0kC;",
-    "2.22.22.80": "",
-    "class": [
-      "u0.smali",
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1kc;->A0E()V",
-    "2.22.22.80": "",
-    "class": [
-      "h0.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/00i;->findViewById(I)Landroid/view/View;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
     ]
   },
   {
@@ -147,104 +15,6 @@
     ]
   },
   {
-    "2.22.18.70": "StatusPlaybackContactFragment;->A13()V",
-    "2.22.22.80": "",
-    "class": [
-      "d.smali",
-      "o.smali",
-      "i0.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gZ;->A0O(Landroid/app/Activity;)Landroid/os/Bundle;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1ZB;-><init>(LX/0ix;LX/0ix;[Ljava/lang/Long;[Ljava/lang/String;)V",
-    "2.22.22.80": "",
-    "class": [
-      "n.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A19()V",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Op;->A00(Landroid/content/Context;)Z",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Bl;-><init>(LX/0ix;)V",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsFragment.smali",
-      "GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/16q;->A21()LX/16q;",
-    "2.22.22.80": "",
-    "class": [
-      "a1.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GT;->A00()V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0tu;->A00(Lorg/whispersystems/jobqueue/Job;)V",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i8;->A1O(LX/00k;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Aj;->onCreate(Landroid/os/Bundle;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/01B;->A0F()LX/01C;",
-    "2.22.22.80": "",
-    "class": [
-      "YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1Bf;->A01(Lcom/whatsapp/jid/UserJid;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
     "2.22.18.70": "LX/0mK;->A0F(LX/0ix;IZ)V",
     "2.22.22.80": "",
     "class": [
@@ -252,548 +22,10 @@
     ]
   },
   {
-    "2.22.18.70": "LX/02T;-><init>()V",
-    "2.22.22.80": "",
-    "class": [
-      "d.smali",
-      "n.smali",
-      "AutoMessageAdapter.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/16q;->A00(LX/0kC;)Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "a1.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i4;-><init>()V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ut;->A01(LX/0ix;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2vL;->A07Yo(LX/0ix;)V",
-    "2.22.22.80": "",
-    "class": [
-      "a1.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0wJ;->A21()LX/0wJ;",
+    "2.22.18.70": "LX/0lu;->A08(Ljava/lang/String;)LX/1aE;",
     "2.22.22.80": "",
     "class": [
       "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/02l;->A01()Landroid/app/Notification;",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1Bf;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GS;->A01(ILandroid/app/Notification;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A15(Landroid/content/Context;)V",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0wJ;->A04(Landroid/content/Context;Ljava/lang/String;)LX/1GH;",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0j4;->A09(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Matrix;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ux;->A21()LX/0ux;",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03A;->A06(LX/01B;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/02l;->A09(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i6;->setContentView(I)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i6;->AXM(LX/054;)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0lG;->A08()V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/00z;->A09(I)Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "yo.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GS;->onDestroy()V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/00S;->A01(Landroid/content/Context;Ljava/lang/String;)I",
-    "2.22.22.80": "",
-    "class": [
-      "utils.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0kW;->A0K()Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/01I;->A29_2()LX/0lu;",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i8;->A1L(LX/2AJ;LX/0i8;)LX/01I;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0Q(LX/01I;)LX/0lE;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0R(LX/01I;)LX/0lL;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/00S;->A04(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
-    "2.22.22.80": "",
-    "class": [
-      "yo.smali",
-      "Conversation.smali",
-      "YoFABView.smali",
-      "UniversalStyle.smali",
-      "DirAdapter.smali",
-      "v.smali",
-      "HsvHueSelectorView.smali",
-      "w.smali",
-      "ColorSelectorView.smali",
-      "YoBubbleToggleView.smali",
-      "HsvAlphaSelectorView.smali",
-      "Pin.smali",
-      "HsvColorValueView.smali",
-      "HomeUI.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/178;->A09(Landroid/view/View;LX/0kW;LX/1oO;Ljava/lang/Object;)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali",
-      "o.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Ac;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
-    "2.22.22.80": "",
-    "class": [
-      "SavePhoto.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0nM;->A21()LX/0nM;",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1oc;->A02(Landroid/app/Activity;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0kW;->A0k(Ljava/lang/String;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A0p()Landroid/content/Context;",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0u(Landroid/app/Activity;Landroid/graphics/Point;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Aj;->A2T()Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0mS;->A00(J)LX/0kW;",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0kW;->A0X(I)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03i;-><init>(Landroid/view/View;)V",
-    "2.22.22.80": "",
-    "class": [
-      "e.smali",
-      "AutoMessageView.smali",
-      "m.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1Re;->A00(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1oV;-><init>(Landroid/graphics/BitmapFactory$Options;Ljava/lang/Long;IIZ)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2DZ;->A03()V",
-    "2.22.22.80": "",
-    "class": [
-      "ezz.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A1T()V",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i6;->A1T(Landroidy/appcompat/widget/Toolbar;)V",
-    "2.22.22.80": "",
-    "class": [
-      "HomeUI.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2LD;->A00(Ljava/lang/String;[Ljava/lang/Object;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1R2;->A00(Landroid/content/Context;Landroid/content/Intent;)Z",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/02T;->A02()V",
-    "2.22.22.80": "",
-    "class": [
-      "Auto_message.smali",
-      "IGStatusesView.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03L;->A0E(Landroid/graphics/drawable/Drawable;)V",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A0q(Landroid/os/Bundle;)Landroid/view/LayoutInflater;",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0lE;->A21()LX/0lE;",
-    "2.22.22.80": "",
-    "class": [
-      "u0.smali",
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ts;->A05(LX/0ix;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/00i;->x()LX/03L;",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1rW;->YoEndCall()V",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/178;->A07(Landroid/view/View;LX/0kW;LX/1oO;)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali",
-      "o.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2DZ;->A02()V",
-    "2.22.22.80": "",
-    "class": [
-      "exx.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0jf;->A00()J",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ix;->A00(Ljava/lang/String;)LX/0ix;",
-    "2.22.22.80": "",
-    "class": [
-      "n.smali",
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0i(Ljava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2UK;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/01a;LX/169;LX/0nM;Ljava/lang/String;)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A11(Landroid/view/View;Ljava/lang/Object;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0lX;->A09(LX/0lu;)Ljava/util/List;",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2On;->A00(Landroid/content/Context;)Landroid/content/Context;",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1Fr;-><init>(LX/0ix;Ljava/lang/String;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i8;->A1K(LX/0iA;)LX/2AJ;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/3G8;-><init>(Landroid/content/Context;)V",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1i7;->A05(LX/1oV;Ljava/io/InputStream;)LX/1oW;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03L;->A0C(Landroid/graphics/drawable/Drawable;)V",
-    "2.22.22.80": "",
-    "class": [
-      "others.smali",
-      "k.smali",
-      "HomeUI.smali",
-      "j.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2DZ;->A05()V",
-    "2.22.22.80": "",
-    "class": [
-      "eyy.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0lX;->A05()Ljava/util/List;",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->AZc(LX/0kC;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "v0.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Ay;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/169;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0iZ;->A04(Landroid/content/Context;)Landroid/content/Intent;",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1y2;->A05(Landroid/view/View;Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "HiddenConversationsFragment.smali",
-      "GpConversationsFragment.smali"
     ]
   },
   {
@@ -804,126 +36,9 @@
     ]
   },
   {
-    "2.22.18.70": "LX/0mK;->A0Y(LX/0kW;Ljava/lang/String;Z)Z",
+    "2.22.18.70": "LX/0mK;->A21()LX/0mK;",
     "2.22.22.80": "",
     "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i6;->AXN(LX/054;)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0mH;->A0H()Ljava/lang/Object;",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali",
-      "yo.smali",
-      "j0.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0tI;->A01(LX/1Fr;BJ)LX/0kW;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0ut;->A02(LX/0ix;ZZ)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "ConversationsFragment;->A0u(Landroid/app/Activity;)V",
-    "2.22.22.80": "",
-    "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/11l;->A00(LX/0lG;LX/0jf;Z)Ljava/lang/String;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03L;->A0M(Z)V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0N(LX/00j;)LX/03A;",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A0p(Ljava/lang/String;)Ljava/lang/StringBuilder;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0mS;->A21()LX/0mS;",
-    "2.22.22.80": "",
-    "class": [
-      "n.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/2Xn;-><init>(Landroid/content/Context;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "Conversation.smali",
-      "v.smali",
-      "DialogAdd.smali",
-      "j0.smali",
-      "w.smali",
-      "a.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/14J;->A0d(Landroid/net/Uri;Z)Ljava/io/InputStream;",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/1GH;->A06(Landroid/widget/ImageView;LX/0kC;)V",
-    "2.22.22.80": "",
-    "class": [
-      "dep.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/03L;->A0I(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
-    "class": [
-      "HomeUI.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/169;->A21()LX/169;",
-    "2.22.22.80": "",
-    "class": [
-      "i.smali",
       "dep.smali"
     ]
   },
@@ -935,6 +50,22 @@
     ]
   },
   {
+    "2.22.18.70": "StatusPlaybackContactFragment;->A13()V",
+    "2.22.22.80": "",
+    "class": [
+      "d.smali",
+      "i0.smali",
+      "o.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/1ZB;-><init>(LX/0ix;LX/0ix;[Ljava/lang/Long;[Ljava/lang/String;)V",
+    "2.22.22.80": "",
+    "class": [
+      "n.smali"
+    ]
+  },
+  {
     "2.22.18.70": "StatusPlaybackContactFragment;->A0r()V",
     "2.22.22.80": "",
     "class": [
@@ -943,43 +74,45 @@
     ]
   },
   {
-    "2.22.18.70": "LX/0kW;->A0B()LX/0ix;",
+    "2.22.18.70": "LX/06S;->A00(LX/03M;)V",
     "2.22.22.80": "",
     "class": [
-      "yo.smali",
-      "Conversation.smali",
-      "dep.smali",
-      "SS.smali"
+      "OnPageSelected.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/1kc;-><init>(LX/0lZ;LX/0n3;LX/0iY;LX/1BY;Ljava/io/File;Ljava/io/File;IIJJ)V",
-    "2.22.22.80": "",
-    "class": [
-      "h0.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0i6;->onPause()V",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0mK;->A07(LX/0iu;LX/0it;LX/1Zb;LX/1Yp;LX/0kW;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)V",
+    "2.22.18.70": "LX/0tu;->A00(Lorg/whispersystems/jobqueue/Job;)V",
     "2.22.22.80": "",
     "class": [
       "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/01B;->A0C()LX/00j;",
+    "2.22.18.70": "LX/0zJ;->A00()Z",
     "2.22.22.80": "",
     "class": [
-      "HiddenConversationsFragment.smali",
-      "GpConversationsFragment.smali"
+      "ezz.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0ut;->A02(LX/0ix;ZZ)V",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/06S;->getBehavior()LX/03M;",
+    "2.22.22.80": "",
+    "class": [
+      "OnPageSelected.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0mS;->A21()LX/0mS;",
+    "2.22.22.80": "",
+    "class": [
+      "n.smali"
     ]
   },
   {
@@ -992,121 +125,163 @@
     ]
   },
   {
-    "2.22.18.70": "LX/01a;->A0C()Landroid/content/ContentResolver;",
+    "2.22.18.70": "LX/0lE;->A0B(LX/0ix;)LX/0kC;",
     "2.22.22.80": "",
     "class": [
-      "YoGalleryWallpaperPreview.smali"
+      "u0.smali",
+      "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/0i6;->A0z(LX/01I;LX/0i6;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0gX;->A1I(Ljava/lang/Object;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoGalleryWallpaperPreview.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0qI;->A01(LX/02l;I)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0mK;->A21()LX/0mK;",
+    "2.22.18.70": "LX/0kW;->A0K()Ljava/lang/String;",
     "2.22.22.80": "",
     "class": [
       "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "ConversationsFragment;-><init>()V",
+    "2.22.18.70": "LX/2vL;->A07Yo(LX/0ix;)V",
     "2.22.22.80": "",
     "class": [
-      "HiddenConversationsFragment.smali",
-      "HiddenConversationsActivity.smali",
-      "GpConversationsFragment.smali",
-      "GpConversationsActivity.smali",
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
+      "a1.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/0lu;->A08(Ljava/lang/String;)LX/1aE;",
+    "2.22.18.70": "LX/1GH;->A06(Landroid/widget/ImageView;LX/0kC;)V",
     "2.22.22.80": "",
     "class": [
       "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/2Oo;-><init>(Landroid/view/LayoutInflater;LX/01B;)V",
+    "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->AZc(LX/0kC;Z)V",
     "2.22.22.80": "",
     "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
+      "v0.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/01a;->A21()LX/01a;",
+    "2.22.18.70": "LX/1Bf;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
     "2.22.22.80": "",
     "class": [
       "i.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/02l;->A0A(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
-    "class": [
-      "YoHiddenService.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0oM;->A02(LX/0iW;)Z",
-    "2.22.22.80": "",
-    "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
-    ]
-  },
-  {
-    "2.22.18.70": "LX/0kC;-><init>(Lcom/whatsapp/jid/Jid;)V",
+    "2.22.18.70": "LX/0wJ;->A04(Landroid/content/Context;Ljava/lang/String;)LX/1GH;",
     "2.22.22.80": "",
     "class": [
       "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/1Kg;->getFMessage()LX/0kW;",
+    "2.22.18.70": "LX/0wJ;->A21()LX/0wJ;",
     "2.22.22.80": "",
     "class": [
-      "u.smali",
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2Xn;-><init>(Landroid/content/Context;I)V",
+    "2.22.22.80": "",
+    "class": [
+      "j0.smali",
+      "w.smali",
+      "a.smali",
+      "DialogAdd.smali",
       "Conversation.smali",
+      "v.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2DZ;->A05()V",
+    "2.22.22.80": "",
+    "class": [
+      "eyy.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/1rW;->YoEndCall()V",
+    "2.22.22.80": "",
+    "class": [
       "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/2Oo;-><init>(Landroid/content/Context;LX/01B;)V",
+    "2.22.18.70": "LX/1Bf;->A21()LX/1Bf;",
     "2.22.22.80": "",
     "class": [
-      "Hilt_HiddenConversationsFragment.smali",
-      "Hilt_GpConversationsFragment.smali"
+      "i.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/00i;->A1J()LX/03L;",
+    "2.22.18.70": "LX/0mK;->A07(LX/0iu;LX/0it;LX/1Zb;LX/1Yp;LX/0kW;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)V",
     "2.22.22.80": "",
     "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2DZ;->A02()V",
+    "2.22.22.80": "",
+    "class": [
+      "exx.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2DZ;->A03()V",
+    "2.22.22.80": "",
+    "class": [
+      "ezz.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0nM;->A21()LX/0nM;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/03L;->A0I(Ljava/lang/CharSequence;)V",
+    "2.22.22.80": "",
+    "class": [
+      "HomeUI.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0ts;->A05(LX/0ix;Z)V",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2Ay;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/169;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2Xn;->setContentView(Landroid/view/View;)V",
+    "2.22.22.80": "",
+    "class": [
+      "j0.smali",
+      "w.smali",
+      "a.smali",
+      "DialogAdd.smali",
+      "Conversation.smali",
+      "v.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0mH;->A0H()Ljava/lang/Object;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "yo.smali",
+      "j0.smali"
     ]
   },
   {
@@ -1117,62 +292,286 @@
     ]
   },
   {
+    "2.22.18.70": "LX/169;->A21()LX/169;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/02T;->A02()V",
+    "2.22.22.80": "",
+    "class": [
+      "IGStatusesView.smali",
+      "Auto_message.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/178;->A09(Landroid/view/View;LX/0kW;LX/1oO;Ljava/lang/Object;)V",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "o.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0kW;->A0B()LX/0ix;",
+    "2.22.22.80": "",
+    "class": [
+      "yo.smali",
+      "dep.smali",
+      "Conversation.smali",
+      "SS.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0ux;->A01(Landroid/content/Context;LX/0kC;IZ)I",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0mK;->A0Y(LX/0kW;Ljava/lang/String;Z)Z",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0lE;->A21()LX/0lE;",
+    "2.22.22.80": "",
+    "class": [
+      "u0.smali",
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/16q;->A21()LX/16q;",
+    "2.22.22.80": "",
+    "class": [
+      "a1.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/16q;->A00(LX/0kC;)Ljava/lang/String;",
+    "2.22.22.80": "",
+    "class": [
+      "a1.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/1Bf;->A01(Lcom/whatsapp/jid/UserJid;Z)V",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/01I;->A29_2()LX/0lu;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/03i;-><init>(Landroid/view/View;)V",
+    "2.22.22.80": "",
+    "class": [
+      "m.smali",
+      "e.smali",
+      "AutoMessageView.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/03L;->A0C(Landroid/graphics/drawable/Drawable;)V",
+    "2.22.22.80": "",
+    "class": [
+      "j.smali",
+      "HomeUI.smali",
+      "k.smali",
+      "others.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/178;->A07(Landroid/view/View;LX/0kW;LX/1oO;)V",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "o.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/00S;->A01(Landroid/content/Context;Ljava/lang/String;)I",
+    "2.22.22.80": "",
+    "class": [
+      "utils.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/01B;->A0F()LX/01C;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/00S;->A04(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
+    "2.22.22.80": "",
+    "class": [
+      "HsvAlphaSelectorView.smali",
+      "UniversalStyle.smali",
+      "YoBubbleToggleView.smali",
+      "YoFABView.smali",
+      "HsvHueSelectorView.smali",
+      "HsvColorValueView.smali",
+      "w.smali",
+      "yo.smali",
+      "ColorSelectorView.smali",
+      "Pin.smali",
+      "DirAdapter.smali",
+      "Conversation.smali",
+      "HomeUI.smali",
+      "v.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/1kc;-><init>(LX/0lZ;LX/0n3;LX/0iY;LX/1BY;Ljava/io/File;Ljava/io/File;IIJJ)V",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ]
+  },
+  {
     "2.22.18.70": "LX/0jD;->AbB(Ljava/lang/Runnable;)V",
     "2.22.22.80": "",
     "class": [
-      "GpConversationsActivity.smali",
-      "YoSwipeActions.smali",
-      "HiddenConversationsActivity.smali"
+      "YoSwipeActions.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/01M;->get()Ljava/lang/Object;",
+    "2.22.18.70": "LX/1kc;->A0E()V",
     "2.22.22.80": "",
     "class": [
-      "YoGalleryWallpaperPreview.smali",
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
+      "h0.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/14z;->A00(Landroid/content/Context;)LX/02l;",
+    "2.22.18.70": "LX/2DZ;->A06()V",
     "2.22.22.80": "",
     "class": [
-      "YoHiddenService.smali"
+      "gnn.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/0i4;->onCreate(Landroid/os/Bundle;)V",
+    "2.22.18.70": "LX/03i;->A04(Z)V",
     "2.22.22.80": "",
     "class": [
-      "GpConversationsActivity.smali",
-      "HiddenConversationsActivity.smali"
+      "n.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/2Xn;->setContentView(Landroid/view/View;)V",
+    "2.22.18.70": "LX/0ux;->A21()LX/0ux;",
     "2.22.22.80": "",
     "class": [
-      "Conversation.smali",
-      "v.smali",
-      "DialogAdd.smali",
-      "j0.smali",
-      "w.smali",
-      "a.smali"
+      "dep.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/06S;->getBehavior()LX/03M;",
+    "2.22.18.70": "LX/0i6;->A1T(Landroidy/appcompat/widget/Toolbar;)V",
     "2.22.22.80": "",
     "class": [
-      "OnPageSelected.smali"
+      "HomeUI.smali"
     ]
   },
   {
-    "2.22.18.70": "LX/0gY;->A07()Landroid/content/Intent;",
+    "2.22.18.70": "LX/10o;->A04(LX/0ix;IIJ)V",
     "2.22.22.80": "",
     "class": [
-      "YoGalleryWallpaperPreview.smali"
+      "YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/3G8;-><init>(Landroid/content/Context;)V",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/02T;-><init>()V",
+    "2.22.22.80": "",
+    "class": [
+      "AutoMessageAdapter.smali",
+      "n.smali",
+      "d.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0kC;-><init>(Lcom/whatsapp/jid/Jid;)V",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2UK;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/01a;LX/169;LX/0nM;Ljava/lang/String;)V",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/1Kg;->getFMessage()LX/0kW;",
+    "2.22.22.80": "",
+    "class": [
+      "u.smali",
+      "dep.smali",
+      "Conversation.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/2Ac;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
+    "2.22.22.80": "",
+    "class": [
+      "SavePhoto.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0kC;->A0L()Z",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali",
+      "a1.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/00z;->A09(I)Ljava/lang/String;",
+    "2.22.22.80": "",
+    "class": [
+      "yo.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/01a;->A21()LX/01a;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0ut;->A01(LX/0ix;Z)V",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.22.18.70": "LX/0mS;->A00(J)LX/0kW;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
     ]
   }
 ]

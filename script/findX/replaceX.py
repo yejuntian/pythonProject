@@ -19,7 +19,7 @@ def replace_x(folder_path, dataList):
     dirs = os.listdir(cwd)
     for fileName in dirs:
         file_path = os.path.join(cwd, fileName)
-        if os.path.isfile(file_path):
+        if os.path.isfile(file_path) and file_path.split('.')[-1] == "smali":
             with codecs.open(file_path, "r", "utf-8") as rfile:
                 data = rfile.read()
             with codecs.open(file_path, "w", "utf-8") as wfile:
@@ -62,12 +62,6 @@ if __name__ == "__main__":
             method_data.extend(filed_data)
             replace_x(args.from_dir, method_data)
             print("************LX相关属性和方法全部替换完成************")
-
-            class_data = load_json_data(f"{mCurPath}/script/findX/class.json")
-            class_data = merge_data(class_data, method_data)
-            jsonStr = json.dumps(class_data, ensure_ascii=False, indent=2)
-            with open(f"{mCurPath}/script/findX/class.json", "w+") as wf:
-                wf.write(jsonStr)
             break
         else:
             break
