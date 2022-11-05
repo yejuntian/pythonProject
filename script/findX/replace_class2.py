@@ -50,3 +50,4 @@ if __name__ == "__main__":
     filed_data = load_json_data(f"{from_dir}/field2.json")
     method_data.extend(filed_data)
     replace_class2(from_dir)
+    print(f"程序执行结束，结果保存在{from_dir}/class2.json")

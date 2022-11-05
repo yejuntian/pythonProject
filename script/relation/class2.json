@@ -1,0 +1,653 @@
+[
+  {
+    "2.22.18.70": "LX/1Bf;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "n.smali"
+    ],
+    "2.22.10.73": "LX/2bg;"
+  },
+  {
+    "2.22.18.70": "LX/178;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "n.smali",
+      "o.smali"
+    ],
+    "2.22.10.73": "LX/2Xm;"
+  },
+  {
+    "2.22.18.70": "LX/0kW;",
+    "2.22.22.80": "",
+    "class": [
+      "u.smali",
+      "j0.smali",
+      "i.smali",
+      "SS.smali",
+      "w.smali",
+      "yo.smali",
+      "dep.smali",
+      "Conversation.smali",
+      "o.smali"
+    ],
+    "2.22.10.73": "LX/2Nt;"
+  },
+  {
+    "2.22.18.70": "LX/06S;",
+    "2.22.22.80": "",
+    "class": [
+      "OnPageSelected.smali"
+    ],
+    "2.22.10.73": "LX/0fi;"
+  },
+  {
+    "2.22.18.70": "LX/4oc;",
+    "2.22.22.80": "",
+    "class": [
+      "x.smali",
+      "HomeUI.smali"
+    ],
+    "2.22.10.73": "LX/0Bg;"
+  },
+  {
+    "2.22.18.70": "LX/0mS;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "n.smali"
+    ],
+    "2.22.10.73": "LX/2QT;"
+  },
+  {
+    "2.22.18.70": "LX/1oO;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "o.smali"
+    ],
+    "2.22.10.73": "LX/3Ei;"
+  },
+  {
+    "2.22.18.70": "LX/0it;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2pS;"
+  },
+  {
+    "2.22.18.70": "LX/2vL;",
+    "2.22.22.80": "",
+    "class": [
+      "a1.smali"
+    ],
+    "2.22.10.73": "LX/2hK;"
+  },
+  {
+    "2.22.18.70": "LX/0zJ;",
+    "2.22.22.80": "",
+    "class": [
+      "ezz.smali"
+    ],
+    "2.22.10.73": "LX/2OF;"
+  },
+  {
+    "2.22.18.70": "LX/0iu;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/0D6;"
+  },
+  {
+    "2.22.18.70": "LX/01B;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/09t;"
+  },
+  {
+    "2.22.18.70": "LX/10o;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/2T2;"
+  },
+  {
+    "2.22.18.70": "LX/01I;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali",
+      "yo.smali"
+    ],
+    "2.22.10.73": "LX/025;"
+  },
+  {
+    "2.22.18.70": "LX/1ZB;",
+    "2.22.22.80": "",
+    "class": [
+      "n.smali"
+    ],
+    "2.22.10.73": "LX/32s;"
+  },
+  {
+    "2.22.18.70": "LX/01a;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ],
+    "2.22.10.73": "LX/035;"
+  },
+  {
+    "2.22.18.70": "LX/2Xn;",
+    "2.22.22.80": "",
+    "class": [
+      "DialogAttachContent.smali",
+      "j0.smali",
+      "w.smali",
+      "a.smali",
+      "d.smali",
+      "DialogAdd.smali",
+      "i0.smali",
+      "Conversation.smali",
+      "o.smali",
+      "v.smali"
+    ],
+    "2.22.10.73": "LX/0b3;"
+  },
+  {
+    "2.22.18.70": "LX/0nM;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ],
+    "2.22.10.73": "LX/2Oe;"
+  },
+  {
+    "2.22.18.70": "LX/169;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2TB;"
+  },
+  {
+    "2.22.18.70": "LX/1Yp;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2za;"
+  },
+  {
+    "2.22.18.70": "LX/02O;",
+    "2.22.22.80": "",
+    "class": [
+      "Auto_message.smali",
+      "IGStatusesView.smali",
+      "ChatGenSingle.smali"
+    ],
+    "2.22.10.73": "LX/0OG;"
+  },
+  {
+    "2.22.18.70": "LX/0iW;",
+    "2.22.22.80": "",
+    "class": [
+      "eyy.smali"
+    ],
+    "2.22.10.73": "LX/2OC;"
+  },
+  {
+    "2.22.18.70": "LX/0ix;",
+    "2.22.22.80": "",
+    "class": [
+      "a1.smali",
+      "SS.smali",
+      "p.smali",
+      "w.smali",
+      "z0.smali",
+      "n.smali",
+      "a.smali",
+      "u0.smali",
+      "YoSwipeActions.smali",
+      "b.smali",
+      "yo.smali",
+      "dep.smali",
+      "Conversation.smali"
+    ],
+    "2.22.10.73": "LX/2NO;"
+  },
+  {
+    "2.22.18.70": "LX/02T;",
+    "2.22.22.80": "",
+    "class": [
+      "IGStatusesView.smali",
+      "Auto_message.smali",
+      "b.smali",
+      "n.smali",
+      "d.smali",
+      "AutoMessageAdapter.smali"
+    ],
+    "2.22.10.73": "LX/0DE;"
+  },
+  {
+    "2.22.18.70": "LX/1kc;",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ],
+    "2.22.10.73": "LX/32P;"
+  },
+  {
+    "2.22.18.70": "LX/1rW;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2iV;"
+  },
+  {
+    "2.22.18.70": "LX/0lE;",
+    "2.22.22.80": "",
+    "class": [
+      "u0.smali",
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/02B;"
+  },
+  {
+    "2.22.18.70": "LX/0lG;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/02F;"
+  },
+  {
+    "2.22.18.70": "LX/28d;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/3GK;"
+  },
+  {
+    "2.22.18.70": "LX/00S;",
+    "2.22.22.80": "",
+    "class": [
+      "HsvAlphaSelectorView.smali",
+      "UniversalStyle.smali",
+      "YoBubbleToggleView.smali",
+      "YoFABView.smali",
+      "HsvHueSelectorView.smali",
+      "HsvColorValueView.smali",
+      "w.smali",
+      "Conversation.smali",
+      "yo.smali",
+      "ColorSelectorView.smali",
+      "Pin.smali",
+      "DirAdapter.smali",
+      "utils.smali",
+      "HomeUI.smali",
+      "v.smali"
+    ],
+    "2.22.10.73": "LX/01O;"
+  },
+  {
+    "2.22.18.70": "LX/2Ac;",
+    "2.22.22.80": "",
+    "class": [
+      "SavePhoto.smali"
+    ],
+    "2.22.10.73": "LX/2Ol;"
+  },
+  {
+    "2.22.18.70": "LX/16q;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali",
+      "a1.smali"
+    ],
+    "2.22.10.73": "LX/06L;"
+  },
+  {
+    "2.22.18.70": "LX/1aE;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2gX;"
+  },
+  {
+    "2.22.18.70": "LX/0n3;",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ],
+    "2.22.10.73": "LX/2ON;"
+  },
+  {
+    "2.22.18.70": "LX/1LF;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ],
+    "2.22.10.73": "LX/2w7;"
+  },
+  {
+    "2.22.18.70": "LX/1GH;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/0Oi;"
+  },
+  {
+    "2.22.18.70": "LX/0ts;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/2Qc;"
+  },
+  {
+    "2.22.18.70": "LX/0mH;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "yo.smali",
+      "j0.smali"
+    ],
+    "2.22.10.73": "LX/2Ns;"
+  },
+  {
+    "2.22.18.70": "LX/1BY;",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ],
+    "2.22.10.73": "LX/2aJ;"
+  },
+  {
+    "2.22.18.70": "LX/1VJ;",
+    "2.22.22.80": "",
+    "class": [
+      "Conversation.smali"
+    ],
+    "2.22.10.73": "LX/0JU;"
+  },
+  {
+    "2.22.18.70": "LX/0wJ;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/05X;"
+  },
+  {
+    "2.22.18.70": "LX/3G8;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "o.smali"
+    ],
+    "2.22.10.73": "LX/4dZ;"
+  },
+  {
+    "2.22.18.70": "LX/0i6;",
+    "2.22.22.80": "",
+    "class": [
+      "HomeUI.smali"
+    ],
+    "2.22.10.73": "LX/09S;"
+  },
+  {
+    "2.22.18.70": "LX/00z;",
+    "2.22.22.80": "",
+    "class": [
+      "yo.smali"
+    ],
+    "2.22.10.73": "LX/01E;"
+  },
+  {
+    "2.22.18.70": "LX/0lZ;",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ],
+    "2.22.10.73": "LX/02P;"
+  },
+  {
+    "2.22.18.70": "LX/03i;",
+    "2.22.22.80": "",
+    "class": [
+      "e.smali",
+      "AutoMessageView.smali",
+      "n.smali",
+      "d.smali",
+      "AutoMessageAdapter.smali",
+      "m.smali"
+    ],
+    "2.22.10.73": "LX/0Af;"
+  },
+  {
+    "2.22.18.70": "LX/2DZ;",
+    "2.22.22.80": "",
+    "class": [
+      "igg.smali",
+      "ezz.smali",
+      "edd.smali",
+      "gnn.smali",
+      "a.smali",
+      "exx.smali",
+      "Conversation.smali",
+      "eyy.smali"
+    ],
+    "2.22.10.73": "LX/0QS;"
+  },
+  {
+    "2.22.18.70": "LX/0lu;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2OJ;"
+  },
+  {
+    "2.22.18.70": "LX/1Fr;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali",
+      "w.smali",
+      "yo.smali",
+      "dep.smali",
+      "Conversation.smali"
+    ],
+    "2.22.10.73": "LX/2ik;"
+  },
+  {
+    "2.22.18.70": "LX/143;",
+    "2.22.22.80": "",
+    "class": [
+      "eyy.smali"
+    ],
+    "2.22.10.73": "LX/2Yd;"
+  },
+  {
+    "2.22.18.70": "LX/00i;",
+    "2.22.22.80": "",
+    "class": [
+      "ezz.smali",
+      "eyy.smali"
+    ],
+    "2.22.10.73": "LX/09X;"
+  },
+  {
+    "2.22.18.70": "LX/0kC;",
+    "2.22.22.80": "",
+    "class": [
+      "a1.smali",
+      "w0.smali",
+      "Conversation.smali",
+      "u0.smali",
+      "YoSwipeActions.smali",
+      "v0.smali",
+      "dep.smali",
+      "yo.smali"
+    ],
+    "2.22.10.73": "LX/2Ng;"
+  },
+  {
+    "2.22.18.70": "LX/01C;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/0KA;"
+  },
+  {
+    "2.22.18.70": "LX/0jD;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/2Nv;"
+  },
+  {
+    "2.22.18.70": "LX/1S5;",
+    "2.22.22.80": "",
+    "class": [
+      "k.smali",
+      "i.smali",
+      "n.smali",
+      "m.smali",
+      "o.smali"
+    ],
+    "2.22.10.73": "LX/2wa;"
+  },
+  {
+    "2.22.18.70": "LX/1Kg;",
+    "2.22.22.80": "",
+    "class": [
+      "u.smali",
+      "dep.smali",
+      "Conversation.smali"
+    ],
+    "2.22.10.73": "LX/2pX;"
+  },
+  {
+    "2.22.18.70": "LX/0iY;",
+    "2.22.22.80": "",
+    "class": [
+      "h0.smali"
+    ],
+    "2.22.10.73": "LX/2Oo;"
+  },
+  {
+    "2.22.18.70": "LX/0mK;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali",
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/02R;"
+  },
+  {
+    "2.22.18.70": "LX/3FU;",
+    "2.22.22.80": "",
+    "class": [
+      "n.smali"
+    ],
+    "2.22.10.73": "LX/4ca;"
+  },
+  {
+    "2.22.18.70": "LX/1IA;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2ph;"
+  },
+  {
+    "2.22.18.70": "LX/03L;",
+    "2.22.22.80": "",
+    "class": [
+      "k.smali",
+      "j.smali",
+      "others.smali",
+      "dep.smali",
+      "Conversation.smali",
+      "HomeUI.smali"
+    ],
+    "2.22.10.73": "LX/0UW;"
+  },
+  {
+    "2.22.18.70": "LX/2UK;",
+    "2.22.22.80": "",
+    "class": [
+      "i.smali"
+    ],
+    "2.22.10.73": "LX/3f1;"
+  },
+  {
+    "2.22.18.70": "LX/0ut;",
+    "2.22.22.80": "",
+    "class": [
+      "YoSwipeActions.smali"
+    ],
+    "2.22.10.73": "LX/06x;"
+  },
+  {
+    "2.22.18.70": "LX/1Zb;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/34V;"
+  },
+  {
+    "2.22.18.70": "LX/0lz;",
+    "2.22.22.80": "",
+    "class": [
+      "eyy.smali"
+    ],
+    "2.22.10.73": "LX/02P;"
+  },
+  {
+    "2.22.18.70": "LX/03M;",
+    "2.22.22.80": "",
+    "class": [
+      "OnPageSelected.smali"
+    ],
+    "2.22.10.73": "LX/0bw;"
+  },
+  {
+    "2.22.18.70": "LX/0ux;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/2Xj;"
+  },
+  {
+    "2.22.18.70": "LX/0tu;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/065;"
+  },
+  {
+    "2.22.18.70": "LX/2Ay;",
+    "2.22.22.80": "",
+    "class": [
+      "dep.smali"
+    ],
+    "2.22.10.73": "LX/3R3;"
+  }
+]

@@ -30,7 +30,7 @@ def getJsonData(fpath):
 
 
 def startReplace(fpath, fname):
-    curPath = os.path.join(os.getcwd(), fname)
+    curPath = os.path.join(os.getcwd(), f"script/findX/{fname}")
     oldJson = getJsonData(fpath)
     newJson = getJsonData(curPath)
     for newItem in newJson:
@@ -46,6 +46,7 @@ def save2File(fpath, dataList):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with open(fpath, "w+") as wf:
         wf.write(jsonStr)
+    print(f"程序执行结束，结果保存在{fpath}")
 
 
 if __name__ == "__main__":
