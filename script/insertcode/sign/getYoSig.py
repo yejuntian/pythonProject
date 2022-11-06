@@ -1,16 +1,19 @@
+import argparse
 import codecs
 import os
-import argparse
+import re
 
 """
     {
         "2.22.10.73": "LX/4Ne;",
         "method": [
+            "getYoSig()[Landroid/content/pm/Signature;",
             "sec()Ljavax/crypto/SecretKey;",
             "md()[B"
         ],
-        "string": "\"PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0GXKR6OOQmhyERwx74fw1RYSU10I4r1gyBVDbRJ40pidjM41G1I1oN\"",
-        "2.22.22.77": "LX/2Fr;"
+        "string": "PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0GXKR6OOQmhyERwx74fw1RYSU10I4r1gyBVDbRJ40pidjM41G1I1oN",
+        "2.22.22.80": "LX/2Fq;",
+        "id": "about_logo"
     }
 """
 
@@ -23,13 +26,15 @@ blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
              'smali_classes6', 'smali_classes7']
 # 用于存放查到的目标文件集合
 find_file_list = []
-targetStr = "PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0GXKR6OOQmhyERwx74fw1RYSU10I4r1gyBVDbRJ40pidjM41G1I1oN"
+targetStr = "[Landroid/content/pm/Signature;"
 code1 = """
-    invoke-static {}, Lcom/gbwhatsapp/yo/yo;->sec()Ljavax/crypto/SecretKey;
-    """
+    invoke-static {{}}, Lcom/gbwhatsapp/yo/yo;->getYoSig()[Landroid/content/pm/Signature;
+
+    move-result-object {register}
+"""
 
 code2 = """
-    invoke-static {}, Lcom/gbwhatsapp/yo/yo;->md()[B
+    invoke-static {}, Lcom/gbwhatsapp/yo/yo;->getYoSig()[Landroid/content/pm/Signature;
     """
 
 
@@ -61,17 +66,16 @@ def insert_code(file_list):
         with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
             lines = list(map(lambda x: x.replace("\n", ""), rf.readlines()))
             for i in range(0, len(lines)):
-                line = str(lines[i]).rstrip()
-                if line.endswith("([B[BII)Ljavax/crypto/SecretKey;"):
-                    line = str(lines[i + 2])
-                    if line.__contains__("move-result"):
+                line = lines[i].strip()
+                if not line.__contains__("Lcom/gbwhatsapp/yo/yo;->getYoSig()[Landroid/content/pm/Signature"):
+                    if (line.startswith("sget-object") or line.startswith("iget-object")) and line.endswith(
+                            "[Landroid/content/pm/Signature;"):
                         enableWrite = True
+                        register = re.findall(r"[v,p]\d+", line)[0]
                         targetLine = lines[i + 1]
-                        line = targetLine.replace(str(lines[i + 1]), code1)
+                        line = targetLine.replace(targetLine, code1.format(register=register))
                         lines[i + 1] = line
-                elif line.endswith("(Landroid/content/Context;)[B"):
-                    line = str(lines[i + 2])
-                    if line.__contains__("move-result"):
+                    if line.startswith("invoke-static") and line.endswith("[Landroid/content/pm/Signature;"):
                         enableWrite = True
                         targetLine = lines[i + 1]
                         line = targetLine.replace(targetLine, code2)
@@ -89,4 +93,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     find_file(args.from_dir, targetStr, find_file_list)
-    insert_code(find_file_list)
