@@ -1,7 +1,7 @@
 [
   {
     "2.22.18.70": "LX/3FU;->A01:LX/1S5;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/3CH;->A01:LX/1YP;",
     "class": [
       "n.smali"
     ],
@@ -9,7 +9,7 @@
   },
   {
     "2.22.18.70": "LX/143;->A05:[Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/10V;->A06:[Ljava/lang/String;",
     "class": [
       "eyy.smali"
     ],
@@ -17,7 +17,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A2C:LX/0jD;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A2K:LX/0oY;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -25,7 +25,7 @@
   },
   {
     "2.22.18.70": "LX/1Fr;->A01:Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1LM;->A01:Ljava/lang/String;",
     "class": [
       "w.smali",
       "i.smali",
@@ -36,7 +36,7 @@
   },
   {
     "2.22.18.70": "LX/1LF;->A02:Lcom/gbwhatsapp/TextData;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1SE;->A02:Lcom/gbwhatsapp/TextData;",
     "class": [
       "i.smali"
     ],
@@ -44,7 +44,7 @@
   },
   {
     "2.22.18.70": "LX/1S5;->A04:J",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1YP;->A04:J",
     "class": [
       "i.smali"
     ],
@@ -52,7 +52,7 @@
   },
   {
     "2.22.18.70": "LX/1S5;->A00:I",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1YP;->A00:I",
     "class": [
       "i.smali",
       "n.smali"
@@ -61,7 +61,7 @@
   },
   {
     "2.22.18.70": "StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
-    "2.22.22.80": "",
+    "2.22.22.80": "StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
     "class": [
       "SS.smali"
     ],
@@ -69,7 +69,7 @@
   },
   {
     "2.22.18.70": "LX/0kW;->A0z:LX/1Fr;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pE;->A10:LX/1LM;",
     "class": [
       "i.smali",
       "w.smali",
@@ -81,7 +81,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A2H:Ljava/util/LinkedHashSet;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A2P:Ljava/util/LinkedHashSet;",
     "class": [
       "yo.smali"
     ],
@@ -89,15 +89,16 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A1k:LX/10o;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A1k:LX/10o;",
     "class": [
       "YoSwipeActions.smali"
     ],
-    "2.22.10.73": "ConversationsFragment;->A1Y:LX/2T2"
+    "2.22.10.73": "ConversationsFragment;->A1Y:LX/2T2",
+    "TODO":"暂时没找到该变量--》未完成"
   },
   {
     "2.22.18.70": "LX/0kC;->A0R:Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nw;->A0S:Ljava/lang/String;",
     "class": [
       "dep.smali"
     ],
@@ -105,7 +106,7 @@
   },
   {
     "2.22.18.70": "HomeActivity;->A0M:Lcom/gbwhatsapp/HomeActivity$TabsPager;",
-    "2.22.22.80": "",
+    "2.22.22.80": "HomeActivity;->A0N:Lcom/gbwhatsapp/HomeActivity$TabsPager;",
     "class": [
       "yo.smali"
     ],
@@ -113,7 +114,7 @@
   },
   {
     "2.22.18.70": "LX/1S5;->A01:I",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1YP;->A01:I",
     "class": [
       "n.smali"
     ],
@@ -121,7 +122,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A0Q:LX/0mK;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A0S:LX/0pJ;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -129,7 +130,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A0s:LX/0ut;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A0U:LX/11d;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -137,7 +138,7 @@
   },
   {
     "2.22.18.70": "LX/0kC;->A0K:Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nw;->A0K:Ljava/lang/String;",
     "class": [
       "dep.smali"
     ],
@@ -145,7 +146,7 @@
   },
   {
     "2.22.18.70": "LX/1Fr;->A02:Z",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1LM;->A02:Z",
     "class": [
       "yo.smali",
       "dep.smali",
@@ -155,7 +156,7 @@
   },
   {
     "2.22.18.70": "LX/1IA;->A01:Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Nt;->A01:Ljava/lang/String;",
     "class": [
       "dep.smali"
     ],
@@ -163,7 +164,7 @@
   },
   {
     "2.22.18.70": "LX/0lG;->A00:Lcom/gbwhatsapp/Me;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0o1;->A00:Lcom/gbwhatsapp/Me;",
     "class": [
       "dep.smali"
     ],
@@ -171,7 +172,7 @@
   },
   {
     "2.22.18.70": "LX/1aE;->A0H:Z",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1MM;->A0I:Z",
     "class": [
       "dep.smali"
     ],
@@ -179,15 +180,16 @@
   },
   {
     "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->A2p:LX/0ix;",
-    "2.22.22.80": "",
+    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA2q():LX/0nx;",
     "class": [
       "Conversation.smali"
     ],
-    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A2d:LX/2NO;"
+    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A2d:LX/2NO;",
+    "TODO": "LX/0nx;->A2q:LX/0nx;需要手动实现--》未实现"
   },
   {
     "2.22.18.70": "LX/1S5;->A0B:Lcom/whatsapp/jid/UserJid;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1YP;->A0B:Lcom/whatsapp/jid/UserJid;",
     "class": [
       "n.smali"
     ],
@@ -195,7 +197,7 @@
   },
   {
     "2.22.18.70": "HomeActivity;->A21:Ljava/lang/Runnable;",
-    "2.22.22.80": "",
+    "2.22.22.80": "HomeActivity;->A24:Ljava/lang/Runnable;",
     "class": [
       "HomeUI.smali"
     ],
@@ -203,7 +205,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A02:LX/00i;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A02:LX/00k;",
     "class": [
       "ezz.smali",
       "eyy.smali"
@@ -212,17 +214,18 @@
   },
   {
     "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->A1a:LX/2DZ;",
-    "2.22.22.80": "",
+    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA1Z():LX/1vq;",
     "class": [
       "Conversation.smali",
       "igg.smali",
       "a.smali"
     ],
-    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A1S:LX/0QS;"
+    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A1S:LX/0QS;",
+    "TODO":"LX/0nx;->A1Z:LX/1vq;需要手动实现--》未实现"
   },
   {
     "2.22.18.70": "HomeActivity;->A03:I",
-    "2.22.22.80": "",
+    "2.22.22.80": "HomeActivity;->A03:I",
     "class": [
       "HomeUI.smali"
     ],
@@ -230,7 +233,7 @@
   },
   {
     "2.22.18.70": "HomeActivity;->A0I:Landroidy/appcompat/widget/Toolbar;",
-    "2.22.22.80": "",
+    "2.22.22.80": "HomeActivity;->A0H:Landroidy/appcompat/widget/Toolbar;",
     "class": [
       "HomeUI.smali"
     ],
@@ -238,7 +241,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A1F:LX/0ts;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A1K:LX/12D;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -246,7 +249,7 @@
   },
   {
     "2.22.18.70": "LX/1rW;->A0x:Ljava/util/concurrent/ScheduledExecutorService;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/205;->A12:Ljava/util/concurrent/ScheduledExecutorService;",
     "class": [
       "dep.smali"
     ],
@@ -254,7 +257,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A0H:LX/0zJ;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A0H:LX/0uB;",
     "class": [
       "ezz.smali"
     ],
@@ -262,7 +265,7 @@
   },
   {
     "2.22.18.70": "StatusesFragment;->A0w:Ljava/util/List;",
-    "2.22.22.80": "",
+    "2.22.22.80": "StatusesFragment;->A0z:Ljava/util/List;",
     "class": [
       "n.smali"
     ],
@@ -270,7 +273,7 @@
   },
   {
     "2.22.18.70": "LX/1Fr;->A00:LX/0ix;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1LM;->A00:LX/0nx;",
     "class": [
       "yo.smali",
       "dep.smali",
@@ -280,7 +283,7 @@
   },
   {
     "2.22.18.70": "LX/0kC;->A0D:Lcom/whatsapp/jid/Jid;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nw;->A0D:Lcom/whatsapp/jid/Jid;",
     "class": [
       "dep.smali"
     ],
@@ -288,15 +291,16 @@
   },
   {
     "2.22.18.70": "LX/2Xn;->A05:Landroid/content/Context;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2fZ;->A05:Landroid/content/Context;",
     "class": [
       "o.smali"
     ],
-    "2.22.10.73": "LX/0b3;->A05:Landroid/content/Context;"
+    "2.22.10.73": "LX/0b3;->A05:Landroid/content/Context;",
+    "TODO":"LX/2fZ;->A05 变量需要手动实现--》未实现"
   },
   {
     "2.22.18.70": "LX/1S5;->A08:LX/0kW;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1YP;->A08:LX/0pE;",
     "class": [
       "i.smali",
       "o.smali"
@@ -305,7 +309,7 @@
   },
   {
     "2.22.18.70": "ConversationsFragment;->A10:LX/28d;",
-    "2.22.22.80": "",
+    "2.22.22.80": "ConversationsFragment;->A15:LX/2DG;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -313,7 +317,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A0P:LX/0iW;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A0P:LX/0md;",
     "class": [
       "eyy.smali"
     ],
@@ -321,7 +325,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A0O:LX/0lz;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A0O:LX/0oS;",
     "class": [
       "eyy.smali"
     ],
@@ -329,7 +333,7 @@
   },
   {
     "2.22.18.70": "HomeActivity;->A22:Ljava/lang/Runnable;",
-    "2.22.22.80": "",
+    "2.22.22.80": "HomeActivity;->A25:Ljava/lang/Runnable;",
     "class": [
       "HomeUI.smali"
     ],

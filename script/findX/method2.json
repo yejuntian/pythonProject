@@ -1,7 +1,7 @@
 [
   {
     "2.22.18.70": "LX/0ix;->A00(Ljava/lang/String;)LX/0ix;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nx;->A01(Ljava/lang/String;)LX/0nx;",
     "class": [
       "dep.smali",
       "n.smali"
@@ -10,7 +10,7 @@
   },
   {
     "2.22.18.70": "LX/03L;->A0H(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/02x;->A0H(Ljava/lang/CharSequence;)V",
     "class": [
       "HomeUI.smali"
     ],
@@ -18,15 +18,16 @@
   },
   {
     "2.22.18.70": "LX/0mK;->A0F(LX/0ix;IZ)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pJ;->A0B(LX/0nx;I)V",
     "class": [
       "YoSwipeActions.smali"
     ],
-    "2.22.10.73": "LX/02R;->A0I(LX/2NO;Z)V"
+    "2.22.10.73": "LX/02R;->A0I(LX/2NO;Z)V",
+    "TODO": "A0B(LX/0nx;I)V -》参数个数发生变化，未完成"
   },
   {
     "2.22.18.70": "LX/0lu;->A08(Ljava/lang/String;)LX/1aE;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0oP;->A07(Ljava/lang/String;)LX/1MM;",
     "class": [
       "dep.smali"
     ],
@@ -34,7 +35,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A08(I)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A08(I)V",
     "class": [
       "igg.smali"
     ],
@@ -42,7 +43,7 @@
   },
   {
     "2.22.18.70": "LX/0mK;->A21()LX/0mK;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pJ;->A21()LX/0pJ;",
     "class": [
       "dep.smali"
     ],
@@ -50,7 +51,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A04()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A04()V",
     "class": [
       "edd.smali"
     ],
@@ -58,7 +59,7 @@
   },
   {
     "2.22.18.70": "StatusPlaybackContactFragment;->A13()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "StatusPlaybackContactFragment;->A14()V",
     "class": [
       "d.smali",
       "i0.smali",
@@ -68,7 +69,7 @@
   },
   {
     "2.22.18.70": "LX/1ZB;-><init>(LX/0ix;LX/0ix;[Ljava/lang/Long;[Ljava/lang/String;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1jT;-><init>(LX/0nx;LX/0nx;[Ljava/lang/Long;[Ljava/lang/String;)V",
     "class": [
       "n.smali"
     ],
@@ -76,7 +77,7 @@
   },
   {
     "2.22.18.70": "StatusPlaybackContactFragment;->A0r()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "StatusPlaybackContactFragment;->A0s()V",
     "class": [
       "j0.smali",
       "o.smali"
@@ -85,7 +86,7 @@
   },
   {
     "2.22.18.70": "LX/06S;->A00(LX/03M;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/096;->A00(LX/03U;)V",
     "class": [
       "OnPageSelected.smali"
     ],
@@ -93,7 +94,7 @@
   },
   {
     "2.22.18.70": "LX/0tu;->A00(Lorg/whispersystems/jobqueue/Job;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0ty;->A00(Lorg/whispersystems/jobqueue/Job;)V",
     "class": [
       "dep.smali"
     ],
@@ -101,7 +102,7 @@
   },
   {
     "2.22.18.70": "LX/0zJ;->A00()Z",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0uB;->A00()Z;",
     "class": [
       "ezz.smali"
     ],
@@ -109,15 +110,16 @@
   },
   {
     "2.22.18.70": "LX/0ut;->A02(LX/0ix;ZZ)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/19S;->A02(LX/0nx;ZZ)V",
     "class": [
       "YoSwipeActions.smali"
     ],
-    "2.22.10.73": "LX/06x;->A02(LX/2NO;ZZ)V"
+    "2.22.10.73": "LX/06x;->A02(LX/2NO;ZZ)V",
+    "TODO": "A02(LX/0nx;ZZ)V方法需要手动实现---》未完成"
   },
   {
     "2.22.18.70": "LX/06S;->getBehavior()LX/03M;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/096;->getBehavior()LX/03U;",
     "class": [
       "OnPageSelected.smali"
     ],
@@ -125,7 +127,7 @@
   },
   {
     "2.22.18.70": "LX/0mS;->A21()LX/0mS;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pe;->A21()LX/0pe;",
     "class": [
       "n.smali"
     ],
@@ -133,7 +135,7 @@
   },
   {
     "2.22.18.70": "LX/0kW;->A0I()Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pE;->A0J()Ljava/lang/String;",
     "class": [
       "i.smali",
       "yo.smali",
@@ -143,7 +145,7 @@
   },
   {
     "2.22.18.70": "LX/0lE;->A0B(LX/0ix;)LX/0kC;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nv;->A0A(LX/0nx;)LX/0nw;",
     "class": [
       "u0.smali",
       "dep.smali"
@@ -152,7 +154,7 @@
   },
   {
     "2.22.18.70": "LX/0kW;->A0K()Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pE;->A0L()Ljava/lang/String;",
     "class": [
       "dep.smali"
     ],
@@ -160,7 +162,7 @@
   },
   {
     "2.22.18.70": "LX/2vL;->A07Yo(LX/0ix;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pa;->A07Yo(LX/0nx;)V",
     "class": [
       "a1.smali"
     ],
@@ -168,7 +170,7 @@
   },
   {
     "2.22.18.70": "LX/1GH;->A06(Landroid/widget/ImageView;LX/0kC;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Lv;->A06(Landroid/widget/ImageView;LX/2Ng;)V",
     "class": [
       "dep.smali"
     ],
@@ -176,23 +178,25 @@
   },
   {
     "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->AZc(LX/0kC;Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->ALp_cpy(LX/0nw;Z)V",
     "class": [
       "v0.smali"
     ],
-    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A3J(LX/2Ng;Z)V"
+    "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A3J(LX/2Ng;Z)V",
+    "TODO": "补缺方法ALp_cpy(LX/0nw;Z)V -->未实现"
   },
   {
     "2.22.18.70": "LX/1Bf;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Fw;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
     "class": [
       "i.smali"
     ],
-    "2.22.10.73": "LX/2bg;->A00(Lcom/whatsapp/jid/UserJid;Z)V"
+    "2.22.10.73": "LX/2bg;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
+    "TODO": "LX/2bg;对应类为:LX/1Fx; 参考类:Lcom/whatsapp/status/StatusConfirmMuteDialogFragment;"
   },
   {
     "2.22.18.70": "LX/0wJ;->A04(Landroid/content/Context;Ljava/lang/String;)LX/1GH;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0ql;->A04(Landroid/content/Context;Ljava/lang/String;)LX/1Lv;",
     "class": [
       "dep.smali"
     ],
@@ -200,7 +204,7 @@
   },
   {
     "2.22.18.70": "LX/0wJ;->A21()LX/0wJ;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0ql;->A21()LX/0ql;",
     "class": [
       "dep.smali"
     ],
@@ -208,7 +212,7 @@
   },
   {
     "2.22.18.70": "LX/2Xn;-><init>(Landroid/content/Context;I)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2fZ;-><init>(Landroid/content/Context;I)V",
     "class": [
       "j0.smali",
       "w.smali",
@@ -221,7 +225,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A05()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A05()V",
     "class": [
       "eyy.smali"
     ],
@@ -229,7 +233,7 @@
   },
   {
     "2.22.18.70": "LX/1rW;->YoEndCall()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/205;->YoEndCall()V",
     "class": [
       "dep.smali"
     ],
@@ -237,7 +241,7 @@
   },
   {
     "2.22.18.70": "LX/1Bf;->A21()LX/1Bf;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Fw;->A21()LX/1Fw;",
     "class": [
       "i.smali"
     ],
@@ -245,7 +249,7 @@
   },
   {
     "2.22.18.70": "LX/0mK;->A07(LX/0iu;LX/0it;LX/1Zb;LX/1Yp;LX/0kW;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pJ;->A07(LX/1Nx;LX/1kJ;LX/1aL;LX/1iX;LX/0pE;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)V",
     "class": [
       "dep.smali"
     ],
@@ -253,7 +257,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A02()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A02()V",
     "class": [
       "exx.smali"
     ],
@@ -261,7 +265,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A03()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A03()V",
     "class": [
       "ezz.smali"
     ],
@@ -269,7 +273,7 @@
   },
   {
     "2.22.18.70": "LX/0nM;->A21()LX/0nM;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0q4;->A21()LX/0q4;",
     "class": [
       "i.smali"
     ],
@@ -277,7 +281,7 @@
   },
   {
     "2.22.18.70": "LX/03L;->A0I(Ljava/lang/CharSequence;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/02x;->A0I(Ljava/lang/CharSequence;)V",
     "class": [
       "HomeUI.smali"
     ],
@@ -285,7 +289,7 @@
   },
   {
     "2.22.18.70": "LX/0ts;->A05(LX/0ix;Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/12D;->A04(LX/2NO;Z)V",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -293,7 +297,7 @@
   },
   {
     "2.22.18.70": "LX/2Ay;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/169;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2FM;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/0qr;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
     "class": [
       "dep.smali"
     ],
@@ -301,7 +305,7 @@
   },
   {
     "2.22.18.70": "LX/2Xn;->setContentView(Landroid/view/View;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2fZ;->setContentView(Landroid/view/View;)V",
     "class": [
       "j0.smali",
       "w.smali",
@@ -314,7 +318,7 @@
   },
   {
     "2.22.18.70": "LX/0mH;->A0H()Ljava/lang/Object;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pC;->A0I()Ljava/lang/Object;",
     "class": [
       "i.smali",
       "yo.smali",
@@ -324,7 +328,7 @@
   },
   {
     "2.22.18.70": "LX/178;->A21()LX/178;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/13h;->A21()LX/13h;",
     "class": [
       "n.smali"
     ],
@@ -332,7 +336,7 @@
   },
   {
     "2.22.18.70": "LX/169;->A21()LX/169;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0qr;->A21()LX/0qr;",
     "class": [
       "i.smali",
       "dep.smali"
@@ -341,7 +345,7 @@
   },
   {
     "2.22.18.70": "LX/02T;->A02()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/02A;->A01()V",
     "class": [
       "IGStatusesView.smali",
       "Auto_message.smali"
@@ -350,7 +354,7 @@
   },
   {
     "2.22.18.70": "LX/178;->A09(Landroid/view/View;LX/0kW;LX/1oO;Ljava/lang/Object;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/13h;->A09(Landroid/view/View;LX/0pE;LX/1ky;Ljava/lang/Object;)V",
     "class": [
       "i.smali",
       "o.smali"
@@ -359,7 +363,7 @@
   },
   {
     "2.22.18.70": "LX/0kW;->A0B()LX/0ix;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pE;->A0D()LX/0nx;",
     "class": [
       "yo.smali",
       "dep.smali",
@@ -370,7 +374,7 @@
   },
   {
     "2.22.18.70": "LX/0ux;->A01(Landroid/content/Context;LX/0kC;IZ)I",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Ah;->A01(Landroid/content/Context;LX/0nw;IZ)I",
     "class": [
       "dep.smali"
     ],
@@ -378,7 +382,7 @@
   },
   {
     "2.22.18.70": "LX/0mK;->A0Y(LX/0kW;Ljava/lang/String;Z)Z",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pJ;->A0T(LX/0pE;Ljava/lang/String;Z)Z",
     "class": [
       "dep.smali"
     ],
@@ -386,7 +390,7 @@
   },
   {
     "2.22.18.70": "LX/0lE;->A21()LX/0lE;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nv;->A21()LX/0nv;",
     "class": [
       "u0.smali",
       "dep.smali"
@@ -395,7 +399,7 @@
   },
   {
     "2.22.18.70": "LX/16q;->A21()LX/16q;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/145;->A21()LX/145;",
     "class": [
       "a1.smali"
     ],
@@ -403,7 +407,7 @@
   },
   {
     "2.22.18.70": "LX/16q;->A00(LX/0kC;)Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/145;->A00(LX/0nw;)Ljava/lang/String;",
     "class": [
       "a1.smali"
     ],
@@ -411,7 +415,7 @@
   },
   {
     "2.22.18.70": "LX/1Bf;->A01(Lcom/whatsapp/jid/UserJid;Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Fw;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
     "class": [
       "i.smali"
     ],
@@ -419,15 +423,16 @@
   },
   {
     "2.22.18.70": "LX/01I;->A29_2()LX/0lu;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0oF;->A29()LX/0oP;",
     "class": [
       "dep.smali"
     ],
-    "2.22.10.73": "LX/025;->A29()LX/2OJ;"
+    "2.22.10.73": "LX/025;->A29()LX/2OJ;",
+    "TODO":"参考synthetic A0k(LX/0oF;)LX/0sc;方法---》未实现"
   },
   {
     "2.22.18.70": "LX/03i;-><init>(Landroid/view/View;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/03L;-><init>(Landroid/view/View;)V",
     "class": [
       "m.smali",
       "e.smali",
@@ -437,7 +442,7 @@
   },
   {
     "2.22.18.70": "LX/03L;->A0C(Landroid/graphics/drawable/Drawable;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/02x;->A0C(Landroid/graphics/drawable/Drawable;)V",
     "class": [
       "j.smali",
       "HomeUI.smali",
@@ -448,7 +453,7 @@
   },
   {
     "2.22.18.70": "LX/178;->A07(Landroid/view/View;LX/0kW;LX/1oO;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/13h;->A07(Landroid/view/View;LX/0pE;LX/1ky;)V",
     "class": [
       "i.smali",
       "o.smali"
@@ -457,7 +462,7 @@
   },
   {
     "2.22.18.70": "LX/00S;->A01(Landroid/content/Context;Ljava/lang/String;)I",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/00U;->A01(Landroid/content/Context;Ljava/lang/String;)I",
     "class": [
       "utils.smali"
     ],
@@ -465,7 +470,7 @@
   },
   {
     "2.22.18.70": "LX/01B;->A0F()LX/01C;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/01C;->A0G()LX/02v;",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -473,7 +478,7 @@
   },
   {
     "2.22.18.70": "LX/00S;->A04(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/00U;->A04(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
     "class": [
       "HsvAlphaSelectorView.smali",
       "UniversalStyle.smali",
@@ -494,7 +499,7 @@
   },
   {
     "2.22.18.70": "LX/1kc;-><init>(LX/0lZ;LX/0n3;LX/0iY;LX/1BY;Ljava/io/File;Ljava/io/File;IIJJ)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1oJ;-><init>(LX/0oW;LX/0q0;LX/0mf;LX/11T;Ljava/io/File;Ljava/io/File;IIJJ)V",
     "class": [
       "h0.smali"
     ],
@@ -502,7 +507,7 @@
   },
   {
     "2.22.18.70": "LX/0jD;->AbB(Ljava/lang/Runnable;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0oY;->AbM(Ljava/lang/Runnable;)V",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -510,7 +515,7 @@
   },
   {
     "2.22.18.70": "LX/1kc;->A0E()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1oJ;->A0E()V",
     "class": [
       "h0.smali"
     ],
@@ -518,7 +523,7 @@
   },
   {
     "2.22.18.70": "LX/2DZ;->A06()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1vq;->A06()V",
     "class": [
       "gnn.smali"
     ],
@@ -526,7 +531,7 @@
   },
   {
     "2.22.18.70": "LX/03i;->A04(Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/03L;->A04(Z)V",
     "class": [
       "n.smali"
     ],
@@ -534,7 +539,7 @@
   },
   {
     "2.22.18.70": "LX/0ux;->A21()LX/0ux;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1Ah;->A21()LX/1Ah;",
     "class": [
       "dep.smali"
     ],
@@ -542,7 +547,7 @@
   },
   {
     "2.22.18.70": "LX/0i6;->A1T(Landroidy/appcompat/widget/Toolbar;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0lG;->AdL(Landroidy/appcompat/widget/Toolbar;)V",
     "class": [
       "HomeUI.smali"
     ],
@@ -550,15 +555,16 @@
   },
   {
     "2.22.18.70": "LX/10o;->A04(LX/0ix;IIJ)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/10o;->A04(LX/0ix;IIJ)V",
     "class": [
       "YoSwipeActions.smali"
     ],
-    "2.22.10.73": "LX/2T2;->A04(LX/2NO;IIJ)V"
+    "2.22.10.73": "LX/2T2;->A04(LX/2NO;IIJ)V",
+    "TODO":"暂时没找到对应类"
   },
   {
     "2.22.18.70": "LX/3G8;-><init>(Landroid/content/Context;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/4oF;-><init>(Landroid/content/Context;)V",
     "class": [
       "i.smali"
     ],
@@ -566,7 +572,7 @@
   },
   {
     "2.22.18.70": "LX/02T;-><init>()V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/02A;-><init>()V",
     "class": [
       "AutoMessageAdapter.smali",
       "n.smali",
@@ -576,7 +582,7 @@
   },
   {
     "2.22.18.70": "LX/0kC;-><init>(Lcom/whatsapp/jid/Jid;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nw;-><init>(Lcom/whatsapp/jid/Jid;)V",
     "class": [
       "dep.smali"
     ],
@@ -584,7 +590,7 @@
   },
   {
     "2.22.18.70": "LX/2UK;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/01a;LX/169;LX/0nM;Ljava/lang/String;)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2cs;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/01W;LX/0qr;LX/0q4;Ljava/lang/String;)V",
     "class": [
       "i.smali"
     ],
@@ -592,7 +598,7 @@
   },
   {
     "2.22.18.70": "LX/1Kg;->getFMessage()LX/0kW;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/1RC;->getFMessage()LX/0pE;",
     "class": [
       "u.smali",
       "dep.smali",
@@ -602,7 +608,7 @@
   },
   {
     "2.22.18.70": "LX/2Ac;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/2FI;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
     "class": [
       "SavePhoto.smali"
     ],
@@ -610,7 +616,7 @@
   },
   {
     "2.22.18.70": "LX/0kC;->A0L()Z",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0nw;->A0L()Z",
     "class": [
       "dep.smali",
       "a1.smali"
@@ -619,7 +625,7 @@
   },
   {
     "2.22.18.70": "LX/00z;->A09(I)Ljava/lang/String;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/018;->A09(I)Ljava/lang/String;",
     "class": [
       "yo.smali"
     ],
@@ -627,7 +633,7 @@
   },
   {
     "2.22.18.70": "LX/01a;->A21()LX/01a;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/01W;->A21()LX/01W;",
     "class": [
       "i.smali"
     ],
@@ -635,7 +641,7 @@
   },
   {
     "2.22.18.70": "LX/0ut;->A01(LX/0ix;Z)V",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/19S;->A00(LX/0nx;Z)V",
     "class": [
       "YoSwipeActions.smali"
     ],
@@ -643,7 +649,7 @@
   },
   {
     "2.22.18.70": "LX/0mS;->A00(J)LX/0kW;",
-    "2.22.22.80": "",
+    "2.22.22.80": "LX/0pe;->A00(J)LX/0pE;",
     "class": [
       "i.smali"
     ],
