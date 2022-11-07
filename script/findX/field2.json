@@ -180,7 +180,7 @@
   },
   {
     "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->A2p:LX/0ix;",
-    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA2q():LX/0nx;",
+    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/0nx;",
     "class": [
       "Conversation.smali"
     ],
@@ -214,7 +214,7 @@
   },
   {
     "2.22.18.70": "Lcom/gbwhatsapp/Conversation;->A1a:LX/2DZ;",
-    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA1Z():LX/1vq;",
+    "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/1vq;",
     "class": [
       "Conversation.smali",
       "igg.smali",
