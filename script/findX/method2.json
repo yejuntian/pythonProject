@@ -23,7 +23,7 @@
       "YoSwipeActions.smali"
     ],
     "2.22.10.73": "LX/02R;->A0I(LX/2NO;Z)V",
-    "TODO": "A0B(LX/0nx;I)V -》参数个数发生变化，未完成"
+    "TODO": "A0B(LX/0nx;I)V -》参数个数发生变化，已完成"
   },
   {
     "2.22.18.70": "LX/0lu;->A08(Ljava/lang/String;)LX/1aE;",
@@ -115,7 +115,7 @@
       "YoSwipeActions.smali"
     ],
     "2.22.10.73": "LX/06x;->A02(LX/2NO;ZZ)V",
-    "TODO": "A02(LX/0nx;ZZ)V方法需要手动实现---》未完成"
+    "TODO": "A02(LX/0nx;ZZ)V方法需要手动实现---》已完成"
   },
   {
     "2.22.18.70": "LX/06S;->getBehavior()LX/03M;",
@@ -183,7 +183,7 @@
       "v0.smali"
     ],
     "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A3J(LX/2Ng;Z)V",
-    "TODO": "补缺方法ALp_cpy(LX/0nw;Z)V -->未实现"
+    "TODO": "补缺方法ALp_cpy(LX/0nw;Z)V -->已实现"
   },
   {
     "2.22.18.70": "LX/1Bf;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
@@ -428,7 +428,7 @@
       "dep.smali"
     ],
     "2.22.10.73": "LX/025;->A29()LX/2OJ;",
-    "TODO":"参考synthetic A0k(LX/0oF;)LX/0sc;方法---》未实现"
+    "TODO":"参考synthetic A0k(LX/0oF;)LX/0sc;方法---》已实现"
   },
   {
     "2.22.18.70": "LX/03i;-><init>(Landroid/view/View;)V",

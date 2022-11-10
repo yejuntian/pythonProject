@@ -94,7 +94,7 @@
       "YoSwipeActions.smali"
     ],
     "2.22.10.73": "ConversationsFragment;->A1Y:LX/2T2",
-    "TODO":"暂时没找到该变量--》未完成"
+    "TODO":"暂时没找到该变量--》未实现"
   },
   {
     "2.22.18.70": "LX/0kC;->A0R:Ljava/lang/String;",
@@ -185,7 +185,7 @@
       "Conversation.smali"
     ],
     "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A2d:LX/2NO;",
-    "TODO": "LX/0nx;->A2q:LX/0nx;需要手动实现--》未实现"
+    "TODO": "LX/0nx;->A2q:LX/0nx;需要手动实现--》已实现"
   },
   {
     "2.22.18.70": "LX/1S5;->A0B:Lcom/whatsapp/jid/UserJid;",
@@ -221,7 +221,7 @@
       "a.smali"
     ],
     "2.22.10.73": "Lcom/gbwhatsapp/Conversation;->A1S:LX/0QS;",
-    "TODO":"LX/0nx;->A1Z:LX/1vq;需要手动实现--》未实现"
+    "TODO":"LX/0nx;->A1Z:LX/1vq;需要手动实现--》已实现"
   },
   {
     "2.22.18.70": "HomeActivity;->A03:I",
@@ -296,7 +296,7 @@
       "o.smali"
     ],
     "2.22.10.73": "LX/0b3;->A05:Landroid/content/Context;",
-    "TODO":"LX/2fZ;->A05 变量需要手动实现--》未实现"
+    "TODO":"LX/2fZ;->A05 变量需要手动实现--》已实现"
   },
   {
     "2.22.18.70": "LX/1S5;->A08:LX/0kW;",
