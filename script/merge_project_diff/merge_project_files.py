@@ -63,7 +63,7 @@ def execute_merge_diff_file(project_from_dir, project_to_dir):
                         merge_xml_diff.merge_diff(from_file_path, to_file_path)
                     else:
                         merge_xml_diff.merge_diff_attrs(from_file_path, to_file_path, target_project_path)
-                if from_path.__contains__("AndroidManifest"):
+                if from_file_path.__contains__("AndroidManifest") and not from_file_path.__contains__("original"):
                     if not is_allow:
                         manifest_diff.merge_manifest_diff(to_file_path, from_file_path)
                         fromDir = project_from_dir + "/AndroidManifest_diff.xml"

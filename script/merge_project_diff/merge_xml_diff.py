@@ -96,10 +96,12 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
         from_root = from_parse.getroot()
         isChanged: bool = False
         for from_child in from_root:
-            from_attr_name = from_child.attrib["name"]
-            if from_attr_name not in to_root_map and "APKTOOL" not in from_attr_name:
-                new_add_list.append(from_child)
-                isChanged = True
+            from_child_str = ET.tostring(from_child, encoding="utf-8").decode('utf-8').strip()
+            if not from_child_str.startswith("<!--"):
+                from_attr_name = from_child.attrib["name"]
+                if from_attr_name not in to_root_map and "APKTOOL" not in from_attr_name:
+                    new_add_list.append(from_child)
+                    isChanged = True
         if isChanged:
             xml_content = convert_str(new_add_list)
 
