@@ -117,7 +117,7 @@ def convert_str(to_root):
         text = child.text
         xml_content += "    "
         # string标签中text内容">"会被转移为'&gt'
-        if attr_tag == "string" and str(text).__contains__(">"):
+        if (attr_tag == "string" and str(text).__contains__(">")) or attr_tag == "plurals":
             child_str = ET.tostring(child, encoding="utf-8").decode('utf-8').strip().replace('&gt;', '>')
             xml_content += child_str
         else:
