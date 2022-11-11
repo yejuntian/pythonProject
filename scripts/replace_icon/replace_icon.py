@@ -74,8 +74,8 @@ if __name__ == "__main__":
     parser.add_argument("to_project_dir")
     args = parser.parse_args()
 
-    icon_list = load_data("script/replace_icon/res_icon.xml")
+    icon_list = load_data("scripts/replace_icon/res_icon.xml")
 
-    # delOldIcon(args.to_project_dir, blacklist)
+    delOldIcon(args.to_project_dir, blacklist)
     copyIcon(args.from_project_dir, args.to_project_dir, blacklist)
     print(f"执行完成，输出结果保存到：{args.to_project_dir}")

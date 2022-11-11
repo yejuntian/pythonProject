@@ -30,7 +30,7 @@ def getJsonData(fpath):
 
 
 def startReplace(fpath, fname):
-    curPath = os.path.join(os.getcwd(), f"script/findX/{fname}")
+    curPath = os.path.join(os.getcwd(), f"scripts/findX/{fname}")
     oldJson = getJsonData(fpath)
     newJson = getJsonData(curPath)
     for newItem in newJson:

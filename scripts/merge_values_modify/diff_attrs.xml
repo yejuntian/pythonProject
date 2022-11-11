@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <!-- arrays.xml配置如下 select:代表子标签tag-->
+    <param name="arrays.xml" select="item">
+        <!--id:子标签name; message内容：标签文本text-->
+        <message xml:id="font_size">Extra Large</message>
+        <message xml:id="font_size_values">-2</message>
+    </param>
+    <!--styles.xml配置如下  select:代表子标签tag-->
+    <param name="styles.xml" select="item">
+        <!--
+        id:子标签name
+        lang:子标签tag属性name
+         message内容：标签文本text
+        -->
+        <message xml:id="Base.Theme.AppCompat.Light.Dialog.Alert" xml:lang="android:layoutDirection">ltr</message>
+        <message xml:id="BusinessSeparator" xml:lang="android:text">ظ\u0080ت</message>
+        <message xml:id="HomeActivityList" xml:lang="android:background">@android:color/transparent</message>
+        <message xml:id="Theme.Base" xml:lang="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow
+        </message>
+    </param>
+    <!--strings.xml配置如下-->
+    <param name="strings.xml">
+        <message xml:id="settings_gdrive_backup_frequency_option_off">Never 👈</message>
+        <message xml:id="settings_gdrive_backup_general_info_sdcard_short">"Back up your messages and media. You can restore them when you reinstall WhatsApp. Your messages will also back up to your phone's SD card."</message>
+        <message xml:id="settings_gdrive_backup_general_info_shared_storage_short">"Back up your messages and media. You can restore them when you reinstall WhatsApp. Your messages will also back up to your phone's internal storage."</message>
+        <message xml:id="whatsapp_name">GBWhatsApp</message>
+        <message xml:id="localized_app_name">GBWhatsApp</message>
+        <message xml:id="set_as_profile_photo">GBWhatsApp profile photo</message>
+        <message xml:id="yoShareSbj">GBWhatsApp</message>
+    </param>
+</stylesheet>
+
+
