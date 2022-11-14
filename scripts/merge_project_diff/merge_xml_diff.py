@@ -112,7 +112,8 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
 
 def convert_str(to_root):
     xml_content: str = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n'
-    for child in to_root:
+    sum = len(to_root)
+    for index, child in enumerate(to_root):
         attr_tag = child.tag
         text = child.text
         xml_content += "    "
@@ -122,9 +123,10 @@ def convert_str(to_root):
             xml_content += child_str
         else:
             xml_content += ET.tostring(child, encoding='utf-8').decode('utf-8').strip().replace('/>', ' />')
-        xml_content += '\n'
+        if index < sum - 1:
+            xml_content += '\n'
 
-    xml_content += '</resources>\n'
+    xml_content += '\n</resources>\n'
     return xml_content
 
 
@@ -136,7 +138,7 @@ def save_2_file(data_str, target_file_path):
         print(f"写入{target_file_path}出现异常: {result}")
         print(traceback.format_exc())
     # else:
-        # print(f"写入{target_file_path}完成")
+    # print(f"写入{target_file_path}完成")
 
 
 if __name__ == "__main__":
