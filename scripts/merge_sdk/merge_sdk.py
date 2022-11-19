@@ -31,6 +31,7 @@ def write_data_2_file(file_path, public_map):
             for line in lines:
                 if line.startswith(".field public static final"):
                     attr_name = line.split(":")[0].split(" ")[-1]
+                    #print(f"file_type = {file_type} attr_name = {attr_name}")
                     attr_id = public_map[file_type][attr_name]
                     data += f".field public static final {attr_name}:I = {attr_id}\n"
                 else:

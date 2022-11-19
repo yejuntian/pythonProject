@@ -57,8 +57,8 @@ if __name__ == "__main__":
     while True:
         exit_flag = input('method2.json、field2.json对应关系全部替换完成？yes or no \n')
         if exit_flag == 'yes':
-            method_data = load_json_data(f"{mCurPath}/script/findX/method2.json")
-            filed_data = load_json_data(f"{mCurPath}/script/findX/field2.json")
+            method_data = load_json_data(f"{mCurPath}/scripts/findX/method2.json")
+            filed_data = load_json_data(f"{mCurPath}/scripts/findX/field2.json")
             method_data.extend(filed_data)
             replace_x(args.from_dir, method_data)
             print("************LX相关属性和方法全部替换完成************")
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     while True:
         exit_flag = input('class2.json对应关系全部替换完成？yes or no \n')
         if exit_flag == 'yes':
-            class_data = load_json_data(f"{mCurPath}/script/findX/class2.json")
+            class_data = load_json_data(f"{mCurPath}/scripts/findX/class2.json")
             replace_x(args.from_dir, class_data)
             print("************LX相关的类替换完成************")
             break
