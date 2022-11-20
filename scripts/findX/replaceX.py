@@ -3,6 +3,13 @@ import json
 import codecs
 import os
 
+# 排除哪些文件夹
+blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
+             'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
+             'smali_classes4', 'smali_classes7', 'AndroidManifest.xml', 'apktool.yml']
+# 只匹配下面的文件类型
+extends = ["smali"]
+
 baseVersion = "2.22.18.70"
 newVersion = "2.22.22.80"
 
@@ -14,12 +21,10 @@ def load_json_data(file_path):
 
 
 def replace_x(folder_path, dataList):
-    os.chdir(folder_path)
-    cwd = os.getcwd()
-    dirs = os.listdir(cwd)
+    dirs = os.listdir(folder_path)
     for fileName in dirs:
-        file_path = os.path.join(cwd, fileName)
-        if os.path.isfile(file_path) and file_path.split('.')[-1] == "smali":
+        file_path = os.path.join(folder_path, fileName)
+        if os.path.isfile(file_path) and file_path.split('.')[-1] in extends:
             with codecs.open(file_path, "r", "utf-8") as rfile:
                 data = rfile.read()
             with codecs.open(file_path, "w", "utf-8") as wfile:
@@ -31,7 +36,7 @@ def replace_x(folder_path, dataList):
                     data = data.replace(item[baseVersion], item[newVersion])
                 wfile.write(data)
 
-        elif os.path.isdir(file_path):
+        elif os.path.isdir(file_path) and fileName not in blacklist:
             replace_x(file_path, dataList)
 
 
