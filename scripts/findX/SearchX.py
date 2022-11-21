@@ -93,6 +93,7 @@ if __name__ == "__main__":
                "|HomeActivity;->A\w+:.*"
                "|StatusesFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/Conversation;->\w+:.*"
+               "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
                )
     save2File(mCurPath, package_data(), "field.json")
     print("****************查询完毕****************")
