@@ -6,7 +6,7 @@ import manifest_diff
 import merge_xml_diff
 
 # 排除哪些文件夹
-black_list_dir = ['.idea', ".git", 'build', 'apktool.yml']
+black_list_dir = ['.idea', ".git", 'build', 'META-INF', 'original', 'apktool.yml']
 # 目标项目的地址
 target_project_path = ""
 # 用于存放diff数据集合，key是
@@ -63,11 +63,14 @@ def execute_merge_diff_file(project_from_dir, project_to_dir):
                         merge_xml_diff.merge_diff(from_file_path, to_file_path)
                     else:
                         merge_xml_diff.merge_diff_attrs(from_file_path, to_file_path, target_project_path)
-                if from_file_path.__contains__("AndroidManifest") and not from_file_path.__contains__("original"):
+                if from_file_path.__contains__("AndroidManifest"):
                     if not is_allow:
                         manifest_diff.merge_manifest_diff(to_file_path, from_file_path)
                         fromDir = project_from_dir + "/AndroidManifest_diff.xml"
                         if os.path.exists(fromDir):
+                            to_dir_path = project_to_dir + "_diff/AndroidManifest_diff.xml"
+                            if os.path.exists(to_dir_path):  # 删除之前文件
+                                os.remove(to_dir_path)
                             shutil.move(fromDir, project_to_dir + "_diff")
 
 
