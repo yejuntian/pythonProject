@@ -68,6 +68,9 @@ def execute_merge_diff_file(project_from_dir, project_to_dir):
                         manifest_diff.merge_manifest_diff(to_file_path, from_file_path)
                         fromDir = project_from_dir + "/AndroidManifest_diff.xml"
                         if os.path.exists(fromDir):
+                            to_dir_path = project_to_dir + "_diff/AndroidManifest_diff.xml"
+                            if os.path.exists(to_dir_path):  # 删除之前文件
+                                os.remove(to_dir_path)
                             shutil.move(fromDir, project_to_dir + "_diff")
 
 
