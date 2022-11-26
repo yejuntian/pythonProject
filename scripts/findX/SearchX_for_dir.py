@@ -1,16 +1,9 @@
-import argparse
 import codecs
 import json
 import os
 import re
+import argparse
 
-foldPath = ""
-# 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
-             'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes7', 'AndroidManifest.xml', 'apktool.yml']
-# 只匹配下面的文件类型
-extends = ["smali"]
 savePath = ""
 setList = set()
 mapList = {}
@@ -18,12 +11,11 @@ baseVersion = "2.22.18.70"
 newVersion = "2.22.22.80"
 
 
-def findXClass(from_dir, rexStr):
-    fileList = os.listdir(from_dir)
+def findXClass(folder_path, rexStr):
+    fileList = os.listdir(folder_path)
     for fileName in fileList:
-        fpath = os.path.join(from_dir, fileName)
-        if os.path.isfile(fpath) and fpath.split('.')[-1] in extends:
-            print(fpath)
+        fpath = os.path.join(folder_path, fileName)
+        if os.path.isfile(fpath) and fpath.split('.')[-1] == "smali":
             with codecs.open(fpath, "r", "utf-8") as rfile:
                 data = rfile.read()
                 findList = re.findall(fr"{rexStr}", data)
@@ -38,7 +30,7 @@ def findXClass(from_dir, rexStr):
                         mapList[findStr] = classSet
                 setList.update(findList)
         # 如果是文件夹，递归
-        elif os.path.isdir(fpath) and fileName not in blacklist:
+        elif os.path.isdir(fpath):
             findXClass(fpath, rexStr)
 
 
@@ -61,7 +53,8 @@ def save2File(folder_path, dataList, fileName):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with open(fileName, "w+") as wf:
         wf.write(jsonStr)
-    print(f"结果保存到：{os.path.join(folder_path, fileName)}")
+    print(f"结果保存到：{os.path.join(folder_path,fileName)}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
