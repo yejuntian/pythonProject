@@ -62,12 +62,12 @@ if __name__ == "__main__":
     # diff文件绝对路径
     parser.add_argument("diff_path")
     # 反编译项目绝对路径
-    parser.add_argument("project_path")
+    # parser.add_argument("project_path")
     args = parser.parse_args()
     exec_diff(args.diff_path)
     # 根据git提交类型，分别存到到不同文件中
     mCurrentPath = os.getcwd()
-    target_folder = mCurrentPath + "/script/git_diff"
+    target_folder = mCurrentPath + "/scripts/git_diff"
     os.chdir(target_folder)
     save_data_to_file(add_file_list, "add.json")
     print(f"新增文件，输出到：{target_folder}/add.json")
@@ -78,5 +78,5 @@ if __name__ == "__main__":
     save_data_to_file(other_file_list, "other.json")
     print(f"文件其他操作，输出到：{target_folder}/other.json")
     # 复制新增文件到指定目录
-    copy_file_to_new_folder(add_file_list, mCurrentPath, "outputFiles", args.project_path)
-    print(f"执行脚本完毕，新增资源文件copy到:{mCurrentPath}/outputFiles")
+    # copy_file_to_new_folder(add_file_list, mCurrentPath, "outputFiles", args.project_path)
+    # print(f"执行脚本完毕，新增资源文件copy到:{mCurrentPath}/outputFiles")
