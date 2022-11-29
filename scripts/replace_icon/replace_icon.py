@@ -74,7 +74,14 @@ if __name__ == "__main__":
     parser.add_argument("to_project_dir")
     args = parser.parse_args()
 
-    icon_list = load_data("scripts/replace_icon/gb_res_icon.xml")
+    number = input('请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp",'''
+                   ' "3->com.WhatsApp2Plus"\n')
+    if number == "1":
+        icon_list = load_data("scripts/replace_icon/gb_res_icon.xml")
+    elif number == "2":
+        icon_list = load_data("scripts/replace_icon/plus_res_icon.xml")
+    elif number == "3":
+        icon_list = load_data("scripts/replace_icon/plus_res_icon.xml")
 
     delOldIcon(args.to_project_dir, blacklist)
     copyIcon(args.from_project_dir, args.to_project_dir, blacklist)
