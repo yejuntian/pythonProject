@@ -5,7 +5,7 @@ import os
 import replace_manifest
 
 # 替换的键值对，一行两个字符串，前面的是旧字符串，后面的是新字符串，中间用空格隔开
-key_path = 'script/replacepackage/replacekeys.properties'
+key_path = 'scripts/replacepackage/replacekeys.properties'
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
