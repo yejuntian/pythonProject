@@ -1,10 +1,14 @@
 import argparse
 import glob
 import os
+import re
 import shutil
 import traceback
 import lxml.etree as ET
 import merge_public
+
+# 正则校验
+reStr = "APKTOOL_.*_0x\w{8}"
 
 """
     对比两个不同项目values目录下xml不同，
@@ -47,11 +51,14 @@ def merge_diff(from_path, to_path):
         for to_child in to_root:
             to_child_attr = to_child.attrib
             to_attr_name = to_child_attr.get("name")
-            if to_attr_name is not None and "APKTOOL" not in to_attr_name:
-                if fromFileName == "public.xml":
-                    to_attr_type = to_child_attr.get("type")
-                    to_attr_name = f"{to_attr_name}#{to_attr_type}"
-                to_root_map[to_attr_name] = to_child
+            if to_attr_name is not None:
+                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr,to_attr_name):
+                    continue
+                else:
+                    if fromFileName == "public.xml":
+                        to_attr_type = to_child_attr.get("type")
+                        to_attr_name = f"{to_attr_name}#{to_attr_type}"
+                    to_root_map[to_attr_name] = to_child
 
         # 源文件
         from_parse = ET.parse(from_path)
@@ -60,14 +67,17 @@ def merge_diff(from_path, to_path):
         for from_child in from_root:
             from_child_attr = from_child.attrib
             from_attr_name = from_child_attr.get("name")
-            if from_attr_name is not None and "APKTOOL" not in from_attr_name:
-                if fromFileName == "public.xml":
-                    from_attr_type = from_child_attr.get("type")
-                    from_attr_name = f"{from_attr_name}#{from_attr_type}"
-                if from_attr_name not in to_root_map.keys():
-                    to_root.append(from_child)
-                    new_add_list.append(from_child)
-                    isChanged = True
+            if from_attr_name is not None:
+                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr,from_attr_name):
+                    continue
+                else:
+                    if fromFileName == "public.xml":
+                        from_attr_type = from_child_attr.get("type")
+                        from_attr_name = f"{from_attr_name}#{from_attr_type}"
+                    if from_attr_name not in to_root_map.keys():
+                        to_root.append(from_child)
+                        new_add_list.append(from_child)
+                        isChanged = True
         if isChanged:
             xml_content = convert_str(to_root)
             # 合并public.xml
@@ -102,11 +112,14 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
         for to_child in to_root:
             to_child_attr = to_child.attrib
             to_attr_name = to_child_attr.get("name")
-            if to_attr_name is not None and "APKTOOL" not in to_attr_name:
-                if fromFileName == "public.xml":
-                    to_attr_type = to_child_attr.get("type")
-                    to_attr_name = f"{to_attr_name}#{to_attr_type}"
-                to_root_map[to_attr_name] = to_child
+            if to_attr_name is not None:
+                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr,to_attr_name):
+                    continue
+                else:
+                    if fromFileName == "public.xml":
+                        to_attr_type = to_child_attr.get("type")
+                        to_attr_name = f"{to_attr_name}#{to_attr_type}"
+                    to_root_map[to_attr_name] = to_child
 
         # 源文件
         from_parse = ET.parse(from_path)
@@ -115,13 +128,16 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
         for from_child in from_root:
             from_child_attr = from_child.attrib
             from_attr_name = from_child_attr.get("name")
-            if from_attr_name is not None and "APKTOOL" not in from_attr_name:
-                if fromFileName == "public.xml":
-                    from_attr_type = from_child_attr.get("type")
-                    from_attr_name = f"{from_attr_name}#{from_attr_type}"
-                if from_attr_name not in to_root_map.keys():
-                    new_add_list.append(from_child)
-                    isChanged = True
+            if from_attr_name is not None:
+                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr,from_attr_name):
+                    continue
+                else:
+                    if fromFileName == "public.xml":
+                        from_attr_type = from_child_attr.get("type")
+                        from_attr_name = f"{from_attr_name}#{from_attr_type}"
+                    if from_attr_name not in to_root_map.keys():
+                        new_add_list.append(from_child)
+                        isChanged = True
         if isChanged:
             xml_content = convert_str(new_add_list)
 

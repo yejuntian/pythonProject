@@ -1,6 +1,7 @@
 import argparse
 import xml.etree.ElementTree as ET
 import os
+import re
 
 
 # 找出反编译apk中public.xml与反编译项目中public.xml不同的资源属性
@@ -31,9 +32,12 @@ def parser_public_xml(from_dir, to_dir):
         label_name = child.attrib["name"]
         label_id = child.attrib["id"]
         label_value = f"{label_type}#{label_name}"
-        if label_value not in des_res_set and "APKTOOL_DUMMY_" not in label_name:
-            sub = f'    <public type="{label_type}" name="{label_name}" id="{label_id}" />'
-            xml_label.append(sub)
+        if label_value.__contains__("APKTOOL") and not re.match(r"APKTOOL_.*_0x\w{8}", label_value):
+            continue
+        else:
+            if label_value not in des_res_set:
+                sub = f'    <public type="{label_type}" name="{label_name}" id="{label_id}" />'
+                xml_label.append(sub)
     xml_label.append('</resources>')
 
     newFile = f"{os.getcwd()}/public_diff.xml"
@@ -51,4 +55,3 @@ if __name__ == '__main__':
     options = parser.parse_args()
 
     parser_public_xml(options.from_dir, options.to_dir)
-

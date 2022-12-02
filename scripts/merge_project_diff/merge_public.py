@@ -1,5 +1,6 @@
 import argparse
 import codecs
+import re
 import lxml.etree as ET
 
 """
@@ -38,12 +39,15 @@ def copy_attrs(from_dir, to_dir):
             child_name = child.attrib['name'].strip()
             child_type = child.attrib['type'].strip()
             # 屏蔽APKTOOL开头的name
-            if child_name not in name_dict[child_type] and "APKTOOL" not in child_name:
-                child_max = max_dict[child_type]
-                child.set('id', str(hex(int(child_max.attrib['id'], 16) + 1)))
-                max_dict[child_type] = child
-                index = to_root.index(child_max)
-                to_root.insert(index + 1, child)
+            if child_name.__contains__("APKTOOL") and not re.match(r"APKTOOL_.*_0x\w{8}", child_name):
+                continue
+            else:
+                if child_name not in name_dict[child_type]:
+                    child_max = max_dict[child_type]
+                    child.set('id', str(hex(int(child_max.attrib['id'], 16) + 1)))
+                    max_dict[child_type] = child
+                    index = to_root.index(child_max)
+                    to_root.insert(index + 1, child)
     save_to_file(to_root, to_dir)
 
 
@@ -61,7 +65,7 @@ def save_to_file(data_list, file_name):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
-    #目标public.xml绝对地址
+    # 目标public.xml绝对地址
     parser.add_argument("to_dir")
     options = parser.parse_args()
     copy_attrs(options.from_dir, options.to_dir)
