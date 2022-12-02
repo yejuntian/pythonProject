@@ -51,7 +51,7 @@ def merge_diff(from_path, to_path):
                 if fromFileName == "public.xml":
                     to_attr_type = to_child_attr.get("type")
                     to_attr_name = f"{to_attr_name}#{to_attr_type}"
-            to_root_map[to_attr_name] = to_child
+                to_root_map[to_attr_name] = to_child
 
         # 源文件
         from_parse = ET.parse(from_path)
