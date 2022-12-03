@@ -1,5 +1,6 @@
 import os
 import shutil
+import argparse
 
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF', 'original', 'smali',
@@ -35,6 +36,7 @@ def copy_png(from_dir, to_dir):
                     and not fname.__contains__(".svg")
                     and not fname.__contains__(".otf")
                     and not fname.__contains__(".properties")
+                    and not fname.__contains__(".gitignore")
             ):
                 if not os.path.exists(to_dir):
                     os.makedirs(to_dir, exist_ok=True)
@@ -42,7 +44,10 @@ def copy_png(from_dir, to_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    from_dir = args.from_dir
     to_dir = f"{from_dir}_diff"
     copy_png(from_dir, to_dir)
     print(f"程序执行结束，结果保存在{to_dir}")
