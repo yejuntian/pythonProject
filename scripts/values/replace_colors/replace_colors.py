@@ -9,11 +9,11 @@ extends = ["xml"]
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
              'lib', 'META-INF', 'original', 'apktool.yml']
 # 存储对应关系文件
-dataPath = 'scripts/values/replace_strings/string.json'
+dataPath = 'scripts/values/replace_colors/colors.json'
 
 """
-    主要作用：根据string.json中对应关系，
-    替换项目所涉及的String.xml对应的属性name
+    主要作用：根据colors.json中对应关系，
+    替换项目所涉及的colors.xml对应的属性name
 """
 
 
@@ -43,6 +43,7 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
                         for key, value in mapping_string.items():
                             replace_times += data.count(key)
                             data = data.replace(key, value)
+                            print(f"key = {value} value = {value} ")
                         print(r'替换次数：', replace_times)
                         wf.write(data)
 
