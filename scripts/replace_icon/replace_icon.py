@@ -79,7 +79,7 @@ if __name__ == "__main__":
     if number == "1":
         icon_list = load_data("scripts/replace_icon/gb_res_icon.xml")
     elif number == "2":
-        icon_list = load_data("scripts/replace_icon/plus_res_icon.xml")
+        icon_list = load_data("scripts/replace_icon/ob_res_icon.xml")
     elif number == "3":
         icon_list = load_data("scripts/replace_icon/plus_res_icon.xml")
 
