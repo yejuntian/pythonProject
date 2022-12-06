@@ -1,4 +1,3 @@
-import argparse
 import json
 import os
 import xml.etree.ElementTree as ET
@@ -99,7 +98,7 @@ def correctRelation(fpath):
         elif count == 1:
             pos = strList.index(curTxt)
             entity = dataList[pos]
-            if preTxt == entity.oldPreTxt or nextTxt == entity.oldNextTxt:
+            if (preTxt == entity.oldPreTxt or nextTxt == entity.oldNextTxt) and curTxt == entity.curTxt:
                 entity.newName = name
                 entity.newPreTxt = preTxt
                 entity.newNextTxt = nextTxt
@@ -108,7 +107,7 @@ def correctRelation(fpath):
         elif count > 1:
             pos = strList.index(curTxt)
             entity = dataList[pos]
-            if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt:
+            if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt and curTxt == entity.curTxt:
                 entity.newName = name
                 entity.newPreTxt = preTxt
                 entity.newNextTxt = nextTxt
@@ -116,7 +115,7 @@ def correctRelation(fpath):
             else:
                 for pos in range(pos, len(dataList)):
                     entity = dataList[pos]
-                    if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt:
+                    if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt and curTxt == entity.curTxt:
                         entity.newName = name
                         entity.newPreTxt = preTxt
                         entity.newNextTxt = nextTxt
@@ -132,11 +131,6 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    parser.add_argument("to_dir")
-    args = parser.parse_args()
-
-    from_dir = args.from_dir
-    to_dir = args.from_dir
+    from_dir = "/Users/shareit/work/GBWorke/wagb/DecodeCode/WhatsApp_v2.22.18.70"
+    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
     findCorrectRelation(from_dir, to_dir)
