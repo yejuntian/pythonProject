@@ -34,10 +34,10 @@ def findCorrectRelation(from_dir, to_dir):
     tpath = f"{to_dir}/res/values/colors.xml"
     setColorList(fpath, True)
     setColorList(tpath, False)
-    # save2File(package_data(from_dataList), os.getcwd(), "colors_old.json")
-    # save2File(package_data(to_dataList), os.getcwd(), "colors_new.json")
+    save2File(package_data(from_dataList), os.getcwd(), "colors_old.json")
+    save2File(package_data(to_dataList), os.getcwd(), "colors_new.json")
     correctRelation()
-    # save2File(package_data(), os.getcwd(), "colors.json")
+    save2File(package_data(to_dataList), os.getcwd(), "colors.json")
 
 
 def package_data(dataList):
@@ -131,8 +131,7 @@ def getColor(colorTxt, colorMapping):
 
 
 def correctRelation():
-    print(f"colorsSize = {len(allFromColors)} size = {len(from_dataList)}")
-    print(allFromColors)
+    # print(f"colorsSize = {len(allFromColors)} size = {len(from_dataList)}")
     size = len(to_dataList)
     for index, toEntity in enumerate(to_dataList):
         curColor = getCorrectColor(toEntity.curColor)
@@ -145,61 +144,40 @@ def correctRelation():
         else:
             preColor = getCorrectColor(to_dataList[index - 1].curColor)
             nextColor = getCorrectColor(to_dataList[index + 1].curColor)
-
+        count = allFromColors.count(curColor)
+        if count == 0:
+            continue
+        elif count == 1:
+            pos = allFromColors.index(curColor)
+            fromEntity = from_dataList[pos]
+            if isMatchColor(curColor, preColor, nextColor, fromEntity):
+                toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+                continue
+        elif count > 1:
+            pos = allFromColors.index(curColor)
+            fromEntity = from_dataList[pos]
+            if isMatchColor(curColor, preColor, nextColor, fromEntity):
+                toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+                continue
+            else:
+                for pos in range(pos, len(allFromColors)):
+                    fromEntity = from_dataList[pos]
+                    if isMatchColor(curColor, preColor, nextColor, fromEntity):
+                        toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+                        break
         # print(f"name = {toEntity.colorName} curColor = {curColor} preColor = {preColor} nextColor = {nextColor}")
 
 
+# 是否匹配到正确的颜色值
+def isMatchColor(curColor, preColor, nextColor, fromEntity):
+    return (preColor == getCorrectColor(fromEntity.preColor) and nextColor == getCorrectColor(
+        fromEntity.nextColor) and curColor == getCorrectColor(fromEntity.curColor))
+
+
 def getCorrectColor(colorTxt):
-    if colorTxt.__contains__("$"):
+    if not colorTxt is None and colorTxt.__contains__("$"):
         return colorTxt.split("$")[1]
     return colorTxt
-
-
-# def correctRelation(fpath):
-#     parse = ET.parse(fpath)
-#     root = parse.getroot()
-#     size = len(root)
-#     for index, child in enumerate(root):
-#         attrib = child.attrib
-#         name = attrib.get("name")
-#         if index == 0:
-#             preColor = None
-#             nextColor = root[index + 1].text
-#         elif index == size - 1:
-#             nextColor = None
-#             preColor = root[index - 1].text
-#         else:
-#             preColor = root[index - 1].text
-#             nextColor = root[index + 1].text
-#         oldPreColor = child.text
-#         count = colorList.count(oldPreColor)
-#         if count == 0:
-#             continue
-#         elif count == 1:
-#             pos = colorList.index(oldPreColor)
-#             entity = dataList[pos]
-#             if preColor == entity.oldPreColor or nextColor == entity.oldNextColor:
-#                 entity.newColorName = name
-#                 entity.newPreColor = preColor
-#                 entity.newNextColor = nextColor
-#                 repeatStrList.append(f"{name}#{entity.oldPreColorName}")
-#                 continue
-#         elif count > 1:
-#             pos = colorList.index(oldPreColor)
-#             entity = dataList[pos]
-#             if preColor == entity.oldPreColor and nextColor == entity.oldNextColor:
-#                 entity.newColorName = name
-#                 entity.newPreColor = preColor
-#                 entity.newNextColor = nextColor
-#                 continue
-#             else:
-#                 for pos in range(pos, len(dataList)):
-#                     entity = dataList[pos]
-#                     if preColor == entity.oldPreColor and nextColor == entity.oldNextColor:
-#                         entity.newColorName = name
-#                         entity.newPreColor = preColor
-#                         entity.newNextColor = nextColor
-#                         break
 
 
 def save2File(dataList, folder_path, fileName):
@@ -211,13 +189,6 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("from_dir")
-    # parser.add_argument("to_dir")
-    # args = parser.parse_args()
-
-    # from_dir = args.from_dir
-    # to_dir = args.from_dir
     from_dir = "/Users/shareit/work/GBWorke/wagb/DecodeCode/WhatsApp_v2.22.18.70"
     to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
     findCorrectRelation(from_dir, to_dir)

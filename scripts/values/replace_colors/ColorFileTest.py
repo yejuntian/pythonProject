@@ -1,22 +1,11 @@
-import argparse
 import codecs
-import os
 import json
 import xml.etree.ElementTree as ET
 import traceback
 
-# 只匹配下面的文件类型
-extends = ["xml"]
-# 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
-             'lib', 'META-INF', 'original', 'apktool.yml']
-# 存储对应关系文件
-colorPath = 'scripts/values/replace_colors/colors.json'
-
-# ************下面用于判断color是否正确******************
 # 存储对应关系文件
 # oldColorPath = 'scripts/values/replace_colors/colors_old.json'
-oldColorPath = 'scripts/values/replace_colors/colors_old.json'
+oldColorPath = 'colors_old.json'
 # 颜色属性名称集合-->values/colors.xml
 colorNameList = set()
 # color内容引用集合-->values/colors.xml
@@ -26,59 +15,14 @@ colorNameList2 = set()
 # color内容引用集合-->values-night/colors.xml
 colorTxtList2 = set()
 
-"""
-    主要作用：根据colors.json中对应关系，
-    替换项目所涉及的colors.xml对应的属性name
-"""
-
-
-def replaceColors():
-    mapping_string = load_replace_keys(colorPath)
-    execute_folder(from_dir, blacklist, extends, mapping_string)
-
-
-def load_replace_keys(dataPath):
-    with codecs.open(dataPath, "r", "utf-8") as rfile:
-        data = json.loads(rfile.read())
-        dataMap = {}
-        for item in data:
-            colorName = item["colorName"]
-            if colorName.__contains__("$"):
-                colorList = colorName.split("$")
-                dataMap[colorList[0]] = colorList[1]
-    return dataMap
-
-
-def execute_folder(from_dir, blacklist, extends, mapping_string):
-    listdir = os.listdir(from_dir)
-    for fname in listdir:
-        if fname not in blacklist:
-            fpath = os.path.join(from_dir, fname)
-            if os.path.isdir(fpath):
-                execute_folder(fpath, blacklist, extends, mapping_string)
-            elif os.path.isfile(fpath):
-                if fname.split(".")[-1] in extends:
-                    print(fpath)
-                    with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
-                        data = rf.read()
-                    with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
-                        replace_times = 0
-                        for key, value in mapping_string.items():
-                            replace_times += data.count(key)
-                            data = data.replace(key, value)
-                        print(r'替换次数：', replace_times)
-                        wf.write(data)
-
 
 # 校验color正确性，并把矫正color写入到color.xml
-def correctColorFile(from_dir):
-    fColorPath = f"{from_dir}/res/values/colors.xml"
-    fColorNightPath = f"{from_dir}/res/values-night/colors.xml"
+def correctColorFile():
     oldColorList = loadOldColorData(oldColorPath)
     loadNewColorData(fColorPath, False, oldColorList)
     loadNewColorData(fColorNightPath, True, oldColorList)
-    correctColorData(False, fColorPath, fColorNightPath)
-    correctColorData(True, fColorPath, fColorNightPath)
+    correctColorData(False)
+    correctColorData(True)
 
 
 def loadOldColorData(fpath):
@@ -108,7 +52,7 @@ def loadNewColorData(from_path, isNightColor, colorMap):
                 correctColor = getCorrectColor(colorMap.get(colorName2))
                 child.text = correctColor
                 enableCorrect = True
-                print(f'{from_path}  <color name="{colorName}">颜色已矫正为：{correctColor}</color>>')
+                print(f'{from_path} <color name="{colorName}">矫正为:{correctColor}</color>')
             if not isNightColor:
                 colorTxtList.add(colorName2)
             else:
@@ -144,7 +88,7 @@ def getCorrectColor(colorTxt):
 
 
 # 校验color是否正确
-def correctColorData(isNightColor, fColorPath, fColorNightPath):
+def correctColorData(isNightColor):
     if not isNightColor:
         for colorTxt in colorTxtList:
             if not colorTxt in colorNameList and not colorTxt in colorNameList2:
@@ -156,10 +100,7 @@ def correctColorData(isNightColor, fColorPath, fColorNightPath):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    args = parser.parse_args()
-
-    from_dir = args.from_dir
-    replaceColors()
-    correctColorFile(from_dir)
+    from_path = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
+    fColorPath = f"{from_path}/res/values/colors.xml"
+    fColorNightPath = f"{from_path}/res/values-night/colors.xml"
+    correctColorFile()
