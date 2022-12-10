@@ -46,7 +46,7 @@ def matchesRegex(reg, data):
         matches = re.finditer(regex, groupStr, re.MULTILINE)
         for subMatchNum, subMatch in enumerate(matches, start=1):
             subGroupStr = subMatch.group()
-            if not subGroupStr == '"string"':
+            if not subGroupStr == '"color"':
                 strList.add(subGroupStr)
                 # print(subGroupStr)
 
