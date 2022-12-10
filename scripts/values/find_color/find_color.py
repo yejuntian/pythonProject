@@ -3,16 +3,14 @@ import json
 import os
 import re
 
-# radioButton3.setText(yo.getString("no_internet_title") + " (\"" + yo.getString("voip_call_outgoing") + "\")👻")
-regex1 = r"yo.getString\(\".*\"\)"
-# yo.getString(z5 ? "disableFingerprintFirst" : "fingerprint_setup_dialog_title")
-regex2 = r"yo.getString\(.+ ? : \".*\"\)"
-# a.j("register_try_again_later", yo.getCtx(), 0);
-regex3 = r"a.j\(\".+\""
-# yo.getID(LockUtils.isJIDLocked(yo.getCurr_sJid()) ? "unlock" : "lock","string")
-regex4 = r"yo.getID\(.*, *?\"string\"\)"
+# yo.getResColor("conversation_divider_text");
+regex1 = r"yo.getResColor\(\"[\w_]+\"\)"
+# others.getColor("quoted_name_picker", ColorStore.getPrimaryTextColor())
+regex2 = r"others.getColor\(\"[\w_]+\",.*"
+# yo.getID("floating_edit_text_color", "color")
+regex3 = r"yo.getID\(\"[\w_]+\", *?\"color\"\)"
 # 正则匹配集合
-reList = [regex1, regex2, regex3, regex4]
+reList = [regex1, regex2, regex3]
 
 # 匹配()括号内容
 regex = r"\"[\w_]+\""
@@ -68,4 +66,4 @@ def save_2_file(dataList, fileName):
 if __name__ == "__main__":
     from_dir = "/Users/shareit/work/GBWorke/WhatsAppPlus_origin_java"
     transFolder(from_dir, blacklist)
-    save_2_file(strList, "string_list.json")
+    save_2_file(strList, "color.json")
