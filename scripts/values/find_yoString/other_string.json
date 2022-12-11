@@ -3,7 +3,6 @@
   "clock_wrong_title",
   "already_saved",
   "photo_saved_to_gallery",
-  "notification_settings_title_groups",
   "chats",
   "already_saved",
   "status_deleted",
@@ -24,5 +23,10 @@
   "permission_storage_need_write_access_on_msg_download",
   "save_to_gallery",
   "wallpaper_set_successful",
-  "payments_set_pin_incorrect_format_error"
+  "payments_set_pin_incorrect_format_error",
+  "contact_picker_section_status",
+  "acjrestart",
+  "yoMods",
+  "time_ago",
+  "msg_num"
 ]
