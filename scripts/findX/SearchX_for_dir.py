@@ -77,6 +77,7 @@ if __name__ == "__main__":
                "|Landroidy/recyclerview/widget/LinearLayoutManager;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+\(.*?\).+"
                "|Lcom/airbnb/lottie/LottieAnimationView;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
                )
     save2File(mCurPath, package_data(), "method.json")
     # 查找属性
