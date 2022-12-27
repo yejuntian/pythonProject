@@ -12,7 +12,7 @@ extends = ["smali", "xml", "html"]
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
 # 默认包名集合列表
-default_package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp"]
+default_package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
 
@@ -86,15 +86,15 @@ if __name__ == '__main__':
 
     default_package = input(
         '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp",'
-        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->其他包名"\n')
-    if default_package.strip() == "5":
+        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->com.whatsapp","6->其他包名"\n')
+    if default_package.strip() == "6":
         user_default_package = input('请输入默认包名：\n')
         default_package_list.append(user_default_package.strip())
 
     new_package = input(
         '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.obwhatsapp",'
-        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->其他包名"\n')
-    if new_package.strip() == "5":
+        ' "3->com.WhatsApp2Plus", "4->com.yowhatsapp","5->com.whatsapp","6->其他包名"\n')
+    if new_package.strip() == "6":
         user_new_package = input('请输入新包名：\n')
         new_package_list.append(user_new_package.strip())
 
