@@ -64,18 +64,19 @@ def execute_path(folder_path, black_list, extends):
 def rename_directory(oldFolderName, newFolderName):
     curPath = os.getcwd()
     pos = curPath.rfind(r"smali")
-    curPath = curPath[:pos]
-    # print(f"curPath = {curPath}")
+    from_dir = curPath[:pos]
+    # print(f"from_dir = {from_dir}")
     os.chdir(curPath)
-    fileList = glob.glob(curPath + "/" + "smali*/com/*")
+    fileList = glob.glob(from_dir + "/" + "smali*/com/*")
     # print(fileList)
-    for file in fileList:
-        if file.rfind("/") > 0:
-            dirName = file[file.rindex("/") + 1:]
+    for fpath in fileList:
+        if fpath.rfind("/") > 0:
+            dirName = fpath[fpath.rindex("/") + 1:]
             # print(f"dirName = {dirName}")
             if dirName == oldFolderName:
-                newDir = file.replace(oldFolderName, newFolderName)
-                os.rename(file, newDir)
+                relativePath = fpath.split(from_dir)[1]
+                newDir = os.path.join(from_dir, relativePath.replace(oldFolderName, newFolderName))
+                os.rename(fpath, newDir)
 
 
 if __name__ == '__main__':
