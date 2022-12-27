@@ -131,6 +131,6 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/GBWorke/wagb/DecodeCode/WhatsApp_v2.22.18.70"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
+    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     findCorrectRelation(from_dir, to_dir)

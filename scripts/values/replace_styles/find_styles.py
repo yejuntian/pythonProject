@@ -462,5 +462,5 @@ def getStyleItemValue(map, key, newContent):
 
 if __name__ == "__main__":
     from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
+    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     findStyle(from_dir, to_dir)

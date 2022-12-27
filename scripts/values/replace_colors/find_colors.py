@@ -9,7 +9,6 @@ to_dataList = []
 # from_dir/colors.xml所有颜色的16进制色值集合
 allFromColors = []
 colorList = []
-repeatStrList = []
 
 """
     主要作用：查找两个项目，colors.xml对应的关系，
@@ -135,6 +134,7 @@ def correctRelation():
     size = len(to_dataList)
     for index, toEntity in enumerate(to_dataList):
         curColor = getCorrectColor(toEntity.curColor)
+        toColorName = toEntity.colorName
         if index == 0:
             preColor = None
             nextColor = getCorrectColor(to_dataList[index + 1].curColor)
@@ -150,22 +150,36 @@ def correctRelation():
         elif count == 1:
             pos = allFromColors.index(curColor)
             fromEntity = from_dataList[pos]
-            if isMatchColor(curColor, preColor, nextColor, fromEntity):
-                toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+            fromColorName = fromEntity.colorName
+            if isMatchColor(curColor, preColor, nextColor, fromEntity) and not isExitColorMapping(fromColorName):
+                toEntity.colorName = f"{toColorName}${fromColorName}"
                 continue
         elif count > 1:
             pos = allFromColors.index(curColor)
             fromEntity = from_dataList[pos]
-            if isMatchColor(curColor, preColor, nextColor, fromEntity):
-                toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+            fromColorName = fromEntity.colorName
+            if isMatchColor(curColor, preColor, nextColor, fromEntity) and not isExitColorMapping(fromColorName):
+                toEntity.colorName = f"{toColorName}${fromColorName}"
                 continue
             else:
                 for pos in range(pos, len(allFromColors)):
                     fromEntity = from_dataList[pos]
-                    if isMatchColor(curColor, preColor, nextColor, fromEntity):
-                        toEntity.colorName = f"{toEntity.colorName}${fromEntity.colorName}"
+                    fromColorName = fromEntity.colorName
+                    if isMatchColor(curColor, preColor, nextColor, fromEntity) and not isExitColorMapping(
+                            fromColorName):
+                        toEntity.colorName = f"{toColorName}${fromColorName}"
                         break
         # print(f"name = {toEntity.colorName} curColor = {curColor} preColor = {preColor} nextColor = {nextColor}")
+
+
+# 是否存在颜色映射
+def isExitColorMapping(fromColorName):
+    if fromColorName in colorList:
+        isExit = True
+    else:
+        isExit = False
+        colorList.append(fromColorName)
+    return isExit
 
 
 # 是否匹配到正确的颜色值
@@ -189,6 +203,6 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/GBWorke/wagb/DecodeCode/WhatsApp_v2.22.18.70"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
+    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     findCorrectRelation(from_dir, to_dir)
