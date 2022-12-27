@@ -61,6 +61,7 @@ def find_file(from_dir, targetStr, file_list):
 
 
 def insert_code(file_list):
+    # print(file_list)
     for fpath in file_list:
         enableWrite = False
         with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
@@ -93,3 +94,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     find_file(args.from_dir, targetStr, find_file_list)
+    insert_code(find_file_list)
