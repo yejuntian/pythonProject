@@ -5,7 +5,8 @@ import xml.etree.ElementTree as ET
 # from_dir/string.xml集合
 dataList = []
 strList = []
-repeatStrList = []
+# 用于存放已查找到的string name集合
+stringNameList = []
 
 """
     主要作用：查找两个项目，string.xml对应的关系，
@@ -98,16 +99,17 @@ def correctRelation(fpath):
         elif count == 1:
             pos = strList.index(curTxt)
             entity = dataList[pos]
-            if (preTxt == entity.oldPreTxt or nextTxt == entity.oldNextTxt) and curTxt == entity.curTxt:
+            if (preTxt == entity.oldPreTxt or nextTxt == entity.oldNextTxt) \
+                    and curTxt == entity.curTxt and not isExitStr(entity.oldName):
                 entity.newName = name
                 entity.newPreTxt = preTxt
                 entity.newNextTxt = nextTxt
-                repeatStrList.append(f"{name}#{entity.oldName}")
                 continue
         elif count > 1:
             pos = strList.index(curTxt)
             entity = dataList[pos]
-            if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt and curTxt == entity.curTxt:
+            if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt \
+                    and curTxt == entity.curTxt and not isExitStr(entity.oldName):
                 entity.newName = name
                 entity.newPreTxt = preTxt
                 entity.newNextTxt = nextTxt
@@ -115,11 +117,21 @@ def correctRelation(fpath):
             else:
                 for pos in range(pos, len(dataList)):
                     entity = dataList[pos]
-                    if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt and curTxt == entity.curTxt:
+                    if preTxt == entity.oldPreTxt and nextTxt == entity.oldNextTxt \
+                            and curTxt == entity.curTxt and not isExitStr(entity.oldName):
                         entity.newName = name
                         entity.newPreTxt = preTxt
                         entity.newNextTxt = nextTxt
                         break
+
+
+def isExitStr(str):
+    if str in stringNameList:
+        isExit = True
+    else:
+        isExit = False
+        stringNameList.append(str)
+    return isExit
 
 
 def save2File(dataList, folder_path, fileName):
