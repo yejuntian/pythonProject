@@ -9,6 +9,8 @@ mappingName = {}
 new_layout_list = []
 # 旧版layout对象集合
 old_layout_list = []
+# 用于存放已查找到的layout映射集合
+layoutList = []
 # 是否保持文件
 isSaveFile = False
 
@@ -70,7 +72,8 @@ def mappingLayoutEntity(new_layout_list, old_layout_list):
             mappingEntity(new_fileName, new_numberStr, matchList)
             # print(f"{new_fileName} = {matchList}")
         elif size == 1:
-            mappingName[new_fileName] = matchList[0][0]
+            if not isExitLayoutMapping(matchList[0][0]):
+                mappingName[new_fileName] = matchList[0][0]
 
 
 # 匹配多个情况下，进行进一步筛选
@@ -82,9 +85,20 @@ def mappingEntity(new_fileName, new_numberStr, matchList):
             mappingList.append(fileName)
 
     if len(mappingList) == 1:
-        mappingName[new_fileName] = matchList[0][0]
+        if not isExitLayoutMapping(matchList[0][0]):
+            mappingName[new_fileName] = matchList[0][0]
     else:
         print(f"{new_fileName} = {mappingList}")
+
+
+# 是否存在layout映射
+def isExitLayoutMapping(fromLayoutName):
+    if fromLayoutName in layoutList:
+        isExit = True
+    else:
+        isExit = False
+        layoutList.append(fromLayoutName)
+    return isExit
 
 
 def transFolder(from_dir, entityList):
@@ -162,6 +176,6 @@ def save2File(dataList, fileName, enableConvert=True):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/GBWorke/whatsapp_new/whatsapp_v2.22.25.11"
+    from_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     to_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
     findLayout(from_dir, to_dir)
