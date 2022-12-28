@@ -220,7 +220,7 @@ def saveStylesMapping(key, value):
     if value.__contains__("@style/"):
         value = value.split("/")[1]
 
-    if stylesMapping.get(key) is None:
+    if stylesMapping.get(key) is None and not value in stylesMapping.values():
         stylesMapping[key] = value
 
 
