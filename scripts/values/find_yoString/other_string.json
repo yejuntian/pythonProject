@@ -28,5 +28,8 @@
   "acjrestart",
   "yoMods",
   "time_ago",
-  "msg_num"
+  "msg_num",
+  "set_auto_text",
+  "save",
+  "cancel"
 ]
