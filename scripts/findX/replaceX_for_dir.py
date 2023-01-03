@@ -13,7 +13,7 @@ def load_json_data(file_path):
     return json.loads(data)
 
 
-def replace_x(folder_path, dataList):
+def replace_x(folder_path, mappingData):
     os.chdir(folder_path)
     cwd = os.getcwd()
     dirs = os.listdir(cwd)
@@ -24,15 +24,15 @@ def replace_x(folder_path, dataList):
                 data = rfile.read()
             with codecs.open(file_path, "w", "utf-8") as wfile:
                 replace_times = 0
-                for item in dataList:
-                    replace_times += data.count(item[baseVersion])
+                for key, value in mappingData:
+                    replace_times += data.count(key)
                     print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
-                    data = data.replace(item[baseVersion], item[newVersion])
+                    data = data.replace(key, value)
                 wfile.write(data)
 
         elif os.path.isdir(file_path):
-            replace_x(file_path, dataList)
+            replace_x(file_path, mappingData)
 
 
 # 组装数据
@@ -48,6 +48,34 @@ def merge_data(class_data, method_data):
     return class_data
 
 
+def getOrderData(dataList):
+    """有些value值和key值相同所以会导致重复替换 比如{A:B,B:C}
+     A先替换为了B，然后B又替换成了C 最后导致A换成了C；
+     如果调换顺序就不会发行该种情况从字典中移除再添加进行顺序调整"""
+
+    # 把所有list映射为字典
+    mappingData = {}
+    for item in dataList:
+        key = item[baseVersion]
+        value = item[newVersion]
+        mappingData[key] = value
+
+    print(mappingData)
+    # 查找value值和key值相同
+    temp_dict = {}
+    for item in dataList:
+        key = item[baseVersion]
+        value = item[newVersion]
+        if value in mappingData.keys():
+            temp_dict[key] = value
+    # 进行顺序调整,先删除再添加
+    for key, value in temp_dict.items():
+        print(f"key = {key} value = {value}")
+        mappingData.pop(key)
+        mappingData[key] = value
+    return mappingData
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
@@ -60,6 +88,7 @@ if __name__ == "__main__":
             method_data = load_json_data(f"{mCurPath}/scripts/findX/method2.json")
             filed_data = load_json_data(f"{mCurPath}/scripts/findX/field2.json")
             method_data.extend(filed_data)
+            method_data = getOrderData(method_data)
             replace_x(args.from_dir, method_data)
             print("************LX相关属性和方法全部替换完成************")
             break
@@ -70,6 +99,7 @@ if __name__ == "__main__":
         exit_flag = input('class2.json对应关系全部替换完成？yes or no \n')
         if exit_flag == 'yes':
             class_data = load_json_data(f"{mCurPath}/scripts/findX/class2.json")
+            class_data = getOrderData(class_data)
             replace_x(args.from_dir, class_data)
             print("************LX相关的类替换完成************")
             break
