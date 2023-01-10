@@ -14,9 +14,9 @@ blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF',
 # 只匹配下面的文件类型
 extends = ["xml"]
 # 需要copy的type类型集合
-typeList = ["color", "string", "style"]
+typeList = ["color", "string", "style", "dimen"]
 # 文件名列表
-fileNameList = ["colors.xml", "strings.xml", "styles.xml"]
+fileNameList = ["colors.xml", "strings.xml", "styles.xml", "dimens.xml"]
 # 需要copy的映射关系
 copy_dict = {}
 # 需要copy的属性name字典
@@ -28,7 +28,7 @@ diffNameDict = {}
 
 
 def startCopyValues(from_dir, to_dir):
-    mappingData = getNameMappingList("GBNeedToFind.json")
+    mappingData = getNameMappingList("scripts/values/native_values/GBNeedToFind.json")
     publicFilePath = os.path.join(to_dir, "res/values/public.xml")
     getInsertNameList(publicFilePath, typeList, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
@@ -98,6 +98,8 @@ def startCopyAttr(fpath, tpath, fname):
 # 创建新文件插入diff code
 def createNewFile(fpath, tpath, fileType):
     diffNameList = diffNameDict.get(fileType)
+    if diffNameList is None or len(diffNameList) <= 0:
+        return
     from_parser = ET.parse(fpath)
     from_root = from_parser.getroot()
     fromNameList = []
@@ -120,6 +122,8 @@ def createNewFile(fpath, tpath, fileType):
 # diff code插入到已存在的文件
 def insertExitFile(fpath, tpath, fileType):
     diffNameList = diffNameDict.get(fileType)
+    if diffNameList is None or len(diffNameList) <= 0:
+        return
     to_parser = ET.parse(tpath)
     to_root = to_parser.getroot()
     toNameList = []
@@ -194,6 +198,8 @@ def insertPublic(fpath, type):
 
     pos = to_root.index(maxChild)
     enableInsertNameList = enableInsertNameDict.get(type)
+    if enableInsertNameList is None or len(enableInsertNameList) <= 0:
+        return
     for itemName in enableInsertNameList:
         maxId += 1
         pos += 1
