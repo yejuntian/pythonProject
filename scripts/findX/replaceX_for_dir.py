@@ -24,7 +24,7 @@ def replace_x(folder_path, mappingData):
                 data = rfile.read()
             with codecs.open(file_path, "w", "utf-8") as wfile:
                 replace_times = 0
-                for key, value in mappingData:
+                for key, value in mappingData.items():
                     replace_times += data.count(key)
                     print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
