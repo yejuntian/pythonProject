@@ -64,38 +64,46 @@ def matchValues(fromMappingValues, toMappingValues, matchId_dict):
 
 
 def transFolderIds(targetFolder, matchId_dict, allNotFindId, fromMappingValues, toMappingValues):
-    listdir = os.listdir(targetFolder)
-    for fname in listdir:
-        fpath = os.path.join(targetFolder, fname)
-        if fname not in blacklist:
-            if os.path.isdir(fpath):
-                transFolderIds(fpath, matchId_dict, allNotFindId, fromMappingValues, toMappingValues)
+    if os.path.isdir(targetFolder):
+        listdir = os.listdir(targetFolder)
+        for fname in listdir:
+            fpath = os.path.join(targetFolder, fname)
+            if fname not in blacklist:
+                if os.path.isdir(fpath):
+                    transFolderIds(fpath, matchId_dict, allNotFindId, fromMappingValues, toMappingValues)
+                elif os.path.isfile(fpath):
+                    if fname.split(".")[-1] in extends:
+                        print(fpath)
+                        startReplaceFile(fpath, toMappingValues, fromMappingValues)
+    else:
+        if targetFolder.split(".")[-1] in extends:
+            startReplaceFile(targetFolder, toMappingValues, fromMappingValues)
 
-            elif os.path.isfile(fpath):
-                if fname.split(".")[-1] in extends:
-                    print(fpath)
-                    with codecs.open(fpath, "r", "utf-8") as rf:
-                        data = rf.read()
-                    with codecs.open(fpath, "w", "utf-8") as wf:
-                        idList = set()
-                        # 匹配id
-                        matches = re.finditer(regexStr, data, re.MULTILINE)
-                        for matchNum, match in enumerate(matches, start=1):
-                            matchId = match.group()
-                            idList.add(matchId)
-                        # 替换id
-                        replace_times = 0
-                        for attrId in idList:
-                            searchId = matchId_dict.get(attrId)
-                            if not searchId is None:
-                                replace_times += data.count(attrId)
-                                # print(f"attrId = {attrId} searchId = {searchId}")
-                                data = data.replace(attrId, searchId)
-                            else:
-                                if searchId in toMappingValues.values() or searchId in fromMappingValues:
-                                    allNotFindId[attrId] = fpath
-                        print(r'替换次数：', replace_times)
-                        wf.write(data)
+
+# 替换
+def startReplaceFile(fpath, toMappingValues, fromMappingValues):
+    with codecs.open(fpath, "r", "utf-8") as rf:
+        data = rf.read()
+    with codecs.open(fpath, "w", "utf-8") as wf:
+        idList = set()
+        # 匹配id
+        matches = re.finditer(regexStr, data, re.MULTILINE)
+        for matchNum, match in enumerate(matches, start=1):
+            matchId = match.group()
+            idList.add(matchId)
+        # 替换id
+        replace_times = 0
+        for attrId in idList:
+            searchId = matchId_dict.get(attrId)
+            if not searchId is None:
+                replace_times += data.count(attrId)
+                # print(f"attrId = {attrId} searchId = {searchId}")
+                data = data.replace(attrId, searchId)
+            else:
+                if searchId in toMappingValues.values() or searchId in fromMappingValues:
+                    allNotFindId[attrId] = fpath
+        print(r'替换次数：', replace_times)
+        wf.write(data)
 
 
 def save2File(dataList, fileName):
@@ -115,5 +123,5 @@ if __name__ == "__main__":
 
     # from_dir = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.7.74"
     # to_dir = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.22.80"
-    # targetFolder = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.22.80/smali_classes4"
+    # targetFolder = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.22.80/smali_classes4/zoo/update/NewVersionDialog.smali"
     # matchPublicId(from_dir, to_dir, targetFolder)
