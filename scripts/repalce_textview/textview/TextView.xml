@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <properties>
     <comment>abc_action_bar_title_item.xml</comment>
-    <comment>abc_activity_chooser_view_list_item.xml</comment>
     <comment>abc_alert_dialog_material.xml</comment>
     <comment>abc_cascading_menu_item_layout.xml</comment>
     <comment>abc_dialog_title_material.xml</comment>
@@ -11,12 +10,8 @@
     <comment>abc_search_dropdown_item_icons_2line.xml</comment>
     <comment>abc_search_view.xml</comment>
     <comment>abc_tooltip.xml</comment>
-    <comment>design_bottom_navigation_item.xml</comment>
     <comment>design_layout_snackbar_include.xml</comment>
     <comment>design_layout_tab_text.xml</comment>
-    <comment>design_navigation_item_subheader.xml</comment>
-    <comment>exo_player_control_view.xml</comment>
-    <comment>exo_styled_player_view.xml</comment>
     <comment>expand_button.xml</comment>
     <comment>fingerprint_dialog_layout.xml</comment>
     <comment>preference.xml</comment>
@@ -24,8 +19,6 @@
     <comment>preference_category_material.xml</comment>
     <comment>preference_dialog_edittext.xml</comment>
     <comment>preference_dropdown.xml</comment>
-    <comment>preference_information.xml</comment>
-    <comment>preference_information_material.xml</comment>
     <comment>preference_list_fragment.xml</comment>
     <comment>preference_material.xml</comment>
     <comment>preference_widget_seekbar.xml</comment>
@@ -34,4 +27,12 @@
     <comment>support_simple_spinner_dropdown_item.xml</comment>
     <comment>toast.xml</comment>
     <comment>mtrl_layout_snackbar_include.xml</comment>
+    <!--新版本已经去掉的layout-->
+    <comment>abc_activity_chooser_view_list_item.xml</comment>
+    <comment>design_bottom_navigation_item.xml</comment>
+    <comment>design_navigation_item_subheader.xml</comment>
+    <comment>exo_player_control_view.xml</comment>
+    <comment>exo_styled_player_view.xml</comment>
+    <comment>preference_information.xml</comment>
+    <comment>preference_information_material.xml</comment>
 </properties>

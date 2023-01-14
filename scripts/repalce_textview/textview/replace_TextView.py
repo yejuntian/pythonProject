@@ -49,7 +49,7 @@ def loadData(path):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wa_diff_gb/whatsapp_2.22.22.80"
+    from_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     dataList = loadData("TextView.xml")
     replaceText(f"{from_dir}/res", dataList)
     printResult(dataList, f"{from_dir}/res")
