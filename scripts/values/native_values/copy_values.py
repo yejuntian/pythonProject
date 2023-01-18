@@ -2,9 +2,8 @@ import argparse
 import codecs
 import json
 import os
-import traceback
-
 import lxml.etree as ET
+import traceback
 
 # 需要插入的字典
 enableInsertNameDict = {}
@@ -14,9 +13,10 @@ blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF',
 # 只匹配下面的文件类型
 extends = ["xml"]
 # 需要copy的type类型集合
-typeList = ["color", "string", "style", "dimen"]
+typeList = ["array", "attr", "bool", "color", "dimen", "integer", "string", "style"]
 # 文件名列表
-fileNameList = ["colors.xml", "strings.xml", "styles.xml", "dimens.xml"]
+fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
+                "dimens.xml", "integers.xml", "strings.xml", "styles.xml"]
 # 需要copy的映射关系
 copy_dict = {}
 # 需要copy的属性name字典
