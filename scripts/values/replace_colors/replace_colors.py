@@ -11,7 +11,7 @@ extends = ["xml"]
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
              'lib', 'META-INF', 'original', 'apktool.yml']
 # 存储对应关系文件
-colorPath = 'scripts/values/replace_colors/colors.json'
+colorPath = 'scripts/values/replace_colors/colorMapping.json'
 
 # ************下面用于判断color是否正确******************
 # 存储对应关系文件
@@ -52,6 +52,7 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
             elif os.path.isfile(fpath):
                 if fname.split(".")[-1] in extends:
                     print(fpath)
+                    enableRenameFile = False
                     with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
                         data = rf.read()
                     with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
@@ -60,8 +61,14 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
                             if key.startswith("APKTOOL_DUMMYVAL_"):
                                 replace_times += data.count(key)
                                 data = data.replace(key, value)
+                                if key == fname.split(".")[0]:
+                                    enableRenameFile = True
+                                    newPath = os.path.join(from_dir, f"{value}.xml")
                         print(r'替换次数：', replace_times)
                         wf.write(data)
+                        # 重命名文件
+                        if enableRenameFile:
+                            os.rename(fpath, newPath)
 
 
 # 校验color正确性，并把矫正color写入到color.xml
