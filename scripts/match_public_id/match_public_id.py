@@ -21,7 +21,7 @@ regexStr = r"0x7f[0-9a-f]{6}"
     主要作用：反编译smali代码中,我们新增的代码使用findViewById(I)形式查找的ID值，替换为目标项目public.xml对应的属性ID值
     from_dir：参考项目地址
     to_dir：目标项目地址
-    targetFolder：要替换smali代码中ID值的目录或文件地址
+    targetFolder：要替换smali代码中ID值的文件夹或文件地址
 """
 
 
@@ -115,11 +115,13 @@ def save2File(dataList, fileName):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    from_dir = parser.add_argument("from_dir")
-    to_dir = parser.add_argument("to_dir")
-    targetFolder = parser.add_argument("targetFolder")
+    parser.add_argument("from_dir")
+    parser.add_argument("to_dir")
     args = parser.parse_args()
-    matchPublicId(args.from_dir, args.to_dir, args.targetFolder)
+    from_dir = args.from_dir
+    targetFolder = args.to_dir
+    to_dir = targetFolder[0:(targetFolder.index("smali_")) - 1]
+    matchPublicId(from_dir, to_dir, targetFolder)
 
     # from_dir = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.7.74"
     # to_dir = "/Users/shareit/work/shareit/whatsapp-decode-v212116000/DecodeCode/WhatsApp_v2.22.22.80"
