@@ -1,0 +1,54 @@
+{
+  "string": [
+    "msg_store_restore_db",
+    "yoHowMove",
+    "copyWA",
+    "yowav",
+    "background_color_description"
+  ],
+  "id": [
+    "eula_title",
+    "conversation_contact_global_status",
+    "conversation_contact_photo_frame",
+    "div",
+    "div2",
+    "eula_accept",
+    "counter",
+    "fabdiv",
+    "software_too_old_title",
+    "container"
+  ],
+  "drawable": [
+    "admin_shield",
+    "abc_ic_menu_cut_mtrl_alpha",
+    "panel",
+    "alex_receipt",
+    "alex_download",
+    "color_bucket",
+    "color_text"
+  ],
+  "layout": [
+    "privacy_card",
+    "privacy_card_v2"
+  ],
+  "array": [],
+  "style": [
+    "WA.Button.Error",
+    "GroupMemberStatus.Admin",
+    "Text.Description",
+    "RegistrationTitle",
+    "ActionBarButtonStyle",
+    "ThemeOverlay.AppCompat.Light"
+  ],
+  "dimen": [
+    "fab_button_size",
+    "contact_selector_width"
+  ],
+  "color": [
+    "black",
+    "white",
+    "primary_surface",
+    "conversationEntryBackground",
+    "screen_title_text"
+  ]
+}
