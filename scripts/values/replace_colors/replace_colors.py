@@ -1,9 +1,9 @@
 import argparse
 import codecs
-import os
 import json
-import xml.etree.ElementTree as ET
+import os
 import traceback
+import xml.etree.ElementTree as ET
 
 # 只匹配下面的文件类型
 extends = ["xml"]
@@ -39,14 +39,7 @@ def replaceColors():
 
 def load_replace_keys(dataPath):
     with codecs.open(dataPath, "r", "utf-8") as rfile:
-        data = json.loads(rfile.read())
-        dataMap = {}
-        for item in data:
-            colorName = item["colorName"]
-            if colorName.__contains__("$"):
-                colorList = colorName.split("$")
-                dataMap[colorList[0]] = colorList[1]
-    return dataMap
+        return json.loads(rfile.read())
 
 
 def execute_folder(from_dir, blacklist, extends, mapping_string):
@@ -64,8 +57,9 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
                     with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
                         replace_times = 0
                         for key, value in mapping_string.items():
-                            replace_times += data.count(key)
-                            data = data.replace(key, value)
+                            if key.startswith("APKTOOL_DUMMYVAL_"):
+                                replace_times += data.count(key)
+                                data = data.replace(key, value)
                         print(r'替换次数：', replace_times)
                         wf.write(data)
 

@@ -1,5 +1,6 @@
 import json
 import os
+import argparse
 import xml.etree.ElementTree as ET
 
 # from_dir/colors.xml集合
@@ -12,7 +13,7 @@ colorList = []
 
 """
     主要作用：查找两个项目，colors.xml对应的关系，
-    并把查询结果保存在colors.json中
+    并把查询结果保存在colorMapping.json中
 """
 
 
@@ -33,10 +34,13 @@ def findCorrectRelation(from_dir, to_dir):
     tpath = f"{to_dir}/res/values/colors.xml"
     setColorList(fpath, True)
     setColorList(tpath, False)
-    save2File(package_data(from_dataList), os.getcwd(), "colors_old.json")
-    save2File(package_data(to_dataList), os.getcwd(), "colors_new.json")
+    save2File(package_data(from_dataList), mCurrentPath, "colors_old.json")
+    save2File(package_data(to_dataList), mCurrentPath, "colors_new.json")
     correctRelation()
-    save2File(package_data(to_dataList), os.getcwd(), "colors.json")
+    save2File(package_data(to_dataList), mCurrentPath, "colors.json")
+    data = {entity.colorName.split("$")[0]: entity.colorName.split("$")[1]
+            for entity in to_dataList if entity.colorName.__contains__("$")}
+    save2File(data, mCurrentPath, "colorMapping.json")
 
 
 def package_data(dataList):
@@ -203,6 +207,14 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
+    mCurrentPath = f"{os.getcwd()}/scripts/values/replace_colors"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    parser.add_argument("to_dir")
+    args = parser.parse_args()
+    from_dir = args.from_dir
+    to_dir = args.to_dir
+
+    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    # to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     findCorrectRelation(from_dir, to_dir)
