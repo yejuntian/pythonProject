@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!--    参考conversation_entry.xml-->
+    <comment>dribble_conversation_entry.xml</comment>
+    <comment>dribblev2_conversation_entry.xml</comment>
+    <comment>fbmess_conversation_entry.xml</comment>
+    <comment>rounded_conversation_entry.xml</comment>
+    <comment>theme_conversation_old_stock_entry.xml</comment>
+    <comment>theme_conversation_stock_entry.xml</comment>
+    <comment>theme_ios11_conversation_entry.xml</comment>
+    <comment>theme_ios14_conversation_entry.xml</comment>
+    <comment>theme_msggoogle_conversation_entry.xml</comment>
+    <comment>theme_rcline_conversation_entry.xml</comment>
+    <comment>theme_rcmess_conversation_entry.xml</comment>
+    <comment>theme_telegramxios_conversation_entry.xml</comment>
+    <comment>yowa_aran_conversation_entry.xml</comment>
+    <comment>yowa_concept_conversation_entry.xml</comment>
+    <comment>yowa_hangouts_conversation_entry.xml</comment>
+    <comment>yowa_hangoutsv2_conversation_entry.xml</comment>
+    <comment>yowa_mood_conversation_entry.xml</comment>
+    <comment>yowa_simple_conversation_entry.xml</comment>
+    <comment>yowa_wamod_conversation_entry.xml</comment>
+    <comment>yowa_wanh_conversation_entry.xml</comment>
+    <comment>allo_conversation_entry.xml</comment>
+    <comment>rcig_conversation_entry.xml</comment>
+    <!--参考conversations_row.xml-->
+    <!--    <comment>yowa_conversations_row.xml</comment>-->
+    <!--    <comment>telegram_conversations_row.xml</comment>-->
+    <!--    <comment>wamod_conversations_row.xml</comment>-->
+    <!--    <comment>waca_conversations_row.xml</comment>-->
+    <!--    <comment>wanh_conversations_row.xml</comment>-->
+    <!--    <comment>nlmods_conversations_row.xml</comment>-->
+    <!--    <comment>wamd_conversations_row.xml</comment>-->
+    <!--    <comment>stock_conversations_row.xml</comment>-->
+</properties>
