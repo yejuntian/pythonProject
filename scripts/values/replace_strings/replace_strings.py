@@ -1,7 +1,7 @@
 import argparse
-import os
 import codecs
 import json
+import os
 
 # 只匹配下面的文件类型
 extends = ["xml"]
@@ -9,7 +9,7 @@ extends = ["xml"]
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
              'lib', 'META-INF', 'original', 'apktool.yml']
 # 存储对应关系文件
-dataPath = 'scripts/values/replace_strings/string.json'
+dataPath = 'scripts/values/replace_strings/mappingString.json'
 
 """
     主要作用：根据string.json中对应关系，
@@ -19,11 +19,7 @@ dataPath = 'scripts/values/replace_strings/string.json'
 
 def load_replace_keys(dataPath):
     with codecs.open(dataPath, "r", "utf-8") as rfile:
-        data = json.loads(rfile.read())
-        dataMap = {}
-        for item in data:
-            dataMap[item["newName"]] = item["oldName"]
-    return dataMap
+        return json.loads(rfile.read())
 
 
 def execute_folder(from_dir, blacklist, extends, mapping_string):

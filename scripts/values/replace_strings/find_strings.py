@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import xml.etree.ElementTree as ET
@@ -7,10 +8,12 @@ dataList = []
 strList = []
 # 用于存放已查找到的string name集合
 stringNameList = []
+# 是否保存文件
+isSaveFile = False
 
 """
     主要作用：查找两个项目，string.xml对应的关系，
-    并把查询结果保存在string.json中
+    并把查询结果保存在mappingString.json中
 """
 
 
@@ -34,7 +37,11 @@ def findCorrectRelation(from_dir, to_dir):
     tpath = f"{to_dir}/res/values/strings.xml"
     getStringList(fpath)
     correctRelation(tpath)
-    save2File(package_data(), os.getcwd(), "string.json")
+    if isSaveFile:
+        save2File(package_data(), mCurrentPath, "scripts/values/replace_strings/string.json")
+    # 字典推导式
+    data = {entity.newName: entity.oldName for entity in dataList}
+    save2File(data, mCurrentPath, "scripts/values/replace_strings/mappingString.json")
 
 
 def package_data():
@@ -143,6 +150,13 @@ def save2File(dataList, folder_path, fileName):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
+    mCurrentPath = os.getcwd()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    parser.add_argument("to_dir")
+    args = parser.parse_args()
+    from_dir = args.from_dir
+    to_dir = args.to_dir
+    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    # to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
     findCorrectRelation(from_dir, to_dir)
