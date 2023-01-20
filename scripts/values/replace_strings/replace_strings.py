@@ -37,8 +37,9 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
                     with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
                         replace_times = 0
                         for key, value in mapping_string.items():
-                            replace_times += data.count(key)
-                            data = data.replace(key, value)
+                            if key.startswith("APKTOOL_DUMMYVAL_"):
+                                replace_times += data.count(key)
+                                data = data.replace(key, value)
                         print(r'替换次数：', replace_times)
                         wf.write(data)
 
