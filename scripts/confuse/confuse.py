@@ -1,10 +1,11 @@
 import os
 import xml.etree.ElementTree as ET
 import json
+import argparse
 import codecs
 
-filePath = "public.xml"
 blackTypeStr = ["bool", "drawable", "id", "raw"]
+# 存放public.xml映射关系
 mappingStr = {}
 # GB使用的映射列表
 gbMapping = {}
@@ -16,7 +17,7 @@ filelist = {"color": "json_data/color.json",
 # WhatsApp不需要混淆的属性集合
 originMapping = {}
 # 是否要保存测试文件
-enableSaveFile = False
+enableSaveFile = True
 
 
 # 加载gb所有的属性name
@@ -70,7 +71,7 @@ def addMapping(fpath):
             else:
                 newName = getNewName(type, id)
                 if mappingStr.get(name) is None:
-                    mappingStr[name] = f"{newName}#{type}"
+                    mappingStr[f"{name}#{type}"] = f"{newName}#{type}"
                 else:
                     print(f'<public type="{type}" name="{name}" id="{id}" />')
 
@@ -90,6 +91,12 @@ def getNewName(type, id):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    from_dir = args.from_dir
+    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    filePath = f"{from_dir}/res/values/public.xml"
     for key, value in filelist.items():
         loadData(key, value)
     findNotConfuseAttr(filePath, gbMapping)
