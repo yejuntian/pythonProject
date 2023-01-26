@@ -2,10 +2,9 @@ import codecs
 import glob
 import json
 import os
+import lxml.etree as ET
 import re
 import traceback
-
-import lxml.etree as ET
 
 # 只匹配下面的文件类型
 extends = ["xml"]
@@ -16,6 +15,8 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
                "colors.xml": "color", "dimens.xml": "dimen", "drawables.xml": "drawable",
                "integers.xml": "integer", "plurals.xml": "plurals", "strings.xml": "string",
                "styles.xml": "style"}
+# 保留文件后缀集合
+keepFileSuffixList = ["anim", "animator", "color", "interpolator", "xml"]
 
 
 def replaceRes(from_dir):
@@ -107,9 +108,12 @@ def replaceOthers(fpath, from_dir, mappingData, fname, parentType):
         # 重命名file
         fileKey = f'{fname.split(".")[0]}#{parentType}'
         if fileKey in mappingData.keys():
-            newFileName = mappingData.get(fileKey).split("#")[0]
             enableRenameFile = True
-            newPath = os.path.join(from_dir, newFileName)
+            newFileName = mappingData.get(fileKey).split("#")[0]
+            if parentType in keepFileSuffixList:
+                newPath = os.path.join(from_dir, f"{newFileName}.xml")
+            else:
+                newPath = os.path.join(from_dir, newFileName)
         print(r'替换次数：', dataTuple[1])
         wf.write(dataTuple[0])
         if enableRenameFile:
