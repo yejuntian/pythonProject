@@ -31,5 +31,7 @@
   "msg_num",
   "set_auto_text",
   "save",
-  "cancel"
+  "cancel",
+  "calls",
+  "statuses"
 ]
