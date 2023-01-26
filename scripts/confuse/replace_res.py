@@ -66,12 +66,12 @@ def replaceOthers(fpath, from_dir, mappingData, fname, parentType):
             type = typeSplit[-1]
             newKey = f'"@{type}/{key}"'
             newValue = f'"@{type}/{typeSplit[0]}"'
+            replace_times += data.count(newKey)
+            data = data.replace(newKey, newValue)
             # 重命名file
             if key == fname.split(".")[0] and parentType == type:
                 enableRenameFile = True
                 newPath = os.path.join(from_dir, typeSplit[0])
-        replace_times += data.count(newKey)
-        data = data.replace(newKey, newValue)
         print(r'替换次数：', replace_times)
         wf.write(data)
         if enableRenameFile:
