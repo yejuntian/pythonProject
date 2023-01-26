@@ -1,9 +1,11 @@
+import argparse
 import codecs
 import glob
 import json
 import os
-import lxml.etree as ET
 import re
+import time
+import lxml.etree as ET
 import traceback
 
 # 只匹配下面的文件类型
@@ -18,11 +20,19 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
 # 保留文件后缀集合
 keepFileSuffixList = ["anim", "animator", "color", "interpolator", "xml"]
 
+"""
+    主要作用：加载scripts/confuse/mapping.json对应关系，
+    对res目录下资源文件进行二次混淆，提高反编译难度
+"""
+
 
 def replaceRes(from_dir):
-    mappingData = loadData("mapping.json")
+    beforeTime = time.time()
+    mappingData = loadData(f"{mCurrentPath}/scripts/confuse/mapping.json")
     transFolder(from_dir, blacklist, mappingData)
     replaceSmaliAttrName(from_dir)
+    afterTime = time.time()
+    print(f"资源混淆完毕，输出结果保存到：{from_dir} 共耗时{afterTime - beforeTime} 秒")
 
 
 # 替换R$*.smali 属性名
@@ -384,5 +394,10 @@ def save_2_file(data_str, target_file_path):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    mCurrentPath = os.getcwd()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    from_dir = args.from_dir
+    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
     replaceRes(from_dir)

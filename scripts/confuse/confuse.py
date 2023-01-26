@@ -19,6 +19,11 @@ originMapping = {}
 # 是否要保存测试文件
 enableSaveFile = True
 
+"""
+    主要作用：根据json_data目录下的映射关系列表，对比public.xml文件，
+    输出需要混淆的属性，最终保存到confuse/mapping.json文件中。
+"""
+
 
 # 加载gb所有的属性name
 def loadData(type, fpath):
@@ -86,7 +91,7 @@ def save2File(dataList, fpath):
 
 
 def getNewName(type, id):
-    newId = id[5:]
+    newId = id[6:]
     return f"{type}{newId}"
 
 
