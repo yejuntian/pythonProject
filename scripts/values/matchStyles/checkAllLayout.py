@@ -12,7 +12,7 @@ matchRes = r"\"@\w+\/.*?\""
 # 寻找styles.xml符合<item name="android:src">@drawable/ic_menu</item>格式的正则
 matchRes2 = r">(@\w+/(\w+).*)<"
 # 匹配public.xml attr属性正则
-matchAttrRes = r"(app|whatsapp):(\w+)=\".*?\""
+matchAttrRes = r"(app|whatsapp|tools|custom):(\w+)=\".*?\""
 # 匹配属性正则="?APKTOOL_DUMMYVAL_0x7f0400ec"
 matchAttrRes3 = r"=\"\?(\w+)\""
 # 匹配属性正则=>?APKTOOL_DUMMYVAL_0x7f040432</item>

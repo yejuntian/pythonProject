@@ -7,7 +7,7 @@ import re
 import xml.etree.ElementTree as ET
 
 # 正则匹配public.xml attr属性
-matchAttrRes = r"(app|whatsapp):(\w+)=\".*?\""
+matchAttrRes = r"(app|whatsapp|tools|custom):(\w+)=\".*?\""
 # 正则匹配android:orientation="vertical"
 matchAttrRes2 = r"\w+:(\w+)=\".*?\""
 # 正则匹配属性="?APKTOOL_DUMMYVAL_0x7f0400ec"
