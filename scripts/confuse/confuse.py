@@ -4,16 +4,16 @@ import json
 import argparse
 import codecs
 
-blackTypeStr = ["bool", "drawable", "id", "raw"]
+blackTypeStr = ["bool", "drawable", "font", "mipmap", "id", "raw"]
 # 存放public.xml映射关系
 mappingStr = {}
 # GB使用的映射列表
 gbMapping = {}
 # 文件类型映射关系列表
-filelist = {"color": "json_data/color.json",
-            "style": "json_data/style.json",
-            "layout": "json_data/layout.json",
-            "string": "json_data/string.json"}
+filelist = {"color": "scripts/confuse/json_data/color.json",
+            "style": "scripts/confuse/json_data/style.json",
+            "layout": "scripts/confuse/json_data/layout.json",
+            "string": "scripts/confuse/json_data/string.json"}
 # WhatsApp不需要混淆的属性集合
 originMapping = {}
 # 是否要保存测试文件
@@ -50,7 +50,7 @@ def findNotConfuseAttr(fpath, mappingData):
                     originMapping[type] = []
                 originMapping[type].append(name)
     if enableSaveFile:
-        save2File(originMapping, "whatsapp.json")
+        save2File(originMapping, f"{mCurrentPath}/scripts/confuse/whatsapp.json")
 
 
 def addMapping(fpath):
@@ -75,14 +75,14 @@ def addMapping(fpath):
                 else:
                     print(f'<public type="{type}" name="{name}" id="{id}" />')
 
-    save2File(mappingStr, "mapping.json")
+    save2File(mappingStr, f"{mCurrentPath}/scripts/confuse/mapping.json")
 
 
-def save2File(dataList, fileName):
+def save2File(dataList, fpath):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
-    with codecs.open(fileName, "w", "utf-8") as wf:
+    with codecs.open(fpath, "w", "utf-8") as wf:
         wf.write(jsonStr)
-    print(f"执行程序结束，文件保存在:{os.path.join(os.getcwd(), fileName)}")
+    print(f"执行程序结束，文件保存在:{fpath}")
 
 
 def getNewName(type, id):
@@ -91,6 +91,7 @@ def getNewName(type, id):
 
 
 if __name__ == "__main__":
+    mCurrentPath = os.getcwd()
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
     args = parser.parse_args()
