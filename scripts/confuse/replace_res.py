@@ -1,4 +1,5 @@
 import codecs
+import glob
 import json
 import os
 import re
@@ -17,9 +18,52 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
                "styles.xml": "style"}
 
 
-def replaceRes(fpath):
+def replaceRes(from_dir):
     mappingData = loadData("mapping.json")
-    transFolder(fpath, blacklist, mappingData)
+    transFolder(from_dir, blacklist, mappingData)
+    replaceSmaliAttrName(from_dir)
+
+
+# 替换R$*.smali 属性名
+def replaceSmaliAttrName(from_dir):
+    file_list = glob.glob(pathname=from_dir + "/**/R$*smali", recursive=True)
+    if len(file_list) <= 0: return
+    mappingData = getPublicMapping(f"{from_dir}/res/values/public.xml")
+    for fpath in file_list:
+        replaceSmaliFile(fpath, mappingData)
+
+
+def replaceSmaliFile(fpath, mappingData):
+    fileName = os.path.basename(fpath)
+    if fileName != "R$styleable.smali":
+        data = ""
+        with open(fpath, encoding="utf-8", mode="r") as rf:
+            lines = rf.readlines()
+            for line in lines:
+                if line.startswith(".field public static final"):
+                    attrId = line.split(" = ")[-1].replace("\n", "")
+                    # print(f"fpath = {fpath} attrId = {attrId}")
+                    attrName = mappingData[attrId]
+                    data += f".field public static final {attrName}:I = {attrId}\n"
+                else:
+                    data += line
+        with open(fpath, encoding="utf-8", mode="w") as wf:
+            wf.write(data)
+
+
+# 获取public.xml 属性id和属性name映射关系
+def getPublicMapping(fpath):
+    parse = ET.parse(fpath)
+    root = parse.getroot()
+    mappingData = {}
+    for child in root:
+        attrib = child.attrib
+        name = attrib.get("name")
+        id = attrib.get("id")
+        if not name is None and name.__contains__("."):
+            name = name.replace(".", "_")
+        mappingData[id] = name
+    return mappingData
 
 
 def loadData(fpath):
@@ -56,26 +100,81 @@ def replaceString(fpath, from_dir, mappingData, isValuesDir, fname, parentType):
 
 def replaceOthers(fpath, from_dir, mappingData, fname, parentType):
     enableRenameFile = False
-    replace_times = 0
     with codecs.open(fpath, "r", "utf-8") as rf:
         data = rf.read()
     with codecs.open(fpath, "w", "utf-8") as wf:
-        for name, value in mappingData.items():
-            key = name.split("#")[0]
-            typeSplit = value.split("#")
-            type = typeSplit[-1]
-            newKey = f'"@{type}/{key}"'
-            newValue = f'"@{type}/{typeSplit[0]}"'
-            replace_times += data.count(newKey)
-            data = data.replace(newKey, newValue)
-            # 重命名file
-            if key == fname.split(".")[0] and parentType == type:
-                enableRenameFile = True
-                newPath = os.path.join(from_dir, typeSplit[0])
-        print(r'替换次数：', replace_times)
-        wf.write(data)
+        dataTuple = getReplaceXMLContent(mappingData, data)
+        # 重命名file
+        fileKey = f'{fname.split(".")[0]}#{parentType}'
+        if fileKey in mappingData.keys():
+            newFileName = mappingData.get(fileKey).split("#")[0]
+            enableRenameFile = True
+            newPath = os.path.join(from_dir, newFileName)
+        print(r'替换次数：', dataTuple[1])
+        wf.write(dataTuple[0])
         if enableRenameFile:
             os.rename(fpath, newPath)
+
+
+# 替换xml正则匹配内容
+def getReplaceXMLContent(mappingData, data):
+    replace_times = 0
+    # 正则匹配"@layout/rc_tab_oneui"格式的字符串
+    regex = r"\"@(\w+)\/(.*?)\""
+    matches = re.finditer(regex, data, re.MULTILINE)
+    for matchNum, match in enumerate(matches, start=1):
+        replaceKey = f'{match.group()}'
+        type = match.group(1)
+        name = match.group(2)
+        key = f"{name}#{type}"
+        value = mappingData.get(key)
+        if not value is None:
+            replaceValue = f'"@{type}/{value.split("#")[0]}"'
+            # print(f"replaceKey = {replaceKey} replaceValue = {replaceValue}")
+            data = data.replace(replaceKey, replaceValue)
+            replace_times += 1
+    # 正则匹配whatsapp:elevation="0.0dip"格式的字符串
+    regex2 = r"(app|whatsapp|tools|custom):(\w+)=\".*?\""
+    matches = re.finditer(regex2, data, re.MULTILINE)
+    for matchNum, match2 in enumerate(matches, start=1):
+        type2 = match2.group(1)
+        name2 = match2.group(2)
+        key2 = f"{name2}#attr"
+        value2 = mappingData.get(key2)
+        if not value2 is None:
+            replaceKey2 = f'{type2}:{name2}='
+            replaceValue2 = f'{type2}:{value2.split("#")[0]}='
+            # print(f"replaceKey2 = {replaceKey2} replaceValue2 = {replaceValue2}")
+            data = data.replace(replaceKey2, replaceValue2)
+            replace_times += 1
+    # 正则匹配="?actionBarSize"格式的字符串
+    regex3 = r"=\"\?(\w+)\""
+    matches = re.finditer(regex3, data, re.MULTILINE)
+    for matchNum, match3 in enumerate(matches, start=1):
+        name3 = match3.group(1)
+        key3 = f"{name3}#attr"
+        value3 = mappingData.get(key3)
+        if not value3 is None:
+            replaceKey3 = f'"?{name3}"'
+            replaceValue3 = f'"?{value3.split("#")[0]}"'
+            # print(f"replaceKey3 = {replaceKey3} replaceValue3 = {replaceValue3}")
+            data = data.replace(replaceKey3, replaceValue3)
+            replace_times += 1
+    # 正则匹配="?attr/colorPrimary"格式的字符串
+    regex4 = r"=\"\?(\w+)\/(.*)\""
+    matches = re.finditer(regex4, data, re.MULTILINE)
+    for matchNum, match4 in enumerate(matches, start=1):
+        type4 = match4.group(1)
+        name4 = match4.group(2)
+        key4 = f"{name4}#{type4}"
+        value4 = mappingData.get(key4)
+        if not value4 is None:
+            replaceKey4 = f'"?{type4}/{name4}"'
+            replaceValue4 = f'"?{type4}/{value4.split("#")[0]}"'
+            # print(f"replaceKey4 = {replaceKey4} replaceValue4 = {replaceValue4}")
+            data = data.replace(replaceKey4, replaceValue4)
+            replace_times += 1
+    return data, replace_times
 
 
 def renameValues(fpath, mappingData, fname):
@@ -104,7 +203,7 @@ def renameValues(fpath, mappingData, fname):
                 case "plurals.xml":
                     replaceName(mappingData, fpath, attrType)
                 case "strings.xml":
-                    replaceName(mappingData, fpath, attrType)
+                    replaceNameAndText(mappingData, fpath, attrType)
                 case "styles.xml":
                     replaceStyles(mappingData, fpath, attrType)
 
@@ -227,8 +326,8 @@ def replaceArrays(mappingData, fpath, attrType):
 # 替换xml内容
 def replaceText(xmlText, child, mappingData):
     # 匹配符合@drawable/ic_menu格式的字符串
-    regex = r"(@(\w+)/(\w+).*)"
-    if re.match(regex, xmlText):
+    regex = r"(@(\w+)/([\w.]+).*)"
+    if not xmlText is None and re.match(regex, xmlText):
         matches = re.finditer(regex, xmlText, re.MULTILINE)
         for matchNum, match in enumerate(matches, start=1):
             attrType = match.group(2)
@@ -238,6 +337,17 @@ def replaceText(xmlText, child, mappingData):
             if not attrText is None:
                 newTxt = f'@{attrType}/{attrText.split("#")[0]}'
                 child.text = str(xmlText).replace(xmlText, newTxt)
+    # 匹配符合?settingsTitleTextColor格式的字符串
+    regex2 = r"\?(\w+)"
+    if not xmlText is None and re.match(regex2, xmlText):
+        matches = re.finditer(regex2, xmlText, re.MULTILINE)
+        for matchNum, match2 in enumerate(matches, start=1):
+            name = match2.group(1)
+            attrText2 = mappingData.get(f"{name}#attr")
+            # print(f"{attrText2}#attr")
+            if not attrText2 is None:
+                newTxt2 = f'?{attrText2.split("#")[0]}'
+                child.text = str(xmlText).replace(xmlText, newTxt2)
 
 
 def convert_str(to_root):
