@@ -16,7 +16,7 @@ isSaveFile = False
 
 
 class LayoutEntity:
-    def __init__(self, fileName, idList, ids, labelStr, numberStr, childCount, newFileName):
+    def __init__(self, fileName, idList, ids, labelStr, numberStr, childCount, newFileName, includeLayoutList):
         self.fileName = fileName
         self.idList = idList
         self.ids = ids
@@ -24,6 +24,7 @@ class LayoutEntity:
         self.numberStr = numberStr
         self.childCount = childCount
         self.newFileName = newFileName
+        self.includeLayoutList = includeLayoutList
 
 
 def findLayout(from_dir, to_dir):
@@ -69,16 +70,35 @@ def mappingLayoutEntity(new_layout_list, old_layout_list):
 
         size = len(matchList)
         if size > 1:
-            mappingEntity(new_fileName, new_numberStr, matchList)
+            mappingEntity(newEntity, new_numberStr, matchList)
             # print(f"{new_fileName} = {matchList}")
         elif size == 1:
             if not isExitLayoutMapping(matchList[0][0]):
                 mappingName[new_fileName] = matchList[0][0]
+                mappingIncludeLayout(newEntity, matchList[0][1])
+
+
+# 映射xml中include的layout
+def mappingIncludeLayout(newEntity, oldEntity):
+    newIncludeLayoutList = newEntity.includeLayoutList
+    oldIncludeLayoutList = oldEntity.includeLayoutList
+    if newIncludeLayoutList is None or oldIncludeLayoutList is None:
+        return
+    else:
+        size = len(newIncludeLayoutList)
+        if size > 0 and size == len(oldIncludeLayoutList):
+            for index in range(0, size):
+                newLayoutName = newIncludeLayoutList[index]
+                oldLayoutName = oldIncludeLayoutList[index]
+                mappingName[newLayoutName] = [oldLayoutName]
+                # 存放到已查找的集合列表中
+                layoutList.append(oldLayoutName)
 
 
 # 匹配多个情况下，进行进一步筛选
-def mappingEntity(new_fileName, new_numberStr, matchList):
+def mappingEntity(newEntity, new_numberStr, matchList):
     mappingList = []
+    new_fileName = newEntity.fileName
     for fileName, entity in matchList:
         old_numberStr = entity.numberStr
         if new_numberStr == old_numberStr:
@@ -87,6 +107,7 @@ def mappingEntity(new_fileName, new_numberStr, matchList):
     if len(mappingList) == 1:
         if not isExitLayoutMapping(matchList[0][0]):
             mappingName[new_fileName] = matchList[0][0]
+            mappingIncludeLayout(newEntity, matchList[0][1])
     else:
         print(f"{new_fileName} = {mappingList}")
 
@@ -121,6 +142,8 @@ def matchRes(fname, data, entityList):
     labelRegex = r"<.+? "
     # 数字正则
     numberRegex = r"\"\d+.+?\""
+    # 匹配layout正则
+    layoutRegex = r"<include layout=\"@layout/(\w+)\" />"
 
     idStr = ""
     labelStr = ""
@@ -149,7 +172,12 @@ def matchRes(fname, data, entityList):
         numberStr = f"{groupStr}#{numberStr}"
         # print(f"{fname} = {numberStr}")
 
-    entity = LayoutEntity(fname, ids, idStr, labelStr, numberStr, len(ids), None)
+    includeLayoutList = []
+    matches = re.finditer(layoutRegex, data, re.MULTILINE)
+    for matchNum, match in enumerate(matches, start=1):
+        includeLayoutList.append(match.group(1))
+
+    entity = LayoutEntity(fname, ids, idStr, labelStr, numberStr, len(ids), None, includeLayoutList)
     entityList.append(entity)
 
 
@@ -162,6 +190,7 @@ def save2File(dataList, fileName, enableConvert=True):
                 "idList": entity.idList,
                 "ids": entity.ids,
                 "labelStr": entity.labelStr,
+                "includeLayoutList": entity.includeLayoutList,
                 "numberStr": entity.numberStr,
                 "idCount": entity.childCount
             }
