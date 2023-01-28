@@ -90,7 +90,7 @@ def mappingIncludeLayout(newEntity, oldEntity):
             for index in range(0, size):
                 newLayoutName = newIncludeLayoutList[index]
                 oldLayoutName = oldIncludeLayoutList[index]
-                mappingName[newLayoutName] = [oldLayoutName]
+                mappingName[newLayoutName] = oldLayoutName
                 # 存放到已查找的集合列表中
                 layoutList.append(oldLayoutName)
 
