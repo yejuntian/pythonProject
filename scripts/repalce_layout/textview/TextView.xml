@@ -31,8 +31,7 @@
     <comment>abc_activity_chooser_view_list_item.xml</comment>
     <comment>design_bottom_navigation_item.xml</comment>
     <comment>design_navigation_item_subheader.xml</comment>
-    <comment>exo_player_control_view.xml</comment>
-    <comment>exo_styled_player_view.xml</comment>
     <comment>preference_information.xml</comment>
     <comment>preference_information_material.xml</comment>
+    <comment>exo_player_control_view.xml</comment>
 </properties>
