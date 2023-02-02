@@ -99,8 +99,9 @@ def traverse_folder(from_dir):
         if from_file_path.__contains__("smali"):
             if os.path.isdir(from_file_path):
                 if from_file_path.__contains__(default_folder_name):
-                    fileName = default_folder_name + from_file_path.split(default_folder_name)[1]
-
+                    # 处理WhatsApp父目录为gbwhatsapp文件名的情况
+                    index = len(from_file_path.split(default_folder_name)) - 1
+                    fileName = default_folder_name + from_file_path.split(default_folder_name)[index]
                     # move文件到smali对应目录
                     is_move_file = start_move_file(fileName, from_file_path, False)
                 if is_move_file:
@@ -110,7 +111,9 @@ def traverse_folder(from_dir):
                     traverse_folder(from_file_path)
             elif os.path.isfile(from_file_path):  # 移动文件
                 if from_file_path.__contains__(default_folder_name):
-                    fileName = default_folder_name + from_file_path.split(default_folder_name)[1]
+                    # 处理WhatsApp父目录为gbwhatsapp文件名的情况
+                    index = len(from_file_path.split(default_folder_name)) - 1
+                    fileName = default_folder_name + from_file_path.split(default_folder_name)[index]
                     # move文件到smali对应目录
                     start_move_file(fileName, from_file_path, True)
         else:  # 其他文件
