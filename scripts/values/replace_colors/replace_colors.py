@@ -32,9 +32,10 @@ colorTxtList2 = set()
 """
 
 
-def replaceColors():
+def replaceColors(from_dir):
     mapping_string = load_replace_keys(colorPath)
-    execute_folder(from_dir, blacklist, extends, mapping_string)
+    colorList = getColorNameList(f"{from_dir}/res/values/public.xml")
+    execute_folder(from_dir, blacklist, extends, mapping_string, colorList)
 
 
 def load_replace_keys(dataPath):
@@ -42,13 +43,26 @@ def load_replace_keys(dataPath):
         return json.loads(rfile.read())
 
 
-def execute_folder(from_dir, blacklist, extends, mapping_string):
+def getColorNameList(fpath):
+    parser = ET.parse(fpath)
+    root = parser.getroot()
+    nameList = []
+    for child in root:
+        attrib = child.attrib
+        name = attrib.get("name")
+        type = attrib.get("type")
+        if not name is None and not type is None and type == "color":
+            nameList.append(name)
+    return nameList
+
+
+def execute_folder(from_dir, blacklist, extends, mapping_string, colorList):
     listdir = os.listdir(from_dir)
     for fname in listdir:
         if fname not in blacklist:
             fpath = os.path.join(from_dir, fname)
             if os.path.isdir(fpath):
-                execute_folder(fpath, blacklist, extends, mapping_string)
+                execute_folder(fpath, blacklist, extends, mapping_string, colorList)
             elif os.path.isfile(fpath):
                 if fname.split(".")[-1] in extends:
                     print(fpath)
@@ -58,7 +72,7 @@ def execute_folder(from_dir, blacklist, extends, mapping_string):
                     with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
                         replace_times = 0
                         for key, value in mapping_string.items():
-                            if key.startswith("APKTOOL_DUMMYVAL_"):
+                            if key.startswith("APKTOOL_DUMMYVAL_") and not value in colorList:
                                 replace_times += data.count(key)
                                 data = data.replace(key, value)
                                 if key == fname.split(".")[0]:
@@ -162,5 +176,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     from_dir = args.from_dir
-    replaceColors()
+    replaceColors(from_dir)
     correctColorFile(from_dir)
