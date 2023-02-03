@@ -8,10 +8,11 @@ mappingStr = {}
 # GB使用的映射列表
 gbMapping = {}
 # 文件类型映射关系列表
-filelist = {"color": "json_data/colors.json",
-            "style": "json_data/styles.json",
-            "layout": "json_data/layouts.json",
-            "string": "json_data/strings.json"}
+curPath = f"{os.getcwd()}/scripts/values/native_values"
+filelist = {"color": f"{curPath}/json_data/colors.json",
+            "style": f"{curPath}/json_data/styles.json",
+            "layout": f"{curPath}/json_data/layouts.json",
+            "string": f"{curPath}/json_data/strings.json"}
 # WhatsApp不需要混淆的属性集合
 originMapping = {}
 
