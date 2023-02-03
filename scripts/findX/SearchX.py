@@ -11,11 +11,11 @@ blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
              'smali_classes4', 'smali_classes7', 'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]
-savePath = ""
+savePath = f"{os.getcwd()}/scripts/findX"
 setList = set()
 mapList = {}
-baseVersion = "2.22.18.70"
-newVersion = "2.22.22.80"
+baseVersion = "2.22.22.80"
+newVersion = "2.23.2.76"
 
 
 def findXClass(from_dir, rexStr):
@@ -57,7 +57,6 @@ def package_data():
 
 
 def save2File(folder_path, dataList, fileName):
-    os.chdir(folder_path)
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with open(fileName, "w+") as wf:
         wf.write(jsonStr)
@@ -69,10 +68,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     foldPath = args.foldPath
-    mCurPath = os.getcwd()
     # 查找类
     findXClass(foldPath, "LX/\w*;")
-    save2File(mCurPath, package_data(), "class.json")
+    save2File(savePath, package_data(), "class.json")
     # 查找方法
     findXClass(foldPath,
                "LX/\w*;->.*\(.*?\).+"
@@ -86,7 +84,7 @@ if __name__ == "__main__":
                "|Lcom/airbnb/lottie/LottieAnimationView;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
                )
-    save2File(mCurPath, package_data(), "method.json")
+    save2File(savePath, package_data(), "method.json")
     # 查找属性
     findXClass(foldPath,
                "LX/\w+;->.*:.*"
@@ -98,5 +96,5 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
                "|ContactPickerFragment;->\w+:.*"
                )
-    save2File(mCurPath, package_data(), "field.json")
+    save2File(savePath, package_data(), "field.json")
     print("****************查询完毕****************")
