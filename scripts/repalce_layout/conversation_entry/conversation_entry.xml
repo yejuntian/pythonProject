@@ -23,6 +23,7 @@
     <comment>yowa_wanh_conversation_entry.xml</comment>
     <comment>allo_conversation_entry.xml</comment>
     <comment>rcig_conversation_entry.xml</comment>
+
     <!--参考conversations_row.xml-->
     <!--    <comment>yowa_conversations_row.xml</comment>-->
     <!--    <comment>telegram_conversations_row.xml</comment>-->
@@ -32,4 +33,18 @@
     <!--    <comment>nlmods_conversations_row.xml</comment>-->
     <!--    <comment>wamd_conversations_row.xml</comment>-->
     <!--    <comment>stock_conversations_row.xml</comment>-->
+
+    <!--参考home.xml-->
+    <!--    <comment>home.xml</comment>-->
+    <!--    <comment>home_ig.xml</comment>-->
+    <!--    <comment>home_stock.xml</comment>-->
+    <!--    <comment>home_stock_ig.xml</comment>-->
+    <!--    <comment>homebot.xml</comment>-->
+    <!--    <comment>homebot_ig.xml</comment>-->
+
+    <!-- 参考conversation_actionbar.xml-->
+    <!--<comment>yowa_style_stock_conversation_actionbar.xml</comment>-->
+    <!--    <comment>yowa_style_stockcentered_conversation_actionbar.xml</comment>-->
+    <!--    <comment>yowa_style_wamod_conversation_actionbar.xml</comment>-->
+    <!--    <comment>yowa_style_wamodcentered_conversation_actionbar.xml</comment>-->
 </properties>
