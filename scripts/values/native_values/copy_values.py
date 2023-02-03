@@ -13,10 +13,14 @@ blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF',
 # 只匹配下面的文件类型
 extends = ["xml"]
 # 需要copy的type类型集合
-typeList = ["array", "attr", "bool", "color", "dimen", "integer", "string", "style"]
+typeList = ["array", "attr", "bool", "color", "dimen", "id",
+            "integer", "string", "style", "anim", "drawable"]
+# 不需要copy的文件类型，只需要在public.xml进行注册，copy操作单独进行处理
+notCopyTypeList = ["anim", "drawable"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
-                "dimens.xml", "integers.xml", "strings.xml", "styles.xml"]
+                "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
+                "styles.xml"]
 # 需要copy的映射关系
 copy_dict = {}
 # 需要copy的属性name字典
@@ -33,6 +37,10 @@ def startCopyValues(from_dir, to_dir):
     getInsertNameList(publicFilePath, typeList, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
     for type in typeList:
+        # 特殊处理，只需要注册到public.xml，copy操作单独处理
+        if type in notCopyTypeList:
+            print(mappingData[type])
+            enableInsertNameDict[type] = mappingData[type]
         insertPublic(publicFilePath, type)
     print(f"程序执行结束，结果保存在{to_dir}")
 

@@ -15,6 +15,7 @@ filelist = {"color": f"{curPath}/json_data/colors.json",
             "string": f"{curPath}/json_data/strings.json"}
 # WhatsApp不需要混淆的属性集合
 originMapping = {}
+saveFolder = f"{os.getcwd()}/scripts/values/native_values"
 
 """
     主要作用：读取json_data目录下的json,
@@ -54,7 +55,7 @@ def findNativeValues(fpath, mappingData):
                     originMapping[type] = []
                 originMapping[type].append(name)
 
-    save2File(originMapping, "whatsapp.json")
+    save2File(originMapping, f"{saveFolder}/whatsapp.json")
 
 
 # 查找GB需要的属性,通过脚本没有查找到的属性映射
@@ -99,7 +100,7 @@ def findStringMapping(from_dir, to_dir, stringList, dict_list):
     for name in stringList:
         stringDict[name] = oldStringDict.get(name)
 
-    stringMappingList = []
+    stringMapping = {}
     dataList = []
     # 防止name重复映射同一个
     tempList = []
@@ -109,13 +110,13 @@ def findStringMapping(from_dir, to_dir, stringList, dict_list):
             if attrName.startswith("APKTOOL_DUMMYVAL") and not attrName in tempList and attrText == oldAttrText:
                 isFind = True
                 tempList.append(attrName)
-                stringMappingList.append({"oldName": oldAttrName, "newName": attrName})
+                stringMapping[attrName] = oldAttrName
                 break
         if not isFind:
             dataList.append(oldAttrName)
     dict_list["string"] = dataList
-    save2File(stringMappingList, "FindString.json")
-    save2File(dict_list, "GBNeedToFind.json")
+    save2File(stringMapping, f"{saveFolder}/FindString.json")
+    save2File(dict_list, f"{saveFolder}/GBNeedToFind.json")
 
 
 # 获取values/strings.xml属性name和文本text的映射关系
