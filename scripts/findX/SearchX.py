@@ -23,7 +23,7 @@ def findXClass(from_dir, rexStr):
     for fileName in fileList:
         fpath = os.path.join(from_dir, fileName)
         if os.path.isfile(fpath) and fpath.split('.')[-1] in extends:
-            print(fpath)
+            # print(fpath)
             with codecs.open(fpath, "r", "utf-8") as rfile:
                 data = rfile.read()
                 findList = re.findall(fr"{rexStr}", data)
@@ -58,9 +58,10 @@ def package_data():
 
 def save2File(folder_path, dataList, fileName):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
-    with open(fileName, "w+") as wf:
+    fpath = os.path.join(folder_path, fileName)
+    with open(fpath, "w+") as wf:
         wf.write(jsonStr)
-    print(f"结果保存到：{os.path.join(folder_path, fileName)}")
+    print(f"结果保存到：{fpath}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
