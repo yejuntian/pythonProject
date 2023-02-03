@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!-- gbwhatsapp-layout目录下需要修改的layout-->
+    <comment>abc_action_bar_title_item.xml</comment>
+    <comment>abc_alert_dialog_material.xml</comment>
+    <comment>abc_cascading_menu_item_layout.xml</comment>
+    <comment>abc_dialog_title_material.xml</comment>
+    <comment>abc_list_menu_item_layout.xml</comment>
+    <comment>abc_popup_menu_header_item_layout.xml</comment>
+    <comment>abc_popup_menu_item_layout.xml</comment>
+    <comment>abc_search_dropdown_item_icons_2line.xml</comment>
+    <comment>abc_search_view.xml</comment>
+    <comment>abc_tooltip.xml</comment>
+    <comment>about.xml</comment>
+    <comment>activity_community_home_header.xml</comment>
+    <comment>activity_spam_warning.xml</comment>
+    <comment>calls.xml</comment>
+    <comment>contact_info_header.xml</comment>
+    <comment>contact_info_header_v2.xml</comment>
+    <comment>contact_info_phone.xml</comment>
+    <comment>conversation.xml</comment>
+    <comment>conversation_actionbar.xml</comment>
+    <comment>conversation_entry.xml</comment>
+    <comment>conversation_group_description.xml</comment>
+    <comment>conversation_row_participant_header.xml</comment>
+    <comment>conversation_row_participant_header_with_more_padding.xml</comment>
+    <comment>conversation_row_participant_header_with_padding.xml</comment>
+    <comment>conversation_search_view.xml</comment>
+    <comment>conversations.xml</comment>
+    <comment>conversations_row.xml</comment>
+    <comment>design_layout_snackbar_include.xml</comment>
+    <comment>design_layout_tab_text.xml</comment>
+    <comment>emoji_picker_horizontal.xml</comment>
+    <comment>empty_tell_a_friend.xml</comment>
+    <comment>eula.xml</comment>
+    <comment>expand_button.xml</comment>
+    <comment>fingerprint_dialog_layout.xml</comment>
+    <comment>fragment_cart_contents.xml</comment>
+    <!-- group_chat_info_row、group_chat_info_row_v2新版本共用同一个layout.xml  start -->
+    <comment>group_chat_info_row.xml</comment>
+    <comment>group_chat_info_row_v2.xml</comment>
+    <!-- group_chat_info_row、group_chat_info_row_v2新版本共用同一个layout.xml  start -->
+    <comment>groupchat_info_header.xml</comment>
+    <comment>home.xml</comment>
+    <comment>home_tab.xml</comment>
+    <comment>media_caption_entry.xml</comment>
+    <comment>media_composer_bottom_bar.xml</comment>
+    <comment>media_gallery.xml</comment>
+    <comment>mentions_row.xml</comment>
+    <comment>message_reply.xml</comment>
+    <comment>mtrl_layout_snackbar_include.xml</comment>
+    <comment>my_statuses.xml</comment>
+    <comment>payment_transaction_history.xml</comment>
+    <comment>popup_notification.xml</comment>
+    <comment>preference.xml</comment>
+    <comment>preference_category.xml</comment>
+    <comment>preference_category_material.xml</comment>
+    <comment>preference_dialog_edittext.xml</comment>
+    <comment>preference_dropdown.xml</comment>
+    <comment>preference_list_fragment.xml</comment>
+    <comment>preference_material.xml</comment>
+    <comment>preference_widget_seekbar.xml</comment>
+    <comment>preference_widget_seekbar_material.xml</comment>
+    <comment>registerphone.xml</comment>
+    <comment>select_dialog_item_material.xml</comment>
+    <comment>software_too_old.xml</comment>
+    <comment>status_contact_picker.xml</comment>
+    <comment>status_playback_page.xml</comment>
+    <comment>statuses.xml</comment>
+    <comment>support_simple_spinner_dropdown_item.xml</comment>
+    <comment>toast.xml</comment>
+    <comment>toolbar.xml</comment>
+    <comment>voice_note_view.xml</comment>
+    <!--  未找到对应类-->
+    <comment>text_status_composer.xml</comment>
+    <!--新版本已经去掉的layout-->
+    <comment>abc_activity_chooser_view_list_item.xml</comment>
+    <comment>design_bottom_navigation_item.xml</comment>
+    <comment>design_navigation_item_subheader.xml</comment>
+    <comment>preference_information.xml</comment>
+    <comment>preference_information_material.xml</comment>
+    <!--exo_playback_control_view.xml改名为：exo_player_control_view.xml-->
+    <comment>exo_player_control_view.xml</comment>
+    <comment>exo_simple_player_view.xml</comment>
+</properties>
+
