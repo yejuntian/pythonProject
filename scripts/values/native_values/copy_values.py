@@ -39,8 +39,7 @@ def startCopyValues(from_dir, to_dir):
     for type in typeList:
         # 特殊处理，只需要注册到public.xml，copy操作单独处理
         if type in notCopyTypeList:
-            print(mappingData[type])
-            enableInsertNameDict[type] = mappingData[type]
+            enableInsertNameDict[type] = getInsertName(publicFilePath, type, mappingData[type])
         insertPublic(publicFilePath, type)
     print(f"程序执行结束，结果保存在{to_dir}")
 
@@ -48,6 +47,20 @@ def startCopyValues(from_dir, to_dir):
 def getNameMappingList(fpath):
     with codecs.open(fpath, "r", "utf-8") as rf:
         return json.loads(rf.read())
+
+
+# 对比public.xml，把没有注册的属性添加到集合中
+def getInsertName(targetPath, fileType, diffNameList):
+    if enableInsertNameDict.get(fileType) is None:
+        enableInsertNameDict[fileType] = []
+    if len(diffNameList) <= 0:
+        return
+    targetNameList = getTargetTypePublicId(targetPath, fileType)
+    for diffName in diffNameList:
+        if not diffName in targetNameList:
+            enableInsertNameDict[fileType].append(diffName)
+    print(enableInsertNameDict[fileType])
+    return enableInsertNameDict[fileType]
 
 
 def getInsertNameList(fpath, typeList, mappingData):
@@ -158,6 +171,33 @@ def insertExitFile(fpath, tpath, fileType):
         xml_content = convert_str(to_root)
         # 合并其他string.xml
         save_2_file(xml_content, tpath)
+    addInsertNameList(tpath, fileType, diffNameList)
+
+
+# 对比public.xml，把没有注册的属性添加到集合中
+def addInsertNameList(tpath, fileType, diffNameList):
+    targetPath = tpath[0:tpath.index("/res/values")]
+    targetNameList = getTargetTypePublicId(f"{targetPath}/res/values/public.xml", fileType)
+    for name in diffNameList:
+        if not name in targetNameList:
+            if enableInsertNameDict.get(fileType) is None:
+                enableInsertNameDict[fileType] = []
+            if name not in enableInsertNameDict[fileType]:
+                enableInsertNameDict[fileType].append(name)
+    print(enableInsertNameDict[fileType])
+
+# 在public.xml中获取指定类型的name集合
+def getTargetTypePublicId(fpath, targetType):
+    targetNameList = []
+    parse = ET.parse(fpath)
+    root = parse.getroot()
+    for child in root:
+        attrib = child.attrib
+        name = attrib.get("name")
+        type = attrib.get("type")
+        if not name is None and not type is None and type == targetType:
+            targetNameList.append(name)
+    return targetNameList
 
 
 def convert_str(to_root):
