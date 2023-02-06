@@ -70,7 +70,7 @@ def matchValues(fpath, mappingData):
             isFind = True
             break
     if isFind:
-        save2File(temp_dict, "scripts/values/matchStyles/NotFind.json")
+        save2File(temp_dict, "scripts/values/native_values/GBNeedToFind.json")
     else:
         print("程序执行结束，所有属性完全匹配！")
 

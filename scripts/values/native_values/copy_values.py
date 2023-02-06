@@ -14,9 +14,10 @@ blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF',
 extends = ["xml"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
-            "integer", "string", "style", "anim", "drawable"]
+            "integer", "string", "style", "anim", "drawable",
+            "animator", "layout"]
 # 不需要copy的文件类型，只需要在public.xml进行注册，copy操作单独进行处理
-notCopyTypeList = ["anim", "drawable"]
+notCopyTypeList = ["anim", "drawable", "animator", "layout"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
@@ -59,7 +60,6 @@ def getInsertName(targetPath, fileType, diffNameList):
     for diffName in diffNameList:
         if not diffName in targetNameList:
             enableInsertNameDict[fileType].append(diffName)
-    print(enableInsertNameDict[fileType])
     return enableInsertNameDict[fileType]
 
 
@@ -185,6 +185,7 @@ def addInsertNameList(tpath, fileType, diffNameList):
             if name not in enableInsertNameDict[fileType]:
                 enableInsertNameDict[fileType].append(name)
     print(enableInsertNameDict[fileType])
+
 
 # 在public.xml中获取指定类型的name集合
 def getTargetTypePublicId(fpath, targetType):
