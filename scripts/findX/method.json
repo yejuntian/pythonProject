@@ -71,7 +71,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/youbasha/ui/views/n.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "已完成"
   },
   {
     "2.22.22.80": "LX/0pE;->A0J()Ljava/lang/String;",
@@ -156,7 +156,7 @@
     "class": [
       "smali_classes5/z/i.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "LX/0oJ;->A0N(Ljava/lang/String;)Ljava/io/File;",
@@ -244,7 +244,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/youbasha/ui/views/i.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/10o;->A04(LX/0nx;IIJ)V  TODO 没有找到对应方法暂时先注释",
@@ -259,7 +259,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/a1.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0L(Landroid/app/Activity;III)V",
@@ -275,7 +275,7 @@
       "smali_classes5/com/gbwhatsapp/yo/u0.smali",
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/01C;->A0G()LX/02v;",
@@ -289,7 +289,8 @@
     "2.23.2.76": "LX/24Y;->YoEndCall()V",
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
-    ]
+    ],
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "LX/1Fw;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
@@ -423,7 +424,7 @@
     "class": [
       "smali_classes5/z/i.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/0lU;->A08(II)V",
@@ -512,8 +513,7 @@
     "2.23.2.76": "LX/02l;-><init>(Landroid/view/View;)V",
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/chatgen/e.smali"
-    ],
-    "TODO": "之前对应关系错误，替换后校验是否正确"
+    ]
   },
   {
     "2.22.22.80": "LX/0ql;->A04(Landroid/content/Context;Ljava/lang/String;)LX/1Lv;",
@@ -535,7 +535,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/YoSwipeActions.smali"
     ],
-    "TODO": "需要自己添加新方法->内部调用A00()方法"
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "LX/0pJ;->A21()LX/0pJ;",
@@ -543,7 +543,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
     ],
-    "TODO": "需要自己添加新方法"
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "LX/0pJ;->A0B(LX/0nx;I)V",
@@ -558,7 +558,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
     ],
-    "TODO": "需要自己添加新方法"
+    "TODO": "已实现"
   },
   {
     "2.22.22.80": "LX/0uH;->A00(LX/0nw;)Ljava/io/File;",
@@ -573,7 +573,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
     ],
-    "TODO": "需要自己添加新方法"
+    "TODO": "已完成"
   },
   {
     "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->ALp_cpy(LX/0nw;Z)V",
@@ -581,7 +581,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/v0.smali"
     ],
-    "TODO": "需要自己添加新方法"
+    "TODO": "已完成"
   },
   {
     "2.22.22.80": "LX/0lG;->AdL(Landroidy/appcompat/widget/Toolbar;)V",
@@ -641,7 +641,7 @@
       "smali_classes5/com/gbwhatsapp/yo/dep.smali",
       "smali_classes5/z/i.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/0o6;->A03(LX/0nw;)Ljava/lang/String;",
@@ -663,7 +663,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/youbasha/ui/views/n.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/19S;->A00(LX/0nx;Z)V",
@@ -678,7 +678,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/YoSwipeActions.smali"
     ],
-    "TODO": "参数个数发生改变，需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/2fZ;-><init>(Landroid/content/Context;I)V",
@@ -713,7 +713,7 @@
     "class": [
       "smali_classes5/com/gbwhatsapp/yo/dep.smali"
     ],
-    "TODO": "需要自己实现"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/0o1;->A04()Ljava/lang/String;",
@@ -758,7 +758,7 @@
     "class": [
       "smali_classes6/zoo/view/share/CsShareManager.smali"
     ],
-    "TODO": "需要自己实现该类"
+    "TODO": "己实现"
   },
   {
     "2.22.22.80": "LX/03L;-><init>(Landroid/view/View;)V",

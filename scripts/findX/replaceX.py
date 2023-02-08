@@ -10,8 +10,8 @@ blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
 # 只匹配下面的文件类型
 extends = ["smali"]
 
-baseVersion = "2.22.18.70"
-newVersion = "2.22.22.80"
+baseVersion = "2.22.22.80"
+newVersion = "2.23.2.76"
 
 
 def load_json_data(file_path):

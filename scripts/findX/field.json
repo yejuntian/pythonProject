@@ -57,7 +57,7 @@
   },
   {
     "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/1vq;",
-    "2.23.2.76": "Lcom/gbwhatsapp/Conversation;->getA1j:LX/2iL;",
+    "2.23.2.76": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/2iL;",
     "class": [
       "smali_classes5/com/gbwhatsapp/igg.smali",
       "smali_classes5/b0/a.smali",
@@ -349,7 +349,7 @@
   },
   {
     "2.22.22.80": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/0nx;",
-    "2.23.2.76": "Lcom/gbwhatsapp/Conversation;->getA35:LX/0rd;",
+    "2.23.2.76": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/0rd;",
     "class": [
       "smali_classes6/zoo/view/share/CsShareManager.smali",
       "smali_classes5/com/gbwhatsapp/yo/Conversation.smali"

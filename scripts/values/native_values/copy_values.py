@@ -46,8 +46,20 @@ def startCopyValues(from_dir, to_dir):
 
 
 def getNameMappingList(fpath):
+    dict = {}
     with codecs.open(fpath, "r", "utf-8") as rf:
-        return json.loads(rf.read())
+        data = json.loads(rf.read())
+        for attrType, nameList in data.items():
+            if dict.get(attrType) is None:
+                dict[attrType] = []
+            for name in nameList:
+                # 特殊处理
+                if attrType == "style":
+                    name = name.replace("_", ".")
+                # 去重操作
+                if not name in dict[attrType]:
+                    dict[attrType].append(name)
+    return dict
 
 
 # 对比public.xml，把没有注册的属性添加到集合中
@@ -58,7 +70,8 @@ def getInsertName(targetPath, fileType, diffNameList):
         return
     targetNameList = getTargetTypePublicId(targetPath, fileType)
     for diffName in diffNameList:
-        if not diffName in targetNameList:
+        # 去重
+        if not diffName in targetNameList and not diffName in enableInsertNameDict[fileType]:
             enableInsertNameDict[fileType].append(diffName)
     return enableInsertNameDict[fileType]
 
@@ -79,6 +92,8 @@ def getInsertNameList(fpath, typeList, mappingData):
 
     for attrType, attrNameList in mappingData.items():
         stringList = attrNameDict.get(attrType)
+        # print(attrType)
+        # print(attrNameList)
         if stringList is None or len(stringList) <= 0:
             continue
         for attrName in attrNameList:

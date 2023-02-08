@@ -84,6 +84,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+\(.*?\).+"
                "|Lcom/airbnb/lottie/LottieAnimationView;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
                )
     save2File(savePath, package_data(), "method.json")
     # 查找属性

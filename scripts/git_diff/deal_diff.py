@@ -18,13 +18,17 @@ def exec_diff(diff_path):
             operate = split_line[0]
             file = split_line[1]
             if operate == "M":
-                modify_file_list.append(file)
+                if not file in modify_file_list:
+                    modify_file_list.append(file)
             elif operate == "D":
-                del_file_list.append(file)
+                if not file in del_file_list:
+                    del_file_list.append(file)
             elif operate == "A":
-                add_file_list.append(file)
+                if not file in add_file_list:
+                    add_file_list.append(file)
             else:
-                other_file_list.append(file)
+                if not file in other_file_list:
+                    other_file_list.append(file)
 
 
 def save_data_to_file(data_list, file_name):
