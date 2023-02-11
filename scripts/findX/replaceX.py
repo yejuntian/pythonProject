@@ -21,9 +21,9 @@ def load_json_data(file_path):
 
 
 def getOrderData(dataList):
-    """有些value值和key值相同所以会导致重复替换 比如{A:B,B:C}
-     A先替换为了B，然后B又替换成了C 最后导致A换成了C；
-     如果调换顺序就不会发行该种情况从字典中移除再添加进行顺序调整"""
+    """有些value值和key值相同所以会导致重复替换 比如{A:B,B:C,C:D}
+     A先替换为B,B替换成了C,C替换为D, 最后导致A替换成了D；
+     如果调换顺序就不会发行该种情况,从字典中移除再进行逆序添加"""
 
     # 把所有list映射为字典
     mappingData = {}
@@ -32,19 +32,23 @@ def getOrderData(dataList):
         value = item[newVersion]
         mappingData[key] = value
 
-    print(mappingData)
-    # 查找value值和key值相同
-    temp_dict = {}
+    newMappingData = mappingData.copy()
+
+    tempList = []
     for item in dataList:
         key = item[baseVersion]
         value = item[newVersion]
-        if value in mappingData.keys():
-            temp_dict[key] = value
-    # 进行顺序调整,先删除再添加
-    for key, value in temp_dict.items():
-        print(f"key = {key} value = {value}")
-        mappingData.pop(key)
-        mappingData[key] = value
+        # 查找value值和key值相同,同时避免key和value相同的情况
+        if value in mappingData.keys() and key != value:
+            tempList.append(key)
+    # 删除value值和key值相同的映射关系
+    for item in tempList:
+        mappingData.pop(item)
+    # 进行顺序调整,逆序遍历进行添加
+    tempList.reverse()
+    for item in tempList:
+        value = newMappingData[item]
+        mappingData[item] = value
     return mappingData
 
 
@@ -59,10 +63,10 @@ def replace_x(folder_path, mappingData):
                 replace_times = 0
                 for key, value in mappingData.items():
                     replace_times += data.count(key)
-                    print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
                     data = data.replace(key, value)
                 wfile.write(data)
+                print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
         elif os.path.isdir(file_path) and fileName not in blacklist:
             replace_x(file_path, mappingData)
