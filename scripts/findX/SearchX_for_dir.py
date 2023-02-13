@@ -69,10 +69,10 @@ if __name__ == "__main__":
     # 查找方法
     findXClass(foldPath,
                "LX/\w*;->.*\(.*?\).+"
-               "|ConversationsFragment;->.*\(.*?\).+"
-               "|StatusPlaybackContactFragment;->.*\(.*?\).+"
-               "|HomeActivity;->A\w+\(.*?\).+"
-               "|StatusesFragment;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->.*\(.*?\).+"
+               "|Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->.*\(.*?\).+"
+               "|Lcom/gbwhatsapp/HomeActivity;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/status/StatusesFragment;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/Conversation;->A\w+\(.*?\).+"
                "|Landroidy/recyclerview/widget/LinearLayoutManager;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+\(.*?\).+"
@@ -84,13 +84,13 @@ if __name__ == "__main__":
     # 查找属性
     findXClass(foldPath,
                "LX/\w+;->.*:.*"
-               "|ConversationsFragment;->.*:.*"
-               "|StatusPlaybackContactFragment;->.*:.*"
-               "|HomeActivity;->A\w+:.*"
-               "|StatusesFragment;->\w+:.*"
+               "|Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->.*:.*"
+               "|Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->.*:.*"
+               "|Lcom/gbwhatsapp/HomeActivity;->A\w+:.*"
+               "|Lcom/gbwhatsapp/status/StatusesFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/Conversation;->\w+:.*"
                "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
-               "|ContactPickerFragment->\w+:.*"
+               "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
                )
     save2File(mCurPath, package_data(), "field.json")
     print("****************查询完毕****************")
