@@ -91,7 +91,7 @@ def getReplaceResult(lines, mappingData, fileName, isReplaceClass):
                 filedStr = match.group()
                 if filedStr in mappingData.keys():
                     newFieldValue = getNewStr(mappingData.get(filedStr), regex)
-                    print(f"oldFiled = {match.group(1)} newFiled = {newFieldValue}")
+                    # print(f"oldFiled = {match.group(1)} newFiled = {newFieldValue}")
                     line = line.replace(match.group(1), newFieldValue)
                     replace_times += 1
             # 替换method方法
@@ -101,7 +101,7 @@ def getReplaceResult(lines, mappingData, fileName, isReplaceClass):
                 if methodStr in mappingData.keys():
                     newMethodValue = getNewStr(mappingData.get(methodStr), regex)
                     line = line.replace(match.group(1), newMethodValue)
-                    print(f"oldMethod = {match.group(1)} newMethod = {newMethodValue}")
+                    # print(f"oldMethod = {match.group(1)} newMethod = {newMethodValue}")
                     replace_times += 1
         else:
             # 替换class
