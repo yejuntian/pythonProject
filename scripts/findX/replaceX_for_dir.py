@@ -26,10 +26,9 @@ def replace_x(folder_path, mappingData):
                 replace_times = 0
                 for key, value in mappingData.items():
                     replace_times += data.count(key)
-                    print(fr'fileName: {fileName} 替换次数：{replace_times}')
-
                     data = data.replace(key, value)
                 wfile.write(data)
+                print(fr'fileName: {fileName} 替换次数：{replace_times}')
 
         elif os.path.isdir(file_path):
             replace_x(file_path, mappingData)
@@ -87,10 +86,10 @@ if __name__ == "__main__":
     mCurPath = os.getcwd()
 
     while True:
-        exit_flag = input('method2.json、field2.json对应关系全部替换完成？yes or no \n')
+        exit_flag = input('method.json、field.json对应关系全部替换完成？yes or no \n')
         if exit_flag == 'yes':
-            method_data = load_json_data(f"{mCurPath}/scripts/findX/method2.json")
-            filed_data = load_json_data(f"{mCurPath}/scripts/findX/field2.json")
+            method_data = load_json_data(f"{mCurPath}/scripts/findX/method.json")
+            filed_data = load_json_data(f"{mCurPath}/scripts/findX/field.json")
             method_data.extend(filed_data)
             method_data = getOrderData(method_data)
             replace_x(args.from_dir, method_data)
@@ -100,9 +99,9 @@ if __name__ == "__main__":
             break
 
     while True:
-        exit_flag = input('class2.json对应关系全部替换完成？yes or no \n')
+        exit_flag = input('class.json对应关系全部替换完成？yes or no \n')
         if exit_flag == 'yes':
-            class_data = load_json_data(f"{mCurPath}/scripts/findX/class2.json")
+            class_data = load_json_data(f"{mCurPath}/scripts/findX/class.json")
             class_data = getOrderData(class_data)
             replace_x(args.from_dir, class_data)
             print("************LX相关的类替换完成************")
