@@ -5,8 +5,8 @@ import json
 import os
 import re
 import time
-import lxml.etree as ET
 import traceback
+import lxml.etree as ET
 
 # 只匹配下面的文件类型
 extends = ["xml"]
@@ -19,6 +19,15 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
                "styles.xml": "style"}
 # 保留文件后缀集合
 keepFileSuffixList = ["anim", "animator", "color", "interpolator", "xml"]
+# -----------替换三方sdk中的smali文件属性---------------
+# 只匹配下面的文件类型
+extends2 = ["smali"]
+# 排除哪些文件夹
+blacklist2 = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
+              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
+              'smali_classes4', 'AndroidManifest.xml', 'apktool.yml']
+# 没查找到的属性
+notFoundDict = {}
 
 """
     主要作用：加载scripts/confuse/mapping.json对应关系，
@@ -30,36 +39,105 @@ def replaceRes(from_dir):
     beforeTime = time.time()
     mappingData = loadData(f"{mCurrentPath}/scripts/confuse/mapping.json")
     transFolder(from_dir, blacklist, mappingData)
-    replaceSmaliAttrName(from_dir)
+    replaceSmaliAttrName(from_dir, mappingData)
+    replaceSdkSmaliFile(from_dir, mappingData)
     afterTime = time.time()
     print(f"资源混淆完毕，输出结果保存到：{from_dir} 共耗时{afterTime - beforeTime} 秒")
 
 
+def replaceSdkSmaliFile(from_dir, mappingData):
+    listdir = os.listdir(from_dir)
+    for fname in listdir:
+        fpath = os.path.join(from_dir, fname)
+        if not fname in blacklist2:
+            if os.path.isdir(fpath):
+                replaceSdkSmaliFile(fpath, mappingData)
+            elif os.path.isfile(fpath):
+                print(fpath)
+                if fname.split(".")[-1] in extends2:
+                    with codecs.open(fpath, "r", "utf-8") as rf:
+                        lines = rf.readlines()
+                    with codecs.open(fpath, "w", "utf-8") as wf:
+                        result = ""
+                        # 匹配固定样式的属性eg:R$color;->cardview_shadow_end_color:
+                        regex = r"R\$(.*?);->(.*?):"
+                        for line in lines:
+                            matches = re.finditer(regex, line, re.MULTILINE)
+                            for matchNum, match in enumerate(matches, start=1):
+                                matchStyle = match.group(1)
+                                matchAttrName = match.group(2)
+                                if matchStyle != "styleable":
+                                    key = f"{matchAttrName}#{matchStyle}"
+                                    value = mappingData.get(key)
+                                    # print(f"key = {key} value = {value}")
+                                    if not value is None:
+                                        newKey = f"R${matchStyle};->{matchAttrName}:"
+                                        newValue = f'R${matchStyle};->{value.split("#")[0]}:'
+                                        line = line.replace(newKey, newValue)
+                                        # print(line)
+                                else:  # 替换属性name
+                                    matches = re.finditer(r"(.*)_(.*)", matchAttrName, re.MULTILINE)
+                                    for matchNum, match in enumerate(matches, start=1):
+                                        attrName = match.group(2)
+                                        key = f"{attrName}#attr"
+                                        newName = mappingData.get(key)
+                                        if not newName is None:
+                                            key = f'R$styleable;->{matchAttrName}:'
+                                            newKey = f'R$styleable;->{match.group(1)}_{newName.split("#")[0]}:'
+                                            line = line.replace(key, newKey)
+                            result += line
+                        wf.write(result)
+
+
 # 替换R$*.smali 属性名
-def replaceSmaliAttrName(from_dir):
+def replaceSmaliAttrName(from_dir, mappingData):
     file_list = glob.glob(pathname=from_dir + "/**/R$*smali", recursive=True)
     if len(file_list) <= 0: return
-    mappingData = getPublicMapping(f"{from_dir}/res/values/public.xml")
     for fpath in file_list:
         replaceSmaliFile(fpath, mappingData)
 
 
 def replaceSmaliFile(fpath, mappingData):
+    print(f"fpath = {fpath}")
     fileName = os.path.basename(fpath)
-    if fileName != "R$styleable.smali":
+    attrType = fileName.split(".")[0].split("$")[-1]
+    with open(fpath, encoding="utf-8", mode="r") as rf:
+        lines = rf.readlines()
+    with open(fpath, encoding="utf-8", mode="w") as wf:
         data = ""
-        with open(fpath, encoding="utf-8", mode="r") as rf:
-            lines = rf.readlines()
-            for line in lines:
-                if line.startswith(".field public static final"):
-                    attrId = line.split(" = ")[-1].replace("\n", "")
-                    # print(f"fpath = {fpath} attrId = {attrId}")
-                    attrName = mappingData[attrId]
-                    data += f".field public static final {attrName}:I = {attrId}\n"
+        for line in lines:
+            if line.startswith(".field public static final"):
+                attrName = line.split(":")[0].split(" ")[-1].strip()
+                attrId = line.split(" = ")[-1].replace("\n", "").strip()
+                if fileName != "R$styleable.smali":
+                    if attrType == "style" and not attrName is None:
+                        attrName = attrName.replace("_", ".")
+                    key = f"{attrName}#{attrType}"
+                    newName = mappingData.get(key)
+                    # print(f"attrName = {attrName} key = {key} newName = {newName}")
+                    if not attrName is None and not newName is None:
+                        newName = newName.split("#")[0]
+                        data += f".field public static final {newName}:I = {attrId}\n"
+                    else:
+                        data += line
                 else:
-                    data += line
-        with open(fpath, encoding="utf-8", mode="w") as wf:
-            wf.write(data)
+                    regex = r".field public static final (.*?)_(.*?):"
+                    if re.match(regex, line):
+                        matches = re.finditer(regex, line, re.MULTILINE)
+                        for matchNum, match in enumerate(matches, start=1):
+                            attrName = match.group(2)
+                            key = f"{attrName}#attr"
+                            newName = mappingData.get(key)
+                            if not newName is None:
+                                newName = f'{match.group(1)}_{newName.split("#")[0]}'
+                                data += f".field public static final {newName}:I = {attrId}\n"
+                            else:
+                                data += line
+                    else:
+                        data += line
+            else:
+                data += line
+        wf.write(data)
 
 
 # 获取public.xml 属性id和属性name映射关系
@@ -71,7 +149,10 @@ def getPublicMapping(fpath):
         attrib = child.attrib
         name = attrib.get("name")
         id = attrib.get("id")
-        if not name is None and name.__contains__("."):
+        type = attrib.get("type")
+        if name is None or id is None:
+            continue
+        if type == "style" and name.__contains__("."):
             name = name.replace(".", "_")
         mappingData[id] = name
     return mappingData

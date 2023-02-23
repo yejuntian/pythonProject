@@ -1,6 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 import json
+import glob
 import argparse
 import codecs
 
@@ -10,10 +11,11 @@ mappingStr = {}
 # GB使用的映射列表
 gbMapping = {}
 # 文件类型映射关系列表
-filelist = {"color": "scripts/confuse/json_data/color.json",
-            "style": "scripts/confuse/json_data/style.json",
-            "layout": "scripts/confuse/json_data/layout.json",
-            "string": "scripts/confuse/json_data/string.json"}
+mCurrentPath = os.getcwd()
+filelist = {"color": f"{mCurrentPath}/scripts/confuse/json_data/color.json",
+            "style": f"{mCurrentPath}/scripts/confuse/json_data/style.json",
+            "layout": f"{mCurrentPath}/scripts/confuse/json_data/layout.json",
+            "string": f"{mCurrentPath}/scripts/confuse/json_data/string.json"}
 # WhatsApp不需要混淆的属性集合
 originMapping = {}
 # 是否要保存测试文件
@@ -23,6 +25,38 @@ enableSaveFile = True
     主要作用：根据json_data目录下的映射关系列表，对比public.xml文件，
     输出需要混淆的属性，最终保存到confuse/mapping.json文件中。
 """
+
+
+def confuse(from_dir):
+    filePath = f"{from_dir}/res/values/public.xml"
+    for key, value in filelist.items():
+        loadData(key, value)
+    packageData(gbMapping)
+    getSmaliAttr(gbMapping)
+    findNotConfuseAttr(filePath, gbMapping)
+    addMapping(filePath)
+
+
+# 获取smali文件属性
+def getSmaliAttr(gbMapping):
+    file_list = glob.glob(pathname=from_dir + "/**/R$*smali", recursive=True)
+    if len(file_list) <= 0: return
+    for fpath in file_list:
+        fileName = os.path.basename(fpath)
+        attrType = fileName.split(".")[0].split("$")[-1]
+        if fileName == "R$styleable.smali" or attrType in blackTypeStr:
+            continue
+        if gbMapping.get(attrType) is None:
+            gbMapping[attrType] = []
+        with open(fpath, encoding="utf-8", mode="r") as rf:
+            lines = rf.readlines()
+            for line in lines:
+                if line.startswith(".field public static final"):
+                    attrName = line.split(":")[0].split(" ")[-1].strip()
+                    if attrType == "style":
+                        attrName = attrName.replace("_", ".")
+                    if not attrName in gbMapping.get(attrType):
+                        gbMapping[attrType].append(attrName)
 
 
 # 加载gb所有的属性name
@@ -35,6 +69,19 @@ def loadData(type, fpath):
         for item in data:
             if not str(item) in gbMapping.get(type):
                 gbMapping[type].append(item)
+
+
+# 组装所有数据
+def packageData(gbMapping):
+    fpath = f"{mCurrentPath}/scripts/confuse/json_data/allString.json"
+    with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
+        data = json.loads(rf.read())
+        for type, nameList in data.items():
+            if gbMapping.get(type) is None:
+                gbMapping[type] = []
+            for item in nameList:
+                if not str(item) in gbMapping.get(type):
+                    gbMapping[type].append(item)
 
 
 # 找着不需要混淆的属性
@@ -102,8 +149,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     from_dir = args.from_dir
     # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    filePath = f"{from_dir}/res/values/public.xml"
-    for key, value in filelist.items():
-        loadData(key, value)
-    findNotConfuseAttr(filePath, gbMapping)
-    addMapping(filePath)
+    confuse(from_dir)
