@@ -72,6 +72,8 @@ if __name__ == "__main__":
     # 根据git提交类型，分别存到到不同文件中
     mCurrentPath = os.getcwd()
     target_folder = mCurrentPath + "/scripts/git_diff"
+    if not os.path.exists(target_folder):
+        os.makedirs(target_folder)
     os.chdir(target_folder)
     save_data_to_file(add_file_list, "add.json")
     print(f"新增文件，输出到：{target_folder}/add.json")
