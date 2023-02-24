@@ -79,6 +79,7 @@ if __name__ == "__main__":
                "|Lcom/airbnb/lottie/LottieAnimationView;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A\w+\(.*?\).+"
                )
     save2File(mCurPath, package_data(), "method.json")
     # 查找属性
