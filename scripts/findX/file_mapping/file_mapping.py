@@ -12,6 +12,7 @@ regexStr = r"\"(.*)\""
 regexId = r"(0x7f\w{6})"
 baseVersionCode = "2.22.10.73"
 newVersionCode = "2.23.2.76"
+targetPublicIdDict = {}
 
 """
     主要作用：根据from_dir、to_dir项目路径，获取X包下对应关系，
@@ -31,13 +32,14 @@ class FileMappingEntity():
 
 def fileMapping(from_dir, to_dir):
     fromStrMapping = getFileMapping(from_dir, regexStr)
-    fromIdMapping = getIdMapping(getFileMapping(from_dir, regexId), from_dir)
+    fromIdMapping = getIdMapping(getFileMapping(from_dir, regexId), from_dir, False)
 
     toStrMapping = getFileMapping(to_dir, regexStr)
-    toIdMapping = getIdMapping(getFileMapping(to_dir, regexId), to_dir)
+    toIdMapping = getIdMapping(getFileMapping(to_dir, regexId), to_dir, True)
     entityList = getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping)
     print("------映射完对应关系，开始保存到classMapping.json文件中------")
-    save2File(f"{os.getcwd()}/scripts/findX/file_mapping", entityList, "classMapping.json")
+    # save2File(f"{os.getcwd()}/scripts/findX/file_mapping", entityList, "classMapping.json")
+    save2File(f"{os.getcwd()}", entityList, "classMapping.json")
 
 
 def save2File(folder_path, dataList, fileName):
@@ -69,16 +71,19 @@ def getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping):
             entity = FileMappingEntity(oldClass, None, None, fromStr, None, toClass)
             dict[oldClass] = entity
     # 根据ID映射class
-    for clazz, name in fromIdMapping.items():
+    for attrName, clazz in fromIdMapping.items():
         oldClass = getClassName(clazz)
-        toClass = getClassName(toIdMapping.get(name))
-        if not oldClass in dict and not toClass is None:
-            entity = FileMappingEntity(oldClass, None, None, None, name, toClass)
+        toClass = getClassName(toIdMapping.get(attrName))
+        if toClass is None or (not attrName is None and attrName.__contains__("APKTOOL_DUMMYVAL_")):
+            continue
+        if not oldClass in dict:
+            id = targetPublicIdDict.get(attrName)
+            entity = FileMappingEntity(oldClass, None, None, None, f"{attrName}#{id}", toClass)
             dict[oldClass] = entity
         else:
             entity = dict.get(oldClass)
             if not entity is None:
-                entity.id = name
+                entity.id = f"{attrName}#{targetPublicIdDict.get(attrName)}"
                 dict[oldClass] = entity
     return dict.values()
 
@@ -92,17 +97,34 @@ def getClassName(fpath):
         return None
 
 
-def getIdMapping(idMapping, from_dir):
-    publicIdMapping = getPublicMapping(f"{from_dir}/res/values/public.xml")
+# 获取属性和文件路径对应关系 （eg:key = 'APKTOOL_DUMMYVAL_0x7f120cd4#string'   value = "文件路径"）
+def getIdMapping(idMapping, from_dir, isTargetProject):
+    stringMapping = getStringMapping(f"{from_dir}/res/values/strings.xml")
+    fpath = f"{from_dir}/res/values/public.xml"
+    publicIdMapping = getPublicMapping(fpath, stringMapping, isTargetProject)
     dict = {}
     for key, value in idMapping.items():
         key = publicIdMapping.get(key)
-        dict[value] = key
+        dict[key] = value
+
+    return dict
+
+
+# 获取string.xml name和text映射关系
+def getStringMapping(fpath):
+    parser = ET.parse(fpath)
+    root = parser.getroot()
+    dict = {}
+    for child in root:
+        text = child.text
+        name = child.attrib.get("name")
+        if not text is None and not name is None:
+            dict[name] = text
     return dict
 
 
 # 获取public.xml对应关系
-def getPublicMapping(fpath):
+def getPublicMapping(fpath, stringMapping, isTargetProject):
     parser = ET.parse(fpath)
     root = parser.getroot()
     dict = {}
@@ -110,7 +132,16 @@ def getPublicMapping(fpath):
         attrib = child.attrib
         id = attrib.get("id")
         name = attrib.get("name")
-        dict[id] = name
+        type = attrib.get("type")
+        if not name is None and not id is None:
+            if name.startswith("APKTOOL_DUMMYVAL_") and type == "string":
+                name = stringMapping.get(name)
+            value = f"{name}#{type}"
+            if not value in dict.values():
+                dict[id] = value
+                # 保存属性和Id映射关系
+                if isTargetProject:
+                    targetPublicIdDict[value] = id
     return dict
 
 
@@ -142,6 +173,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     from_dir = args.from_dir
     to_dir = args.to_dir
-    # from_dir = "/Users/shareit/work/shareit/wa_diff_gb/wa_diff_gbv17"
-    # to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.23.2.76"
+    # from_dir = "/Users/shareit/work/GBWorke/FouadWhatsApp/GBWhatsApp_2.22.23.77"
+    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
     fileMapping(from_dir, to_dir)
