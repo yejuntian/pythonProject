@@ -1,7 +1,6 @@
 import argparse
 import codecs
 import functools
-import os
 import traceback
 import xml.etree.ElementTree as ET
 
@@ -42,7 +41,8 @@ def sort_func(bean1, bean2):
 
 
 def public_sort(from_path):
-    parse = ET.parse(from_path)
+    fpath = f"{from_path}/res/values/public.xml"
+    parse = ET.parse(fpath)
     root = parse.getroot()
     for child in root:
         public_type: str = child.attrib["type"]
@@ -84,7 +84,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_path")
     args = parser.parse_args()
+
     public_sort(args.from_path)
-    target_file = os.getcwd() + "/public_sorted.xml"
+    target_file = args.from_path + "/res/values/public_sorted.xml"
     save_to_file(public_data_list, target_file)
     print(f"public.xml排序完成,排序结果保存到:{target_file}")
