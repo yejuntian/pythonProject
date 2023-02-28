@@ -2,8 +2,8 @@ import argparse
 import codecs
 import json
 
-baseVersion = "2.22.10.73"
-newVersion = "2.22.18.70"
+baseVersion = "2.22.22.80"
+newVersion = "2.23.2.76"
 method_data = []
 
 """
@@ -13,7 +13,7 @@ method_data = []
 
 
 def replace_class2(from_dir):
-    filePath = f"{from_dir}/class2.json"
+    filePath = f"{from_dir}/class.json"
     class_data = load_json_data(filePath)
     class_data = merge_data(class_data, method_data)
     jsonStr = json.dumps(class_data, ensure_ascii=False, indent=2)
@@ -50,4 +50,4 @@ if __name__ == "__main__":
     filed_data = load_json_data(f"{from_dir}/field2.json")
     method_data.extend(filed_data)
     replace_class2(from_dir)
-    print(f"程序执行结束，结果保存在{from_dir}/class2.json")
+    print(f"程序执行结束，结果保存在{from_dir}/class.json")
