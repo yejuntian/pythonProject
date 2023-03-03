@@ -28,7 +28,7 @@ def load_replace_keys(defaultPackage, newPackage):
     return map_string
 
 
-def execute_path(folder_path, black_list, extends):
+def execute_path(folder_path, black_list, extends,mapping_string):
     os.chdir(folder_path)
     cwd = os.getcwd()
     dirs = os.listdir(cwd)
@@ -51,7 +51,7 @@ def execute_path(folder_path, black_list, extends):
                         wfile.write(data)
             # 如果是文件夹，递归
             elif os.path.isdir(fpath):
-                execute_path(fpath, blacklist, extends)
+                execute_path(fpath, blacklist, extends,mapping_string)
 
 
 # 重命名目录
@@ -81,7 +81,7 @@ def removeDir(fromPath):
     for fname in listDir:
         fpath = os.path.join(fromPath, fname)
         if os.path.isdir(fpath):
-            shutil.rmtree(fpath,ignore_errors=True)
+            shutil.rmtree(fpath, ignore_errors=True)
     os.rmdir(fromPath)
 
 
@@ -93,7 +93,7 @@ def getFolderName(packageName):
     return defaultName
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("folder_path")
     args = parser.parse_args()
@@ -119,9 +119,13 @@ if __name__ == '__main__':
     defaultPackage = default_package_list[default_index]
     newPackage = new_package_list[new_index]
     mapping_string = load_replace_keys(defaultPackage, newPackage)
-    execute_path(folder_path, blacklist, extends)
+    execute_path(folder_path, blacklist, extends,mapping_string)
     # 重命名文件夹
     oldPackage = getFolderName(defaultPackage)
     newPackage = getFolderName(newPackage)
     rename_directory(folder_path, oldPackage, newPackage)
     print(f"执行完毕，输出结果保存到{folder_path}")
+
+
+if __name__ == '__main__':
+    main()
