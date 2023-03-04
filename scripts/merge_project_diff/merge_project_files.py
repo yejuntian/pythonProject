@@ -74,7 +74,7 @@ def execute_merge_diff_file(project_from_dir, project_to_dir):
                             shutil.move(fromDir, project_to_dir + "_diff")
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("project_from_dir")
     parser.add_argument("project_to_dir")
@@ -82,6 +82,7 @@ if __name__ == "__main__":
 
     from_dir = args.project_from_dir
     to_dir = args.project_to_dir
+    global target_project_path
     target_project_path = to_dir
     operate_flag = input(f'是否将diff文件输出到:{to_dir}\nyes or no ？\n')
     is_allow = operate_flag == "yes"
@@ -89,3 +90,7 @@ if __name__ == "__main__":
     execute_merge_diff_file(from_dir, to_dir)
     after = time.time()
     print(f"输出diff完成，写入到{to_dir if is_allow == True else to_dir + '_diff'} , 耗时{after - before} 秒")
+
+
+if __name__ == "__main__":
+    main()
