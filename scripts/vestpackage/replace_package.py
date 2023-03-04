@@ -9,7 +9,8 @@ extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.yml']
 # 默认包名集合列表
-default_package_list = ["com.gbwhatsapp", "com.nouncebeats.otavia", "com.universe.messenger"]
+default_package_list = ["com.gbwhatsapp", "com.nouncebeats.otavia", "com.universe.messenger",
+                        "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
 
@@ -28,7 +29,7 @@ def load_replace_keys(defaultPackage, newPackage):
     return map_string
 
 
-def execute_path(folder_path, black_list, extends,mapping_string):
+def execute_path(folder_path, black_list, extends, mapping_string):
     os.chdir(folder_path)
     cwd = os.getcwd()
     dirs = os.listdir(cwd)
@@ -51,7 +52,7 @@ def execute_path(folder_path, black_list, extends,mapping_string):
                         wfile.write(data)
             # 如果是文件夹，递归
             elif os.path.isdir(fpath):
-                execute_path(fpath, blacklist, extends,mapping_string)
+                execute_path(fpath, blacklist, extends, mapping_string)
 
 
 # 重命名目录
@@ -101,15 +102,17 @@ def main():
 
     default_package = input(
         '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
-        ' "3->com.universe.messenger","4->其他包名"\n')
-    if default_package.strip() == "4":
+        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
+        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
+    if default_package.strip() == "8":
         user_default_package = input('请输入默认包名：\n')
         default_package_list.append(user_default_package.strip())
 
     new_package = input(
         '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
-        ' "3->com.universe.messenger","4->其他包名"\n')
-    if new_package.strip() == "4":
+        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
+        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
+    if new_package.strip() == "8":
         user_new_package = input('请输入新包名：\n')
         new_package_list.append(user_new_package.strip())
 
@@ -119,7 +122,7 @@ def main():
     defaultPackage = default_package_list[default_index]
     newPackage = new_package_list[new_index]
     mapping_string = load_replace_keys(defaultPackage, newPackage)
-    execute_path(folder_path, blacklist, extends,mapping_string)
+    execute_path(folder_path, blacklist, extends, mapping_string)
     # 重命名文件夹
     oldPackage = getFolderName(defaultPackage)
     newPackage = getFolderName(newPackage)
