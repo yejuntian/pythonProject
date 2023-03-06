@@ -29,21 +29,26 @@ convertPackage = "convertgb"
 convertPackageVersion = "1.0.4"
 convertPackageDescription = "",
 convertPackage_console_scripts = f"{convertPackage} = gbwhatsapp.__main__:main"
+# 处理git修改文件
+gitDiffPackage = "gitdiff"
+gitDiffVersion = "1.0.1"
+gitDiffDescription = "处理git修改文件",
+gitDiff_console_scripts = f"{gitDiffPackage} = git_diff.__main__:main"
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     # 库名
-    name=vestpackage,
+    name=gitDiffPackage,
     # 版本号
-    version=vestPackageVersion,
+    version=gitDiffVersion,
     # 作者
     author="XiaoTian",
     # 作者邮箱
     author_email="1961993790@qq.com",
     # 简述
-    description=vestPackageDescription,
+    description=gitDiffDescription,
     # 详细描述
     long_description=long_description,
     # README.md中描述的语法（一般为markdown）
@@ -62,7 +67,7 @@ setuptools.setup(
     # entry_points将Python模块转变为命令行
     entry_points={
         'console_scripts': [
-            vestPackage_console_scripts
+            gitDiff_console_scripts
         ]
     },
     # install_requires=[  # 你的库依赖的第三方库（也可以指定版本）eg:lxml>= 4.9.1
