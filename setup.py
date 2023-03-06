@@ -21,7 +21,7 @@ projectDiffDescription = "比较项目的差异",
 projectDiff_console_scripts = f"{projectDiff} = merge_project_diff.merge_project_files:main"
 # 马甲包
 vestpackage = "vestpackage"
-vestPackageVersion = "1.0.5"
+vestPackageVersion = "1.0.8"
 vestPackageDescription = "马甲包",
 vestPackage_console_scripts = f"{vestpackage} = vestpackage.replace_package:main"
 # whatsapp 转gbwhatsapp
@@ -35,15 +35,15 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     # 库名
-    name=convertPackage,
+    name=vestpackage,
     # 版本号
-    version=convertPackageVersion,
+    version=vestPackageVersion,
     # 作者
     author="XiaoTian",
     # 作者邮箱
     author_email="1961993790@qq.com",
     # 简述
-    description=convertPackageDescription,
+    description=vestPackageDescription,
     # 详细描述
     long_description=long_description,
     # README.md中描述的语法（一般为markdown）
@@ -62,7 +62,7 @@ setuptools.setup(
     # entry_points将Python模块转变为命令行
     entry_points={
         'console_scripts': [
-            convertPackage_console_scripts
+            vestPackage_console_scripts
         ]
     },
     # install_requires=[  # 你的库依赖的第三方库（也可以指定版本）eg:lxml>= 4.9.1
