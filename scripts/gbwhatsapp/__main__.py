@@ -1,15 +1,14 @@
 import argparse
 import os
 import time
-
-from replace_package import replacePackage
-from gbwhatsapp_2_whatsapp.convert_gb import convertGB
 from androidx_2_androidy.convert_androidy import convertAndroidY
-from support_2_supporty.convert_supporty import convertSupportY
+from gbwhatsapp_2_whatsapp.convert_gb import convertGB
 from insertcode.getYoSig import sign
 from insertcode.md_and_sec import sign as signMd5
-from public_sort.public_sort import sort
 from others.others import other
+from public_sort.public_sort import sort
+from replace_package import replacePackage
+from support_2_supporty.convert_supporty import convertSupportY
 
 """
  主要作用：把WhatsApp转为gbWhatsapp的入口程序
@@ -21,6 +20,8 @@ def main():
     parser.add_argument("from_dir")
     args = parser.parse_args()
     from_dir = args.from_dir
+    # mPath = gbwhatsapp.__file__
+    # mCurrentPath = mPath[0:mPath.rindex("/gbwhatsapp")]
     mCurrentPath = os.getcwd()
     before = time.time()
     print(f"*********** 移除{from_dir} 所有行号开始 ************")

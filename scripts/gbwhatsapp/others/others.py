@@ -133,7 +133,7 @@ def transFolderReplaceStr(from_dir):
 def moveFiles(folderPath, mCurrentPath):
     if not os.path.exists(folderPath):
         os.makedirs(folderPath, exist_ok=True)
-    currentFolderPath = f"{mCurrentPath}/gbwhatsapp/yo"
+    currentFolderPath = f"{mCurrentPath}/scripts/gbwhatsapp/yo"
     listDir = os.listdir(currentFolderPath)
     for fname in listDir:
         fpath = os.path.join(currentFolderPath, fname)

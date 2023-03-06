@@ -1,2 +1,4 @@
 include README.md
 include LICENSE
+include gbwhatsapp/yo/*
+include gbwhatsapp/gbwhatsapp_2_whatsapp/*
