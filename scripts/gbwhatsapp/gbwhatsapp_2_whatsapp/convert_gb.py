@@ -244,15 +244,19 @@ def convert_2_whatsapp():
     replace_package()
 
 
+def convertGB(from_dir, mCurrentPath):
+    global dir_path, smali_1_folder_list, smali_2_folder_list
+    dir_path = from_dir
+    before_time = time.time()
+    smali_1_folder_list = get_data_list(f"{mCurrentPath}/scripts/gbwhatsapp/gbwhatsapp_2_whatsapp/smali.xml")
+    smali_2_folder_list = get_data_list(f"{mCurrentPath}/scripts/gbwhatsapp/gbwhatsapp_2_whatsapp/smali_classes2.xml")
+    convert_2_whatsapp()
+    after_time = time.time()
+    print(f"执行完毕，输出结果保存到：{dir_path} 共耗时{after_time - before_time} 秒")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
     args = parser.parse_args()
-    dir_path = args.from_dir
-
-    before_time = time.time()
-    smali_1_folder_list = get_data_list("scripts/gbwhatsapp/gbwhatsapp_2_whatsapp/smali.xml")
-    smali_2_folder_list = get_data_list("scripts/gbwhatsapp/gbwhatsapp_2_whatsapp/smali_classes2.xml")
-    convert_2_whatsapp()
-    after_time = time.time()
-    print(f"执行完毕，输出结果保存到：{dir_path} 共耗时{after_time - before_time} 秒")
+    convertGB(args.from_dir, os.getcwd())

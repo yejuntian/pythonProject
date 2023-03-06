@@ -88,10 +88,13 @@ def insert_code(file_list):
                 print("写入" + fpath)
 
 
+def sign(from_dir):
+    find_file(from_dir, targetStr, find_file_list)
+    insert_code(find_file_list)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
     args = parser.parse_args()
-
-    find_file(args.from_dir, targetStr, find_file_list)
-    insert_code(find_file_list)
+    sign(args.from_dir)

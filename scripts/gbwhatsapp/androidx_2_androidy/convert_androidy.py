@@ -1,8 +1,8 @@
-import os
-import shutil
+import argparse
 import codecs
 import glob
-import argparse
+import os
+import shutil
 import time
 
 # 只匹配下面的文件类型
@@ -53,14 +53,16 @@ def save_2_file(fpath, package_map_data):
         wfile.write(data)
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    args = parser.parse_args()
-    from_dir = args.from_dir
-
+def convertAndroidY(from_dir):
     before_time = time.time()
     change_androidx_2_androidy(from_dir)
     traverse_folder(from_dir, {"androidx": "androidy"})
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{from_dir} 共耗时{after_time - before_time} 秒")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    convertAndroidY(args.from_dir)

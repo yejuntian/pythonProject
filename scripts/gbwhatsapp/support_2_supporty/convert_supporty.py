@@ -30,6 +30,7 @@ def change_support_2_supporty(from_dir):
         # 设置类名的对应关系
         set_data_map(from_dir, from_file_path, to_file_path)
 
+
 # 设置类名的对应关系
 def set_data_map(file_dir, from_file_path, to_file_path):
     old_class_path1 = from_file_path[len(f"{file_dir}/smali") + 1:].split(".")[0]
@@ -69,14 +70,16 @@ def save_2_file(fpath, package_map_data):
         wfile.write(data)
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    args = parser.parse_args()
-    from_dir = args.from_dir
-
+def convertSupportY(from_dir):
     before_time = time.time()
     change_support_2_supporty(from_dir)
     traverse_folder(from_dir, data_map)
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{from_dir} 共耗时{after_time - before_time} 秒")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    convertSupportY(args.from_dir)
