@@ -109,7 +109,7 @@ def main():
         default_package_list.append(user_default_package.strip())
 
     new_package = input(
-        '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
+        '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
         ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
         '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
     if new_package.strip() == "8":
