@@ -84,7 +84,8 @@ def get_public_data(public_dir):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("sdk_dir")
-    parser.add_argument("public_dir")
     args = parser.parse_args()
-    merge_sdk(args.sdk_dir, args.public_dir)
-    print(f"程序执行结束，输出结果保存到：{args.sdk_dir}")
+    sdkDir = args.sdk_dir
+    projectFolder = sdkDir[0:(sdkDir.index("smali_")) - 1]
+    merge_sdk(sdkDir, f"{projectFolder}/res/values/public.xml")
+    print(f"程序执行结束，输出结果保存到：{sdkDir}")

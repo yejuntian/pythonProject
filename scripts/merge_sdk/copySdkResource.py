@@ -6,7 +6,7 @@ import shutil
 typeList = ["animator", "color", "drawable", "layout", "anim"]
 # 只匹配下面的文件类型
 extends = ["png", "xml", "jpg"]
-dataPath = f"{os.getcwd()}/scripts/values/native_values/GBNeedToFind.json"
+dataPath = f"../values/native_values/GBNeedToFind.json"
 
 """
  主要作用：根据dataPath指定的路径加载json数据，

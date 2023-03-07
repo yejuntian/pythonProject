@@ -2,8 +2,9 @@ import argparse
 import codecs
 import json
 import os
-import lxml.etree as ET
+import shutil
 import traceback
+import lxml.etree as ET
 
 # 需要插入的字典
 enableInsertNameDict = {}
@@ -27,6 +28,9 @@ copy_dict = {}
 # 需要copy的属性name字典
 diffNameDict = {}
 
+# 文件拷贝，只匹配下面的文件类型
+reSExtends = ["png", "xml", "jpg"]
+resTypeList = ["animator", "color", "drawable", "layout", "anim"]
 """
     主要作用：根据GBNeedToFind.json 复制对应类型的属性到目标项目中。
 """
@@ -42,7 +46,50 @@ def startCopyValues(from_dir, to_dir):
         if type in notCopyTypeList:
             enableInsertNameDict[type] = getInsertName(publicFilePath, type, mappingData[type])
         insertPublic(publicFilePath, type)
+
+    # 执行拷贝资源操作
+    copyRes(from_dir, to_dir, mappingData)
     print(f"程序执行结束，结果保存在{to_dir}")
+
+
+def copyRes(from_dir, to_dir, mappingData):
+    print("***************正在执行拷贝资源操作****************")
+    resMappingData = {}
+    for key, value in mappingData.items():
+        if key in resTypeList:
+            resMappingData[key] = value
+    transFolderCopy(from_dir, to_dir, resMappingData)
+
+
+# 遍历整个项目复制资源文件到目标项目
+def transFolderCopy(from_dir, to_dir, mappingData):
+    listdir = os.listdir(from_dir)
+    for fname in listdir:
+        fpath = os.path.join(from_dir, fname)
+        tpath = os.path.join(to_dir, fname)
+        if os.path.isdir(fpath):
+            transFolderCopy(fpath, tpath, mappingData)
+        elif os.path.isfile(fpath):
+            if fname.split(".")[-1] in reSExtends:
+                fileName = fname.split(".")[0]
+                folderName = fpath.split("/")[-2]
+                # 目标文件夹列表
+                parentFolderPath = os.path.dirname(tpath)
+                if not os.path.exists(parentFolderPath):
+                    os.makedirs(parentFolderPath, exist_ok=True)
+                folderList = os.listdir(parentFolderPath)
+                if folderName.__contains__("-"):
+                    folderName = folderName.split("-")[0]
+                if folderName == "mipmap" or folderName == "drawable":
+                    drawableList = mappingData.get("drawable")
+                    # 在copy列表中，并且目标文件夹不存在则进行copy操作
+                    if fileName in drawableList and not fname in folderList:
+                        shutil.copy(fpath, tpath)
+                elif folderName in resTypeList:
+                    otherFileList = mappingData.get(folderName)
+                    # 在copy列表中，并且目标文件夹不存在则进行copy操作
+                    if fileName in otherFileList and not fname in folderList:
+                        shutil.copy(fpath, tpath)
 
 
 def getNameMappingList(fpath):
@@ -199,7 +246,7 @@ def addInsertNameList(tpath, fileType, diffNameList):
                 enableInsertNameDict[fileType] = []
             if name not in enableInsertNameDict[fileType]:
                 enableInsertNameDict[fileType].append(name)
-    print(enableInsertNameDict[fileType])
+    # print(enableInsertNameDict[fileType])
 
 
 # 在public.xml中获取指定类型的name集合
