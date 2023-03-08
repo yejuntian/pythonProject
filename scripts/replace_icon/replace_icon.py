@@ -29,7 +29,8 @@ def delOldIcon(from_path, black_list):
                 else:
                     continue
             else:
-                if file_name in icon_list:
+                relativePath = os.path.join(from_path[from_path.rindex("/") + 1:], file_name)
+                if file_name in icon_list or relativePath in icon_list:
                     os.remove(from_file_path)
 
 
@@ -48,7 +49,8 @@ def copyIcon(from_path, to_path, black_list):
                 else:
                     continue
             else:
-                if file_name in icon_list:
+                relativePath = os.path.join(from_path[from_path.rindex("/") + 1:], file_name)
+                if file_name in icon_list or relativePath in icon_list:
                     if not os.path.exists(to_path):
                         os.makedirs(to_path, exist_ok=True)
                     # print(file_name)
