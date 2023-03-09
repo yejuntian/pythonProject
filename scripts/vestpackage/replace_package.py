@@ -168,7 +168,9 @@ def main():
     newPackage = new_package_list[new_index]
     mapping_string = load_replace_keys(defaultPackage, newPackage)
     # 替换产品名操作
-    vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
+    vestConfigPath = f'{folder_path[0:folder_path.rindex("/")]}/vestConfig'
+    if folder_path.__contains__("/DecodeCode"):
+        vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
     propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}.properties'
     startReplaceProductName(new_index, propertiesPath, folder_path, mapping_string)
     # 替换包名
