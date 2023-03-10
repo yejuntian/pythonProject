@@ -8,9 +8,9 @@ import xml.etree.ElementTree as ET
 
 # 项目地址
 dir_path = ""
-# 需要移动到smali目录的文件列表
+# 需要移动到smali目录的smali.xml路径列表
 smali_1_folder_list = []
-# 需要move到smali_classes2的目录列表
+# 需要move到smali_classes2的smali_classes2.xml路径列表
 smali_2_folder_list = []
 # 默认文件夹名字
 default_folder_name = "gbwhatsapp"
@@ -62,6 +62,7 @@ def start_move_file(fileName, from_file_path, isFile):
                 shutil.move(from_file_path, to_file_path)
         else:
             # print(to_file_path)
+            # 需要移到到smali目录，文件夹的集合列表
             smali_folder_list.append(from_file_path)
         is_move_file = True
     elif fileName in smali_2_folder_list:
@@ -72,6 +73,7 @@ def start_move_file(fileName, from_file_path, isFile):
                 shutil.move(from_file_path, to_file_path)
         else:
             # print(to_file_path)
+            # 需要移到到smali_classes2目录，文件夹集合列表
             smali_classes2_folder_list.append(from_file_path)
         is_move_file = True
     return is_move_file
@@ -95,16 +97,17 @@ def traverse_folder(from_dir):
         from_file_path = str(os.path.join(from_dir, fileName))
         # 是否move文件的标识
         is_move_file = False
-        # 过滤其他文件，仅遍历smali文件夹
+        # 仅遍历后缀名为.smali文件
         if from_file_path.__contains__("smali"):
+            print(f"from_file_path = {from_file_path}")
             if os.path.isdir(from_file_path):
                 if from_file_path.__contains__(default_folder_name):
                     # 处理WhatsApp父目录为gbwhatsapp文件名的情况
                     index = len(from_file_path.split(default_folder_name)) - 1
                     fileName = default_folder_name + from_file_path.split(default_folder_name)[index]
-                    # move文件到smali对应目录
+                    # 移动smali文件到对应的smali、smali_classes2目录，同时需要移动的文件夹则添加到集合列表中
                     is_move_file = start_move_file(fileName, from_file_path, False)
-                if is_move_file:
+                if is_move_file:  # 说明是文件夹，需要遍历下个文件夹
                     continue
                 else:
                     # 继续递归遍历文件夹
@@ -120,7 +123,7 @@ def traverse_folder(from_dir):
             continue
 
 
-# 移动文件到指定目录
+# 遍历file_path目录下的所有文件，都移动文件到smali、smali_classes2目录
 def moveFile_2_target_folder(file_path, isMoveSmaliFolder):
     """
        file_path:文件夹路径
@@ -240,8 +243,22 @@ def convert_2_whatsapp():
     # 移动到smali_classes2目录
     for smali_folder in smali_classes2_folder_list:
         moveFile_2_target_folder(smali_folder, False)
+    # 删除空文件夹
+    deleteEmptyFolder()
     # 替换包名
     replace_package()
+
+
+# 删除空文件夹
+def deleteEmptyFolder():
+    # 删除smali目录下的空文件夹
+    for smali_folder in smali_folder_list:
+        if os.path.isdir(smali_folder):
+            shutil.rmtree(smali_folder, ignore_errors=True)
+        # 删除smali_classes2目录下的空文件夹
+    for smali_folder in smali_classes2_folder_list:
+        if os.path.isdir(smali_folder):
+            shutil.rmtree(smali_folder, ignore_errors=True)
 
 
 def convertGB(from_dir, mCurrentPath):
