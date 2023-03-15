@@ -85,6 +85,7 @@ def main():
     global target_project_path
     target_project_path = to_dir
     operate_flag = input(f'是否将diff文件输出到:{to_dir}\nyes or no ？\n')
+    global is_allow
     is_allow = operate_flag == "yes"
     before = time.time()
     execute_merge_diff_file(from_dir, to_dir)
