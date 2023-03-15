@@ -2,15 +2,13 @@ import argparse
 import codecs
 import glob
 import os
-import replace_manifest
 
 # 替换的键值对，一行两个字符串，前面的是旧字符串，后面的是新字符串，中间用空格隔开
 config_folderPath = 'scripts/replacepackage/properties'
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF',
-             'original', 'AndroidManifest.xml', 'apktool.yml']
+blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF','original', 'apktool.yml']
 # 默认包名集合列表
 default_package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 新包名集合列表
@@ -102,10 +100,10 @@ if __name__ == '__main__':
     default_index = int(default_package) - 1
     new_index = int(new_package) - 1
     # 替换AndroidManifest
-    if new_index in range(0, 4):
-        replace_manifest.replace_manifest(folder_path + "/AndroidManifest.xml",
-                                          default_package_list[default_index],
-                                          new_package_list[new_index])
+    # if new_index in range(0, 4):
+    #     replace_manifest.replace_manifest(folder_path + "/AndroidManifest.xml",
+    #                                       default_package_list[default_index],
+    #                                       new_package_list[new_index])
     # 替换包名
     config_Path = f"{config_folderPath}/{new_package_list[new_index].split('.')[-1]}.properties"
     if not os.path.exists(config_Path):
@@ -113,6 +111,6 @@ if __name__ == '__main__':
     mapping_string = load_replace_keys(config_Path)
     print(config_Path)
     execute_path(folder_path, blacklist, extends)
-    rename_directory(default_package_list[default_index].split(".")[-1],
-                     new_package_list[new_index].split(".")[-1])
+    # rename_directory(default_package_list[default_index].split(".")[-1],
+    #                  new_package_list[new_index].split(".")[-1])
     print(f"执行完毕，输出结果保存到{folder_path}")
