@@ -16,7 +16,7 @@ import setuptools
 """
 # 比较项目差异
 projectDiff = "projectdiff"
-projectDiffVersion = "1.0.9"
+projectDiffVersion = "1.1.0"
 projectDiffDescription = "比较项目的差异",
 projectDiff_console_scripts = f"{projectDiff} = merge_project_diff.merge_project_files:main"
 # 马甲包
@@ -55,15 +55,15 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     # 库名
-    name=vestpackage,
+    name=projectDiff,
     # 版本号
-    version=vestPackageVersion,
+    version=projectDiffVersion,
     # 作者
     author="XiaoTian",
     # 作者邮箱
     author_email="1961993790@qq.com",
     # 简述
-    description=vestPackageDescription,
+    description=projectDiffDescription,
     # 详细描述
     long_description=long_description,
     # README.md中描述的语法（一般为markdown）
@@ -82,7 +82,7 @@ setuptools.setup(
     # entry_points将Python模块转变为命令行
     entry_points={
         'console_scripts': [
-            vestPackage_console_scripts
+            projectDiff_console_scripts
         ]
     },
     # install_requires=[  # 你的库依赖的第三方库（也可以指定版本）eg:lxml>= 4.9.1
