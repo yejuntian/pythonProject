@@ -144,7 +144,7 @@ def replaceProductName(from_dir, productName):
 
 def startReplace(folder_path, numStr):
     global numList
-    if numStr is None or numStr.isspace():
+    if numStr is None or numStr.isspace() or numStr == "":
         default_package = input(
             '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
             ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
