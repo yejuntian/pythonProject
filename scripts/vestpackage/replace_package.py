@@ -95,12 +95,12 @@ def getFolderName(packageName):
 
 
 # 替换产品名
-def startReplaceProductName(index, configPath, to_dir, mapping_string):
+def startReplaceProductName(index, configPath, to_dir, mapping_string, numStr):
     dict = {0: "gb", 3: "ob", 4: "plus", 5: "yo"}
     productNameList = ["agb", "aob", "aplus", "bgb", "bob", "bplus"]
     if index in range(1, 3):
-        if not numList is None and len(numList) >= 3:
-            productIndex = numList[2]
+        if numStr is not None and not numStr == "" and len(numStr.split(",")) >= 3:
+            productIndex = numStr.split(",")[2]
         else:
             productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;4->bgb;5->bob;6->bplus\n')
         if productIndex.isnumeric() and int(productIndex) in range(1, 7):
@@ -143,7 +143,6 @@ def replaceProductName(from_dir, productName):
 
 
 def startReplace(folder_path, numStr):
-    global numList
     if numStr is None or numStr.isspace() or numStr == "":
         default_package = input(
             '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
@@ -176,7 +175,7 @@ def startReplace(folder_path, numStr):
     if folder_path.__contains__("/DecodeCode"):
         vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
     propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}.properties'
-    startReplaceProductName(new_index, propertiesPath, folder_path, mapping_string)
+    startReplaceProductName(new_index, propertiesPath, folder_path, mapping_string, numStr)
     # 替换包名
     execute_path(folder_path, blacklist, extends, mapping_string)
     # 重命名文件夹
