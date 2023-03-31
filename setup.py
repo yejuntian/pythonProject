@@ -21,7 +21,7 @@ projectDiffDescription = "比较项目的差异",
 projectDiff_console_scripts = f"{projectDiff} = merge_project_diff.merge_project_files:main"
 # 马甲包
 vestpackage = "vestpackage"
-vestPackageVersion = "1.1.3"
+vestPackageVersion = "1.1.4"
 vestPackageDescription = "马甲包",
 vestPackage_console_scripts = f"{vestpackage} = vestpackage.replace_package:main"
 # whatsapp 转gbwhatsapp

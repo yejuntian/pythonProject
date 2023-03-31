@@ -3,6 +3,7 @@ import codecs
 import glob
 import os
 import shutil
+from replace_icon import replaceIcon
 
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
@@ -13,6 +14,8 @@ default_package_list = ["com.gbwhatsapp", "com.nouncebeats.otavia", "com.univers
                         "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 产品名
 productNameList = ["agb", "aob", "aplus", "bgb", "bob", "bplus"]
+# flurry注册key
+flurryList = ["VCW5NHMZV2ZK48YXYFKN", "QBBWBTZS28DR73H3CMDT", "RDRKVWX8XXHMCY78RCDQ"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
 
@@ -95,20 +98,23 @@ def getFolderName(packageName):
 
 
 # 替换产品名
-def startReplaceProductName(index, configPath, to_dir, mapping_string, numStr):
+def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_string):
     dict = {0: "gb", 3: "ob", 4: "plus", 5: "yo"}
     productNameList = ["agb", "aob", "aplus", "bgb", "bob", "bplus"]
     if index in range(1, 3):
-        if numStr is not None and not numStr == "" and len(numStr.split(",")) >= 3:
-            productIndex = numStr.split(",")[2]
-        else:
-            productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;4->bgb;5->bob;6->bplus\n')
+        productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;4->bgb;5->bob;6->bplus\n')
         if productIndex.isnumeric() and int(productIndex) in range(1, 7):
-            replaceProductName(to_dir, productNameList[int(productIndex) - 1])
+            pos = int(productIndex) - 1
+            # 替换otavia/message兜底升级key
+            replaceProductName(to_dir, productNameList[pos])
+            replaceFlurryKey(mapping_string, pos)
+            # 替换新Icon
+            replaceIcon(f"{configPath}/{productNameList[pos]}", to_dir, configPath)
     elif index in dict.keys():
+        # 替换gb/ob/plus/yo兜底升级key
         replaceProductName(to_dir, dict[index])
     # 读取配置文件
-    loadData(configPath, mapping_string)
+    loadData(propertiesPath, mapping_string)
 
 
 # 加载配置文件
@@ -123,6 +129,12 @@ def loadData(file_path, mapping_string):
                 if line.find('=') > 0:
                     strs = line.split("=")
                     mapping_string[strs[0].strip()] = strs[1].strip()
+
+
+# 替换flurry注册key
+def replaceFlurryKey(mapping_string, pos):
+    if pos < len(flurryList):
+        mapping_string["B5K3D7FRBWN8NV8JS8HT"] = flurryList[pos]
 
 
 # 替换兜底升级配置
@@ -142,27 +154,27 @@ def replaceProductName(from_dir, productName):
             wf.write(result)
 
 
-def startReplace(folder_path, numStr):
-    if numStr is None or numStr.isspace() or numStr == "":
-        default_package = input(
-            '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
-            ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-            '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
-        if default_package.strip() == "8":
-            user_default_package = input('请输入默认包名：\n')
-            default_package_list.append(user_default_package.strip())
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("folder_path")
+    args = parser.parse_args()
+    folder_path = args.folder_path
 
-        new_package = input(
-            '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
-            ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-            '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
-        if new_package.strip() == "8":
-            user_new_package = input('请输入新包名：\n')
-            new_package_list.append(user_new_package.strip())
-    else:
-        numList = numStr.split(",")
-        default_package = int(numList[0])
-        new_package = int(numList[1])
+    default_package = input(
+        '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
+        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
+        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
+    if default_package.strip() == "8":
+        user_default_package = input('请输入默认包名：\n')
+        default_package_list.append(user_default_package.strip())
+
+    new_package = input(
+        '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.otavia",'
+        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
+        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
+    if new_package.strip() == "8":
+        user_new_package = input('请输入新包名：\n')
+        new_package_list.append(user_new_package.strip())
 
     default_index = int(default_package) - 1
     new_index = int(new_package) - 1
@@ -175,7 +187,7 @@ def startReplace(folder_path, numStr):
     if folder_path.__contains__("/DecodeCode"):
         vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
     propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}.properties'
-    startReplaceProductName(new_index, propertiesPath, folder_path, mapping_string, numStr)
+    startReplaceProductName(new_index, propertiesPath, vestConfigPath, folder_path, mapping_string)
     # 替换包名
     execute_path(folder_path, blacklist, extends, mapping_string)
     # 重命名文件夹
@@ -183,16 +195,6 @@ def startReplace(folder_path, numStr):
     newPackage = getFolderName(newPackage)
     rename_directory(folder_path, oldPackage, newPackage)
     print(f"执行完毕，输出结果保存到{folder_path}")
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    parser.add_argument("numStr")
-    args = parser.parse_args()
-    folder_path = args.from_dir
-    numStr = args.numStr
-    startReplace(folder_path, numStr)
 
 
 if __name__ == '__main__':

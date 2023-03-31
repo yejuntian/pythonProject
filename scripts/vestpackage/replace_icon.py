@@ -69,12 +69,12 @@ def load_data(xml_path):
     return data_list
 
 
+# 删除指定icon，并替换为最新icon
 def replaceIcon(from_dir, to_dir, configPath):
-    if os.path.exists(from_dir):
+    iconPath = f"{configPath}/icon_list.xml"
+    if os.path.exists(from_dir) and os.path.exists(iconPath):
         global icon_list
-        icon_list = load_data(f"{configPath}/icon_list.xml")
+        icon_list = load_data(iconPath)
         icon_list = load_data(configPath)
         delOldIcon(to_dir, blacklist)
         copyIcon(from_dir, to_dir, blacklist)
-
-
