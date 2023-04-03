@@ -1,0 +1,5 @@
+
+    invoke-static {{}}, Lrc/whatsapp/stories/value/Stories;->seenColor()I
+
+    move-result {param}
+

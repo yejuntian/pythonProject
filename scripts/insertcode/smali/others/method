@@ -1,0 +1,15 @@
+
+.method public x()LX/02j;
+    .locals 1
+
+    invoke-virtual {p0}, LX/00l;->x()LX/02j;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/gbwhatsapp/youbasha/others;->ModContPick(LX/02j;)LX/02j;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+

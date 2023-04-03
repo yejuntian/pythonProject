@@ -1,0 +1,20 @@
+
+.method public seen(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A01:I
+
+    invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
+
+    return-void
+.end method
+
+.method public unseen(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A03:I
+
+    invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
+
+    return-void
+.end method

@@ -1,0 +1,3 @@
+
+    invoke-static {{{param}}}, Lcom/gbwhatsapp/youbasha/others;->MainBKC(Landroid/view/View;)V
+
