@@ -75,6 +75,5 @@ def replaceIcon(from_dir, to_dir, configPath):
     if os.path.exists(from_dir) and os.path.exists(iconPath):
         global icon_list
         icon_list = load_data(iconPath)
-        icon_list = load_data(configPath)
         delOldIcon(to_dir, blacklist)
         copyIcon(from_dir, to_dir, blacklist)

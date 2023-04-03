@@ -188,12 +188,15 @@ def main():
         vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
     propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}.properties'
     startReplaceProductName(new_index, propertiesPath, vestConfigPath, folder_path, mapping_string)
-    # 替换包名
-    execute_path(folder_path, blacklist, extends, mapping_string)
-    # 重命名文件夹
-    oldPackage = getFolderName(defaultPackage)
-    newPackage = getFolderName(newPackage)
-    rename_directory(folder_path, oldPackage, newPackage)
+    # 只有包名不同，才替换包名
+    if new_index != default_index:
+        execute_path(folder_path, blacklist, extends, mapping_string)
+        # 重命名文件夹
+        oldPackage = getFolderName(defaultPackage)
+        newPackage = getFolderName(newPackage)
+        rename_directory(folder_path, oldPackage, newPackage)
+    else:
+        print("******* 检测到包名一致，无需遍历替换包名 ********")
     print(f"执行完毕，输出结果保存到{folder_path}")
 
 
