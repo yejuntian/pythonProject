@@ -3,6 +3,7 @@ import codecs
 import glob
 import os
 import shutil
+
 from replace_icon import replaceIcon
 
 # 只匹配下面的文件类型
@@ -10,10 +11,11 @@ extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.yml']
 # 默认包名集合列表
-default_package_list = ["com.gbwhatsapp", "com.nouncebeats.otavia", "com.universe.messenger",
+default_package_list = ["com.gbwhatsapp", "com.nouncebeats.octavia", "com.universe.messenger",
                         "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 产品名
-productNameList = ["agb", "aob", "aplus", "bgb", "bob", "bplus"]
+octaviaNameList = ["bgb", "bob", "bplus"]
+messengerNameList = ["agb", "aob", "aplus"]
 # flurry注册key
 flurryList = ["VCW5NHMZV2ZK48YXYFKN", "QBBWBTZS28DR73H3CMDT", "RDRKVWX8XXHMCY78RCDQ"]
 # 新包名集合列表
@@ -100,16 +102,20 @@ def getFolderName(packageName):
 # 替换产品名
 def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_string):
     dict = {0: "gb", 3: "ob", 4: "plus", 5: "yo"}
-    productNameList = ["agb", "aob", "aplus", "bgb", "bob", "bplus"]
     if index in range(1, 3):
-        productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;4->bgb;5->bob;6->bplus\n')
-        if productIndex.isnumeric() and int(productIndex) in range(1, 7):
+        if index == 1:
+            productNameList = octaviaNameList
+            productIndex = input(f'请输入产品名对应的数字：1->bgb;2->bob;3->bplus;\n')
+        else:
+            productNameList = messengerNameList
+            productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;\n')
+        if productIndex.isnumeric() and int(productIndex) in range(1, 4):
             pos = int(productIndex) - 1
             # 替换otavia/message兜底升级key
             replaceProductName(to_dir, productNameList[pos])
             replaceFlurryKey(mapping_string, pos)
             # 替换新Icon
-            replaceIcon(f"{configPath}/{productNameList[pos]}", to_dir, configPath)
+            # replaceIcon(f"{configPath}/{productNameList[pos]}", to_dir, configPath)
     elif index in dict.keys():
         # 替换gb/ob/plus/yo兜底升级key
         replaceProductName(to_dir, dict[index])
@@ -126,8 +132,8 @@ def loadData(file_path, mapping_string):
         for line in rfile.readlines():
             line = line.strip()
             if not line.__contains__("#"):
-                if line.find('=') > 0:
-                    strs = line.split("=")
+                if line.find('🎵') > 0:
+                    strs = line.split("🎵")
                     mapping_string[strs[0].strip()] = strs[1].strip()
 
 

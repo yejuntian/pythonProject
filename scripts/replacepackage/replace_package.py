@@ -27,7 +27,7 @@ def load_replace_keys(file_path):
             line = line.strip()
             if not line.__contains__("#"):
                 if line.find('=') > 0:
-                    strs = line.split("=")
+                    strs = line.split("🎵")
                     map_string.append([strs[0].strip(), strs[1].strip()])
         return map_string
 
