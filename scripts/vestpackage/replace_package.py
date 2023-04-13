@@ -14,8 +14,8 @@ blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.y
 default_package_list = ["com.gbwhatsapp", "com.nouncebeats.octavia", "com.universe.messenger",
                         "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 产品名
-octaviaNameList = ["agb", "aob", "aplus"]
-messengerNameList = ["bgb", "bob", "bplus"]
+octaviaNameList = ["bgb", "bob", "bplus"]
+messengerNameList = ["agb", "aob", "aplus"]
 # flurry注册key
 flurryList = ["VCW5NHMZV2ZK48YXYFKN", "QBBWBTZS28DR73H3CMDT", "RDRKVWX8XXHMCY78RCDQ"]
 # 新包名集合列表
@@ -105,10 +105,10 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
     if index in range(1, 3):
         if index == 1:
             productNameList = octaviaNameList
-            productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;\n')
+            productIndex = input(f'请输入产品名对应的数字：1->bgb;2->bob;3->bplus;\n')
         else:
             productNameList = messengerNameList
-            productIndex = input(f'请输入产品名对应的数字：1->bgb;2->bob;3->bplus;\n')
+            productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;\n')
         if productIndex.isnumeric() and int(productIndex) in range(1, 4):
             pos = int(productIndex) - 1
             # 替换otavia/message兜底升级key

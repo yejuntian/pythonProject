@@ -37,6 +37,7 @@ def copy_png(from_dir, to_dir):
                     and not fname.__contains__(".otf")
                     and not fname.__contains__(".properties")
                     and not fname.__contains__(".gitignore")
+                    and not fname.__contains__(".prof")
             ):
                 if not os.path.exists(to_dir):
                     os.makedirs(to_dir, exist_ok=True)
