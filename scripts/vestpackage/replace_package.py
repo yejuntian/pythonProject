@@ -113,7 +113,7 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
             pos = int(productIndex) - 1
             # 替换otavia/message兜底升级key
             replaceProductName(to_dir, productNameList[pos])
-            replaceFlurryKey(mapping_string, pos)
+            # replaceFlurryKey(mapping_string, pos)
             # 替换新Icon
             # replaceIcon(f"{configPath}/{productNameList[pos]}", to_dir, configPath)
     elif index in dict.keys():

@@ -216,7 +216,7 @@ def specialLogic(diffNameList, oldStr, newStr):
         for matchNum, match in enumerate(matches, start=1):
             preName = match.group(1)
             lastName = match.group(2)
-            print(f"preName = {preName} lastName = {lastName}")
+            # print(f"preName = {preName} lastName = {lastName}")
             name = f"{preName}{lastName.replace(oldStr, newStr)}"
         newNameList.append(name)
     return newNameList
@@ -337,8 +337,8 @@ def insertPublic(fpath, type):
     if enableInsertNameList is None or len(enableInsertNameList) <= 0:
         return
     # 对dimen这种类型特殊处理
-    if type == "dimen":
-        enableInsertNameList = specialLogic(enableInsertNameList, '.', '_')
+    # if type == "dimen":
+    #     enableInsertNameList = specialLogic(enableInsertNameList, '.', '_')
     for itemName in enableInsertNameList:
         maxId += 1
         pos += 1

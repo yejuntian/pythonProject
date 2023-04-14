@@ -10,6 +10,8 @@ import xml.etree.ElementTree as ET
 notFoundDict = {}
 # 用来保存错误attr集合列表
 attrDict = {}
+# 需要特殊处理的类型
+specialTypeList = ["dimen", "style"]
 """
     主要作用：替换sdk目录R$*.smali资源文件value值
 """
@@ -125,7 +127,7 @@ def get_public_data(public_dir):
             attr_type = attrib["type"]
             attr_name = attrib["name"]
             attr_id = attrib["id"]
-            if attr_name.__contains__("."):
+            if attr_type in specialTypeList and attr_name.__contains__("."):
                 attr_name = attr_name.replace(".", "_")
                 # print(f"attr_type = {attr_type} attr_name = {attrib['name']}")
             if attr_type not in public_map:
