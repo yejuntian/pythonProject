@@ -5,7 +5,7 @@ import argparse
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF', 'original', 'smali',
              'smali_classes2', 'smali_classes3', 'smali_classes4', 'smali_classes5',
-             'smali_classes6', 'smali_classes7', 'gen', "raw", "font"]
+             'smali_classes6', 'smali_classes7', 'smali_classes8', 'gen', "raw", "font"]
 
 
 def copy_png(from_dir, to_dir):
