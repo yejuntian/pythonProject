@@ -2,9 +2,8 @@ import argparse
 import codecs
 import glob
 import os
+import xml.etree.ElementTree as ET
 import shutil
-
-from replace_icon import replaceIcon
 
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
@@ -20,7 +19,7 @@ messengerNameList = ["bgb", "bob", "bplus"]
 flurryList = ["VCW5NHMZV2ZK48YXYFKN", "QBBWBTZS28DR73H3CMDT", "RDRKVWX8XXHMCY78RCDQ"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
-
+appList = ["GBWhatsApp", "OBWhatsApp", "WhatsAppPlus"]
 """
     主要作用：反编译实现马甲包功能；替换默认包名为新包名。
 """
@@ -105,15 +104,12 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
     if index in range(1, 3):
         if index == 1:
             productNameList = octaviaNameList
-            productIndex = input(f'请输入产品名对应的数字：1->agb;2->aob;3->aplus;\n')
         else:
             productNameList = messengerNameList
-            productIndex = input(f'请输入产品名对应的数字：1->bgb;2->bob;3->bplus;\n')
-        if productIndex.isnumeric() and int(productIndex) in range(1, 4):
-            pos = int(productIndex) - 1
+        productIndex = appList.index(getProductName(to_dir))
+        if productIndex in range(1, 4):
             # 替换otavia/message兜底升级key
-            replaceProductName(to_dir, productNameList[pos])
-            # replaceFlurryKey(mapping_string, pos)
+            replaceProductName(to_dir, productNameList[productIndex])
             # 替换新Icon
             # replaceIcon(f"{configPath}/{productNameList[pos]}", to_dir, configPath)
     elif index in dict.keys():
@@ -121,6 +117,18 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
         replaceProductName(to_dir, dict[index])
     # 读取配置文件
     loadData(propertiesPath, mapping_string)
+
+
+# 获取兜底产品名称
+def getProductName(project_dir):
+    stringPath = f"{project_dir}/res/values/strings.xml"
+    parser = ET.parse(stringPath)
+    root = parser.getroot()
+    for child in root:
+        attrib = child.attrib
+        attrName = attrib.get("name")
+        if not attrName is None and attrName == "yoShareSbj":
+            return child.text
 
 
 # 加载配置文件
@@ -135,12 +143,6 @@ def loadData(file_path, mapping_string):
                 if line.find('🎵') > 0:
                     strs = line.split("🎵")
                     mapping_string[strs[0].strip()] = strs[1].strip()
-
-
-# 替换flurry注册key
-def replaceFlurryKey(mapping_string, pos):
-    if pos < len(flurryList):
-        mapping_string["B5K3D7FRBWN8NV8JS8HT"] = flurryList[pos]
 
 
 # 替换兜底升级配置
