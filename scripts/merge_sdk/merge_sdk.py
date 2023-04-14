@@ -27,7 +27,7 @@ def merge_sdk(sdk_dir, public_dir):
     for file_path in file_list:
         setAllAttr(file_path, public_map)
     # R$styleable.smali value值
-    print(attrDict)
+    # print(attrDict)
     for file_path in file_list:
         if os.path.basename(file_path) == "R$styleable.smali":
             replaceStyleable(file_path, public_map)

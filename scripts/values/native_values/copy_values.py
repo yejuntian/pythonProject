@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import traceback
+import re
 import lxml.etree as ET
 
 # 需要插入的字典
@@ -53,12 +54,14 @@ def startCopyValues(from_dir, to_dir):
 
 
 def copyRes(from_dir, to_dir, mappingData):
-    print("***************正在执行拷贝资源操作****************")
     resMappingData = {}
     for key, value in mappingData.items():
-        if key in resTypeList:
+        if key in resTypeList and len(value) > 0:
             resMappingData[key] = value
-    transFolderCopy(from_dir, to_dir, resMappingData)
+    # 有需要copy的资源类型才进行遍历
+    if len(resMappingData) > 0:
+        print("***************正在执行拷贝资源操作****************")
+        transFolderCopy(from_dir, to_dir, resMappingData)
 
 
 # 遍历整个项目复制资源文件到目标项目
@@ -202,9 +205,31 @@ def createNewFile(fpath, tpath, fileType):
         save_2_file(xml_content, tpath)
 
 
+# 特殊处理类型如dimen
+def specialLogic(diffNameList, oldStr, newStr):
+    if diffNameList is None:
+        return diffNameList
+    newNameList = []
+    regex = r"(.*common_dimens_)(\d+[_.]\d+dp)"
+    for name in diffNameList:
+        matches = re.finditer(regex, name, re.MULTILINE)
+        for matchNum, match in enumerate(matches, start=1):
+            preName = match.group(1)
+            lastName = match.group(2)
+            print(f"preName = {preName} lastName = {lastName}")
+            name = f"{preName}{lastName.replace(oldStr, newStr)}"
+        newNameList.append(name)
+    return newNameList
+
+
 # diff code插入到已存在的文件
 def insertExitFile(fpath, tpath, fileType):
     diffNameList = diffNameDict.get(fileType)
+    # 对dimen这种类型特殊处理
+    if fileType == "dimen":
+        diffNameList = specialLogic(diffNameList, '_', '.')
+        diffNameDict[fileType] = diffNameList
+
     if diffNameList is None or len(diffNameList) <= 0:
         return
     to_parser = ET.parse(tpath)
@@ -311,6 +336,9 @@ def insertPublic(fpath, type):
     enableInsertNameList = enableInsertNameDict.get(type)
     if enableInsertNameList is None or len(enableInsertNameList) <= 0:
         return
+    # 对dimen这种类型特殊处理
+    if type == "dimen":
+        enableInsertNameList = specialLogic(enableInsertNameList, '.', '_')
     for itemName in enableInsertNameList:
         maxId += 1
         pos += 1
