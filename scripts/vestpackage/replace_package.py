@@ -139,7 +139,11 @@ def loadData(file_path, mapping_string):
     with codecs.open(file_path, "r", "utf-8") as rfile:
         for line in rfile.readlines():
             line = line.strip()
-            if not line.__contains__("#"):
+            # 跳过空行和注释行
+            if not line or line.startswith('#'):
+                continue
+            if line.__contains__(r"\uD83C\uDFB5"):
+                line = line.replace(r"\uD83C\uDFB5", "🎵")
                 if line.find('🎵') > 0:
                     strs = line.split("🎵")
                     mapping_string[strs[0].strip()] = strs[1].strip()
