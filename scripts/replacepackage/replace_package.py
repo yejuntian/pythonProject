@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 # 替换的键值对，一行两个字符串，前面的是旧字符串，后面的是新字符串，中间用空格隔开
 config_folderPath = 'scripts/replacepackage/properties'
+vest_folderPath = 'scripts/replacepackage/vest'
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
@@ -138,7 +139,7 @@ if __name__ == '__main__':
     # 替换包名
     config_Path = f"{config_folderPath}/{new_package_list[new_index].split('.')[-1]}.properties"
     if new_index == 5:
-        config_Path = getPropertiesName(folder_path, config_folderPath)
+        config_Path = getPropertiesName(folder_path, vest_folderPath)
     if not os.path.exists(config_Path):
         config_Path = f"{config_folderPath}/gbwhatsapp.properties"
     load_replace_keys(config_Path, mapping_string)
