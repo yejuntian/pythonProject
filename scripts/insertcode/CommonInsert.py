@@ -1,13 +1,15 @@
-import re
 from Utils import *
 
 # 插入到文件末尾
 insertFileEnd = -100
+# 匹配任意一行正则
+matchLine = r"^.*$"
 
 
 class CommonInsert:
-
     def defaultFormatCode(codeStr, match):
+        if match is None:
+            return codeStr
         params = match.group(1)
         if params is not None:
             return codeStr.format(param=params)
@@ -28,23 +30,24 @@ class CommonInsert:
         self.code = code
 
     def insertCode(self):
+        count = 0
         for fpath in self.filePathList:
             if insertFileEnd == self.rowOffSet:
                 self.insertFileEnd(fpath)
             else:
-                self.writeCode(fpath)
+                self.writeCode(fpath, count)
 
     # 插入代码到末尾
     def insertFileEnd(self, fpath):
         isWrite = False
         with codecs.open(fpath, "r", "utf-8") as rf:
             data = rf.read()
-            self.code = getSmaliCode(self.codeFilePath)
+            code = self.code(getFileData(self.codeFilePath), None)
         with codecs.open(fpath, "a", "utf-8") as wf:
-            if self.code is not None and self.code not in data:
+            if code is not None and code not in data:
                 print(f"*********** 正在插入代码{self.codeFilePath} ****************")
                 isWrite = True
-                wf.write(self.code)
+                wf.write(code)
             else:
                 print(f"*********** 已存在代码{self.codeFilePath} ****************")
             if isWrite:
@@ -52,9 +55,9 @@ class CommonInsert:
             # 添加没有插入的类
             pass
 
-    def writeCode(self, fpath):
+    def writeCode(self, fpath, count):
+        newPath = fpath[len(newProjectPath) + 1:]
         isWrite = False
-        count = 0
         with codecs.open(fpath, "r", "utf-8") as rf:
             lines = rf.readlines()
             data = "".join(lines)
@@ -62,29 +65,29 @@ class CommonInsert:
                 for num in range(0, len(lines)):
                     matches = re.finditer(self.regexList[0], lines[num], re.MULTILINE)
                     for match in matches:
-                        code = self.code(getSmaliCode(self.codeFilePath), match)
+                        code = self.code(getFileData(self.codeFilePath), match)
                         if code is not None:
                             count += 1
                             if code not in data:
                                 isWrite = True
-                                print(f"*********** 插入代码{self.codeFilePath} 共有{count}处 ****************")
+                                print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
                                 lines[num + self.rowOffSet] = code
                             else:
-                                print(f"*********** 已存在代码{self.codeFilePath} 共有{count}处 ****************")
+                                print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
             else:
                 matches = re.finditer(self.getMultilineRegex(), data, re.MULTILINE)
                 for match in matches:
                     last_match_end = match.end()
                     num = data.count('\n', 0, last_match_end) - 1
-                    code = self.code(getSmaliCode(self.codeFilePath), match)
+                    code = self.code(getFileData(self.codeFilePath), match)
                     if code is not None:
                         count += 1
                         if code not in data:
                             isWrite = True
-                            print(f"*********** 插入代码{self.codeFilePath} 共有{count}处 ****************")
+                            print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
                             lines[num + self.rowOffSet] = code
                         else:
-                            print(f"*********** 已存在代码{self.codeFilePath} 共有{count}处 ****************")
+                            print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
         with codecs.open(fpath, "w", "utf-8") as wf:
             if self.code is not None:
                 wf.write("".join(lines))
