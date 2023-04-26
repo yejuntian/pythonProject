@@ -1,5 +1,6 @@
 import os
 import shutil
+import argparse
 import xml.etree.ElementTree as ET
 
 # 排除哪些文件夹
@@ -7,6 +8,7 @@ blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
 # 要复制的icon列表
 icon_list = []
+iconNameList = ["WhatsApp", "WhatsApp_GB", "WhatsApp_New", "WhatsApp_2023"]
 
 """
     主要作用：根据"icon_list"图片资源列表，
@@ -77,3 +79,19 @@ def replaceIcon(from_dir, to_dir, configPath):
         icon_list = load_data(iconPath)
         delOldIcon(to_dir, blacklist)
         copyIcon(from_dir, to_dir, blacklist)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+
+    from_dir = args.from_dir
+    iconIndex = input(
+        '请输入新包名对应的数字：1->WhatsApp", "2->WhatsApp_GB",\n"'
+        '3->WhatsApp_New","4->WhatsApp_2023","5->其他图标"\n')
+    if iconIndex.strip() == "5":
+        iconName = input('请输入新包名：\n')
+        iconNameList.append(iconName)
+    configPath = f'{from_dir[0:from_dir.rindex("/DecodeCode")]}/vestConfig'
+    replaceIcon(f"{configPath}/{iconNameList[int(iconIndex) - 1]}", from_dir, configPath)

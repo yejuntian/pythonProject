@@ -1,0 +1,15 @@
+
+.method public x()LX/02j;
+    .locals 1
+
+    invoke-virtual {{{param1}}}, LX/00l;->{param2}LX/02j;#TODO 需要查看类对应关系，还原部分x()代码
+
+    move-result-object v0
+
+    invoke-static {{{param3}}}, Lcom/gbwhatsapp/youbasha/others;->ModContPick(LX/02j;)LX/02j;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+

@@ -7,27 +7,35 @@ matchLine = r"^.*$"
 
 
 class CommonInsert:
-    def defaultFormatCode(codeStr, match):
-        if match is None:
+    def defaultFormatCode(codeStr, match, hasParam):
+        if hasParam:
+            if match is None:
+                return codeStr
+            params = match.group(1)
+            if params is not None:
+                return codeStr.format(param=params)
+            return None
+        else:
             return codeStr
-        params = match.group(1)
-        if params is not None:
-            return codeStr.format(param=params)
-        return None
 
-    def __init__(self, filePathList, codeFilePath, regexList=None, rowOffSet=1, code=defaultFormatCode):
+    def __init__(self, filePathList, codeFilePath, regexList=None, rowOffSet=1, code=defaultFormatCode, hasParam=True,
+                 exitTotalCount=1):
         """
             filePathList：扫描的结果，返回文件path列表
             insertCodeFilePath：代码存储的文件路径
             regexList：正则列表；(既可以匹配单行，也可以匹配多行)
             rowOffSet：行偏移
             code：多参param需要子类实现
+            hasParam：是否有参数
+            totalCount：当前类中存在的个数
         """
         self.filePathList = filePathList
         self.codeFilePath = codeFilePath
         self.regexList = regexList
         self.rowOffSet = rowOffSet
         self.code = code
+        self.hasParam = hasParam
+        self.exitTotalCount = exitTotalCount
 
     def insertCode(self):
         count = 0
@@ -49,9 +57,9 @@ class CommonInsert:
                 isWrite = True
                 wf.write(code)
             else:
-                print(f"*********** 已存在代码{self.codeFilePath} ****************")
+                print(f"*********** 已存在代码{self.codeFilePath} {newPath} ****************")
             if isWrite:
-                print(f"*********** 插入代码完成{self.codeFilePath} ****************")
+                print(f"*********** 插入代码 {self.codeFilePath} 完成****************")
             # 添加没有插入的类
             pass
 
@@ -65,34 +73,36 @@ class CommonInsert:
                 for num in range(0, len(lines)):
                     matches = re.finditer(self.regexList[0], lines[num], re.MULTILINE)
                     for match in matches:
-                        code = self.code(getFileData(self.codeFilePath), match)
+                        code = self.code(getFileData(self.codeFilePath), match, self.hasParam)
                         if code is not None:
                             count += 1
                             if code not in data:
                                 isWrite = True
-                                print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
                                 lines[num + self.rowOffSet] = code
-                            else:
-                                print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
             else:
                 matches = re.finditer(self.getMultilineRegex(), data, re.MULTILINE)
                 for match in matches:
                     last_match_end = match.end()
                     num = data.count('\n', 0, last_match_end) - 1
-                    code = self.code(getFileData(self.codeFilePath), match)
+                    code = self.code(getFileData(self.codeFilePath), match, self.hasParam)
                     if code is not None:
                         count += 1
                         if code not in data:
                             isWrite = True
-                            print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
                             lines[num + self.rowOffSet] = code
-                        else:
-                            print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
+            if code is not None:
+                if code not in data:
+                    pass
+                else:
+                    print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
+                if count > 0:
+                    print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
+
         with codecs.open(fpath, "w", "utf-8") as wf:
             if self.code is not None:
                 wf.write("".join(lines))
                 if isWrite:
-                    print(f"*********** 插入代码完成{self.codeFilePath} ****************")
+                    print(f"*********** 插入代码 {self.codeFilePath} 完成****************")
                 else:
                     # 添加没有插入的类
                     pass

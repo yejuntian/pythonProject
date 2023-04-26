@@ -34,7 +34,7 @@ def fileMapping(from_dir, to_dir):
 
     toStrMapping = getFileMapping(to_dir, regexStr)
     toIdMapping = getIdMapping(getFileMapping(to_dir, regexId), to_dir, True)
-    entityList = getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping)
+    entityList = getEntityList(from_dir, to_dir, fromStrMapping, fromIdMapping, toStrMapping, toIdMapping)
     print("------映射完对应关系，开始保存到classMapping.json文件中------")
     # save2File(f"{os.getcwd()}/scripts/findX/file_mapping", entityList, "classMapping.json")
     save2File(f"{os.getcwd()}", entityList, "classMapping.json")
@@ -57,19 +57,19 @@ def save2File(folder_path, dataList, fileName):
 
 
 # 获取entity对应关系
-def getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping):
+def getEntityList(from_dir, to_dir, fromStrMapping, fromIdMapping, toStrMapping, toIdMapping):
     dict = {}
     # 根据字符串映射class
     for fromStr, fromValue in fromStrMapping.items():
-        oldClass = getClassName(fromValue)
-        toClass = getClassName(toStrMapping.get(fromStr))
+        oldClass = getClassName(from_dir, fromValue)
+        toClass = getClassName(to_dir, toStrMapping.get(fromStr))
         if not toClass is None:
             entity = FileMappingEntity(oldClass, None, None, fromStr, None, toClass)
             dict[oldClass] = entity
     # 根据ID映射class
     for attrName, clazz in fromIdMapping.items():
-        oldClass = getClassName(clazz)
-        toClass = getClassName(toIdMapping.get(attrName))
+        oldClass = getClassName(from_dir, clazz)
+        toClass = getClassName(to_dir, toIdMapping.get(attrName))
         if toClass is None or (not attrName is None and attrName.__contains__("APKTOOL_DUMMYVAL_")):
             continue
         if not oldClass in dict:
@@ -84,9 +84,9 @@ def getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping):
     return dict.values()
 
 
-def getClassName(fpath):
+def getClassName(from_dir, fpath):
     if not fpath is None:
-        return fpath
+        return fpath[len(from_dir) + 1:]
     else:
         return None
 

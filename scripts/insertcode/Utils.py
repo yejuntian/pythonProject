@@ -31,14 +31,14 @@ def findXByStr(str):
     fpath = f"{os.getcwd()}/classMapping.json"
     if len(fileEntityList) > 0:
         getFilePathList(str, fileList)
-        return fileList
+        return [os.path.join(newProjectPath, fpath) for fpath in fileList]
     else:
         if os.path.exists(fpath):
             getFileEntityList(fpath, str, fileList)
         else:
             fileMapping(baseProjectPath, newProjectPath)
             getFileEntityList(fpath, str, fileList)
-    return fileList
+    return [os.path.join(newProjectPath, fpath) for fpath in fileList]
 
 
 def getFileEntityList(fpath, str, fileList):
@@ -77,11 +77,20 @@ def transFolder(from_dir, str, fileList):
                         fileList.append(fpath)
 
 
-# 通过指定字符串比对，最终返回文件地址列表
-def getTransFileList(str):
+# 通过指定字符串比对，最终返回文件地址列表;allExcludeFileList：需要排除的类
+def getTransFileList(str, allExcludeFileList):
     fileList = []
+    newFileList = []
+    allExcludeFileList = [os.path.join(newProjectPath, fpath) for fpath in allExcludeFileList]
     transFolder(newProjectPath, str, fileList)
-    return fileList
+    # 排除不需要替换的路径
+    if allExcludeFileList is not None and len(allExcludeFileList) > 0:
+        for fpath in fileList:
+            if fpath not in allExcludeFileList:
+                newFileList.append(fpath)
+        return newFileList
+    else:
+        return fileList
 
 
 # 读取smali文件内容

@@ -86,5 +86,7 @@ if __name__ == "__main__":
         icon_list = load_data("scripts/replace_icon/plus_res_icon.xml")
 
     delOldIcon(args.to_project_dir, blacklist)
+    if not os.path.exists(args.to_project_dir):
+        os.makedirs(args.to_project_dir, exist_ok=True)
     copyIcon(args.from_project_dir, args.to_project_dir, blacklist)
     print(f"执行完成，输出结果保存到：{args.to_project_dir}")

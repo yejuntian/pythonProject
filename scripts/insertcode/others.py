@@ -18,8 +18,24 @@ paramStr = getParam(
                "invoke\-virtual \{.*\}\, Landroid\/app\/Activity\;\-\>getWindow\(\)Landroid\/view\/Window\;"]
     , func=getXParam)
 
+# 替换为x()需要排除的class
+allExcludeFileList = ["smali_classes2/com/gbwhatsapp/chatinfo/ContactInfoActivity.smali",
+                      "smali_classes2/com/gbwhatsapp/gallerypicker/MediaPicker.smali",
+                      "smali_classes2/com/gbwhatsapp/mediaview/MediaViewBaseFragment.smali",
+                      "smali_classes2/com/gbwhatsapp/profile/ViewProfilePhoto.smali"]
+excludeFileList = findXByStr("dialogtoast/update-progress-message/dialog-type-not-progress-dialog/ \\\"")
+allExcludeFileList.extend(excludeFileList)
 
-def getXFormatCode(codeStr, match):
+
+# 格式化参数
+def modContPick(codeStr, match):
+    if paramStr[1] != "x()":
+        return codeStr.format(param1="p0", param2=paramStr[1], param3="v0")
+    else:
+        return None
+
+
+def getXFormatCode(codeStr, match, hasParam):
     param1 = match.group(1)
     param2 = match.group(2)
     if param1 is not None and param2 is not None:
@@ -38,7 +54,7 @@ def others():
                                 "check\-cast (v\d+)\, Landroid\/widget\/ListView\;"],
                      rowOffSet=0),
 
-        CommonInsert(filePathList=getTransFileList(paramStr[0]),
+        CommonInsert(filePathList=getTransFileList(paramStr[0], allExcludeFileList),
                      codeFilePath="smali/others/x",
                      regexList=[r"invoke\-virtual \{(.*)\}\, " + f"({re.escape(paramStr[0])})"],
                      rowOffSet=0,
@@ -46,8 +62,29 @@ def others():
 
         CommonInsert(filePathList=Utils.findXByStr(
             "This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead."),
-            codeFilePath="smali/others/method",
-            rowOffSet=insertFileEnd),
+            codeFilePath="smali/others/modContPick",
+            rowOffSet=insertFileEnd,
+            code=modContPick),
+
+        # CommonInsert(filePathList=findFileByName("HomeActivity"),
+        #              codeFilePath="smali/others/actionbarbk",
+        #              regexList=["\.locals 4",
+        #                         matchLine,
+        #                         matchLine,
+        #                         matchLine,
+        #                         matchLine,
+        #                         matchLine,
+        #                         "if\-nez \w+\, \:cond_\d+",
+        #                         "new\-instance v\d+\, Landroid\/animation\/ValueAnimator\;"],
+        #              rowOffSet=-1,
+        #              hasParam=False),
+        #
+        # CommonInsert(filePathList=findFileByName("HomeActivity"),
+        #              codeFilePath="smali/others/actionbarbk",
+        #              regexList=["if\-nez v\d+\, \:cond_\d+",
+        #                         "const\-string\/jumbo v\d+\, \"search_fragment\""],
+        #              rowOffSet=-1,
+        #              hasParam=False),
     ]
 
 
