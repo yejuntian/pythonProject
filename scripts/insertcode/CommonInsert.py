@@ -18,8 +18,7 @@ class CommonInsert:
         else:
             return codeStr
 
-    def __init__(self, filePathList, codeFilePath, regexList=None, rowOffSet=1, code=defaultFormatCode, hasParam=True,
-                 exitTotalCount=1):
+    def __init__(self, filePathList, codeFilePath, regexList=None, rowOffSet=1, code=defaultFormatCode, hasParam=True):
         """
             filePathList：扫描的结果，返回文件path列表
             insertCodeFilePath：代码存储的文件路径
@@ -35,7 +34,6 @@ class CommonInsert:
         self.rowOffSet = rowOffSet
         self.code = code
         self.hasParam = hasParam
-        self.exitTotalCount = exitTotalCount
 
     def insertCode(self):
         count = 0
@@ -47,10 +45,11 @@ class CommonInsert:
 
     # 插入代码到末尾
     def insertFileEnd(self, fpath):
+        newPath = fpath[len(newProjectPath) + 1:]
         isWrite = False
         with codecs.open(fpath, "r", "utf-8") as rf:
             data = rf.read()
-            code = self.code(getFileData(self.codeFilePath), None)
+            code = self.code(getFileData(self.codeFilePath), None, self.hasParam)
         with codecs.open(fpath, "a", "utf-8") as wf:
             if code is not None and code not in data:
                 print(f"*********** 正在插入代码{self.codeFilePath} ****************")
@@ -69,7 +68,7 @@ class CommonInsert:
         with codecs.open(fpath, "r", "utf-8") as rf:
             lines = rf.readlines()
             data = "".join(lines)
-            if len(self.regexList) == 1:
+            if self.is_1d_array(self.regexList) and len(self.regexList) == 1:
                 for num in range(0, len(lines)):
                     matches = re.finditer(self.regexList[0], lines[num], re.MULTILINE)
                     for match in matches:
@@ -80,16 +79,18 @@ class CommonInsert:
                                 isWrite = True
                                 lines[num + self.rowOffSet] = code
             else:
-                matches = re.finditer(self.getMultilineRegex(), data, re.MULTILINE)
-                for match in matches:
-                    last_match_end = match.end()
-                    num = data.count('\n', 0, last_match_end) - 1
-                    code = self.code(getFileData(self.codeFilePath), match, self.hasParam)
-                    if code is not None:
-                        count += 1
-                        if code not in data:
-                            isWrite = True
-                            lines[num + self.rowOffSet] = code
+                for regexList in self.regexList:
+                    matches = re.finditer(self.getMultilineRegex(regexList), data, re.MULTILINE)
+                    for match in matches:
+                        last_match_end = match.end()
+                        num = data.count('\n', 0, last_match_end) - 1
+                        print(self.codeFilePath)
+                        code = self.code(getFileData(self.codeFilePath), match, self.hasParam)
+                        if code is not None:
+                            count += 1
+                            if code not in data:
+                                isWrite = True
+                                lines[num + self.rowOffSet] = code
             if code is not None:
                 if code not in data:
                     pass
@@ -108,8 +109,16 @@ class CommonInsert:
                     pass
 
     # 匹配多行正则
-    def getMultilineRegex(self):
+    def getMultilineRegex(self, regexList):
         regexStr = ""
-        for str in self.regexList:
+        for str in regexList:
             regexStr += (str + r"\n^\s*")
         return regexStr
+
+    # 判断是否为一维数组
+    def is_1d_array(self, arr):
+        return type(arr) == list and all(type(i) != list for i in arr)
+
+    # 判断是否为二维数组
+    def is_2d_array(self, arr):
+        return type(arr) == list and any(type(i) == list for i in arr)

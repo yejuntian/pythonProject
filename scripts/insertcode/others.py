@@ -19,16 +19,18 @@ paramStr = getParam(
     , func=getXParam)
 
 # 替换为x()需要排除的class
-allExcludeFileList = ["smali_classes2/com/gbwhatsapp/chatinfo/ContactInfoActivity.smali",
-                      "smali_classes2/com/gbwhatsapp/gallerypicker/MediaPicker.smali",
-                      "smali_classes2/com/gbwhatsapp/mediaview/MediaViewBaseFragment.smali",
-                      "smali_classes2/com/gbwhatsapp/profile/ViewProfilePhoto.smali"]
+allExcludeFileList = [
+    "smali_classes2/com/gbwhatsapp/chatinfo/ContactInfoActivity.smali",
+    "smali_classes2/com/gbwhatsapp/gallerypicker/MediaPicker.smali",
+    "smali_classes2/com/gbwhatsapp/mediaview/MediaViewBaseFragment.smali",
+    "smali_classes2/com/gbwhatsapp/profile/ViewProfilePhoto.smali"
+]
 excludeFileList = findXByStr("dialogtoast/update-progress-message/dialog-type-not-progress-dialog/ \\\"")
 allExcludeFileList.extend(excludeFileList)
 
 
 # 格式化参数
-def modContPick(codeStr, match):
+def modContPick(codeStr, match, hasParam):
     if paramStr[1] != "x()":
         return codeStr.format(param1="p0", param2=paramStr[1], param3="v0")
     else:
@@ -48,10 +50,13 @@ def others():
     return [
         CommonInsert(filePathList=Utils.findFileByName("ContactPickerFragment"),
                      codeFilePath="smali/others/MainBKC",
-                     regexList=["const v\d+, 0x102000a",
-                                matchLine,
-                                "move\-result\-object v\d+",
-                                "check\-cast (v\d+)\, Landroid\/widget\/ListView\;"],
+                     regexList=[
+                         ["const v\d+, 0x102000a",
+                          matchLine,
+                          "move\-result\-object v\d+",
+                          "check\-cast (v\d+)\, Landroid\/widget\/ListView\;"
+                          ]
+                     ],
                      rowOffSet=0),
 
         CommonInsert(filePathList=getTransFileList(paramStr[0], allExcludeFileList),
@@ -66,25 +71,25 @@ def others():
             rowOffSet=insertFileEnd,
             code=modContPick),
 
-        # CommonInsert(filePathList=findFileByName("HomeActivity"),
-        #              codeFilePath="smali/others/actionbarbk",
-        #              regexList=["\.locals 4",
-        #                         matchLine,
-        #                         matchLine,
-        #                         matchLine,
-        #                         matchLine,
-        #                         matchLine,
-        #                         "if\-nez \w+\, \:cond_\d+",
-        #                         "new\-instance v\d+\, Landroid\/animation\/ValueAnimator\;"],
-        #              rowOffSet=-1,
-        #              hasParam=False),
-        #
-        # CommonInsert(filePathList=findFileByName("HomeActivity"),
-        #              codeFilePath="smali/others/actionbarbk",
-        #              regexList=["if\-nez v\d+\, \:cond_\d+",
-        #                         "const\-string\/jumbo v\d+\, \"search_fragment\""],
-        #              rowOffSet=-1,
-        #              hasParam=False),
+        CommonInsert(filePathList=findFileByName("HomeActivity"),
+                     codeFilePath="smali/others/actionbarbk",
+                     regexList=[
+                         ["\.locals 4",
+                          matchLine,
+                          matchLine,
+                          matchLine,
+                          matchLine,
+                          matchLine,
+                          "if\-nez \w+\, \:cond_\d+",
+                          "new\-instance v\d+\, Landroid\/animation\/ValueAnimator\;"
+                          ],
+                         ["if\-nez v\d+\, \:cond_\d+",
+                          "const\-string\/jumbo v\d+\, \"search_fragment\""
+                          ]
+                     ],
+                     rowOffSet=-2,
+                     hasParam=False),
+
     ]
 
 
