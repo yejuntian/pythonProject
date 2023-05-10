@@ -1,0 +1,5 @@
+
+    invoke-static {{{param}}}, Lcom/gbwhatsapp/youbasha/others;->getTabBageBKColor(I)I
+
+    move-result {param}
+

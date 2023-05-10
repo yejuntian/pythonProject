@@ -1,4 +1,6 @@
-from Utils import *
+import os.path
+
+from scripts.insertcode.Utils import *
 
 # 插入到文件末尾
 insertFileEnd = -100
@@ -29,7 +31,7 @@ class CommonInsert:
             totalCount：当前类中存在的个数
         """
         self.filePathList = filePathList
-        self.codeFilePath = codeFilePath
+        self.codeFilePath = os.path.join(getParentDirectory(), codeFilePath)
         self.regexList = regexList
         self.rowOffSet = rowOffSet
         self.code = code
@@ -46,25 +48,28 @@ class CommonInsert:
     # 插入代码到末尾
     def insertFileEnd(self, fpath):
         newPath = fpath[len(newProjectPath) + 1:]
+        codeFilePath = self.codeFilePath.split("/insertcode")[-1]
         isWrite = False
         with codecs.open(fpath, "r", "utf-8") as rf:
             data = rf.read()
             code = self.code(getFileData(self.codeFilePath), None, self.hasParam)
         with codecs.open(fpath, "a", "utf-8") as wf:
             if code is not None and code not in data:
-                print(f"*********** 正在插入代码{self.codeFilePath} ****************")
+                print(f"*** 正在插入代码{codeFilePath} ***")
                 isWrite = True
                 wf.write(code)
             else:
-                print(f"*********** 已存在代码{self.codeFilePath} {newPath} ****************")
+                print(f"*** 已存在代码{codeFilePath} {newPath} ***")
             if isWrite:
-                print(f"*********** 插入代码 {self.codeFilePath} 完成****************")
+                print(f"*** 插入代码 {codeFilePath} 完成***")
             # 添加没有插入的类
             pass
 
     def writeCode(self, fpath, count):
         newPath = fpath[len(newProjectPath) + 1:]
+        codeFilePath = self.codeFilePath.split("/insertcode")[-1]
         isWrite = False
+        code = None
         with codecs.open(fpath, "r", "utf-8") as rf:
             lines = rf.readlines()
             data = "".join(lines)
@@ -84,7 +89,6 @@ class CommonInsert:
                     for match in matches:
                         last_match_end = match.end()
                         num = data.count('\n', 0, last_match_end) - 1
-                        print(self.codeFilePath)
                         code = self.code(getFileData(self.codeFilePath), match, self.hasParam)
                         if code is not None:
                             count += 1
@@ -95,18 +99,16 @@ class CommonInsert:
                 if code not in data:
                     pass
                 else:
-                    print(f"*********** 已存在代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
-                if count > 0:
-                    print(f"*********** 插入代码{self.codeFilePath} {newPath} 共有{count}处 ****************")
+                    print(f"*** 已存在插入代码{codeFilePath} {newPath} 共有{count}处 ***")
 
         with codecs.open(fpath, "w", "utf-8") as wf:
             if self.code is not None:
                 wf.write("".join(lines))
                 if isWrite:
-                    print(f"*********** 插入代码 {self.codeFilePath} 完成****************")
+                    print(f"*** 插入代码 {codeFilePath} {newPath} 完成,共有{count}处 ***")
                 else:
                     # 添加没有插入的类
-                    pass
+                    print(f"*** 插入代码{codeFilePath}失败, {newPath} ***")
 
     # 匹配多行正则
     def getMultilineRegex(self, regexList):

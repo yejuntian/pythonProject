@@ -4,7 +4,7 @@ import json
 import os
 import re
 import xml.etree.ElementTree as ET
-from config import baseVersionCode, newVersionCode
+from scripts.insertcode.config import baseVersionCode, newVersionCode
 
 # 匹配字符串
 regexStr = r"\"(.*)\""

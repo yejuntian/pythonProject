@@ -1,0 +1,3 @@
+    invoke-static {{}}, Lcom/cow/s/t/Utils;->getBaseLongVer()J
+
+    move-result-wide {param}

@@ -3,7 +3,7 @@ from CommonInsert import *
 
 
 # 获取x()所需参数
-def getXParam(matches):
+def getXParam(matches, lines, num, rowOffSet):
     for match in matches:
         line = match.group(1)
         param = match.group(2)
@@ -13,9 +13,11 @@ def getXParam(matches):
 # 获取需要替换为x()所在行
 paramStr = getParam(
     "This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.",
-    regexList=["invoke\-virtual \{.*\}\, (.*\-\>(.*)LX\/.*)",
-               "move\-result\-object v\d",
-               "invoke\-virtual \{.*\}\, Landroid\/app\/Activity\;\-\>getWindow\(\)Landroid\/view\/Window\;"]
+    regexList=[
+        "invoke\-virtual \{.*\}\, (.*\-\>(.*)LX\/.*)",
+        "move\-result\-object v\d",
+        "invoke\-virtual \{.*\}\, Landroid\/app\/Activity\;\-\>getWindow\(\)Landroid\/view\/Window\;"
+    ]
     , func=getXParam)
 
 # 替换为x()需要排除的class
@@ -28,11 +30,13 @@ allExcludeFileList = [
 excludeFileList = findXByStr("dialogtoast/update-progress-message/dialog-type-not-progress-dialog/ \\\"")
 allExcludeFileList.extend(excludeFileList)
 
+homeActivityTabActive_color_id = getPublicIdByName("homeActivityTabActive", "color")
+
 
 # 格式化参数
 def modContPick(codeStr, match, hasParam):
     if paramStr[1] != "x()":
-        return codeStr.format(param1="p0", param2=paramStr[1], param3="v0")
+        return codeStr.format(param=paramStr[1])
     else:
         return None
 
@@ -90,6 +94,44 @@ def others():
                      rowOffSet=-2,
                      hasParam=False),
 
+        CommonInsert(filePathList=findFileByName("Conversation"),
+                     codeFilePath="smali/others/actionbarbk",
+                     regexList=["\.method public onSearchRequested\(\)Z"],
+                     rowOffSet=8,
+                     hasParam=False),
+
+        CommonInsert(filePathList=findXByStr("conversation/dialog/delete no messages"),
+                     codeFilePath="smali/others/actionbarbk",
+                     regexList=["check\-cast v\d+\, Landroid\/app\/Activity\;"],
+                     rowOffSet=1,
+                     hasParam=False),
+
+        CommonInsert(
+            filePathList=findXByStr("MessageAddOnManager/getLastChatsListCachedDisplayedMessageAddOnV2/no chat for "),
+            codeFilePath="smali/others/getHomeCounterBKColor",
+            regexList=[
+                ["move\-result (\w+)",
+                 matchLine,
+                 matchLine,
+                 "invoke\-virtual \{v\d+\, v\d+\}\, Landroid\/view\/View\;\-\>setBackground\(Landroid\/graphics\/drawable\/Drawable\;\)V"
+                 ]
+            ],
+            rowOffSet=-8),
+
+        CommonInsert(
+            filePathList=findFileByName("HomeActivity"),
+            codeFilePath="smali/others/getTabBageBKColor",
+            regexList=[
+                [
+                    f"const \w+\, {re.escape(homeActivityTabActive_color_id)}",
+                    "\:cond_\w+",
+                    "invoke\-static .*",
+                    "move\-result (\w+)",
+                    "new\-instance .*"
+                ]
+            ],
+            rowOffSet=2),
+
     ]
 
 
@@ -97,4 +139,3 @@ if __name__ == "__main__":
     objectList = others()
     for entity in objectList:
         entity.insertCode()
-    print(paramStr)

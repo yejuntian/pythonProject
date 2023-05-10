@@ -1,0 +1,3 @@
+    invoke-static {{}}, Lcom/cow/s/t/Utils;->getBaseStrVer()Ljava/lang/String;
+
+    move-result-object {param}
