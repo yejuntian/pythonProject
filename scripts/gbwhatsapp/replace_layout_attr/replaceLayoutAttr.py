@@ -11,6 +11,10 @@ regexAttrStr = r'android:(\w+)="([^"]*)"'
 targetRegexAttrStr = r'android:="([^"]+)"'
 # from_dir 所有layout xml文件属性集合
 fromAttrDict = {}
+# from_dir 所有layout xml文件属性总个数
+from_dir_attrs_count = 0
+# 写入to_dir 所有layout xml文件属性总个数
+to_dir_attrs_count = 0
 # 是否保存文件
 isSaveFile = False
 
@@ -32,6 +36,7 @@ def replaceMatchLayoutAttrs(from_dir, to_dir):
     if isSaveFile:
         save2File(fromAttrDict, mCurrentPath, "from_layout_attrs.json")
     transFolderWriteXmlAttrs(to_dir, fromAttrDict)
+    print(f"程序执行结束，查找属性总个数为：{from_dir_attrs_count} 写入属性中个数为：{to_dir_attrs_count}")
 
 
 # 遍历所有layout目录，并写入xml属性到对应文件中
@@ -68,6 +73,8 @@ def writeLayoutXmlAttrs(fpath, fname, folderAttrList):
 
 
 def replace_match(match, data_list):
+    global to_dir_attrs_count
+    to_dir_attrs_count += 1
     attribute_value = match.group(1)
     replacement = f'android:{data_list.pop(0)}="{attribute_value}"'
     return replacement
@@ -90,6 +97,7 @@ def findAttrs(from_dir, allAttrDict):
 
 # 获取layout xml所有标签属性,并保持到fileAttrDict字典中
 def setFileAttrDict(fpath, fname, fileAttrDict):
+    global from_dir_attrs_count
     # 查找符合regexStr正则规则的xml属性
     if re.search(regexStr, fname):
         matches = re.finditer(regexStr, fname, re.MULTILINE)
@@ -100,6 +108,7 @@ def setFileAttrDict(fpath, fname, fileAttrDict):
                 for fMatch in matches:
                     tempAttrList.append(fMatch.group(1))
             fileAttrDict[match.group()] = tempAttrList
+            from_dir_attrs_count += len(tempAttrList)
     else:  # 除了regexStr正则之外其他xml属性
         tempAttrList = []
         with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
@@ -107,6 +116,7 @@ def setFileAttrDict(fpath, fname, fileAttrDict):
             for fMatch in matches:
                 tempAttrList.append(fMatch.group(1))
         fileAttrDict[fname.split(".")[0]] = tempAttrList
+        from_dir_attrs_count += len(tempAttrList)
     return fileAttrDict
 
 
