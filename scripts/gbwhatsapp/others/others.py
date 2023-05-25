@@ -1,8 +1,9 @@
-import os
 import argparse
-import lxml.etree as ET
 import codecs
+import os
 import shutil
+
+import lxml.etree as ET
 
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', "res",
@@ -14,7 +15,9 @@ strDict = {"market://details?id=com.gbwhatsapp.w4b&utm_source="
            "com.gbwhatsapp.sticker.READ": "com.whatsapp.sticker.READ"}
 
 """
-    主要作用：删除from_dir无用目录，并校正字符串
+    主要作用：
+        1.删除from_dir无用目录，并校正字符串
+        2.调用moveFiles方法copy文件到目标目录
 """
 
 
@@ -130,22 +133,37 @@ def transFolderReplaceStr(from_dir):
                         wf.write(data)
 
 
-def moveFiles(folderPath, mCurrentPath):
+# copy 文件到指定目录
+def moveFiles(folderPath, mCurrentPath, folderName):
     if not os.path.exists(folderPath):
         os.makedirs(folderPath, exist_ok=True)
-    currentFolderPath = f"{mCurrentPath}/scripts/gbwhatsapp/yo"
-    listDir = os.listdir(currentFolderPath)
+    currentFolderPath = f"{mCurrentPath}/scripts/gbwhatsapp/{folderName}"
+    transFolderCopyFile(currentFolderPath, folderPath)
+
+
+# 遍历目录，层级copy文件到指定文件夹中
+def transFolderCopyFile(from_dir, targetFolderPath):
+    listDir = os.listdir(from_dir)
     for fname in listDir:
-        fpath = os.path.join(currentFolderPath, fname)
-        tpath = os.path.join(folderPath, fname)
-        shutil.copy(fpath, tpath)
+        fpath = os.path.join(from_dir, fname)
+        tpath = os.path.join(targetFolderPath, fname)
+        # print(f"fpath = {fpath} tpath = {tpath}")
+        if os.path.isdir(fpath):
+            # 创建目标文件夹
+            if not os.path.exists(tpath):
+                os.makedirs(tpath, exist_ok=True)
+            transFolderCopyFile(fpath, tpath)
+        elif os.path.isfile(fpath):
+            if not os.path.exists(tpath):
+                shutil.copy(fpath, tpath)
 
 
 def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
-    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/yo", mCurrentPath)
+    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/yo", mCurrentPath, folderName="yo")
+    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/com", mCurrentPath, folderName="com")
 
 
 if __name__ == "__main__":

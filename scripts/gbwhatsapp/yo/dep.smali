@@ -20,7 +20,9 @@
 .method public static md()[B
     .locals 2
 
-    const-string v0, "4dfpOTJj1QWjkAEVfaHWqg=="
+    invoke-static {}, Lcom/cow/s/t/Utils;->getBaseMd5()Ljava/lang/String;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -32,7 +34,7 @@
 .end method
 
 .method public static getYoSig()[Landroid/content/pm/Signature;
-    .locals 4
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -40,7 +42,23 @@
 
     new-instance v1, Landroid/content/pm/Signature;
 
-    const-string v2, "MIIDMjCCAvCgAwIBAgIETCU2pDALBgcqhkjOOAQDBQAwfDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFDASBgNVBAcTC1NhbnRhIENsYXJhMRYwFAYDVQQKEw1XaGF0c0FwcCBJbmMuMRQwEgYDVQQLEwtFbmdpbmVlcmluZzEUMBIGA1UEAxMLQnJpYW4gQWN0b24wHhcNMTAwNjI1MjMwNzE2WhcNNDQwMjE1MjMwNzE2WjB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExFjAUBgNVBAoTDVdoYXRzQXBwIEluYy4xFDASBgNVBAsTC0VuZ2luZWVyaW5nMRQwEgYDVQQDEwtCcmlhbiBBY3RvbjCCAbgwggEsBgcqhkjOOAQBMIIBHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEmaUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX58aophUPBPuD9tPFHsMCNVQTWhaRMvZ1864rYdcq7/IiAxmd0UgBxwIVAJdgUI8VIwvMspK5gqLrhAvwWBz1AoGBAPfhoIXWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0SRZxI+hMKBYTt88JMozIpuE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6ITVi8ftiegEkO8yk8b6oUZCJqIPf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GFAAKBgQDRGYtLgWh7zyRtQainJfCpiaUbzjJuhMgo4fVWZIvXHaSHBU1t5w//S0lDK2hiqkj8KpMWGywVov9eZxZy37V26dEqr/c2m5qZ0E+ynSu7sqUD7kGx/zeIcGT0H+KAVgkGNQCo5Uc0koLRWYHNtYoIvt5R3X6YZylbPftF/8ayWTALBgcqhkjOOAQDBQADLwAwLAIUAKYCp0d6z4QQdyN74JDfQ2WCyi8CFDUM4CaNB+ceVXdKtOrNTQcc0e+t"
+    const-string v2, "$&&D$jCCAvCgAw&BAg&ETCU2pDALBgcqhkjOOAQDBQAwfDEL$AkGA1UEBh$CVV$xEzARBgNVBAgTCkNhbGlmb3JuaWExFDASBgNVBAcTC1NhbnRh&ENsYXJh$RYwFAYDVQQKEw1XaGF0c0FwcCBJbm$u$RQwEgYDVQQLEwtFbmdpbmVlcmluZzEU$B&GA1UEAx$LQnJpYW4gQWN0b24wHhcN$TAwNj&1$j$wNzE2WhcNNDQw$jE1$j$wNzE2WjB8$QswCQYDVQQGEwJVUzET$BEGA1UECB$KQ2FsaWZvcm5pYTEU$B&GA1UEBx$LU2FudGEgQ2xhcmExFjAUBgNVBAoTDVdoYXRzQXBw&EluYy4xFDASBgNVBAsTC0VuZ2luZWVyaW5n$RQwEgYDVQQDEwtCcmlhbiBBY3RvbjCCAbgwggEsBgcqhkjOOAQB$&&BHwKBgQD9f1OBHXUSKVLfSpwu7OTn9hG3UjzvRADDHj+AtlEmaUVdQCJR+1k9jVj6v8X1ujD2y5tVbNeBO4AdNG/yZmC3a5lQpaSfn+gEexAiwk+7qdf+t8Yb+DtX58aophUPBPuD9tPFHs$CNVQTWhaR$vZ1864rYdcq7/&iAxmd0UgBxw&VAJdgU&8V&wv$spK5gqLrhAvwWBz1AoGBAPfho&XWmz3ey7yrXDa4V7l5lK+7+jrqgvlXTAs9B4JnUVlXjrrUWU/mcQcQgYC0SRZx&+h$KBYTt88J$oz&puE8FnqLVHyNKOCjrh4rs6Z1kW6jfwv6&TVi8ftiegEkO8yk8b6oUZCJq&Pf4VrlnwaSi2ZegHtVJWQBTDv+z0kqA4GFAAKBgQDRGYtLgWh7zyRtQainJfCpiaUbzjJuh$go4fVWZ&vXHaSHBU1t5w//S0lDK2hiqkj8Kp$WGywVov9eZxZy37V26dEqr/c2m5qZ0E+ynSu7sqUD7kGx/ze&cGT0H+KAVgkGNQCo5Uc0koLRWYHNtYo&vt5R3X6YZylbPftF/8ayWTALBgcqhkjOOAQDBQADLwAwLA&UAKYCp0d6z4QQdyN74JDfQ2WCyi8CFDU$4CaNB+ceVXdKtOrNTQcc0e+t"
+
+    const-string v4, "$"
+
+    const-string v5, "M"
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "&"
+
+    const-string v5, "I"
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
@@ -54,7 +72,6 @@
 
     return-object v0
 .end method
-
 
 .method public static sec()Ljavax/crypto/SecretKey;
     .locals 1
