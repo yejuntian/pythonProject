@@ -1,6 +1,7 @@
 import codecs
 import os
 import argparse
+import re
 
 """
     {
@@ -9,7 +10,7 @@ import argparse
             "sec()Ljavax/crypto/SecretKey;",
             "md()[B"
         ],
-        "string": "\"PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0GXKR6OOQmhyERwx74fw1RYSU10I4r1gyBVDbRJ40pidjM41G1I1oN\"",
+        "string": "PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0GXKR6OOQmhyERwx74fw1RYSU10I4r1gyBVDbRJ40pidjM41G1I1oN",
         "2.22.22.77": "LX/2Fr;"
     }
 """
@@ -27,9 +28,15 @@ targetStr = "PkTwKSZqUfAUyR0rPQ8hYJ0wNsQQ3dW1+3SCnyTXIfEAxxS75FwkDf47wNv/c8pP3p0
 code1 = """
     invoke-static {}, Lcom/gbwhatsapp/yo/yo;->sec()Ljavax/crypto/SecretKey;
     """
-
+# 上版本代码插入格式
 code2 = """
     invoke-static {}, Lcom/gbwhatsapp/yo/yo;->md()[B
+    """
+# 最新版本代码插入格式
+code3 = """
+    invoke-static {{}}, Lcom/gbwhatsapp/yo/yo;->md()[B
+    
+    move-result-object {param}
     """
 
 
@@ -76,6 +83,14 @@ def insert_code(file_list):
                         targetLine = lines[i + 1]
                         line = targetLine.replace(targetLine, code2)
                         lines[i + 1] = line
+                elif line.endswith("Ljavax/crypto/Mac;->update([B)V"):  # 最新校验规则
+                    param = re.findall(r"[v,p]\d+", line)[1]
+                    line = str(lines[i + 2])
+                    if line.__contains__(":try_start"):
+                        enableWrite = True
+                        targetLine = lines[i - 1]
+                        line = targetLine.replace(targetLine, lines[i - 1] + code3.format(param=param))
+                        lines[i - 1] = line
 
         if enableWrite:
             with open(fpath, 'w') as f:
