@@ -2,7 +2,6 @@ import argparse
 import codecs
 import os
 import shutil
-
 import lxml.etree as ET
 
 # 排除哪些文件夹
@@ -162,8 +161,8 @@ def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
-    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/yo", mCurrentPath, folderName="yo")
-    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/com", mCurrentPath, folderName="com")
+    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/yo", mCurrentPath, "yo")
+    moveFiles(f"{from_dir}/smali_classes5/com", mCurrentPath, "com")
 
 
 if __name__ == "__main__":

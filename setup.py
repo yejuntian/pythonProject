@@ -26,7 +26,7 @@ vestPackageDescription = "马甲包",
 vestPackage_console_scripts = f"{vestpackage} = vestpackage.replace_package:main"
 # whatsapp 转gbwhatsapp
 convertPackage = "convertgb"
-convertPackageVersion = "1.0.4"
+convertPackageVersion = "1.0.8"
 convertPackageDescription = "",
 convertPackage_console_scripts = f"{convertPackage} = gbwhatsapp.__main__:main"
 # 处理git修改文件

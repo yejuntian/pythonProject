@@ -2,18 +2,50 @@ import codecs
 import glob
 import re
 import argparse
+from Utils import getXFilePath
 
+# 关闭备份页面code
 targetStr = "gdrive-new-user-setup/create no need to display GoogleDriveNewUserSetupActivity, exiting."
 code = """
     const/4 {param}, 0x0
     """
-
+# 关闭备份弹框code2
+targetStr2 = "com.google.android.gms.availability"
+regexStr = "\.method public static final A\d+\(Landroid\/content\/Context\;Landroid\/content\/DialogInterface\$OnCancelListener\;LX\/\w+\;I\)Landroid\/app\/Dialog\;"
+code2 = """    const/4 v0, 0x0
+    
+    return-object v0"""
 """
-    主要作用：关闭谷歌云备份
+    主要作用：关闭跳转到谷歌定期备份页面
 """
 
 
-def closeCloudBackUp(from_dir):
+def closeBackUp(from_dir):
+    # 关闭备份页面
+    closeCloudBackUpPage(from_dir)
+    # 关闭备份对话框
+    closeBackUpAlertWindow(from_dir)
+
+
+def closeBackUpAlertWindow(from_dir):
+    fpath = getXFilePath(from_dir, regexStr)
+    print(fpath)
+    if fpath is not None:
+        with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
+            lines = list(map(lambda x: x.replace("\n", ""), rf.readlines()))
+            for i in range(0, len(lines)):
+                line = lines[i].strip()
+                if re.search(regexStr, line):
+                    enableWrite = True
+                    targetLine = i + 3
+                    lines[targetLine] = code2
+        if enableWrite:
+            with codecs.open(fpath, 'w', "utf-8") as wf:
+                wf.write("\n".join(lines))
+                print("写入" + fpath)
+
+
+def closeCloudBackUpPage(from_dir):
     fileList = glob.glob(f"{from_dir}/**/com/gbwhatsapp/**/**/GoogleDriveNewUserSetupActivity.smali")
     for fpath in fileList:
         enableWrite = False
@@ -40,4 +72,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     from_dir = args.from_dir
     # from_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/whatsapp_1"
-    closeCloudBackUp(from_dir)
+    closeBackUp(from_dir)

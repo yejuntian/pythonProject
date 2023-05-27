@@ -6,7 +6,7 @@ from gbwhatsapp_2_whatsapp.convert_gb import convertGB
 from insertcode.getYoSig import sign
 from insertcode.md_and_sec import sign as signMd5
 from insertcode.replaceValuesColor import replaceColors
-from insertcode.closeBackUp import closeCloudBackUp
+from insertcode.closeBackUpPage import closeBackUp
 from others.others import other
 from public_sort.public_sort import sort
 from replace_package import replacePackage
@@ -22,7 +22,7 @@ def main():
     parser.add_argument("from_dir")
     args = parser.parse_args()
     from_dir = args.from_dir
-    # mPath = gbwhatsapp.__file__
+    # mPath = gbwhatsapp.__file__  记得删除脚本路径中/scripts
     # mCurrentPath = mPath[0:mPath.rindex("/gbwhatsapp")]
     mCurrentPath = os.getcwd()
     before = time.time()
@@ -56,8 +56,8 @@ def main():
     print("*********** 其他操作->删除无用文件夹，替换特定字符串开始 ************")
     # 替换values-v31/colors.xml内容
     replaceColors(from_dir)
-    # 关闭google备份
-    closeCloudBackUp(from_dir)
+    # 关闭google备份弹框和页面
+    closeBackUp(from_dir)
     # 删除无用文件夹，替换特定字符串
     other(from_dir, mCurrentPath)
     print("*********** 其他操作->删除无用文件夹，替换特定字符串结束 ************")
