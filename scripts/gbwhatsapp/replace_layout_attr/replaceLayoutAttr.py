@@ -8,7 +8,7 @@ regexStr = r"0x7f[0-9a-f]{6}"
 # from_dir匹配xml资源属性
 regexAttrStr = r'android:(\w+)="([^"]*)"'
 # to_dir 所有匹配属性的集合
-targetRegexAttrStr = r'android:="([^"]+)"'
+targetRegexAttrStr = r'android:="([^"]*)"'
 # from_dir 所有layout xml文件属性集合
 fromAttrDict = {}
 # from_dir 所有layout xml文件属性总个数
@@ -68,7 +68,7 @@ def writeLayoutXmlAttrs(fpath, fname, folderAttrList):
         with codecs.open(fpath, mode="r", encoding="utf-8") as rf:
             data = rf.read()
         with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
-            result = re.sub(r'android:="([^"]*)"', lambda match: replace_match(match, fileAttrsList), data)
+            result = re.sub(targetRegexAttrStr, lambda match: replace_match(match, fileAttrsList), data)
             wf.write(result)
 
 
