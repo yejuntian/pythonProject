@@ -51,7 +51,7 @@ def main():
     sign(from_dir)
     signMd5(from_dir)
     print("*********** 插入签名校验结束 ************")
-    sort(from_dir)
+    sort(from_dir,True)
     # 其他操作->删除无用文件夹，替换特定字符串
     print("*********** 其他操作->删除无用文件夹，替换特定字符串开始 ************")
     # 替换values-v31/colors.xml内容

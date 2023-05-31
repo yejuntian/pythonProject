@@ -80,9 +80,11 @@ def save_to_file(data_list, file_name):
         wf.write('</resources>')
 
 
-def sort(from_path):
+def sort(from_path, isRenameFile=False):
     public_sort(from_path)
     target_file = from_path + "/res/values/public_sorted.xml"
+    if isRenameFile:
+        target_file = from_path + "/res/values/public.xml"
     save_to_file(public_data_list, target_file)
     print(f"public.xml排序完成,排序结果保存到:{target_file}")
 

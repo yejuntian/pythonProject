@@ -161,8 +161,12 @@ def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
-    moveFiles(f"{from_dir}/smali_classes5/gbwhatsapp/yo", mCurrentPath, "yo")
-    moveFiles(f"{from_dir}/smali_classes5/com", mCurrentPath, "com")
+    # 如果存在smali_classes5则创建smali_classes6文件夹
+    folderName = "smali_classes5"
+    if os.path.exists(f"{from_dir}/{folderName}"):
+        folderName = "smali_classes6"
+    moveFiles(f"{from_dir}/{folderName}/gbwhatsapp/yo", mCurrentPath, "yo")
+    moveFiles(f"{from_dir}/{folderName}/com", mCurrentPath, "com")
 
 
 if __name__ == "__main__":
