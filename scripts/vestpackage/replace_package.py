@@ -107,7 +107,7 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
         else:
             productNameList = messengerNameList
         productIndex = appList.index(getProductName(to_dir))
-        if productIndex in range(1, 4):
+        if productIndex in range(0, 4):
             # 替换otavia/message兜底升级key
             replaceProductName(to_dir, productNameList[productIndex])
             # 替换新Icon
