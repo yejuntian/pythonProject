@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!-- gbwhatsapp-layout目录下需要修改混淆属性-->
+    <comment>home.xml</comment>
+    <comment>about.xml</comment>
+    <comment>eula.xml</comment>
+    <comment>eula_with_ls.xml</comment>
+    <comment>conversation.xml</comment>
+    <comment>conversations_row.xml</comment>
+    <comment>conversation_entry.xml下相关include的layout</comment>
+    <comment>group_chat_info_row.xml</comment>
+    <comment>my_statuses.xml</comment>
+    <comment>layout-land/google_migrate_importer_view.xml</comment>
+    <comment>registerphone.xml</comment>
+    <comment>status_playback_page.xml</comment>
+    <comment>voice_note_view.xml</comment>
+    <comment>conversation_row_text_left.xml</comment>
+    <comment>conversation_row_text_right.xml</comment>
+    <comment>wallpaper_preview_default.xml</comment>
+    <comment>conversation_actionbar.xml</comment>
+    <!--AndroidManifest.xml-->
+    <comment>app_name</comment>
+    <comment>launcher_app_name</comment>
+    <comment>localized_app_name</comment>
+</properties>
+

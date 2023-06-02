@@ -23,8 +23,8 @@ typeDict = {"array": typeStr, "attr": typeStr, "bool": typeStr, "color": typeStr
             "dimen": typeStr, "integer": typeStr, "string": typeStr, "style": typeStr}
 
 """
-    主要作用：映射typeList集合中每个属性的对应关系，查找to_dir/res/layout目录下所有未混淆的layout资源文件，
-    匹配from_dir/res目录下对应的layout,正则校验如果匹配的个数相同则代表匹配成功,最终保存到layoutAttrMapping.json文件。
+    主要作用：映射typeList集合中每个属性的对应关系，查找from_dir/res/layout目录下所有未混淆的layout资源文件，
+    匹配to_dir/res目录下对应的layout,正则校验如果匹配的个数相同则代表匹配成功,最终保存到layoutAttrMapping.json文件。
 """
 
 

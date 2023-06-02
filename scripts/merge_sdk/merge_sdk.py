@@ -111,6 +111,9 @@ def write_data_2_file(file_path, public_map):
 
 
 def save2File(dataList, fpath):
+    parentDir = os.path.dirname(fpath)
+    if not os.path.exists(parentDir):
+        os.makedirs(parentDir, exist_ok=True)
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with codecs.open(fpath, "w", "utf-8") as wf:
         wf.write(jsonStr)
