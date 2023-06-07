@@ -66,4 +66,4 @@ def save_2_file(dataList, fileName):
 if __name__ == "__main__":
     from_dir = "/Users/shareit/work/GBWorke/WhatsAppPlus_origin_java"
     transFolder(from_dir, blacklist)
-    save_2_file(strList, "color.json")
+    save_2_file(strList, "gb_color.json")

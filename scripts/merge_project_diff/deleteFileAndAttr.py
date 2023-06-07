@@ -21,6 +21,11 @@ publicMappingNameData = {}
 deleteFileDict = {}
 # 字符串前缀
 strPrefix = "APKTOOL_DUMMYVAL_"
+# 属性集合
+attrTypeDict = {"array": [], "attr": [], "bool": [], "color": [], "dimen": [],
+                "drawable": [], "id": [], "integer": [], "plurals": [], "string": [],
+                "style": [], "anim": [], "animator": [], "interpolator": [], "layout": [],
+                "menu": [], "mipmap": [], "raw": [], "xml": []}
 
 
 def deleteGarbage(from_dir):
@@ -28,7 +33,7 @@ def deleteGarbage(from_dir):
     # 校验fileList结合，删除无用文件
     checkFile(f"{from_dir}/res")
     checkXMlAttr(from_dir)
-    saveJsonFile(deleteFileDict, "delete.json")
+    saveJsonFile(deleteFileDict, "deleteFileAndAttrs.json")
 
 
 # 检查xml属性，删除无用属性
@@ -50,6 +55,9 @@ def checkXMlAttr(from_dir):
 
         # 遍历所有以values-tr形式的文件夹删除xml无用属性
         tranValuesFolder(from_dir)
+        # 删除public.xml多余属性
+        for attrType in attrTypeDict:
+            deletePublicNote(attrType)
         # 重新写入public.xml文件
         save_to_publicXML(publicMappingChildData, f"{from_dir}/res/values/public.xml")
 
@@ -61,10 +69,17 @@ def tranValuesFolder(from_dir):
         if os.path.isdir(fpath):
             tranValuesFolder(fpath)
         elif os.path.isfile(fpath):
-            if fname.startswith("plurals.xml") or fname.startswith("strings.xml"):
+            if fname.startswith("plurals.xml") or fname.startswith("strings.xml") \
+                    or fname.startswith("bools.xml") or fname.startswith("integers.xml") \
+                    or fname.startswith("ids.xml"):
                 parserCommonXML(fpath, typeMapping.get(fname))
-            elif fname.startswith("bools.xml"):
+            elif fname.startswith("colors.xml") or fname.startswith("dimens.xml") \
+                    or fname.startswith("drawables.xml"):
                 parserColorXML(fpath, typeMapping.get(fname))
+            elif fname.startswith("styles.xml"):
+                parserStylesXML(fpath, typeMapping.get(fname))
+            elif fname.startswith("arrays.xml") or fname.startswith("attrs.xml"):
+                parserArraysXML(fpath, typeMapping.get(fname))
 
 
 # 解析arrays.xml
@@ -86,9 +101,10 @@ def parserArraysXML(fpath, fileType):
         # print(f"attrName = {attrName} fpath = {fpath} fileType = {fileType}")
         if not attrName.startswith(strPrefix) and attrName in publicMappingNameData.get(fileType) and enableAdd:
             arrayList.append(child)
+            attrTypeDict.get(fileType).append(attrName)
         else:
             deletePublicAttrName(attrName, fileType)
-            deleteFileDict[fileType].append(attrName)
+            deleteFileAndAttr(attrName, fileType)
     # 重新写入xml文件
     xml_content = convert_str(arrayList)
     saveXMLfile(xml_content, fpath)
@@ -121,22 +137,45 @@ def parserStylesXML(fpath, fileType):
         # print(f"attrName = {attrName} fpath = {fpath} fileType = {fileType}")
         if not attrName.startswith(strPrefix) and attrName in publicMappingNameData.get(fileType) and enableAdd:
             styleList.append(child)
+            attrTypeDict.get(fileType).append(attrName)
         else:
             deletePublicAttrName(attrName, fileType)
-            deleteFileDict[fileType].append(attrName)
+            deleteFileAndAttr(attrName, fileType)
     # 重新写入xml文件
     xml_content = convert_str(styleList)
     saveXMLfile(xml_content, fpath)
 
 
+# 删除public.xml注册的多余标签
+def deletePublicNote(fileType):
+    attrNameList = attrTypeDict.get(fileType)
+    nameList = publicMappingNameData.get(fileType)
+    # print(f"fileType = {fileType} attrNameList = {attrNameList} nameList = {nameList}")
+    # 删除public.xml多余属性
+    if nameList is not None and len(nameList) > len(attrNameList):
+        for name in nameList:
+            if name not in attrNameList:
+                position = nameList.index(name)
+                publicMappingNameData.get(fileType).pop(position)
+                publicMappingChildData.get(fileType).pop(position)
+
+
 # 删除public.xml注册标签
 def deletePublicAttrName(attrName, fileType):
     nameList = publicMappingNameData.get(fileType)
+    # 删除无用节点
     if nameList.count(attrName) > 0:
         pos = nameList.index(attrName)
         # print(f"attrName = {attrName} pos = {pos} fileType = {fileType}")
         publicMappingNameData.get(fileType).pop(pos)
         publicMappingChildData.get(fileType).pop(pos)
+
+
+# 删除文件或xml属性集合
+def deleteFileAndAttr(attrName, fileType):
+    # 添加到删除属性json集合中
+    if attrName not in deleteFileDict.get(fileType):
+        deleteFileDict[fileType].append(attrName)
 
 
 # 解析colors.xml、bools.xml等等xml
@@ -155,9 +194,10 @@ def parserColorXML(fpath, fileType):
         # print(f"attrName = {attrName} fpath = {fpath} fileType = {fileType}")
         if not attrName.startswith(strPrefix) and attrName in publicMappingNameData.get(fileType) and enableAdd:
             stringList.append(child)
+            attrTypeDict.get(fileType).append(attrName)
         else:
             deletePublicAttrName(attrName, fileType)
-            deleteFileDict[fileType].append(attrName)
+            deleteFileAndAttr(attrName, fileType)
     # 重新写入xml文件
     xml_content = convert_str(stringList)
     saveXMLfile(xml_content, fpath)
@@ -176,9 +216,10 @@ def parserCommonXML(fpath, fileType):
         # print(f"attrName = {attrName} fpath = {fpath} fileType = {fileType}")
         if not attrName.startswith(strPrefix) and attrName in publicMappingNameData.get(fileType):
             stringList.append(child)
+            attrTypeDict.get(fileType).append(attrName)
         else:
             deletePublicAttrName(attrName, fileType)
-            deleteFileDict[fileType].append(attrName)
+            deleteFileAndAttr(attrName, fileType)
     # 重新写入xml文件
     xml_content = convert_str(stringList)
     saveXMLfile(xml_content, fpath)
@@ -233,6 +274,8 @@ def deleteFile(fileName, fpath, fileType, fileNameList):
     if fileName not in fileNameList:
         os.remove(fpath)
         deleteFileDict.get(fileType).append(fileName)
+    else:
+        attrTypeDict.get(fileType).append(fileName)
 
 
 # 获取public.xml 属性id和属性name映射关系

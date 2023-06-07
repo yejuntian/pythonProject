@@ -10,8 +10,8 @@ import xml.etree.ElementTree as ET
 regexStr = r"\"(.*)\""
 # 匹配16进制id
 regexId = r"(0x7f\w{6})"
-baseVersionCode = "2.22.10.73"
-newVersionCode = "2.23.2.76"
+baseVersionCode = "2.23.2.76"
+newVersionCode = "2.23.8.76"
 targetPublicIdDict = {}
 
 """

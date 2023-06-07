@@ -138,5 +138,7 @@ if __name__ == "__main__":
 
     from_dir = args.from_dir
     to_dir = args.to_dir
+    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
+    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76"
     replaceValues(from_dir, to_dir)
     print(f"执行完成，输出结果保存到：{to_dir}")

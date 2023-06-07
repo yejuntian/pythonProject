@@ -8,14 +8,14 @@ foldPath = ""
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes7', 'AndroidManifest.xml', 'apktool.yml']
+             'smali_classes4', 'smali_classes7', 'smali_classes8', 'AndroidManifest.xml',
+             'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]
 savePath = f"{os.getcwd()}/scripts/findX"
 setList = set()
 mapList = {}
-baseVersion = "2.22.22.80"
-newVersion = "2.23.2.76"
+from baseVersion import baseVersion, newVersion
 
 
 def findXClass(from_dir, rexStr):
@@ -44,7 +44,9 @@ def findXClass(from_dir, rexStr):
 
 def package_data():
     dataList = []
-    for newStr in setList:
+    sorted_list = sorted(setList)
+    sorted_list.sort()
+    for newStr in sorted_list:
         newMap = {
             baseVersion: newStr,
             newVersion: "",
@@ -62,6 +64,7 @@ def save2File(folder_path, dataList, fileName):
     with open(fpath, "w+") as wf:
         wf.write(jsonStr)
     print(f"结果保存到：{fpath}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -98,6 +101,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/Conversation;->\w+:.*"
                "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
+               "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                )
     save2File(savePath, package_data(), "field.json")
     print("****************查询完毕****************")

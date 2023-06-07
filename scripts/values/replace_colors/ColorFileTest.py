@@ -100,7 +100,7 @@ def correctColorData(isNightColor):
 
 
 if __name__ == '__main__':
-    from_path = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
+    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76"
     fColorPath = f"{from_path}/res/values/colors.xml"
     fColorNightPath = f"{from_path}/res/values-night/colors.xml"
     correctColorFile()

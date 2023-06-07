@@ -10,16 +10,16 @@ import lxml.etree as ET
 # 需要插入的字典
 enableInsertNameDict = {}
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF',
+blacklist = ['.idea', '.git', '.gradle', 'build', 'kotlin', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["xml"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
             "integer", "string", "style", "anim", "drawable",
-            "animator", "layout"]
+            "animator", "layout", "xml"]
 # 不需要copy的文件类型，只需要在public.xml进行注册，copy操作单独进行处理
-notCopyTypeList = ["anim", "drawable", "animator", "layout"]
+notCopyTypeList = ["anim", "drawable", "animator", "layout", "xml"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
@@ -45,7 +45,7 @@ def startCopyValues(from_dir, to_dir):
     for type in typeList:
         # 特殊处理，只需要注册到public.xml，copy操作单独处理
         if type in notCopyTypeList:
-            enableInsertNameDict[type] = getInsertName(publicFilePath, type, mappingData[type])
+            enableInsertNameDict[type] = getInsertName(publicFilePath, type, mappingData.get(type))
         insertPublic(publicFilePath, type)
 
     # 执行拷贝资源操作
@@ -84,14 +84,16 @@ def transFolderCopy(from_dir, to_dir, mappingData):
                 if folderName.__contains__("-"):
                     folderName = folderName.split("-")[0]
                 if folderName == "mipmap" or folderName == "drawable":
-                    drawableList = mappingData.get("drawable")
+                    drawableList = mappingData.get(folderName)
                     # 在copy列表中，并且目标文件夹不存在则进行copy操作
-                    if fileName in drawableList and not fname in folderList:
+                    if drawableList is not None and fileName in drawableList and fname not in folderList:
                         shutil.copy(fpath, tpath)
                 elif folderName in resTypeList:
                     otherFileList = mappingData.get(folderName)
                     # 在copy列表中，并且目标文件夹不存在则进行copy操作
-                    if fileName in otherFileList and not fname in folderList:
+                    # print(f"folderName = {folderName} fileName = {fileName}")
+                    # print(otherFileList)
+                    if otherFileList is not None and fileName in otherFileList and fname not in folderList:
                         shutil.copy(fpath, tpath)
 
 
@@ -116,7 +118,7 @@ def getNameMappingList(fpath):
 def getInsertName(targetPath, fileType, diffNameList):
     if enableInsertNameDict.get(fileType) is None:
         enableInsertNameDict[fileType] = []
-    if len(diffNameList) <= 0:
+    if diffNameList is None or len(diffNameList) <= 0:
         return
     targetNameList = getTargetTypePublicId(targetPath, fileType)
     for diffName in diffNameList:

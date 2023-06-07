@@ -18,6 +18,7 @@
     <comment>conversation_row_text_right.xml</comment>
     <comment>wallpaper_preview_default.xml</comment>
     <comment>conversation_actionbar.xml</comment>
+    <comment>conversation_list_row_header.xml</comment>
     <!--AndroidManifest.xml-->
     <comment>app_name</comment>
     <comment>launcher_app_name</comment>

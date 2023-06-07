@@ -7,8 +7,7 @@ import argparse
 savePath = ""
 setList = set()
 mapList = {}
-baseVersion = "2.22.18.70"
-newVersion = "2.22.22.80"
+from baseVersion import baseVersion, newVersion
 
 
 def findXClass(folder_path, rexStr):
@@ -36,7 +35,9 @@ def findXClass(folder_path, rexStr):
 
 def package_data():
     dataList = []
-    for newStr in setList:
+    sorted_list = sorted(setList)
+    sorted_list.sort()
+    for newStr in sorted_list:
         newMap = {
             baseVersion: newStr,
             newVersion: "",
@@ -92,6 +93,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/Conversation;->\w+:.*"
                "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
+               "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                )
     save2File(mCurPath, package_data(), "field.json")
     print("****************查询完毕****************")

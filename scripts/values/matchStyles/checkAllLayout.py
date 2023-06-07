@@ -6,7 +6,7 @@ import re
 import xml.etree.ElementTree as ET
 
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', '.gradle', 'kotlin', 'lib', 'META-INF', 'original', 'apktool.yml']
+blacklist = ['.idea', '.git', '.gradle', 'build', 'kotlin', 'lib', 'META-INF', 'original', 'apktool.yml']
 # 寻找符合android:id="@id/eula_title"格式的正则
 matchRes = r"\"@\w+\/.*?\""
 # 寻找styles.xml符合<item name="android:src">@drawable/ic_menu</item>格式的正则
@@ -118,6 +118,7 @@ def findValues(from_dir, allValues):
 
 
 def addValues(fpath, allValues):
+    # print(fpath)
     with codecs.open(fpath, "r", "utf-8") as rf:
         data = rf.read()
         # 正则匹配matchRes属性

@@ -12,7 +12,7 @@
     <comment>abc_search_view.xml</comment>
     <comment>abc_tooltip.xml</comment>
     <comment>about.xml</comment>
-    <comment>activity_community_home_header.xml</comment>
+    <!--<comment>activity_community_home_header.xml 只是属性调换顺序</comment>-->
     <comment>activity_spam_warning.xml</comment>
     <comment>calls.xml</comment>
     <comment>contact_info_header.xml</comment>
@@ -45,12 +45,12 @@
     <comment>home_tab.xml</comment>
     <comment>media_caption_entry.xml</comment>
     <comment>media_composer_bottom_bar.xml</comment>
-    <comment>media_gallery.xml</comment>
+    <!-- <comment>media_gallery.xml app:layout_scrollFlags="enterAlways|scroll|snap" 调整属性value顺序</comment>-->
     <comment>mentions_row.xml</comment>
     <comment>message_reply.xml</comment>
     <comment>mtrl_layout_snackbar_include.xml</comment>
     <comment>my_statuses.xml</comment>
-    <comment>payment_transaction_history.xml</comment>
+    <!--<comment>payment_transaction_history.xml app:layout_scrollFlags="enterAlways|scroll|snap" 调整属性value顺序</comment>-->
     <comment>popup_notification.xml</comment>
     <comment>preference.xml</comment>
     <comment>preference_category.xml</comment>
@@ -73,6 +73,8 @@
     <comment>voice_note_view.xml</comment>
     <!--  未找到对应类-->
     <comment>text_status_composer.xml</comment>
+    <!-- text_status_composer.xml和new_text_status_composer_link_preview.xml合并为一个   -->
+    <comment>new_text_status_composer_link_preview.xml</comment>
     <!--新版本已经去掉的layout-->
     <comment>abc_activity_chooser_view_list_item.xml</comment>
     <comment>design_bottom_navigation_item.xml</comment>

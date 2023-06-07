@@ -2,9 +2,7 @@ import argparse
 import json
 import codecs
 import os
-
-baseVersion = "2.22.22.80"
-newVersion = "2.23.2.76"
+from baseVersion import baseVersion, newVersion
 
 
 def load_json_data(file_path):

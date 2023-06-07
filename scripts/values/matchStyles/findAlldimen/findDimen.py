@@ -5,8 +5,8 @@ import os
 import re
 
 resultDict = {}
-dimenRegex = r"\"@(\w+)/(APKTOOL_DUMMYVAL_\w+)\""
-
+regexList = [r"\"@(\w+)/(APKTOOL_DUMMYVAL_(\w+))\"", r"(whatsapp|app):(APKTOOL_DUMMYVAL\w+)=",
+             r"\"@(\w+)\/(.*?)\""]
 """
     主要作用：根据from_path读取xml文件，匹配xml文件中的所有符合正则dimenRegex的属性，
     并把匹配结果保存到matchStyles/findAlldimen/result.json
@@ -14,7 +14,8 @@ dimenRegex = r"\"@(\w+)/(APKTOOL_DUMMYVAL_\w+)\""
 
 
 def findAllDimens(fpath):
-    matchRes(fpath, dimenRegex, resultDict)
+    for regex in regexList:
+        matchRes(fpath, regex, resultDict)
     save2File(f"{os.getcwd()}/scripts/values/matchStyles/findAlldimen", resultDict, "result.json")
 
 

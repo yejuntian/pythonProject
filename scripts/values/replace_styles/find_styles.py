@@ -76,7 +76,7 @@ def matchCorrectStyle(newEntityList, oldEntityList):
             continue
         count = newStylesChildCountList.count(childCount)
         old_count = oldStylesChildCountList.count(childCount)
-        if count == 1 and old_count == 1:  # 唯一style
+        if count == 1 and old_count == 1:  # TODO 唯一style,有些个数相同但是item不匹配，需要进行逻辑优化
             pos = oldStylesChildCountList.index(childCount)
             oldEntity = oldEntityList[pos]
             old_name = oldEntity.name
@@ -462,5 +462,5 @@ def getStyleItemValue(map, key, newContent):
 
 if __name__ == "__main__":
     from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    to_dir = "/Users/shareit/work/GBWorke/whatsapp_new/Whatsapp_v2.22.24.78"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76"
     findStyle(from_dir, to_dir)

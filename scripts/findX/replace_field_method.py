@@ -1,14 +1,10 @@
 import codecs
 import json
 import argparse
-
-baseVersion = "2.22.22.80"
-newVersion = "2.23.2.76"
-method_data = []
+from baseVersion import baseVersion, newVersion
 
 """
-    组合field2.json、method2.json中类的对应关系，
-    替换class2.json中对应版本的value值
+    根据findX/class.json中类的对应关系，替换findX/field.json、findX/method.json中对应版本的value值
 """
 
 
@@ -42,31 +38,29 @@ def merge_data(class_data, method_data):
 
 def packageData(from_dir):
     # 合并method数据
-    method_data = load_json_data(f"{from_dir}/method2.json")
+    class_data = load_json_data(f"{from_dir}/class.json")
     fMethodPath = f"{from_dir}/method.json"
-    method_data = mergeData(load_json_data(fMethodPath), method_data)
+    method_data = mergeData(load_json_data(fMethodPath), class_data)
     save_2_file(method_data, fMethodPath)
     # 合并field数据
-    field_data = load_json_data(f"{from_dir}/field2.json")
     fFieldPath = f"{from_dir}/field.json"
-    field_data = mergeData(load_json_data(fFieldPath), field_data)
+    field_data = mergeData(load_json_data(fFieldPath), class_data)
     save_2_file(field_data, fFieldPath)
-    # 合并method数据
-    class_data = load_json_data(f"{from_dir}/class2.json")
-    fClassPath = f"{from_dir}/class.json"
-    class_data = mergeData(load_json_data(fClassPath), class_data)
-    save_2_file(class_data, fClassPath)
 
 
-def mergeData(data, allData):
+def mergeData(data, class_data):
     for str in data:
         oldData = str[baseVersion]
         newData = str[newVersion]
         if newData == "":
-            for item in allData:
-                if oldData == item[baseVersion]:
-                    str[newVersion] = item[newVersion]
+            isFind = False
+            for classItem in class_data:
+                if oldData.split("->")[0] == classItem[baseVersion]:
+                    isFind = True
+                    str[newVersion] = f"{classItem[newVersion]}->"
                     continue
+            if not isFind:
+                str[newVersion] = f"{oldData.split('->')[0]}->"
     return data
 
 

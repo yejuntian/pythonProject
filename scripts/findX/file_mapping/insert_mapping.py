@@ -3,8 +3,8 @@ import codecs
 import json
 import os
 
-baseVersion = "2.22.22.80"
-insertVersion = "2.23.2.76"
+baseVersion = "2.23.2.76"
+insertVersion = "2.23.8.76"
 
 """
     基于baseVersion版本号，查找insertVersion对应的关系，
@@ -14,6 +14,7 @@ insertVersion = "2.23.2.76"
 
 def replace_X(tpath):
     curPath = os.path.join(os.getcwd(), "scripts/findX/file_mapping/classMapping.json")
+    # print(curPath)
     newJson = getJsonData(tpath)
     oldJson = getJsonData(curPath)
     for newItem in newJson:
