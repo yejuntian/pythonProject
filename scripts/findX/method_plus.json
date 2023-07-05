@@ -1,0 +1,75 @@
+[
+  {
+    "2.23.2.76": "LX/0rh;->A0A()I",
+    "2.23.8.76": "LX/0ra;->A0C()I"
+  },
+  {
+    "2.23.2.76": "LX/2Va;->AD3()LX/0rd;",
+    "2.23.8.76": "LX/2sw;->AEZ()LX/0r7;"
+  },
+  {
+    "2.23.2.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0z:LX/0ra;",
+    "2.23.8.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0x:LX/0sH;"
+  },
+  {
+    "2.23.2.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A27:LX/0sN;",
+    "2.23.8.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A25:LX/0rX;"
+  },
+  {
+    "2.23.2.76": "LX/0ra;->A09(LX/0sN;)Ljava/util/List;",
+    "2.23.8.76": "LX/0sH;->A0A(LX/0rX;)Ljava/util/List;"
+  },
+  {
+    "2.23.2.76": "LX/2VZ;-><init>(LX/0rd;)V",
+    "2.23.8.76": "LX/2sv;-><init>(LX/0r7;I)V",
+    "TODO": "方法参数改变 0x2"
+  },
+  {
+    "2.23.2.76": "LX/0ra;->A07()Ljava/util/List;",
+    "2.23.8.76": "LX/0sH;->A07()Ljava/util/List;"
+  },
+  {
+    "2.23.2.76": "LX/0rz;->A0L:Ljava/lang/String;",
+    "2.23.8.76": "LX/0r6;->A0M:Ljava/lang/String;"
+  },
+  {
+    "2.23.2.76": "LX/0rz;->A0E:LX/0rd;",
+    "2.23.8.76": "LX/0r6;->A0E:LX/0r7;"
+  },
+  {
+    "2.23.2.76": "LX/0rz;->A08(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;",
+    "2.23.8.76": "LX/0r6;->A07(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;"
+  },
+  {
+    "2.23.2.76": "LX/0ry;->A21()LX/0ry;",
+    "2.23.8.76": "LX/0r5;->A21()LX/0r5;"
+  },
+  {
+    "2.23.2.76": "LX/0ry;->A0A(LX/0rd;)LX/0rz;",
+    "2.23.8.76": "LX/0r5;->A08(LX/0r7;)LX/0r6;"
+  },
+  {
+    "2.23.2.76": "LX/1GA;->A03(LX/0rd;)Ljava/lang/String;",
+    "2.23.8.76": "LX/1PE;->A03(LX/0r7;)Ljava/lang/String;"
+  },
+  {
+    "2.23.2.76": "LX/0rb;->A00(LX/0rd;)I",
+    "2.23.8.76": "LX/0tp;->A00(LX/0r7;)I"
+  },
+  {
+    "2.23.2.76": "LX/0tH;->A0B()LX/0rd;",
+    "2.23.8.76": "LX/0sl;->A0B()LX/0r7;"
+  },
+  {
+    "2.23.2.76": "LX/0tH;->A02:I",
+    "2.23.8.76": "LX/0tH;->A02:I"
+  },
+  {
+    "2.23.2.76": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A13:LX/0rz;",
+    "2.23.8.76": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A0z:LX/0r6;"
+  },
+  {
+    "2.23.2.76": "LX/00U;->A00(Landroid/content/Context;I)I",
+    "2.23.8.76": "LX/00T;->A00(Landroid/content/Context;I)I"
+  }
+]
