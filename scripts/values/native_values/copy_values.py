@@ -32,6 +32,8 @@ diffNameDict = {}
 # 文件拷贝，只匹配下面的文件类型
 reSExtends = ["png", "xml", "jpg"]
 resTypeList = ["animator", "color", "drawable", "layout", "anim"]
+# 是否重命名style名称
+isRenameStyle = True
 """
     主要作用：根据GBNeedToFind.json 复制对应类型的属性到目标项目中。
 """
@@ -106,7 +108,7 @@ def getNameMappingList(fpath):
                 dict[attrType] = []
             for name in nameList:
                 # 特殊处理
-                if attrType == "style":
+                if attrType == "style" and isRenameStyle:
                     name = name.replace("_", ".")
                 # 去重操作
                 if not name in dict[attrType]:
