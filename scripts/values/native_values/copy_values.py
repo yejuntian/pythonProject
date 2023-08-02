@@ -17,9 +17,10 @@ extends = ["xml"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
             "integer", "string", "style", "anim", "drawable",
-            "animator", "layout", "xml", "mipmap"]
+            "animator", "layout", "xml", "mipmap", "interpolator"]
 # 不需要copy的文件类型，只需要在public.xml进行注册，copy操作单独进行处理
-notCopyTypeList = ["anim", "drawable", "mipmap", "animator", "layout", "xml"]
+notCopyTypeList = ["anim", "drawable", "mipmap", "animator",
+                   "layout", "xml", "interpolator"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
@@ -31,7 +32,8 @@ diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
 reSExtends = ["png", "xml", "jpg"]
-resTypeList = ["animator", "color", "drawable", "mipmap", "layout", "anim", "xml"]
+resTypeList = ["anim", "drawable", "mipmap", "animator","color"
+               "layout", "xml", "interpolator"]
 # 是否重命名style名称
 isRenameStyle = True
 """
