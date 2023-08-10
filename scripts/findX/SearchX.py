@@ -8,8 +8,7 @@ foldPath = ""
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes7', 'smali_classes8', 'AndroidManifest.xml',
-             'apktool.yml']
+             'smali_classes4', 'smali_classes5', 'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]
 savePath = f"{os.getcwd()}/scripts/findX"
@@ -42,18 +41,18 @@ def findXClass(from_dir, rexStr):
             findXClass(fpath, rexStr)
 
 
-def package_data():
+def package_data(searchList):
     dataList = []
-    sorted_list = sorted(setList)
+    sorted_list = sorted(searchList)
     sorted_list.sort()
     for newStr in sorted_list:
         newMap = {
             baseVersion: newStr,
             newVersion: "",
-            "class": [str for str in mapList[newStr]]
+            "class": sorted([str for str in mapList[newStr]])
         }
         dataList.append(newMap)
-    setList.clear()
+    searchList.clear()
     mapList.clear()
     return dataList
 
@@ -74,7 +73,9 @@ if __name__ == "__main__":
     foldPath = args.foldPath
     # 查找类
     findXClass(foldPath, "LX/\w*;")
-    save2File(savePath, package_data(), "class.json")
+    save2File(savePath, package_data(setList), "class.json")
+    # 清空搜索到的class数据
+    setList.clear()
     # 查找方法
     findXClass(foldPath,
                "LX/\w*;->.*\(.*?\).+"
@@ -90,7 +91,6 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A\w+\(.*?\).+"
                )
-    save2File(savePath, package_data(), "method.json")
     # 查找属性
     findXClass(foldPath,
                "LX/\w+;->.*:.*"
@@ -103,5 +103,5 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                )
-    save2File(savePath, package_data(), "field.json")
+    save2File(savePath, package_data(setList), "field_method.json")
     print("****************查询完毕****************")

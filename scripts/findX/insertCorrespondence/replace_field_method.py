@@ -1,10 +1,11 @@
 import codecs
 import json
 import argparse
-from baseVersion import baseVersion, newVersion
+from scripts.findX.baseVersion import baseVersion, newVersion
 
 """
-    根据findX/class.json中类的对应关系，替换findX/field.json、findX/method.json中对应版本的value值
+    根据findX/class.json中类的对应关系，
+    插入到findX/field.json、findX/method.json中对应版本的value值
 """
 
 

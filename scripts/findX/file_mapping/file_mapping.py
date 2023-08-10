@@ -10,8 +10,8 @@ import xml.etree.ElementTree as ET
 regexStr = r"\"(.*)\""
 # 匹配16进制id
 regexId = r"(0x7f\w{6})"
-baseVersionCode = "2.23.2.76"
-newVersionCode = "2.23.8.76"
+baseVersionCode = "2.23.8.76"
+newVersionCode = "2.23.15.81"
 targetPublicIdDict = {}
 
 """
@@ -38,8 +38,8 @@ def fileMapping(from_dir, to_dir):
     toIdMapping = getIdMapping(getFileMapping(to_dir, regexId), to_dir, True)
     entityList = getEntityList(fromStrMapping, fromIdMapping, toStrMapping, toIdMapping)
     print("------映射完对应关系，开始保存到classMapping.json文件中------")
-    # save2File(f"{os.getcwd()}/scripts/findX/file_mapping", entityList, "classMapping.json")
-    save2File(f"{os.getcwd()}", entityList, "classMapping.json")
+    save2File(f"{os.getcwd()}/scripts/findX/file_mapping", entityList, "classMapping.json")
+    # save2File(f"{os.getcwd()}", entityList, "classMapping.json")
 
 
 def save2File(folder_path, dataList, fileName):
@@ -173,6 +173,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     from_dir = args.from_dir
     to_dir = args.to_dir
-    # from_dir = "/Users/shareit/work/GBWorke/FouadWhatsApp/GBWhatsApp_2.22.23.77"
-    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
+    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76"
+    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.15.81/DecodeCode/Whatsapp_v2.23.15.81"
     fileMapping(from_dir, to_dir)

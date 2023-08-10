@@ -3,26 +3,38 @@ import codecs
 import json
 import os
 
-baseVersion = "2.23.2.76"
-insertVersion = "2.23.8.76"
+# base版本号
+baseVersion = "2.23.8.76"
+# 插入版本号
+insertVersion = "2.23.15.81"
+# 是否插入plus
+isInsertPlus = False
 
 """
     基于baseVersion版本号，查找insertVersion对应的关系，
     并插入到指定位置。
+    from_path:要插入的json文件绝对路径
 """
 
 
 def replace_X(tpath):
-    curPath = os.path.join(os.getcwd(), "scripts/findX/file_mapping/classMapping.json")
+    if not isInsertPlus:
+        curPath = os.path.join(os.getcwd(), "scripts/findX/file_mapping/classMapping.json")
+    else:
+        curPath = os.path.join(os.getcwd(), "scripts/findX/class.json")
     # print(curPath)
     newJson = getJsonData(tpath)
     oldJson = getJsonData(curPath)
     for newItem in newJson:
         new_item_value = newItem[baseVersion]
+        isFind = False
         for oldItem in oldJson:
             old_item_value = oldItem[baseVersion]
             if old_item_value == new_item_value:
+                isFind = True
                 newItem[insertVersion] = oldItem[insertVersion]
+        if not isFind:
+            newItem[insertVersion] = ""
     save2File(tpath, newJson)
 
 
@@ -42,4 +54,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
     args = parser.parse_args()
-    replace_X(args.from_dir)
+
+    # from_path = "/Users/shareit/work/pythonProject/scripts/findX/class.json"
+    from_path = args.from_dir
+    replace_X(from_path)

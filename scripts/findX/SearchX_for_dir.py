@@ -33,18 +33,18 @@ def findXClass(folder_path, rexStr):
             findXClass(fpath, rexStr)
 
 
-def package_data():
+def package_data(searchList):
     dataList = []
-    sorted_list = sorted(setList)
+    sorted_list = sorted(searchList)
     sorted_list.sort()
     for newStr in sorted_list:
         newMap = {
             baseVersion: newStr,
             newVersion: "",
-            "class": [str for str in mapList[newStr]]
+            "class": sorted([str for str in mapList[newStr]])
         }
         dataList.append(newMap)
-    setList.clear()
+    searchList.clear()
     mapList.clear()
     return dataList
 
@@ -54,7 +54,7 @@ def save2File(folder_path, dataList, fileName):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with open(fileName, "w+") as wf:
         wf.write(jsonStr)
-    print(f"结果保存到：{os.path.join(folder_path,fileName)}")
+    print(f"结果保存到：{os.path.join(folder_path, fileName)}")
 
 
 if __name__ == "__main__":
@@ -66,7 +66,9 @@ if __name__ == "__main__":
     mCurPath = os.getcwd()
     # 查找类
     findXClass(foldPath, "LX/\w*;")
-    save2File(mCurPath, package_data(), "class.json")
+    save2File(mCurPath, package_data(setList), "class.json")
+    # 清空搜索到的class数据
+    setList.clear()
     # 查找方法
     findXClass(foldPath,
                "LX/\w*;->.*\(.*?\).+"
@@ -82,7 +84,6 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A\w+\(.*?\).+"
                )
-    save2File(mCurPath, package_data(), "method.json")
     # 查找属性
     findXClass(foldPath,
                "LX/\w+;->.*:.*"
@@ -95,5 +96,5 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                )
-    save2File(mCurPath, package_data(), "field.json")
+    save2File(mCurPath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

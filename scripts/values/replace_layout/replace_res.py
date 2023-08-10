@@ -21,6 +21,8 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
 # keepFileSuffixList = ["anim", "animator", "color", "interpolator", "xml"]
 # 三方sdk中含有的属性
 sdkDict = {}
+# 是否排除sdk属性方便APKTOOL_DUMMYVAL_xxx 属性的还原操作
+excludeSDKAttr = False
 
 """
     主要作用：加载scripts/values/replace_layout/mapping.json文件，
@@ -56,11 +58,14 @@ def getFilterMappingData(attrDict, mappingData):
                 if resList is None:
                     newMappingData[f"{oldName}#{attrType}"] = f"{newName}#{attrType}"
                 else:
-                    if oldName not in resList:
+                    if excludeSDKAttr:  # 忽略sdk属性
                         newMappingData[f"{oldName}#{attrType}"] = f"{newName}#{attrType}"
-                    else:  # 去重并添加不需要混淆的属性
-                        if attrNameDict not in sdkDict[attrType]:
-                            sdkDict[attrType].append(attrNameDict)
+                    else:
+                        if oldName not in resList:
+                            newMappingData[f"{oldName}#{attrType}"] = f"{newName}#{attrType}"
+                        else:  # 去重并添加不需要混淆的属性
+                            if attrNameDict not in sdkDict[attrType]:
+                                sdkDict[attrType].append(attrNameDict)
     return newMappingData
 
 

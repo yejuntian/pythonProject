@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 # whatsApp所有属性集合
 resDict = {}
 """
- 主要作用：解析from_dir/values/public.xml，对比whatsapp.json查看publi.xml少了哪些属性值
+ 主要作用：解析from_dir/values/public.xml，对比whatsapp.json查看public.xml少了哪些属性值
 """
 
 

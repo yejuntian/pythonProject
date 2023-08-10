@@ -38,7 +38,7 @@
     <comment>fragment_cart_contents.xml</comment>
     <!-- group_chat_info_row、group_chat_info_row_v2新版本共用同一个layout.xml  start -->
     <comment>group_chat_info_row.xml</comment>
-    <comment>group_chat_info_row_v2.xml</comment>
+    <!--    <comment>group_chat_info_row_v2.xml</comment>-->
     <!-- group_chat_info_row、group_chat_info_row_v2新版本共用同一个layout.xml  start -->
     <comment>groupchat_info_header.xml</comment>
     <comment>home.xml</comment>
@@ -71,6 +71,12 @@
     <comment>toast.xml</comment>
     <comment>toolbar.xml</comment>
     <comment>voice_note_view.xml</comment>
+    <comment>conversation_row_text_left.xml</comment>
+    <comment>conversation_row_text_right.xml</comment>
+    <comment>eula_with_ls.xml</comment>
+    <comment>wallpaper_preview_default.xml</comment>
+    <comment>conversations_container.xml</comment>
+    <comment>conversations_container2.xml</comment>
     <!--  未找到对应类-->
     <comment>text_status_composer.xml</comment>
     <!-- text_status_composer.xml和new_text_status_composer_link_preview.xml合并为一个   -->
