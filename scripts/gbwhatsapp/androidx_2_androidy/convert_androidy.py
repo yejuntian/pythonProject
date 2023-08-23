@@ -8,8 +8,8 @@ import time
 # 只匹配下面的文件类型
 extends = ["smali", "xml"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
-             'lib', 'META-INF', 'original', 'apktool.yml']
+blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
+             'META-INF', 'original', 'apktool.yml']
 """
     主要作用：androidx变为androidy
 """
@@ -17,7 +17,7 @@ blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
 
 # 由anroidx目录 变为 androidy
 def change_androidx_2_androidy(from_dir):
-    file_list = glob.glob(f"{from_dir}/smali/androidx/**/*.smali", recursive=True)
+    file_list = glob.glob(f"{from_dir}/smali*/androidx/**/*.smali", recursive=True)
     for file_path in file_list:
         to_file_path = file_path.replace("androidx", "androidy")
         file_dir = os.path.dirname(to_file_path)
