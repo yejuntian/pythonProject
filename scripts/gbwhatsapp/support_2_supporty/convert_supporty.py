@@ -1,17 +1,21 @@
-import os
-import shutil
+import argparse
 import codecs
 import glob
-import argparse
+import os
+import re
+import shutil
 import time
 
 # 只匹配下面的文件类型
 extends = ["smali", "xml"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
-             'lib', 'META-INF', 'original', 'apktool.yml']
+blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
+             'META-INF', 'original', 'apktool.yml']
 # 用于保存类对应关系集合
 data_map = {}
+# 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
+regex = r"/smali.*?/(.+)"
+
 """
     主要作用：support变为supporty
 """
@@ -19,7 +23,7 @@ data_map = {}
 
 # 由support目录 变为 supporty,并设置类名的对应关系
 def change_support_2_supporty(from_dir):
-    file_list = glob.glob(f"{from_dir}/smali/android/support/**/*.smali", recursive=True)
+    file_list = glob.glob(f"{from_dir}/smali*/android/support/**/*.smali", recursive=True)
     for file_path in file_list:
         from_file_path = file_path
         to_file_path = file_path.replace("android/support", "android/supporty")
@@ -28,19 +32,31 @@ def change_support_2_supporty(from_dir):
             os.makedirs(file_dir, exist_ok=True)
         shutil.move(file_path, to_file_path)
         # 设置类名的对应关系
-        set_data_map(from_dir, from_file_path, to_file_path)
+        set_data_map(from_file_path, to_file_path)
 
 
 # 设置类名的对应关系
-def set_data_map(file_dir, from_file_path, to_file_path):
-    old_class_path1 = from_file_path[len(f"{file_dir}/smali") + 1:].split(".")[0]
-    old_class_path2 = old_class_path1.replace("/", ".")
-
-    new_class_path1 = to_file_path[len(f"{file_dir}/smali") + 1:].split(".")[0]
-    new_class_path2 = new_class_path1.replace("/", ".")
-
+def set_data_map(from_file_path, to_file_path):
+    # 原来路径
+    oldPathList = getResultPath(from_file_path)
+    old_class_path1 = oldPathList[0]
+    old_class_path2 = oldPathList[1]
+    # 新路径
+    newPathList = getResultPath(to_file_path)
+    new_class_path1 = newPathList[0]
+    new_class_path2 = newPathList[1]
+    # 原来路径和新路径的对应关系
     data_map[old_class_path1] = new_class_path1
     data_map[old_class_path2] = new_class_path2
+
+
+# 获取文件夹smali*/后面的path相对地址
+def getResultPath(from_file_path):
+    matches = re.finditer(regex, from_file_path, re.MULTILINE)
+    for matchNum, match in enumerate(matches, start=1):
+        from_path1 = match.group(1).split(".smali")[0]
+        from_path2 = from_path1.replace("/", ".")
+        return from_path1, from_path2
 
 
 # 遍历文件，替换为data_map中的字符串
