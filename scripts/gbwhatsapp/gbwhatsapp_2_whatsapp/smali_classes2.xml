@@ -6,6 +6,8 @@
     <comment>gbwhatsapp/filter</comment>
     <comment>gbwhatsapp/jid</comment>
     <comment>gbwhatsapp/media/transcode</comment>
+    <comment>gbwhatsapp/media/magi</comment>
+    <comment>gbwhatsapp/pytorch</comment>
     <comment>gbwhatsapp/nativelibloader</comment>
     <comment>gbwhatsapp/protocol</comment>
     <comment>gbwhatsapp/stickers</comment>
