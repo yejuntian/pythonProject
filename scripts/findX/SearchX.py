@@ -103,5 +103,5 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                )
-    save2File(savePath, package_data(setList), "field_method.json")
+    save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")
