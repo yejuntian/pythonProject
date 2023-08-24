@@ -1,5 +1,5 @@
 include README.md
 include LICENSE
 include gbwhatsapp/yo/*
-include com/cow/s/t/*
+include gbwhatsapp/com/cow/s/t/*
 include gbwhatsapp/gbwhatsapp_2_whatsapp/*
