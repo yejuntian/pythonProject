@@ -23,8 +23,8 @@ smali_classes2_folder_list = []
 # 只匹配下面的文件类型
 extends = ["smali", "xml"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin',
-             'lib', 'META-INF', 'original', 'apktool.yml']
+blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
+             'META-INF', 'original', 'apktool.yml']
 
 """
     主要作用：根据smali.xml、smali_classes2.xml的配置；
