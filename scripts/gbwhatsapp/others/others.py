@@ -1,6 +1,7 @@
 import argparse
 import codecs
 import os
+import re
 import shutil
 import lxml.etree as ET
 
@@ -12,6 +13,7 @@ android_scheme = "http://schemas.android.com/apk/res/android"
 strDict = {"market://details?id=com.gbwhatsapp.w4b&utm_source="
            : "market://details?id=com.whatsapp.w4b&utm_source=",
            "com.gbwhatsapp.sticker.READ": "com.whatsapp.sticker.READ"}
+pattern = re.compile(r'smali_classes(\d+)')
 
 """
     主要作用：
@@ -157,16 +159,23 @@ def transFolderCopyFile(from_dir, targetFolderPath):
                 shutil.copy(fpath, tpath)
 
 
+# 创建新目录并copy文件到新创建的目录中
+def createNewFolderAndCopyFile(from_dir, mCurrentPath):
+    folder_list = os.listdir(from_dir)
+    matching_folders = [folder for folder in folder_list if pattern.match(folder)]
+    if matching_folders is not None and len(matching_folders) > 0:
+        numbers = [int(pattern.match(folder).group(1)) for folder in matching_folders]
+        # 构造需要加1的目标文件夹名称
+        targetFolderName = 'smali_classes' + str(max(numbers) + 1)
+        moveFiles(f"{from_dir}/{targetFolderName}/gbwhatsapp/yo", mCurrentPath, "yo")
+        moveFiles(f"{from_dir}/{targetFolderName}/com", mCurrentPath, "com")
+
+
 def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
-    # 如果存在smali_classes5则创建smali_classes6文件夹
-    folderName = "smali_classes5"
-    if os.path.exists(f"{from_dir}/{folderName}"):
-        folderName = "smali_classes6"
-    moveFiles(f"{from_dir}/{folderName}/gbwhatsapp/yo", mCurrentPath, "yo")
-    moveFiles(f"{from_dir}/{folderName}/com", mCurrentPath, "com")
+    createNewFolderAndCopyFile(from_dir, mCurrentPath)
 
 
 if __name__ == "__main__":
