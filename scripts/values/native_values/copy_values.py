@@ -10,7 +10,7 @@ import lxml.etree as ET
 # 需要插入的字典
 enableInsertNameDict = {}
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', '.gradle', 'build', 'kotlin', 'lib', 'META-INF',
+blacklist = ['.idea', '.git', '.gradle', 'build', 'lib', 'META-INF',
              'original', 'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["xml"]
@@ -32,7 +32,7 @@ diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
 reSExtends = ["png", "xml", "jpg"]
-resTypeList = ["anim", "drawable", "mipmap", "animator","color"
+resTypeList = ["anim", "drawable", "mipmap", "animator", "color",
                "layout", "xml", "interpolator"]
 # 是否重命名style名称
 isRenameStyle = True
