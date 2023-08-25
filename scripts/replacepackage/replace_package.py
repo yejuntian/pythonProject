@@ -109,6 +109,15 @@ def getPropertiesName(folder_path, fpath):
             return f"{fpath}/plus_messenger.properties"
 
 
+# 根据键的包含关系进行排序，优先输出键中长度长的。
+def getSortedMap(dict_param):
+    # 根据键的包含关系排序，优先输出键中长度长的
+    sorted_keys = sorted(dict_param.keys(), key=lambda key: (-len(key), key))
+    # 构建有序字典
+    sorted_mapping = {key: dict_param[key] for key in sorted_keys}
+    return sorted_mapping
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("folder_path")
@@ -143,7 +152,7 @@ if __name__ == '__main__':
     if not os.path.exists(config_Path):
         config_Path = f"{config_folderPath}/gbwhatsapp.properties"
     load_replace_keys(config_Path, mapping_string)
-    execute_path(folder_path, blacklist, extends, mapping_string)
+    execute_path(folder_path, blacklist, extends, getSortedMap(mapping_string))
     # rename_directory(default_package_list[default_index].split(".")[-1],
     #                  new_package_list[new_index].split(".")[-1])
     print(f"执行完毕，输出结果保存到{folder_path}")
