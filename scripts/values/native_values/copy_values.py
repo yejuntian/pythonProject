@@ -5,6 +5,7 @@ import os
 import shutil
 import traceback
 import re
+import glob
 import lxml.etree as ET
 
 # 需要插入的字典
@@ -36,6 +37,14 @@ resTypeList = ["anim", "drawable", "mipmap", "animator", "color",
                "layout", "xml", "interpolator"]
 # 是否重命名style名称
 isRenameStyle = True
+# *******************用于校验注入的属性****************************
+# 遍历所有的xml，对需要注入public.xml的属性进行二次校验,防止注入不存的属性
+xmlList = {"string": "strings.xml", "dimen": "dimens.xml"}
+# 用于存放注入属性的集合
+checkAttrDict = {}
+# 用于存放没有找到的属性
+notFindAttrDict = {}
+
 """
     主要作用：根据GBNeedToFind.json 复制对应类型的属性到目标项目中。
 """
@@ -46,6 +55,7 @@ def startCopyValues(from_dir, to_dir):
     publicFilePath = os.path.join(to_dir, "res/values/public.xml")
     getInsertNameList(publicFilePath, typeList, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
+    getCheckAttrDic(f"{from_dir}/res")
     for type in typeList:
         # 特殊处理，只需要注册到public.xml，copy操作单独处理
         if type in notCopyTypeList:
@@ -55,6 +65,8 @@ def startCopyValues(from_dir, to_dir):
     # 执行拷贝资源操作
     copyRes(from_dir, to_dir, mappingData)
     print(f"程序执行结束，结果保存在{to_dir}")
+    print("*****************不存在的属性名称如下*****************")
+    print(notFindAttrDict)
 
 
 def copyRes(from_dir, to_dir, mappingData):
@@ -158,6 +170,24 @@ def getInsertNameList(fpath, typeList, mappingData):
                     diffNameDict[attrType] = []
                 diffNameDict[attrType].append(attrName)
     # print(diffNameDict)
+
+
+# 获取xml属性集合
+def getCheckAttrDic(from_dir):
+    for type, fname in xmlList.items():
+        if checkAttrDict.get(type) is None:
+            checkAttrDict[type] = []
+        if notFindAttrDict.get(type) is None:
+            notFindAttrDict[type] = []
+        xmlPathList = glob.glob(pathname=f"{from_dir}/**/{fname}", recursive=True)
+        for path in xmlPathList:
+            parser = ET.parse(path)
+            root = parser.getroot()
+            for child in root:
+                attrib = child.attrib
+                attrName = attrib.get("name")
+                if attrName is not None and attrName not in checkAttrDict.get(type):
+                    checkAttrDict[type].append(attrName)
 
 
 def travelFolderCopyAttr(from_dir, to_dir):
@@ -340,12 +370,16 @@ def insertPublic(fpath, type):
 
     pos = to_root.index(maxChild)
     enableInsertNameList = enableInsertNameDict.get(type)
+    checkTypeList = checkAttrDict.get(type)
     if enableInsertNameList is None or len(enableInsertNameList) <= 0:
         return
     # 对dimen这种类型特殊处理
     # if type == "dimen":
     #     enableInsertNameList = specialLogic(enableInsertNameList, '.', '_')
     for itemName in enableInsertNameList:
+        # 过滤掉不存在的属性名的注册
+        if isFilterRegisterAttrName(itemName, type, checkTypeList):
+            continue
         maxId += 1
         pos += 1
 
@@ -365,6 +399,18 @@ def insertPublic(fpath, type):
             attrId = child.attrib.get("id")
             wf.write(f'    <public type="{attrType}" name="{attrName}" id="{attrId}" />\n')
         wf.write('</resources>')
+
+
+# 过滤掉不存在的属性名称，取消public.xml的注册操作
+def isFilterRegisterAttrName(itemName, type, checkTypeList):
+    if checkTypeList is None:
+        return False
+    else:
+        if itemName not in checkTypeList:
+            notFindAttrDict[type].append(itemName)
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
