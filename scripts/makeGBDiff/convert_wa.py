@@ -41,7 +41,7 @@ def convertWA(from_dir, mCurrentPath, isConsole=True):
     if isConsole:
         configPathList = getConfigData(f"{mCurrentPath}/scripts/makeGBDiff/config.xml")
     else:
-        configPathList = getConfigData(f"{mCurrentPath}/config.xml")
+        configPathList = getConfigData(f"{mCurrentPath}/makeGBDiff/config.xml")
     convert_2_whatsapp()
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{project_path} 共耗时{after_time - before_time} 秒")

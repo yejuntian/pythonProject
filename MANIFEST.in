@@ -3,3 +3,4 @@ include LICENSE
 include gbwhatsapp/yo/*
 include gbwhatsapp/com/cow/s/t/*
 include gbwhatsapp/gbwhatsapp_2_whatsapp/*
+include makeGBDiff/config.xml

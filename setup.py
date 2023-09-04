@@ -1,5 +1,4 @@
 import setuptools
-import vestpackage
 
 """
     1.打包pip库：
@@ -8,6 +7,8 @@ import vestpackage
         python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
     3.上传正式服务器
         python3 -m twine upload dist/*
+    上传到公司私服如下：
+        python3 -m twine upload -r nexus dist/*
     4.测试服务器地址
         https://test.pypi.org/project/
     5.正式服务器地址
@@ -50,6 +51,11 @@ publicSortPackage = "publicsort"
 publicSortVersion = "1.0.0"
 publicSortDescription = "public.xml排序",
 publicSort_console_scripts = f"{publicSortPackage} = public_sort.public_sort:main"
+# 生成gb diff
+gbDiff = "gbdiff"
+gbDiffVersion = "0.0.1"
+gbDiffDescription = "生成gbdiff",
+gbDiff_console_scripts = f"{gbDiff} = makeGBDiff.__main__:main"
 
 with open("README.md", "r") as fh:
     long_description = fh.read()

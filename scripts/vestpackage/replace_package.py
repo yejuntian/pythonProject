@@ -78,16 +78,15 @@ def rename_directory(from_dir, oldFolderName, newFolderName):
         oldFolderName = oldFolderName.split("/")[0]
         folderList = glob.glob(f"{from_dir}/**/com/{oldFolderName}")
         for folderPath in folderList:
-            removeDir(folderPath)
+            deleteEmptyFolder(folderPath)
 
 
-def removeDir(fromPath):
-    listDir = os.listdir(fromPath)
-    for fname in listDir:
-        fpath = os.path.join(fromPath, fname)
-        if os.path.isdir(fpath):
-            shutil.rmtree(fpath, ignore_errors=True)
-    os.rmdir(fromPath)
+def deleteEmptyFolder(source_folder):
+    for root, dirs, files in os.walk(source_folder, topdown=False):
+        for dir_name in dirs:
+            dir_path = os.path.join(root, dir_name)
+            if not os.listdir(dir_path):  # 如果文件夹为空
+                os.rmdir(dir_path)  # 删除空文件夹
 
 
 def getFolderName(packageName):
