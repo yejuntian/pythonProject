@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!--移动整个文件夹-->
+    <comment>com/gbwhatsapp/anr</comment>
+    <comment>com/gbwhatsapp/breakpad</comment>
+    <comment>com/gbwhatsapp/calling</comment>
+    <comment>com/gbwhatsapp/fieldstats</comment>
+    <comment>com/gbwhatsapp/filter</comment>
+    <comment>com/gbwhatsapp/jid</comment>
+    <comment>com/gbwhatsapp/media/transcode</comment>
+    <comment>com/gbwhatsapp/nativelibloader</comment>
+    <comment>com/gbwhatsapp/protocol</comment>
+    <comment>com/gbwhatsapp/pytorch</comment>
+    <comment>com/gbwhatsapp/stickers</comment>
+    <comment>com/gbwhatsapp/superpack</comment>
+    <comment>com/gbwhatsapp/util</comment>
+    <comment>com/gbwhatsapp/voipcalling</comment>
+    <comment>com/gbwhatsapp/aborthooks</comment>
+    <comment>com/gbwhatsapp/media/magi</comment>
+
+    <!--移动单独具体文件-->
+    <comment>com/gbwhatsapp/wamsys/JniBridge.smali</comment>
+    <comment>com/gbwhatsapp/AbstractConsumerAppShell.smali</comment>
+    <comment>com/gbwhatsapp/GifHelper.smali</comment>
+    <comment>com/gbwhatsapp/MediaData.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops$LibMp4CheckAndRepairResult.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops$LibMp4OperationResult.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops$LibMp4StreamCheckResult.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops.smali</comment>
+    <comment>com/gbwhatsapp/NativeMediaHandler.smali</comment>
+    <comment>com/gbwhatsapp/SqliteShell.smali</comment>
+    <comment>com/gbwhatsapp/VideoFrameConverter.smali</comment>
+</properties>
+
