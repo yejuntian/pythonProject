@@ -31,8 +31,8 @@ def replaceManifest(fpath):
     nameSpace = "{" + android_scheme + "}"
     rootAttrib[nameSpace + "compileSdkVersion"] = "23"
     rootAttrib[nameSpace + "compileSdkVersionCodename"] = "6.0-2438415"
-    rootAttrib["platformBuildVersionCode"] = "31"
-    rootAttrib["platformBuildVersionName"] = "12"
+    rootAttrib["platformBuildVersionCode"] = "33"
+    rootAttrib["platformBuildVersionName"] = "13"
 
     for child in root:
         childAttrib = child.attrib
@@ -65,7 +65,7 @@ def queries(root, nameSpace):
     for child in root:
         authorities = child.attrib.get(nameSpace + "authorities")
         if child.tag == "provider" and not authorities is None and authorities.__contains__(".car.app.connection"):
-            child.attrib[nameSpace + "name"] = "com.gbwhatsapp.car.app.connection"
+            child.attrib[nameSpace + "name"] = "androidx.car.app.connection"
 
 
 def write_2_file(file_path, data_str):
@@ -89,10 +89,10 @@ def replaceApktool(fpath):
             if line.__contains__("- resources.arsc"):
                 continue
             elif line.__contains__("- png"):
-                newLine = "#resources.arsc\n#- png\n"
+                newLine = "- resources.arsc\n- png\n"
                 result += newLine
             elif line.__contains__("targetSdkVersion"):
-                newLine = "  targetSdkVersion: '29'\n"
+                newLine = "  targetSdkVersion: '33'\n"
                 result += newLine
             elif line.__contains__("unknownFiles:"):
                 newLine = "unknownFiles: {}\n"
