@@ -87,10 +87,11 @@ def replaceApktool(fpath):
         for index in range(size):
             line = lines[index]
             if line.__contains__("- resources.arsc"):
-                continue
-            elif line.__contains__("- png"):
-                newLine = "- resources.arsc\n- png\n"
+                newLine = line + "- png\n- ogg\n- m4a\n- mp4\n"
                 result += newLine
+            elif line.__contains__("- png") or line.__contains__("- ogg") \
+                    or line.__contains__("- m4a") or line.__contains__("- mp4"):
+                continue
             elif line.__contains__("targetSdkVersion"):
                 newLine = "  targetSdkVersion: '33'\n"
                 result += newLine
@@ -134,10 +135,20 @@ def transFolderReplaceStr(from_dir):
                         wf.write(data)
 
 
+# 删除项目空文件夹
+def deleteProjectEmptyFolder(from_dir):
+    for root, dirs, files in os.walk(from_dir, topdown=False):
+        for dir_name in dirs:
+            dir_path = os.path.join(root, dir_name)
+            if not os.listdir(dir_path):  # 如果文件夹为空
+                os.rmdir(dir_path)  # 删除空文件夹
+
+
 def other(from_dir):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
+    deleteProjectEmptyFolder(from_dir)
 
 
 if __name__ == "__main__":

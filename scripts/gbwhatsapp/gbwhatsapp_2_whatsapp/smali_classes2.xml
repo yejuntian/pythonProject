@@ -18,7 +18,5 @@
     <comment>gbwhatsapp/anr</comment>
     <comment>gbwhatsapp/audioRecording</comment>
     <comment>gbwhatsapp/crash/upload</comment>
-    <!-- gbwhatsapp目录下需要move到smali_classes2包下的文件列表-->
-    <comment>gbwhatsapp/checkbox/RtlCheckBox.smali</comment>
 </properties>
 

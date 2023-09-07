@@ -1,5 +1,4 @@
 import setuptools
-
 """
     1.打包pip库：
         python3 setup.py sdist bdist_wheel
@@ -28,7 +27,7 @@ vestPackageDescription = "马甲包",
 vestPackage_console_scripts = f"{vestpackage} = vestpackage.replace_package:main"
 # whatsapp 转gbwhatsapp
 convertPackage = "convertgb"
-convertPackageVersion = "1.1.1"
+convertPackageVersion = "1.1.2"
 convertPackageDescription = "",
 convertPackage_console_scripts = f"{convertPackage} = gbwhatsapp.__main__:main"
 # 处理git修改文件
@@ -53,7 +52,7 @@ publicSortDescription = "public.xml排序",
 publicSort_console_scripts = f"{publicSortPackage} = public_sort.public_sort:main"
 # 生成gb diff
 gbDiff = "gbdiff"
-gbDiffVersion = "0.0.1"
+gbDiffVersion = "0.0.2"
 gbDiffDescription = "生成gbdiff",
 gbDiff_console_scripts = f"{gbDiff} = makeGBDiff.__main__:main"
 

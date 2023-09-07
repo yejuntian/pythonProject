@@ -1,7 +1,7 @@
 import argparse
 import os
 import time
-from makeGBDiff import main as gbDiff
+from makeDiff import main as gbDiff
 from others import other
 
 """
