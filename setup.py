@@ -1,13 +1,19 @@
 import setuptools
+
 """
+
     1.打包pip库：
         python3 setup.py sdist bdist_wheel
     2.上传测试服务器
         python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
     3.上传正式服务器
         python3 -m twine upload dist/*
-    上传到公司私服如下：
-        python3 -m twine upload -r nexus dist/*
+     3.1 上传到公司私服如下：
+          python3 -m twine upload -r nexus dist/*
+        
+      3.2 install 命令：
+          pip3 install pkapk -i https://nexus.adsconflux.xyz/repository/pypi-hosted/simple --trusted-host https://nexus.adsconflux.xyz/ --upgrade
+    
     4.测试服务器地址
         https://test.pypi.org/project/
     5.正式服务器地址
@@ -55,6 +61,11 @@ gbDiff = "gbdiff"
 gbDiffVersion = "0.0.2"
 gbDiffDescription = "生成gbdiff",
 gbDiff_console_scripts = f"{gbDiff} = makeGBDiff.__main__:main"
+# jenkens打包apk
+pkApk = "pkapk"
+pkApkVersion = "0.0.1"
+pkApkDescription = "打包apk",
+pkApk_console_scripts = f"{pkApk} = packageApk.packageApk:packageApk"
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
