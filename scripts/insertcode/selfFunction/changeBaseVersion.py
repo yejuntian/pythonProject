@@ -5,10 +5,11 @@ from scripts.insertcode.CommonInsert import *
 """
 
 versionCode = getParam(
-    "work-manager/configuration/created",
-    regexList=["const\-string \w+\, \"\=\=\=\= logfile version\=\""],
-    rowOffSet=6,
-    matchRex=r"const\-string v0\, (.*)")
+    "WhatsAppLibLoader",
+    regexList=["const\-string\/jumbo v\d\, \"whatsapplibloader\/usable jniVersion\: \""],
+    rowOffSet=4,
+    matchRex=r"const\-string v\d\, (.*)",
+    isFindX=False)
 
 baseLongVer = getParam(
     "ProfiloUploadService",
