@@ -1,7 +1,7 @@
 import codecs
 import json
 import argparse
-import webbrowser
+import requests
 
 # 默认包名集合列表
 default_package_list = ["com.gbwhatsapp", "com.obwhatsapp", "com.WhatsApp2Plus", "com.universe.messenger"]
@@ -10,11 +10,9 @@ appNameList = ["GBWhatsApp", "OBWhatsApp", "WhatsAppPlus"]
 # app名称
 appName = "GBWhatsApp"
 # 配置url
-baseUrl = "http://10.90.156.128:8080/job/gbwhatsapp/buildWithParameters?token=malinkang"
+baseUrl = "https://gbw.cmpc.fun/v1/up/transfer/jenkins"
 # 默认测试版本
 defaultVersion = "2.23.15.501_test"
-# 默认base版本
-baseVersion = "2.23.15.81"
 
 
 def packageApk():
@@ -35,13 +33,17 @@ def packageApk():
         appName = appNameList[int(appNameNumber) - 1]
 
     jsonData = loadData(configPath)
-    sendUrl = f"{baseUrl}&AppName={appName}&PackageName={packageName}" \
-              f"&VersionName={getNewStr(jsonData['versionName'])}" \
-              f"&Changelog={getNewStr(jsonData['changelog'])}" \
-              f"&&Base={baseVersion}"
-    print(sendUrl)
-    # 打开生成的URL链接
-    webbrowser.open(sendUrl)
+    # 默认base版本
+    baseVersion = jsonData.get('baseVersion')
+    if baseVersion is None:
+        baseVersion = "2.23.15.81"
+
+    headers = {"Content-Type": "application/json"}
+    data = {
+        "params": f"token=malinkang&AppName={appName}&PackageName={packageName}&VersionName={getNewStr(jsonData['versionName'])}&Changelog={getNewStr(jsonData['changelog'])}&Base={baseVersion}"
+    }
+    response = requests.post(baseUrl, headers=headers, data=json.dumps(data))
+    print(response.text)
 
 
 # 加载json数据
