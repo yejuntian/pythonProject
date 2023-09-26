@@ -13,6 +13,10 @@ old_layout_list = []
 layoutList = []
 # 是否保持文件
 isSaveFile = False
+# 保存layout名称，方便查找new_layout_list对应index
+new_layoutName_list = []
+# 保存layout名称，方便查找old_layout_list对应index
+old_layoutName_list = []
 
 
 class LayoutEntity:
@@ -30,22 +34,22 @@ class LayoutEntity:
 def findLayout(from_dir, to_dir):
     # 新版layout
     from_layoutDir = f"{from_dir}/res/layout"
-    transFolder(from_layoutDir, new_layout_list)
+    transFolder(from_layoutDir, new_layout_list, new_layoutName_list)
     if isSaveFile:
         save2File(new_layout_list, "newVersion_layout.json")
     # 旧版layout
     to_layoutDir = f"{to_dir}/res/layout"
-    transFolder(to_layoutDir, old_layout_list)
+    transFolder(to_layoutDir, old_layout_list, old_layoutName_list)
     if isSaveFile:
         save2File(old_layout_list, "oldVersion_layout.json")
 
-    mappingLayoutEntity(new_layout_list, old_layout_list)
+    mappingLayoutEntity(new_layout_list, old_layout_list, old_layoutName_list)
     save2File(mappingName, "layout.json", False)
     print(f"对应关系个数为：{len(mappingName)}")
 
 
 # (self, fileName, idList, ids, labelStr, childCount, newFileName):
-def mappingLayoutEntity(new_layout_list, old_layout_list):
+def mappingLayoutEntity(new_layout_list, old_layout_list, layoutName_list):
     for newEntity in new_layout_list:
         new_fileName = newEntity.fileName
         new_ids = newEntity.ids
@@ -59,6 +63,7 @@ def mappingLayoutEntity(new_layout_list, old_layout_list):
             old_ids = oldEntity.ids
             old_childCount = oldEntity.childCount
             old_labelStr = oldEntity.labelStr
+            old_numberStr = oldEntity.numberStr
 
             if new_childCount == old_childCount:
                 if new_childCount <= 10:
@@ -90,6 +95,12 @@ def mappingIncludeLayout(newEntity, oldEntity):
             for index in range(0, size):
                 newLayoutName = newIncludeLayoutList[index]
                 oldLayoutName = oldIncludeLayoutList[index]
+                # 说明之前找到的有问题，需要去除掉
+                if isExitLayoutMapping(oldLayoutName):
+                    # 遍历字典的拷贝并删除特定值
+                    for key, value in list(mappingName.items()):
+                        if value == oldLayoutName:
+                            mappingName.pop(key)
                 mappingName[newLayoutName] = oldLayoutName
                 # 存放到已查找的集合列表中
                 layoutList.append(oldLayoutName)
@@ -122,19 +133,19 @@ def isExitLayoutMapping(fromLayoutName):
     return isExit
 
 
-def transFolder(from_dir, entityList):
+def transFolder(from_dir, entityList, layoutName_list):
     listdir = os.listdir(from_dir)
     for fname in listdir:
         fpath = os.path.join(from_dir, fname)
         if os.path.isdir(fpath):
-            transFolder(fpath, entityList)
+            transFolder(fpath, entityList, layoutName_list)
         elif os.path.isfile(fpath):
             if fname.split(".")[-1] == "xml":
                 with codecs.open(fpath, "r", "utf-8") as rf:
-                    matchRes(fname.split(".")[0], rf.read(), entityList)
+                    matchRes(fname.split(".")[0], rf.read(), entityList, layoutName_list)
 
 
-def matchRes(fname, data, entityList):
+def matchRes(fname, data, entityList, layoutName_list):
     ids = []
     # id正则
     resIdRegex = r"android:id=\"@id/(.+?)\""
@@ -179,6 +190,7 @@ def matchRes(fname, data, entityList):
 
     entity = LayoutEntity(fname, ids, idStr, labelStr, numberStr, len(ids), None, includeLayoutList)
     entityList.append(entity)
+    layoutName_list.append(fname)
 
 
 def save2File(dataList, fileName, enableConvert=True):
@@ -205,6 +217,6 @@ def save2File(dataList, fileName, enableConvert=True):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.15.81/DecodeCode/Whatsapp_v2.23.15.81"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.18.79/DecodeCode/Whatsapp_v2.23.18.79"
     to_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
     findLayout(from_dir, to_dir)
