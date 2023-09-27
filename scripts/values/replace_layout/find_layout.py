@@ -209,7 +209,9 @@ def save2File(dataList, fileName, enableConvert=True):
             listData.append(dataStr)
         jsonStr = json.dumps(listData, ensure_ascii=False, indent=2)
     else:
-        jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
+        jsonStr = json.dumps(
+            {key: value for key, value in dataList.items() if not value.startswith("APKTOOL_DUMMYVAL_")},
+            ensure_ascii=False, indent=2)
 
     with open(fileName, "w+") as wf:
         wf.write(jsonStr)
@@ -217,6 +219,6 @@ def save2File(dataList, fileName, enableConvert=True):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.18.79/DecodeCode/Whatsapp_v2.23.18.79"
-    to_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.19.82/DecodeCode/Whatsapp_v2.23.19.82"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.18.79/DecodeCode/Whatsapp_v2.23.18.79"
     findLayout(from_dir, to_dir)
