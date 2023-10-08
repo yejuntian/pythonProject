@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<FrameLayout android:gravity=\"center\" android:id=\"@android:id/empty\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <com.gbwhatsapp.WaTextView android:textSize=\"17.0sp\" android:textColor"
+  },
+  {
+    "matchStr": "<ProgressBar android:layout_gravity=\"center\" android:id=\"@id/init_statuses_progress\" android:visibility=\"gone\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" style=\"?android:progressBarStyleInverse\" />"
+  }
+]

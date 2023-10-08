@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "merge android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <FrameLayout android:id=\"@id/status_reactions\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <LinearLayout android:layout_gravity=\"center_vertical\" android:orientation=\"vertical\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\">"
+  }
+]

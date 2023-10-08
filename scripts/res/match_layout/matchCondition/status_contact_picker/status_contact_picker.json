@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<View android:id=\"@id/dummy_constrained_view\" app:"
+  },
+  {
+    "matchStr": "<ListView android:id=\"@android:id/list\" android:layout_width=\"0.0dip\" android:layout_height=\"0.0dip\" android:cacheColorHint"
+  }
+]

@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.InfoCard android:orientation=\"vertical\" android:id=\"@id/link_to_community_home_card\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\""
+  }
+]

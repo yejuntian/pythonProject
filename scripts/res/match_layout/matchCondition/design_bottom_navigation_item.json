@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<View android:layout_gravity=\"center\" android:id=\"@id/navigation_bar_item_active_indicator_view\" android:layout_width=\"0.0dip\" android:layout_height=\"0.0dip\" />\n        <ImageView android:layout_gravity=\"center\" android:id=\"@id/navigation_bar_item_icon_view\" android:duplicateParentState=\"true\" android:layout_width=\"24.0dip\" android:layout_height=\"24.0dip\" android:contentDescription=\"@null\" />"
+  }
+]

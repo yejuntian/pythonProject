@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<ImageView android:layout_gravity=\"center_vertical\" android:id=\"@id/search_go_btn\""
+  },
+  {
+    "matchStr": "<ImageView android:layout_gravity=\"center_vertical\" android:id=\"@id/search_voice_btn\""
+  }
+]

@@ -1,0 +1,6 @@
+[
+  {
+    "matchStr": "<com.gbwhatsapp.KeyboardPopupLayout android:id=\"@id/conversation_layout\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"",
+    "notContainsStr": "<androidy.coordinatorlayout.widget.CoordinatorLayout"
+  }
+]

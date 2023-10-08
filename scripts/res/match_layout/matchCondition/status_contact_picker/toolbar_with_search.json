@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<FrameLayout android:id=\"@id/toolbar_holder\" android:background"
+  },
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/search_holder\" android:visibility=\"invisible\" android:layout_width=\"fill_parent\" android:layout_height"
+  }
+]

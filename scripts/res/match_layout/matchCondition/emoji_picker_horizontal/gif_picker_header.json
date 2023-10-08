@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<FrameLayout android:layout_width=\"0.0dip\" android:layout_height=\"fill_parent\" android:layout_weight=\"1.0\">\n        <com.gbwhatsapp.WaImageView android:layout_gravity=\"center\" android:id=\"@id/gif_recents_icon\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
+  }
+]

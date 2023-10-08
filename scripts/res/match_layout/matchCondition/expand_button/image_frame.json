@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<LinearLayout android:gravity=\"start|center\" android:orientation=\"horizontal\" android:id=\"@id/icon_frame\" android:paddingLeft=\"0.0dip\" android:paddingTop=\"4.0dip\""
+  }
+]

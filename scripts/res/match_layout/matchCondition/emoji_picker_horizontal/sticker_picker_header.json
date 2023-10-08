@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/sticker_header_recycler_container\" android:layout_width=\"0.0dip\" android:layout_height=\"fill_parent\" android:layout_weight=\"8.0\">\n        <androidy.recyclerview.widget.RecyclerView android:layout_gravity=\"left\" android:id=\"@id/sticker_header_recycler\" android:clipToPadding=\"false\" android:layout_width=\"wrap_content\" android:layout_height=\"fill_parent\" />\n    </FrameLayout>"
+  }
+]

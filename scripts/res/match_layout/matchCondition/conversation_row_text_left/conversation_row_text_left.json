@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<merge\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <LinearLayout android:gravity=\"center|left\" android:orientation=\"vertical\" android:id=\"@id/main_layout\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:minHeight=\"30.0dip\">\n        <ViewStub android:id=\"@id/conversation_row_participant_header_view_stub\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />\n        <include layout"
+  },
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/suspicious_link_indicator_holder\" android:paddingLeft=\"4.0dip\" android:paddingTop=\"4.0dip\" android:paddingRight=\"4.0dip\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />"
+  }
+]

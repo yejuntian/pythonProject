@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/contentPanel\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:minHeight=\"48.0dip\">\n        <View android:layout_gravity=\"top\" android:id=\"@id/scrollIndicatorUp\""
+  },
+  {
+    "matchStr": "style=\"@style/"
+  }
+]

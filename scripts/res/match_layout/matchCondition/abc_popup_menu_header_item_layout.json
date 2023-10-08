@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "android:ellipsize=\"marquee\" android:layout_gravity=\"center_vertical\" android:id=\"@android:id/title\" android:fadingEdge=\"horizontal\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:singleLine=\"true\" android:textAlignment=\"viewStart\" />"
+  }
+]

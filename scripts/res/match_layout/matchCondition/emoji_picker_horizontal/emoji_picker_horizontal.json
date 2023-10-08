@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<RelativeLayout android:gravity=\"right\" android:layout_gravity=\"top\" android:id=\"@id/emoji_view\" android:visibility=\"gone\" android:clipChildren=\"false\""
+  }
+]

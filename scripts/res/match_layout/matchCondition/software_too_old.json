@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<LinearLayout android:orientation=\"vertical\" android:layout_width=\"fill_parent\" android:layout_height=\"0.0dip\" android:layout_weight=\"1.0\">\n            <View android:layout_width=\"fill_parent\" android:layout_height=\"0.0dip\" android:layout_weight=\"1.0\" />\n            <com.gbwhatsapp.WaImageView android:layout_gravity=\"center\" android:id=\"@id/update_whatsapp\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:src=\"@drawable/ic_updatewhatsapp\" />\n            <View android:layout_width=\"fill_parent\" android:layout_height=\"0.0dip\" android:layout_weight=\"2.0\" />\n        </LinearLayout>"
+  }
+]

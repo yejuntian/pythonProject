@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<androidy.coordinatorlayout.widget.CoordinatorLayout android:id=\"@id/main\" android:clipChildren=\"false\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <FrameLayout android:id=\"@id/voice_recorder_decor\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />\n        <RelativeLayout android:id=\"@id/bottom_sheet\""
+  }
+]

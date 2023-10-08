@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<View android:id=\"@id/hover_action\" android:visibility=\"gone\" android:layout_width=\"0.0dip\" android:layout_height=\"0.0dip\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\" />"
+  }
+]

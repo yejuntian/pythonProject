@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<ImageView android:layout_gravity=\"center\" android:id=\"@id/submenuarrow\" android:visibility=\"gone\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:scaleType=\"center\" style=\"@style/"
+  },
+  {
+    "matchStr": "android:ellipsize=\"marquee\" android:id=\"@id/title\" android:fadingEdge=\"horizontal\" android:duplicateParentState=\"true\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:singleLine=\"true\" android:layout_alignParentTop=\"true\" style=\"@style"
+  }
+]

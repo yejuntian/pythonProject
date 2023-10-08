@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<com.gbwhatsapp.settings.chat.wallpaper.WallpaperImagePreview android:id=\"@id/wallpaper_preview_default_view\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />\n        <com.gbwhatsapp.settings.chat.wallpaper.WallpaperMockChatView android:id=\"@id/wallpaper_preview_default_chat_view\" android:paddingTop=\"4.0dip\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />"
+  }
+]

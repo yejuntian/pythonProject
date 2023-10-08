@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<FrameLayout android:id=\"@id/home_tab_layout\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" android:layoutDirection=\"locale\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <LinearLayout android:gravity=\"center\" android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:id=\"@id/tab_container\" android:layout_width=\"wrap_content\""
+  }
+]

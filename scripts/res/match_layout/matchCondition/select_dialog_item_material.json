@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TextView android:textAppearance=\"?"
+  },
+  {
+    "matchStr": "android:ellipsize=\"marquee\" android:gravity=\"center_vertical\" android:id=\"@android:id/text1\" android:paddingLeft=\"?"
+  }
+]

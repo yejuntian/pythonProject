@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<LinearLayout android:orientation=\"horizontal\" android:id=\"@id/main_container\" android:fitsSystemWindows=\"true\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <LinearLayout android:orientation=\"vertical\" android:id=\"@id/conversation_list_view_host\" android:layout_width=\"0.0dip\" android:layout_height=\"fill_parent\""
+  }
+]

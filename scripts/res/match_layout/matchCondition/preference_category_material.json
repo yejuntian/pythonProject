@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<LinearLayout android:gravity=\"center_vertical\" android:background=\"?android:selectableItemBackground\" android:paddingLeft=\"?android:listPreferredItemPaddingLeft\" android:paddingRight=\"?android:listPreferredItemPaddingRight\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:layout_marginTop=\"16.0dip\" android:baselineAligned=\"false\" android:paddingStart=\"?android:listPreferredItemPaddingStart\" android:paddingEnd=\"?android:listPreferredItemPaddingEnd\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">"
+  },
+  {
+    "matchStr": "<RelativeLayout android:paddingTop=\"8.0dip\" android:paddingBottom=\"8.0dip\" android:layout_width=\"0.0dip\" android:layout_height=\"wrap_content\" android:layout_weight=\"1.0\">\n        <TextView android:layout_gravity=\"start\" android:id=\"@android:id/title\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\""
+  }
+]

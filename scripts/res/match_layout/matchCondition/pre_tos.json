@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<FrameLayout android:id=\"@id/eula_layout\" android:background"
+  },
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/language_selector_list_container\" android:layout_width=\"fill_parent\" android:layout_height=\"0.0dip\""
+  }
+]
