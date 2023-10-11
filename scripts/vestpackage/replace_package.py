@@ -10,13 +10,11 @@ extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.yml']
 # 默认包名集合列表
-default_package_list = ["com.gbwhatsapp", "com.nouncebeats.octavia", "com.universe.messenger",
+default_package_list = ["com.gbwhatsapp", "com.telpro.messenger", "com.universe.messenger",
                         "com.obwhatsapp", "com.WhatsApp2Plus", "com.yowhatsapp", "com.whatsapp"]
 # 产品名
-octaviaNameList = ["agb", "aob", "aplus"]
-messengerNameList = ["bgb", "bob", "bplus"]
-# flurry注册key
-flurryList = ["VCW5NHMZV2ZK48YXYFKN", "QBBWBTZS28DR73H3CMDT", "RDRKVWX8XXHMCY78RCDQ"]
+telProNameList = ["tgb", "tob", "tplus"]
+universeNameList = ["bgb", "bob", "bplus"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
 appList = ["GBWhatsApp", "OBWhatsApp", "WhatsAppPlus"]
@@ -102,9 +100,9 @@ def startReplaceProductName(index, propertiesPath, configPath, to_dir, mapping_s
     dict = {0: "gb", 3: "ob", 4: "plus", 5: "yo"}
     if index in range(1, 3):
         if index == 1:
-            productNameList = octaviaNameList
+            productNameList = telProNameList
         else:
-            productNameList = messengerNameList
+            productNameList = universeNameList
         productIndex = appList.index(getProductName(to_dir))
         if productIndex in range(0, 3):
             # 替换otavia/message兜底升级key
@@ -172,18 +170,18 @@ def main():
     folder_path = args.folder_path
 
     default_package = input(
-        '请输入默认包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.octavia",'
+        '请输入默认包名对应的数字：\n"1->com.gbwhatsapp", "2->com.telpro.messenger",'
         ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
-    if default_package.strip() == "8":
+        '"6->com.whatsapp","7->其他包名"\n')
+    if default_package.strip() == "7":
         user_default_package = input('请输入默认包名：\n')
         default_package_list.append(user_default_package.strip())
 
     new_package = input(
-        '请输入新包名对应的数字：1->com.gbwhatsapp", "2->com.nouncebeats.octavia",'
+        '请输入新包名对应的数字：\n"1->com.gbwhatsapp", "2->com.telpro.messenger",'
         ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-        '"6->com.yowhatsapp", "7->com.whatsapp""8->其他包名"\n')
-    if new_package.strip() == "8":
+        '"6->com.whatsapp","7->其他包名"\n')
+    if new_package.strip() == "7":
         user_new_package = input('请输入新包名：\n')
         new_package_list.append(user_new_package.strip())
 
