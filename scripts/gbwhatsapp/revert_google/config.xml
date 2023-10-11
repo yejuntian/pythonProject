@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <comment>com/google/android/gms/auth2</comment>
+    <comment>com/google/android/gms/common2</comment>
+    <comment>com/google/android/gms/tasks2</comment>
+    <comment>com/google/android/gms/dynamic2</comment>
+    <comment>com/google/android/gms/dynamite2</comment>
+    <comment>com/google/android/exoplayer22</comment>
+</properties>
+
