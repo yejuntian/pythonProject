@@ -12,7 +12,7 @@ import setuptools
           python3 -m twine upload -r nexus dist/*
         
       3.2 install 命令：
-          pip3 install pkapk -i https://nexus.adsconflux.xyz/repository/pypi-hosted/simple --trusted-host https://nexus.adsconflux.xyz/ --upgrade
+          pip3 install vestpackage -i https://nexus.adsconflux.xyz/repository/pypi-hosted/simple --trusted-host https://nexus.adsconflux.xyz/ --upgrade
     
     4.测试服务器地址
         https://test.pypi.org/project/
@@ -28,7 +28,7 @@ projectDiffDescription = "比较项目的差异",
 projectDiff_console_scripts = f"{projectDiff} = merge_project_diff.merge_project_files:main"
 # 马甲包
 vestpackage = "vestpackage"
-vestPackageVersion = "1.2.0"
+vestPackageVersion = "1.2.1"
 vestPackageDescription = "马甲包",
 vestPackage_console_scripts = f"{vestpackage} = vestpackage.replace_package:main"
 # whatsapp 转gbwhatsapp
