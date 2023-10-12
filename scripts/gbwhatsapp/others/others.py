@@ -90,7 +90,8 @@ def replaceApktool(fpath):
                 newLine = line + "- png\n- webp\n- ogg\n- m4a\n- mp4\n"
                 result += newLine
             elif line.__contains__("- png") or line.__contains__("- ogg") \
-                    or line.__contains__("- m4a") or line.__contains__("- mp4"):
+                    or line.__contains__("- m4a") or line.__contains__("- mp4") \
+                    or line.__contains__("- webp"):
                 continue
             elif line.__contains__("targetSdkVersion"):
                 newLine = "  targetSdkVersion: '33'\n"
