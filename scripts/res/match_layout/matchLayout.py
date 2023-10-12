@@ -27,9 +27,10 @@ def main(folderPath):
 
 
 def save_2_file(jsonStr, fpath, fileName):
-    with open(fileName, "w+") as wf:
+    newPath = os.path.join(fpath, fileName)
+    with open(newPath, "w+") as wf:
         wf.write(jsonStr)
-    print(f"匹配结果保存到：{os.path.join(fpath, fileName)}")
+    print(f"匹配结果保存到：{newPath}")
 
 
 # 过滤数据

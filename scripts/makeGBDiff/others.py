@@ -87,7 +87,7 @@ def replaceApktool(fpath):
         for index in range(size):
             line = lines[index]
             if line.__contains__("- resources.arsc"):
-                newLine = line + "- png\n- ogg\n- m4a\n- mp4\n"
+                newLine = line + "- png\n- webp\n- ogg\n- m4a\n- mp4\n"
                 result += newLine
             elif line.__contains__("- png") or line.__contains__("- ogg") \
                     or line.__contains__("- m4a") or line.__contains__("- mp4"):

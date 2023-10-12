@@ -68,7 +68,8 @@ def insert_code(file_list):
             lines = list(map(lambda x: x.replace("\n", ""), rf.readlines()))
             for i in range(0, len(lines)):
                 line = str(lines[i]).rstrip()
-                if line.endswith("[B[CII)Ljavax/crypto/SecretKey;"):
+                if line.endswith("([B[BII)Ljavax/crypto/SecretKey;") or line.endswith(
+                        "[B[CII)Ljavax/crypto/SecretKey;"):
                     line = str(lines[i + 2])
                     if line.__contains__("move-result"):
                         enableWrite = True
