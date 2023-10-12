@@ -1,4 +1,3 @@
-import argparse
 import xml.etree.ElementTree as ET
 import json
 import os
@@ -17,7 +16,7 @@ def checkNotFoundLayout(from_dir):
     for modifyName in modifyNameList:
         if not modifyName in nameList:
             dataList.append(modifyName)
-    save2File(f"{os.getcwd()}/scripts/values/replace_layout/checkLayout", dataList, "notFoundLayout.json")
+    save2File(os.getcwd(), dataList, "notFoundLayout.json")
 
 
 def save2File(folder_path, dataList, fileName):
@@ -52,9 +51,5 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    args = parser.parse_args()
-    from_dir = args.from_dir
-    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
     checkNotFoundLayout(from_dir)
