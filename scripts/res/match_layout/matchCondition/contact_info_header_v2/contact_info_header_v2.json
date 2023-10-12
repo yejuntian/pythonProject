@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<ViewStub android:id=\"@id/contact_details_card_stub\" android:inflatedId=\"@id/contact_details_card\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />"
+    "matchStr": "<ViewStub android:id=\"@id/contact_details_card_stub\" android:inflatedId=\"@id/contact_details_card\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />\n    <include layout"
   }
 ]
