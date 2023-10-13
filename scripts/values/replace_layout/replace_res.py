@@ -390,8 +390,8 @@ def replaceText(xmlText, child, mappingData):
             if not attrText is None:
                 newTxt = f'@{attrType}/{attrText.split("#")[0]}'
                 child.text = str(xmlText).replace(xmlText, newTxt)
-    # 匹配符合?settingsTitleTextColor格式的字符串
-    regex2 = r"\?(\w+)"
+    # 匹配符合?settingsTitleTextColor格式的字符串，排除以 "android:" 开头的情况
+    regex2 = r"\?(?!android:)\w+"
     if not xmlText is None and re.match(regex2, xmlText):
         matches = re.finditer(regex2, xmlText, re.MULTILINE)
         for matchNum, match2 in enumerate(matches, start=1):
