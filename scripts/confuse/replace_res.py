@@ -333,7 +333,7 @@ def replaceStyles(mappingData, fpath, attrType):
             replaceText(subChild.text, subChild, mappingData)
     xml_content = convert_str(root)
     # 合并其他string.xml
-    save_2_file(xml_content, fpath)
+    save_2_file(xml_content.replace('&gt;', '>'), fpath)
 
 
 # 替换style属性parent
