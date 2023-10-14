@@ -78,11 +78,11 @@ def filterStyleXml(fpath, attrType):
             attrNameList = attrTypeNameList.get("attr")
             if not sub_child_attrName.startswith("android:") and sub_child_attrName not in attrNameList:
                 addAttrNames(sub_child_attrName, "attr")
-            filterStyleItemText(subChild.text, attrTypeNameList.get(attrType))
+            filterStyleItemText(subChild.text)
 
 
 # 过滤styles.xml item元素text文本内容
-def filterStyleItemText(xmlText, attrNameList):
+def filterStyleItemText(xmlText):
     # 匹配符合@drawable/ic_menu格式的字符串
     regex = r"(@(\w+)/([\w.]+).*)"
     if xmlText is not None and re.match(regex, xmlText):
@@ -91,6 +91,7 @@ def filterStyleItemText(xmlText, attrNameList):
             attrType = match.group(2)
             attrTxt = match.group(3)
             # print(f"{attrTxt}#{attrType}")
+            attrNameList = attrTypeNameList.get(attrType)
             if attrTxt not in attrNameList:
                 addAttrNames(attrTxt, attrType)
     # 匹配符合?settingsTitleTextColor格式的字符串，排除以 "android:" 开头的情况
@@ -164,6 +165,5 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
-    from_dir = "/Users/shareit/work/GBWorke/gbwhatsapp_2.23.13.76/DecodeCode/Whatsapp_2.23.13.76_copy_diff"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
     registerValues(from_dir)

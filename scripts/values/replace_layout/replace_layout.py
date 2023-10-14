@@ -47,7 +47,7 @@ def save_2_file(fpath, fname, from_dir, mapping_string):
     with codecs.open(fpath, mode="w", encoding="utf-8") as wf:
         replace_times = 0
         for key, value in mapping_string.items():
-            if key.startswith("APKTOOL_DUMMYVAL_") and not value.strip():
+            if key.startswith("APKTOOL_DUMMYVAL_") and not value == "":
                 # 重命名之前，判断是否已存在重命名后的属性名称
                 attrType = publicIdDic.get(key)
                 attrNameList = publicTypeDic.get(attrType)
