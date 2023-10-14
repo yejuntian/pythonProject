@@ -238,7 +238,7 @@ def createNewFile(fpath, tpath, fileType):
                 enableInsertNameDict[fileType].append(from_attr_name)
     if isChanged:
         xml_content = convert_str(fromNameList)
-        save_2_file(xml_content, tpath)
+        save_2_file(xml_content.replace('&gt;', '>'), tpath)
 
 
 # 特殊处理类型如dimen
@@ -293,7 +293,7 @@ def insertExitFile(fpath, tpath, fileType):
     if isChanged:
         xml_content = convert_str(to_root)
         # 合并其他string.xml
-        save_2_file(xml_content, tpath)
+        save_2_file(xml_content.replace('&gt;', '>'), tpath)
     addInsertNameList(tpath, fileType, diffNameList)
 
 
