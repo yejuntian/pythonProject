@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textColor=\"@color/white\" android:id=\"@id/info_tooltip\" android:visibility=\"gone\""
+  }
+]

@@ -50,7 +50,7 @@ def filterData(xml_cache, jsonCache):
         if mappingLayoutNameList is not None and len(mappingLayoutNameList) == 1:
             layoutMappingDic[mappingLayoutNameList[0]] = layoutName
         else:
-            notFondLayoutDic[layoutName] = mappingLayoutNameList
+            notFondLayoutDic[f"{layoutName}.json"] = mappingLayoutNameList
 
 
 def cacheContents(folder_path):
@@ -110,4 +110,4 @@ if __name__ == "__main__":
     project_path = args.project_path
 
     # project_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.19.82/DecodeCode/Whatsapp_v2.23.19.82"
-    main(f"{project_path}/res/layout")
+    main(f"{project_path}/res")

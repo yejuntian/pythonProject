@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.wds.components.profilephoto.WDSProfilePhoto android:layout_gravity=\"center_vertical\" android:id=\"@id/conversation_interop_profile_photo\" android:visibility=\"gone\""
+  }
+]

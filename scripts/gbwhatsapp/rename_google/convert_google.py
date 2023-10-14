@@ -16,7 +16,7 @@ data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
 regex = r"/smali.*?/(.+)"
 # 排除路径集合
-excludePathList = ["com/google/android/exoplayer2/ext"]
+excludePathList = ["com/google/android/exoplayer2/ext", "com/google/android/exoplayer2/decoder"]
 
 """
     主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
@@ -49,8 +49,9 @@ def change_googleFolder(from_dir, mCurrentPath, isConsole=True):
 # 是否为排除的目录
 def isExcludePath(file_path):
     for fpath in excludePathList:
-        return file_path.__contains__(fpath)
-
+        if file_path.__contains__(fpath):
+            return True
+    return False
 
 # 根据fpath路径，获取xml配置内容
 def getConfigData(fpath):

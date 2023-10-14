@@ -17,8 +17,9 @@ matchAttrRes = r"(app|whatsapp|tools|custom):(\w+)=\".*?\""
 matchAttrRes3 = r"=\"\?(\w+)\""
 # 匹配属性正则=>?APKTOOL_DUMMYVAL_0x7f040432</item>
 matchAttrRes4 = r">(\?(\w+))<"
-# 匹配属性="?android:textAppearanceMedium"
-matchAttrRes5 = r"=\"\?(\w+):(.*?)\""
+# 匹配style item属性只匹配<item name="tint">这种样式属性，
+# 排除<item name="android:scaleType">或<item name="APKTOOL_DUMMYVAL_0x7f040104">这样属性
+matchAttrRes5 = r"<item name=\"(?!APKTOOL_DUMMYVAL_)(\w+)\">"
 # 只匹配下面的文件类型
 extends = ["xml"]
 
@@ -148,6 +149,12 @@ def addValues(fpath, allValues):
             attrName = match.group(2)
             allValues.add(f'"@attr/{attrName}"')
             # print(f'"matchAttrRes4 = @attr/{attrName}"')
+        # 正则匹配matchAttrRes5属性
+        matchAttrs = re.finditer(matchAttrRes5, data, re.MULTILINE)
+        for matchNum, match in enumerate(matchAttrs, start=1):
+            attrName = match.group(1)
+            allValues.add(f'"@attr/{attrName}"')
+            # print(f'"matchAttrRes5 = @attr/{attrName}"')
 
 
 def getValuesMapping(allValues):

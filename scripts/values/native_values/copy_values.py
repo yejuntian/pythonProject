@@ -35,27 +35,29 @@ diffNameDict = {}
 reSExtends = ["png", "xml", "jpg"]
 resTypeList = ["anim", "drawable", "mipmap", "animator", "color",
                "layout", "xml", "interpolator"]
-# 是否重命名style名称
-isRenameStyle = True
 # *******************用于校验注入的属性****************************
 # 遍历所有的xml，对需要注入public.xml的属性进行二次校验,防止注入不存的属性
-xmlList = {"string": "strings.xml", "dimen": "dimens.xml"}
+xmlList = {"string": "strings.xml", "dimen": "dimens.xml",
+           "integer": "integers.xml", "array": "arrays.xml",
+           "style": "styles.xml", "attr": "attrs.xml",
+           "color": "colors.xml", "id": "ids.xml"}
 # 用于存放注入属性的集合
 checkAttrDict = {}
 # 用于存放没有找到的属性
 notFindAttrDict = {}
-
+# 需要特殊处理的样式
+spacialTypeList = ["style", "dimen"]
 """
     主要作用：根据GBNeedToFind.json 复制对应类型的属性到目标项目中。
 """
 
 
 def startCopyValues(from_dir, to_dir):
+    getCheckAttrDic(f"{from_dir}/res")
     mappingData = getNameMappingList("scripts/values/native_values/GBNeedToFind.json")
     publicFilePath = os.path.join(to_dir, "res/values/public.xml")
     getInsertNameList(publicFilePath, typeList, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
-    getCheckAttrDic(f"{from_dir}/res")
     for type in typeList:
         # 特殊处理，只需要注册到public.xml，copy操作单独处理
         if type in notCopyTypeList:
@@ -113,21 +115,59 @@ def transFolderCopy(from_dir, to_dir, mappingData):
                         shutil.copy(fpath, tpath)
 
 
+# 获取需要copy的数据列表集合
 def getNameMappingList(fpath):
-    dict = {}
+    temDict = {}
+    styleType = spacialTypeList[0]
+    styleNameList = checkAttrDict.get(styleType)
+    dimenNameList = checkAttrDict.get(spacialTypeList[1])
+
+    if notFindAttrDict.get(styleType) is None:
+        notFindAttrDict[styleType] = []
     with codecs.open(fpath, "r", "utf-8") as rf:
         data = json.loads(rf.read())
         for attrType, nameList in data.items():
-            if dict.get(attrType) is None:
-                dict[attrType] = []
-            for name in nameList:
+            if temDict.get(attrType) is None:
+                temDict[attrType] = []
+            for attrName in nameList:
                 # 特殊处理
-                if attrType == "style" and isRenameStyle:
-                    name = name.replace("_", ".")
+                attrNameTuple = getSpecialTypeName(attrType, attrName, styleNameList,
+                                                   dimenNameList, temDict)
+                if attrNameTuple[1]:
+                    continue
+                attrName = attrNameTuple[0]
                 # 去重操作
-                if not name in dict[attrType]:
-                    dict[attrType].append(name)
-    return dict
+                if not attrName.startswith("APKTOOL_DUMMYVAL_0x7f") and attrName not in temDict[attrType]:
+                    temDict[attrType].append(attrName)
+    return temDict
+
+
+# style/dimen样式需要特殊处理
+def getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList, temDict):
+    # 是否过滤该属性
+    enableContinue = False
+    if fileType == "style":
+        if attrName.replace("_", ".") in styleNameList:
+            attrName = attrName.replace("_", ".")
+        elif attrName.replace(".", "_") in styleNameList:
+            attrName = attrName.replace(".", "_")
+        else:
+            enableContinue = True
+            print(temDict[fileType])
+            if attrName not in temDict[fileType]:
+                notFindAttrDict[fileType].append(attrName)
+    elif fileType == "dimen":
+        regex = r"(.*common_dimens_)(\d+[_.]\d+dp)"
+        if re.match(regex, attrName):
+            matches = re.finditer(regex, attrName, re.MULTILINE)
+            for matchNum, match in enumerate(matches, start=1):
+                preName = match.group(1)
+                lastName = match.group(2)
+                tempAttrName = f"{preName}{lastName.replace('_', '.')}"
+                # print(f"newDimenName = {tempAttrName}  preDimenName = {attrName}")
+                if tempAttrName in dimenNameList:
+                    attrName = tempAttrName
+    return attrName, enableContinue
 
 
 # 对比public.xml，把没有注册的属性添加到集合中
@@ -241,31 +281,9 @@ def createNewFile(fpath, tpath, fileType):
         save_2_file(xml_content.replace('&gt;', '>'), tpath)
 
 
-# 特殊处理类型如dimen
-def specialLogic(diffNameList, oldStr, newStr):
-    if diffNameList is None:
-        return diffNameList
-    newNameList = []
-    regex = r"(.*common_dimens_)(\d+[_.]\d+dp)"
-    for name in diffNameList:
-        matches = re.finditer(regex, name, re.MULTILINE)
-        for matchNum, match in enumerate(matches, start=1):
-            preName = match.group(1)
-            lastName = match.group(2)
-            # print(f"preName = {preName} lastName = {lastName}")
-            name = f"{preName}{lastName.replace(oldStr, newStr)}"
-        newNameList.append(name)
-    return newNameList
-
-
 # diff code插入到已存在的文件
 def insertExitFile(fpath, tpath, fileType):
     diffNameList = diffNameDict.get(fileType)
-    # 对dimen这种类型特殊处理
-    if fileType == "dimen":
-        diffNameList = specialLogic(diffNameList, '_', '.')
-        diffNameDict[fileType] = diffNameList
-
     if diffNameList is None or len(diffNameList) <= 0:
         return
     to_parser = ET.parse(tpath)
@@ -283,7 +301,7 @@ def insertExitFile(fpath, tpath, fileType):
     for fromChild in from_root:
         from_attr = fromChild.attrib
         from_attr_name = from_attr.get("name")
-        if not from_attr_name is None and not from_attr_name in toNameList and from_attr_name in diffNameList:
+        if from_attr_name is not None and from_attr_name not in toNameList and from_attr_name in diffNameList:
             isChanged = True
             to_root.append(fromChild)
             if enableInsertNameDict.get(fileType) is None:
@@ -373,9 +391,7 @@ def insertPublic(fpath, type):
     checkTypeList = checkAttrDict.get(type)
     if enableInsertNameList is None or len(enableInsertNameList) <= 0:
         return
-    # 对dimen这种类型特殊处理
-    # if type == "dimen":
-    #     enableInsertNameList = specialLogic(enableInsertNameList, '.', '_')
+
     for itemName in enableInsertNameList:
         # 过滤掉不存在的属性名的注册
         if isFilterRegisterAttrName(itemName, type, checkTypeList):

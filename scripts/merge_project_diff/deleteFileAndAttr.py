@@ -333,5 +333,5 @@ def save_to_publicXML(data_list, file_name):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76_copy_diff"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.15.81/DecodeCode/Whatsapp_v2.23.15.81_copy_diff"
     deleteGarbage(from_dir)

@@ -1,5 +1,0 @@
-[
-  {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.whatsapp.util.ClippingLayout android:layout_gravity=\"bottom\" android:id=\"@id/voice_note_clipping_layout\" android:clipChildren=\"false\" android:clipToPadding=\"false\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\" xmlns:app=\"http://schemas.android.com/apk/res-auto\">\n    <LinearLayout android:gravity=\"bottom\" android:orientation=\"horizontal\" android:id=\"@id/voice_note_layout\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <com.gbwhatsapp.WaImageView android:id=\"@id/voice_note_pulse\" android:layout_width=\"47.0dip\" android:layout_height=\"47.0dip\" android:src=\"@drawable/recording_mic_pulse\" android:scaleType=\"center\" />\n        <com.gbwhatsapp.WaTextView android:textSize=\"20.0sp\" android:textColor"
-  }
-]

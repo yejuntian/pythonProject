@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!--需要手动还原资源属性的layout.xml-->
+    <comment>home.xml</comment>
+    <comment>about.xml</comment>
+    <comment>conversation_entry.xml</comment>
+    <comment>conversations_row.xml</comment>
+    <!-- styles.xml样式还原属性-->
+    <comment>"Theme.Base"</comment>
+</properties>
+

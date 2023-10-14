@@ -23,8 +23,13 @@ repeatName = {}
 
 
 def load_replace_keys(dataPath):
+    temp = {}
     with codecs.open(dataPath, "r", "utf-8") as rfile:
-        return json.loads(rfile.read())
+        data = json.loads(rfile.read())
+        for key, value in data.items():
+            if key.startswith("APKTOOL_DUMMYVAL_"):
+                temp[key] = value
+    return temp
 
 
 def execute_folder(from_dir, blacklist, extends, mapping_string):

@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<set android:interpolator=\"@android:interpolator/fast_out_slow_in\" android:duration"
+  },
+  {
+    "matchStr": "  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <translate android:fromYDelta=\"0.0\" android:toYDelta=\"20.000004%p\" />\n    <alpha android:fromAlpha=\"1.0\" android:toAlpha=\"0.0\" />\n</set>"
+  }
+]

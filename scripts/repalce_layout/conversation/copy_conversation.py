@@ -6,6 +6,9 @@ import xml.etree.ElementTree as ET
 # 存在2个conversation聊天页面样式
 isCopyConversation2 = False
 
+"""
+    主要作用：copy本项目的res/layout/conversation.xml内容到指定conversation/conversation.xml配置文件中
+"""
 
 def copyConversation(from_dir):
     xmlPath = f"{mCurrentPath}/scripts/repalce_layout/conversation/conversation.xml"
@@ -63,5 +66,5 @@ if __name__ == "__main__":
     parser.add_argument("from_dir")
     args = parser.parse_args()
     from_dir = args.from_dir
-    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
+    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
     copyConversation(from_dir)
