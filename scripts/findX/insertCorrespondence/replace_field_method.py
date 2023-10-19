@@ -1,11 +1,13 @@
 import codecs
 import json
 import argparse
-from scripts.findX.baseVersion import baseVersion, newVersion
+
+baseVersion = "2.23.15.81"
+newVersion = "2.23.20.76"
 
 """
     根据findX/class.json中类的对应关系，
-    插入到findX/field.json、findX/method.json中对应版本的value值
+    插入到findX/field_method.json中对应版本的value值
 """
 
 
@@ -40,13 +42,9 @@ def merge_data(class_data, method_data):
 def packageData(from_dir):
     # 合并method数据
     class_data = load_json_data(f"{from_dir}/class.json")
-    fMethodPath = f"{from_dir}/method.json"
+    fMethodPath = f"{from_dir}/field_method.json"
     method_data = mergeData(load_json_data(fMethodPath), class_data)
     save_2_file(method_data, fMethodPath)
-    # 合并field数据
-    fFieldPath = f"{from_dir}/field.json"
-    field_data = mergeData(load_json_data(fFieldPath), class_data)
-    save_2_file(field_data, fFieldPath)
 
 
 def mergeData(data, class_data):

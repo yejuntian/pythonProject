@@ -4,9 +4,9 @@ import json
 import os
 
 # base版本号
-baseVersion = "2.23.8.76"
+baseVersion = "2.23.15.81"
 # 插入版本号
-insertVersion = "2.23.15.81"
+insertVersion = "2.23.20.76"
 # 是否插入plus
 isInsertPlus = False
 
