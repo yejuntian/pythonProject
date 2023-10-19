@@ -5,7 +5,8 @@ import argparse
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF', 'original', 'smali',
              'smali_classes2', 'smali_classes3', 'smali_classes4', 'smali_classes5',
-             'smali_classes6', 'smali_classes7', 'smali_classes8', 'gen', "raw", "font"]
+             'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9',
+             'smali_classes10','smali_classes11', 'gen', "raw", "font"]
 
 
 def copy_png(from_dir, to_dir):
@@ -38,6 +39,7 @@ def copy_png(from_dir, to_dir):
                     and not fname.__contains__(".properties")
                     and not fname.__contains__(".gitignore")
                     and not fname.__contains__(".prof")
+                    and not fname.__contains__(".bin")
             ):
                 if not os.path.exists(to_dir):
                     os.makedirs(to_dir, exist_ok=True)

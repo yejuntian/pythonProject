@@ -1,27 +1,28 @@
 import argparse
 import codecs
+import glob
 import json
 import os
+import re
 import shutil
 import traceback
-import re
-import glob
+
 import lxml.etree as ET
 
 # 需要插入的字典
 enableInsertNameDict = {}
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', '.gradle', 'build', 'lib', 'META-INF',
-             'original', 'AndroidManifest.xml', 'apktool.yml']
+blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'smali',
+             'smali_classes2', 'smali_classes3', 'smali_classes4', 'smali_classes5',
+             'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9',
+             'smali_classes10', 'smali_classes11', 'gen', 'AndroidManifest.xml', 'apktool.yml']
+
 # 只匹配下面的文件类型
 extends = ["xml"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
             "integer", "string", "style", "anim", "drawable",
             "animator", "layout", "xml", "mipmap", "interpolator"]
-# 不需要copy的文件类型，只需要在public.xml进行注册，copy操作单独进行处理
-notCopyTypeList = ["anim", "drawable", "mipmap", "animator",
-                   "layout", "xml", "interpolator"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
@@ -32,9 +33,11 @@ copy_dict = {}
 diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
-reSExtends = ["png", "xml", "jpg"]
+reSExtends = ["png", "xml", "jpg", "webp"]
 resTypeList = ["anim", "drawable", "mipmap", "animator", "color",
                "layout", "xml", "interpolator"]
+# 需要注册的资源集合
+insertResDict = {}
 # *******************用于校验注入的属性****************************
 # 遍历所有的xml，对需要注入public.xml的属性进行二次校验,防止注入不存的属性
 xmlList = {"string": "strings.xml", "dimen": "dimens.xml",
@@ -54,65 +57,78 @@ spacialTypeList = ["style", "dimen"]
 
 def startCopyValues(from_dir, to_dir):
     getCheckAttrDic(f"{from_dir}/res")
-    mappingData = getNameMappingList("scripts/values/native_values/GBNeedToFind.json")
+    jsonPath = "scripts/values/native_values/GBNeedToFind.json"
+    mappingData = getNameMappingList(jsonPath)
     publicFilePath = os.path.join(to_dir, "res/values/public.xml")
-    getInsertNameList(publicFilePath, typeList, mappingData)
+    publicDict = parserPublicXML(publicFilePath)
+    getInsertNameList(publicDict, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
-    for type in typeList:
-        # 特殊处理，只需要注册到public.xml，copy操作单独处理
-        if type in notCopyTypeList:
-            enableInsertNameDict[type] = getInsertName(publicFilePath, type, mappingData.get(type))
-        insertPublic(publicFilePath, type)
-
+    for attrType in typeList:
+        insertPublic(publicFilePath, attrType)
     # 执行拷贝资源操作
-    copyRes(from_dir, to_dir, mappingData)
+    copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict)
     print(f"程序执行结束，结果保存在{to_dir}")
     print("*****************不存在的属性名称如下*****************")
     print(notFindAttrDict)
 
 
-def copyRes(from_dir, to_dir, mappingData):
+def copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict):
     resMappingData = {}
-    for key, value in mappingData.items():
-        if key in resTypeList and len(value) > 0:
-            resMappingData[key] = value
+    for resType, nameList in mappingData.items():
+        if resType in resTypeList and len(nameList) > 0:
+            resMappingData[resType] = nameList
     # 有需要copy的资源类型才进行遍历
     if len(resMappingData) > 0:
         print("***************正在执行拷贝资源操作****************")
-        transFolderCopy(from_dir, to_dir, resMappingData)
+        transFolderCopy(from_dir, to_dir, resMappingData, insertResDict, publicDict)
+        for attrType, resNameList in insertResDict.items():
+            insertResPublic(publicFilePath, attrType, resNameList)
+        # 添加没有copy的res资源属性
+        for attrType, resNameList in resMappingData.items():
+            publicNameList = publicDict.get(attrType)
+            if notFindAttrDict.get(attrType) is None:
+                notFindAttrDict[attrType] = []
+            for resName in resNameList:
+                if resName not in publicNameList and resName not in notFindAttrDict.get(attrType):
+                    notFindAttrDict[attrType].append(resName)
 
 
 # 遍历整个项目复制资源文件到目标项目
-def transFolderCopy(from_dir, to_dir, mappingData):
+def transFolderCopy(from_dir, to_dir, resMappingData, insertResDict, publicDict):
     listdir = os.listdir(from_dir)
     for fname in listdir:
-        fpath = os.path.join(from_dir, fname)
-        tpath = os.path.join(to_dir, fname)
-        if os.path.isdir(fpath):
-            transFolderCopy(fpath, tpath, mappingData)
-        elif os.path.isfile(fpath):
-            if fname.split(".")[-1] in reSExtends:
-                fileName = fname.split(".")[0]
-                folderName = fpath.split("/")[-2]
-                # 目标文件夹列表
-                parentFolderPath = os.path.dirname(tpath)
-                if not os.path.exists(parentFolderPath):
-                    os.makedirs(parentFolderPath, exist_ok=True)
-                folderList = os.listdir(parentFolderPath)
-                if folderName.__contains__("-"):
-                    folderName = folderName.split("-")[0]
-                if folderName == "mipmap" or folderName == "drawable":
-                    drawableList = mappingData.get(folderName)
-                    # 在copy列表中，并且目标文件夹不存在则进行copy操作
-                    if drawableList is not None and fileName in drawableList and fname not in folderList:
-                        shutil.copy(fpath, tpath)
-                elif folderName in resTypeList:
-                    otherFileList = mappingData.get(folderName)
-                    # 在copy列表中，并且目标文件夹不存在则进行copy操作
-                    # print(f"folderName = {folderName} fileName = {fileName}")
-                    # print(otherFileList)
-                    if otherFileList is not None and fileName in otherFileList and fname not in folderList:
-                        shutil.copy(fpath, tpath)
+        if fname not in blacklist:
+            fpath = os.path.join(from_dir, fname)
+            tpath = os.path.join(to_dir, fname)
+            if os.path.isdir(fpath):
+                transFolderCopy(fpath, tpath, resMappingData, insertResDict, publicDict)
+            elif os.path.isfile(fpath):
+                if fname.split(".")[-1] in reSExtends:
+                    fileName = fname.split(".")[0]
+                    folderName = fpath.split("/")[-2]
+                    # 目标文件夹列表
+                    parentFolderPath = os.path.dirname(tpath)
+                    if not os.path.exists(parentFolderPath):
+                        os.makedirs(parentFolderPath, exist_ok=True)
+                    targetFolderList = os.listdir(parentFolderPath)
+                    if folderName.__contains__("-"):
+                        folderName = folderName.split("-")[0]
+                    if folderName in resTypeList:
+                        fileList = resMappingData.get(folderName)
+                        # 在copy列表中，并且目标文件夹不存在该文件，则进行copy操作
+                        if fileList is not None and fileName in fileList and fname not in targetFolderList:
+                            # print(f"folderName = {folderName} fileName = {fileName}")
+                            shutil.copy(fpath, tpath)
+                            # 添加到注册public.xml集合中
+                            if insertResDict.get(folderName) is None:
+                                insertResDict[folderName] = []
+                            if fileName not in insertResDict.get(folderName) and fileName not in publicDict.get(folderName):
+                                insertResDict[folderName].append(fileName)
+                                # 删除未发现的属性
+                                notFoundList = notFindAttrDict.get(folderName)
+                                if notFoundList is not None and fileName in notFoundList:
+                                    # print(f"remove fileName = {fileName}")
+                                    notFindAttrDict.get(folderName).pop()
 
 
 # 获取需要copy的数据列表集合
@@ -132,7 +148,7 @@ def getNameMappingList(fpath):
             for attrName in nameList:
                 # 特殊处理
                 attrNameTuple = getSpecialTypeName(attrType, attrName, styleNameList,
-                                                   dimenNameList, temDict)
+                                                   dimenNameList)
                 if attrNameTuple[1]:
                     continue
                 attrName = attrNameTuple[0]
@@ -143,7 +159,7 @@ def getNameMappingList(fpath):
 
 
 # style/dimen样式需要特殊处理
-def getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList, temDict):
+def getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList):
     # 是否过滤该属性
     enableContinue = False
     if fileType == "style":
@@ -153,8 +169,7 @@ def getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList, temDict
             attrName = attrName.replace(".", "_")
         else:
             enableContinue = True
-            print(temDict[fileType])
-            if attrName not in temDict[fileType]:
+            if attrName not in notFindAttrDict[fileType]:
                 notFindAttrDict[fileType].append(attrName)
     elif fileType == "dimen":
         regex = r"(.*common_dimens_)(\d+[_.]\d+dp)"
@@ -170,42 +185,29 @@ def getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList, temDict
     return attrName, enableContinue
 
 
-# 对比public.xml，把没有注册的属性添加到集合中
-def getInsertName(targetPath, fileType, diffNameList):
-    if enableInsertNameDict.get(fileType) is None:
-        enableInsertNameDict[fileType] = []
-    if diffNameList is None or len(diffNameList) <= 0:
-        return
-    targetNameList = getTargetTypePublicId(targetPath, fileType)
-    for diffName in diffNameList:
-        # 去重
-        if not diffName in targetNameList and not diffName in enableInsertNameDict[fileType]:
-            enableInsertNameDict[fileType].append(diffName)
-    return enableInsertNameDict[fileType]
-
-
-def getInsertNameList(fpath, typeList, mappingData):
-    parser = ET.parse(fpath)
-    root = parser.getroot()
+def parserPublicXML(fpath):
+    parse = ET.parse(fpath)
+    root = parse.getroot()
+    # 用户存放public.xml所有属性集合
     attrNameDict = {}
     for child in root:
         child_attr = child.attrib
         attr_name = child_attr.get("name")
         attr_type = child_attr.get("type")
-        if not attr_name is None and not attr_type is None and attr_type in typeList:
-            namelist = attrNameDict.get(attr_type)
-            if namelist is None:
+        if attr_name is not None and attr_type is not None:
+            if attrNameDict.get(attr_type) is None:
                 attrNameDict[attr_type] = []
             attrNameDict[attr_type].append(attr_name)
+    return attrNameDict
 
+
+def getInsertNameList(publicDict, mappingData):
     for attrType, attrNameList in mappingData.items():
-        stringList = attrNameDict.get(attrType)
-        # print(attrType)
-        # print(attrNameList)
-        if stringList is None or len(stringList) <= 0:
+        publicAttrNameList = publicDict.get(attrType)
+        if publicAttrNameList is None or len(publicAttrNameList) <= 0:
             continue
         for attrName in attrNameList:
-            if not attrName in stringList:
+            if attrName not in publicAttrNameList:
                 if diffNameDict.get(attrType) is None:
                     diffNameDict[attrType] = []
                 diffNameDict[attrType].append(attrName)
@@ -234,7 +236,7 @@ def travelFolderCopyAttr(from_dir, to_dir):
     from_listdir = os.listdir(from_dir)
     to_listdir = os.listdir(to_dir)
     for fname in from_listdir:
-        if not fname in blacklist:
+        if fname not in blacklist:
             fpath = os.path.join(from_dir, fname)
             tpath = os.path.join(to_dir, fname)
             if os.path.isdir(fpath):
@@ -258,7 +260,7 @@ def startCopyAttr(fpath, tpath, fname):
 
 
 # 创建新文件插入diff code
-def createNewFile(fpath, tpath, fileType):
+def createNewFile(fpath, tPath, fileType):
     diffNameList = diffNameDict.get(fileType)
     if diffNameList is None or len(diffNameList) <= 0:
         return
@@ -269,30 +271,30 @@ def createNewFile(fpath, tpath, fileType):
     for fromChild in from_root:
         from_attr = fromChild.attrib
         from_attr_name = from_attr.get("name")
-        if not from_attr_name is None and from_attr_name in diffNameList:
+        if from_attr_name is not None and from_attr_name in diffNameList:
             isChanged = True
             fromNameList.append(fromChild)
             if enableInsertNameDict.get(fileType) is None:
                 enableInsertNameDict[fileType] = []
-            if not from_attr_name in enableInsertNameDict.get(fileType):
+            if from_attr_name not in enableInsertNameDict.get(fileType):
                 enableInsertNameDict[fileType].append(from_attr_name)
     if isChanged:
         xml_content = convert_str(fromNameList)
-        save_2_file(xml_content.replace('&gt;', '>'), tpath)
+        save_2_file(xml_content.replace('&gt;', '>'), tPath)
 
 
 # diff code插入到已存在的文件
-def insertExitFile(fpath, tpath, fileType):
+def insertExitFile(fpath, tPath, fileType):
     diffNameList = diffNameDict.get(fileType)
     if diffNameList is None or len(diffNameList) <= 0:
         return
-    to_parser = ET.parse(tpath)
+    to_parser = ET.parse(tPath)
     to_root = to_parser.getroot()
     toNameList = []
     for toChild in to_root:
         to_attr = toChild.attrib
         to_attr_name = to_attr.get("name")
-        if not to_attr_name is None:
+        if to_attr_name is not None:
             toNameList.append(to_attr_name)
 
     from_parser = ET.parse(fpath)
@@ -306,13 +308,13 @@ def insertExitFile(fpath, tpath, fileType):
             to_root.append(fromChild)
             if enableInsertNameDict.get(fileType) is None:
                 enableInsertNameDict[fileType] = []
-            if not from_attr_name in enableInsertNameDict.get(fileType):
+            if from_attr_name not in enableInsertNameDict.get(fileType):
                 enableInsertNameDict[fileType].append(from_attr_name)
     if isChanged:
         xml_content = convert_str(to_root)
         # 合并其他string.xml
-        save_2_file(xml_content.replace('&gt;', '>'), tpath)
-    addInsertNameList(tpath, fileType, diffNameList)
+        save_2_file(xml_content.replace('&gt;', '>'), tPath)
+    addInsertNameList(tPath, fileType, diffNameList)
 
 
 # 对比public.xml，把没有注册的属性添加到集合中
@@ -320,7 +322,7 @@ def addInsertNameList(tpath, fileType, diffNameList):
     targetPath = tpath[0:tpath.index("/res/values")]
     targetNameList = getTargetTypePublicId(f"{targetPath}/res/values/public.xml", fileType)
     for name in diffNameList:
-        if not name in targetNameList:
+        if name not in targetNameList:
             if enableInsertNameDict.get(fileType) is None:
                 enableInsertNameDict[fileType] = []
             if name not in enableInsertNameDict[fileType]:
@@ -336,8 +338,8 @@ def getTargetTypePublicId(fpath, targetType):
     for child in root:
         attrib = child.attrib
         name = attrib.get("name")
-        type = attrib.get("type")
-        if not name is None and not type is None and type == targetType:
+        attType = attrib.get("type")
+        if name is not None and attType is not None and attType == targetType:
             targetNameList.append(name)
     return targetNameList
 
@@ -380,7 +382,7 @@ def insertPublic(fpath, type):
         attr = child.attrib
         attrType = attr.get("type")
         attrId = attr.get("id")
-        if not attrType is None and attrType == type:
+        if attrType is not None and attrType == type:
             attrId = int(attrId, 16)
             if attrId >= maxId:
                 maxId = attrId
@@ -417,13 +419,54 @@ def insertPublic(fpath, type):
         wf.write('</resources>')
 
 
+def insertResPublic(fpath, resType, resNameList):
+    if resNameList is None or len(resNameList) < 0:
+        return
+    to_parser = ET.parse(fpath)
+    to_root = to_parser.getroot()
+    maxChild = None
+    maxId = 0
+    for child in to_root:
+        attr = child.attrib
+        attrType = attr.get("type")
+        attrId = attr.get("id")
+        if attrType is not None and attrType == resType:
+            attrId = int(attrId, 16)
+            if attrId >= maxId:
+                maxId = attrId
+                maxChild = child
+
+    pos = to_root.index(maxChild)
+    for itemName in resNameList:
+        maxId += 1
+        pos += 1
+
+        element = ET.SubElement(to_root, "public")
+        element.set("type", resType)
+        element.set("name", itemName)
+        element.set("id", str(hex(maxId)))
+        to_root.insert(pos, element)
+
+    # 写入到public.xml文件中
+    with codecs.open(fpath, "w+", encoding="utf-8") as wf:
+        wf.write('<?xml version="1.0" encoding="utf-8"?>\n')
+        wf.write('<resources>\n')
+        for child in to_root:
+            attrType = child.attrib.get("type")
+            attrName = child.attrib.get("name")
+            attrId = child.attrib.get("id")
+            wf.write(f'    <public type="{attrType}" name="{attrName}" id="{attrId}" />\n')
+        wf.write('</resources>')
+
+
 # 过滤掉不存在的属性名称，取消public.xml的注册操作
 def isFilterRegisterAttrName(itemName, type, checkTypeList):
     if checkTypeList is None:
         return False
     else:
         if itemName not in checkTypeList:
-            notFindAttrDict[type].append(itemName)
+            if itemName not in notFindAttrDict[type]:
+                notFindAttrDict[type].append(itemName)
             return True
         else:
             return False

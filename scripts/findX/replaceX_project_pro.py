@@ -6,7 +6,7 @@ import re
 from baseVersion import baseVersion, newVersion
 
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
+blacklist = ['.idea', '.git', 'build', 'assets', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
              'smali_classes4', 'smali_classes5', 'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
@@ -112,9 +112,7 @@ if __name__ == "__main__":
     from_dir = args.from_dir
     mCurPath = os.getcwd()
 
-    method_data = load_json_data(f"{mCurPath}/scripts/findX/method.json")
-    filed_data = load_json_data(f"{mCurPath}/scripts/findX/field.json")
-    method_data.extend(filed_data)
+    method_data = load_json_data(f"{mCurPath}/scripts/findX/field_method.json")
     method_data = getOrderData(method_data, isMethod=True)
     replace_x(from_dir, method_data)
     print("************LX相关属性和方法全部替换完成************")

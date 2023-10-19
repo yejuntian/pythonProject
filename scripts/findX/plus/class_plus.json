@@ -1,125 +1,129 @@
 [
   {
-    "2.23.8.76": "LX/00V;",
+    "2.23.20.76": "LX/03m;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/03Y;"
   },
   {
-    "2.23.8.76": "LX/05L;",
+    "2.23.20.76": "LX/0JB;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0GC;"
   },
   {
-    "2.23.8.76": "LX/05I;",
+    "2.23.20.76": "LX/07o;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/06W;"
   },
   {
-    "2.23.8.76": "LX/01y;",
+    "2.23.20.76": "LX/0dP;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0Wy;"
   },
   {
-    "2.23.8.76": "LX/055;",
+    "2.23.20.76": "LX/0dM;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0Wv;"
   },
   {
-    "2.23.8.76": "LX/010;",
+    "2.23.20.76": "LX/0dy;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0XX;"
   },
   {
-    "2.23.8.76": "LX/2sw;",
+    "2.23.20.76": "LX/679;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/6ED;"
   },
   {
-    "2.23.8.76": "LX/0oG;",
+    "2.23.20.76": "LX/4Se;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/4Jr;"
   },
   {
-    "2.23.8.76": "LX/0r7;",
+    "2.23.20.76": "LX/1YZ;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/1LG;"
   },
   {
-    "2.23.8.76": "LX/2sv;",
+    "2.23.20.76": "LX/4sq;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/4jx;"
   },
   {
-    "2.23.8.76": "LX/0r6;",
+    "2.23.20.76": "LX/3TL;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/3Dg;"
   },
   {
-    "2.23.8.76": "LX/0r5;",
+    "2.23.20.76": "LX/2u9;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/2im;"
   },
   {
-    "2.23.8.76": "LX/1PE;",
+    "2.23.20.76": "LX/2zx;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/2oQ;"
   },
   {
-    "2.23.8.76": "LX/0tp;",
+    "2.23.20.76": "LX/2ld;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/2aU;"
   },
   {
-    "2.23.8.76": "LX/0sl;",
+    "2.23.20.76": "LX/2yE;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/2mo;"
   },
   {
-    "2.23.8.76": "LX/00T;",
+    "2.23.20.76": "LX/0Ya;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0S7;"
   },
   {
-    "2.23.8.76": "LX/0Iq;",
+    "2.23.20.76": "LX/0CX;",
     "class": [
       "smali_classes5/com/gbwhatsapp/eyy.smali"
     ],
     "2.23.15.81": "LX/0BC;"
   },
   {
-    "2.23.8.76": "LX/0sH;",
+    "2.23.20.76": "LX/2ty;",
     "2.23.15.81": "LX/2if;"
+  },
+  {
+    "2.23.20.76": "LX/3Ov;",
+    "2.23.15.81": "LX/3AM;"
   }
 ]

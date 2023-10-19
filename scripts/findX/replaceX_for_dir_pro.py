@@ -108,9 +108,7 @@ if __name__ == "__main__":
     from_dir = args.from_dir
     mCurPath = os.getcwd()
 
-    method_data = load_json_data(f"{mCurPath}/scripts/findX/method.json")
-    filed_data = load_json_data(f"{mCurPath}/scripts/findX/field.json")
-    method_data.extend(filed_data)
+    method_data = load_json_data(f"{mCurPath}/scripts/findX/field_method.json")
     method_data = getOrderData(method_data, isMethod=True)
     replace_x(from_dir, method_data)
     print("************LX相关属性和方法全部替换完成************")

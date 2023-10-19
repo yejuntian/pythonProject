@@ -89,7 +89,7 @@ def write_data_2_file(file_path, public_map):
     with open(file_path, encoding="utf-8", mode="r") as rf:
         lines = rf.readlines()
         for line in lines:
-            if line.startswith(".field public static final"):
+            if line.startswith(".field public static"):
                 attr_name = line.split(":")[0].split(" ")[-1]
                 attr_value = line.split("=")[-1].strip()
                 # print(f"file_type = {file_type} attr_name = {attr_name}")
@@ -101,7 +101,10 @@ def write_data_2_file(file_path, public_map):
                 # 只有匹配到的才进行赋值
                 if not public_map[file_type].get(attr_name) is None:
                     attr_id = public_map[file_type][attr_name]
-                    data += f".field public static final {attr_name}:I = {attr_id}\n"
+                    preStr = ".field public static"
+                    if line.startswith(".field public static final"):
+                        preStr = ".field public static final"
+                    data += f"{preStr} {attr_name}:I = {attr_id}\n"
                 else:  # 否则保留之前的value数值
                     data += line
             else:
