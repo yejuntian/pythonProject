@@ -5,9 +5,8 @@ import json
 import os
 import re
 import shutil
-import traceback
-
 import lxml.etree as ET
+import traceback
 
 # 需要插入的字典
 enableInsertNameDict = {}
@@ -19,23 +18,25 @@ blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'smali',
 
 # 只匹配下面的文件类型
 extends = ["xml"]
+# 需要特殊处理的type
+extendsType = ["plural"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
-            "integer", "string", "style", "anim", "drawable",
-            "animator", "layout", "xml", "mipmap", "interpolator"]
+            "integer", "string", "style", "plurals", "fraction"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
-                "styles.xml"]
+                "styles.xml", "plurals.xml", "fractions.xml"]
 # 需要copy的映射关系
 copy_dict = {}
 # 需要copy的属性name字典
 diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
-reSExtends = ["png", "xml", "jpg", "webp"]
-resTypeList = ["anim", "drawable", "mipmap", "animator", "color",
-               "layout", "xml", "interpolator"]
+reSExtends = ["png", "xml", "jpg", "webp", "ttf"]
+resTypeList = ["color", "anim", "drawable", "mipmap", "animator",
+               "layout", "xml", "interpolator", "menu", "transition",
+               "font"]
 # 需要注册的资源集合
 insertResDict = {}
 # *******************用于校验注入的属性****************************
@@ -64,7 +65,7 @@ def startCopyValues(from_dir, to_dir):
     getInsertNameList(publicDict, mappingData)
     travelFolderCopyAttr(from_dir, to_dir)
     for attrType in typeList:
-        insertPublic(publicFilePath, attrType)
+        insertPublic(publicFilePath, attrType, publicDict)
     # 执行拷贝资源操作
     copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict)
     print(f"程序执行结束，结果保存在{to_dir}")
@@ -82,7 +83,7 @@ def copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict):
         print("***************正在执行拷贝资源操作****************")
         transFolderCopy(from_dir, to_dir, resMappingData, insertResDict, publicDict)
         for attrType, resNameList in insertResDict.items():
-            insertResPublic(publicFilePath, attrType, resNameList)
+            insertResPublic(publicFilePath, attrType, resNameList, publicDict)
         # 添加没有copy的res资源属性
         for attrType, resNameList in resMappingData.items():
             publicNameList = publicDict.get(attrType)
@@ -241,7 +242,7 @@ def travelFolderCopyAttr(from_dir, to_dir):
             tpath = os.path.join(to_dir, fname)
             if os.path.isdir(fpath):
                 # 不在目标目录，创建新文件夹
-                if not fname in to_listdir:
+                if fname not in to_listdir:
                     os.makedirs(tpath, exist_ok=True)
                 travelFolderCopyAttr(fpath, tpath)
             elif os.path.isfile(fpath):
@@ -252,6 +253,8 @@ def travelFolderCopyAttr(from_dir, to_dir):
 
 def startCopyAttr(fpath, tpath, fname):
     fileType = fname[0:len(fname) - 1]
+    if fileType in extendsType:
+        fileType = f"{fileType}s"
     # 目标文件不存在
     if not os.path.exists(tpath):
         createNewFile(fpath, tpath, fileType)
@@ -373,7 +376,7 @@ def save_2_file(data_str, target_file_path):
         print(traceback.format_exc())
 
 
-def insertPublic(fpath, type):
+def insertPublic(fpath, type, publicDict):
     to_parser = ET.parse(fpath)
     to_root = to_parser.getroot()
     maxChild = None
@@ -406,6 +409,7 @@ def insertPublic(fpath, type):
         element.set("name", itemName)
         element.set("id", str(hex(maxId)))
         to_root.insert(pos, element)
+        publicDict[type].append(itemName)
 
     # 写入到public.xml文件中
     with codecs.open(fpath, "w+", encoding="utf-8") as wf:
@@ -419,7 +423,7 @@ def insertPublic(fpath, type):
         wf.write('</resources>')
 
 
-def insertResPublic(fpath, resType, resNameList):
+def insertResPublic(fpath, resType, resNameList, publicDict):
     if resNameList is None or len(resNameList) < 0:
         return
     to_parser = ET.parse(fpath)
@@ -446,6 +450,7 @@ def insertResPublic(fpath, resType, resNameList):
         element.set("name", itemName)
         element.set("id", str(hex(maxId)))
         to_root.insert(pos, element)
+        publicDict[resType].append(itemName)
 
     # 写入到public.xml文件中
     with codecs.open(fpath, "w+", encoding="utf-8") as wf:
