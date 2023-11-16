@@ -71,7 +71,7 @@ def filterAttrs(from_dir):
                     # style/dimen样式特殊处理，进行重命名操作
                     attrName = getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList)
                     if attrName is not None and attrName not in attrTypeNameList.get(fileType) \
-                            and fileType in attrType:
+                            and attrName not in allAttrs.get(fileType) and fileType in attrType:
                         allAttrs[fileType].append(attrName)
 
     save2File(allAttrs, f"{os.getcwd()}/sdkAttr.json")

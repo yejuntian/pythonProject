@@ -70,6 +70,7 @@ def startCopyValues(from_dir, to_dir):
     copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict)
     print(f"程序执行结束，结果保存在{to_dir}")
     print("*****************不存在的属性名称如下*****************")
+    save_2_file(json.dumps(notFindAttrDict, ensure_ascii=False, indent=2), f"{os.getcwd()}/{jsonPath}")
     print(notFindAttrDict)
 
 
