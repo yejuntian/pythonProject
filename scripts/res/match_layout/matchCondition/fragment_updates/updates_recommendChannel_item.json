@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<FrameLayout android:layout_gravity=\"center_horizontal\" android:id=\"@id/contact_selector\" android:layout_width"
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.WaButtonWithLoader android:id=\"@id/follow_button\" android:paddingLeft"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<FrameLayout android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:id=\"@id/see_all_container\" android:paddingTop"
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.collections.ObservableRecyclerView android:id=\"@id/recommended_list\""
+  }
+]

@@ -90,6 +90,8 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->A\w+\(.*?\).+"
+               "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A\w+\(.*?\).+"
                )
     # 查找属性
     findXClass(foldPath,

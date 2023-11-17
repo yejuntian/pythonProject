@@ -1,9 +1,7 @@
 import codecs
 import json
 import argparse
-
-baseVersion = "2.23.15.81"
-newVersion = "2.23.20.76"
+from baseVersion import baseVersion,newVersion
 
 """
     根据findX/class.json中类的对应关系，

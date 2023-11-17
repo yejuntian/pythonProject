@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<RelativeLayout android:id=\"@id/container\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\">\n        <FrameLayout android:id=\"@id/contact_selector\" android:paddingLeft"
+  },
+  {
+    "matchStr": "android:layout_below=\"@id/container\" />\n    <ViewStub android:id=\"@id/crossposting_updates_xfamily_upsell_stub\" android:layout"
+  }
+]

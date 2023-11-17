@@ -2,7 +2,8 @@ import glob
 import os
 import re
 import codecs
-import xml.etree.ElementTree as ET
+import shutil
+import lxml.etree as ET
 import json
 
 # 保存public.xml属性集合
@@ -15,13 +16,71 @@ typeList = {"strings.xml": "string", "styles.xml": "style", "colors.xml": "color
 # @integer/APKTOOL_DUMMYVAL_0x7f0c0020
 stringRegx = r"@(\w+)/(\w+)"
 
+"""
+    主要作用：
+        1.from_dir项目下的res/values-v1/*.xml复制到to_dir项目中。
+        2.把to_dir项目res/values-v1/*.xml没有注册的属性注册到public.xml。
+"""
 
-def registerValues(from_dir):
+
+def registerValues(from_dir, to_dir):
+    copyValuesV1Folder(from_dir, to_dir)
     # 解析public.xml文件
-    parserPublic(f"{from_dir}/res/values/public.xml")
+    publicPath = f"{to_dir}/res/values/public.xml"
+    parserPublic(publicPath)
     # 过滤出没有注册的属性
-    filterNoRegisterAttrs(from_dir)
-    save2File(notRegisterTypeNameList, "noRegisterAttr.json")
+    filterNoRegisterAttrs(to_dir)
+    for attrType, attrNameList in notRegisterTypeNameList.items():
+        insertResPublic(publicPath, attrType, attrNameList)
+    print("*************程序执行结束******************")
+
+
+def copyValuesV1Folder(from_dir, to_dir):
+    filePathList = glob.glob(f"{from_dir}/res/values*-v1/*.xml", recursive=True)
+    for fpath in filePathList:
+        tPath = f"{to_dir}{fpath[fpath.index('/res/'):]}"
+        if not os.path.exists(tPath):
+            shutil.copy(fpath, tPath)
+
+
+def insertResPublic(fpath, resType, resNameList):
+    if resNameList is None or len(resNameList) < 0:
+        return
+    to_parser = ET.parse(fpath)
+    to_root = to_parser.getroot()
+    maxChild = None
+    maxId = 0
+    for child in to_root:
+        attr = child.attrib
+        attrType = attr.get("type")
+        attrId = attr.get("id")
+        if attrType is not None and attrType == resType:
+            attrId = int(attrId, 16)
+            if attrId >= maxId:
+                maxId = attrId
+                maxChild = child
+
+    pos = to_root.index(maxChild)
+    for itemName in resNameList:
+        maxId += 1
+        pos += 1
+
+        element = ET.SubElement(to_root, "public")
+        element.set("type", resType)
+        element.set("name", itemName)
+        element.set("id", str(hex(maxId)))
+        to_root.insert(pos, element)
+
+    # 写入到public.xml文件中
+    with codecs.open(fpath, "w+", encoding="utf-8") as wf:
+        wf.write('<?xml version="1.0" encoding="utf-8"?>\n')
+        wf.write('<resources>\n')
+        for child in to_root:
+            attrType = child.attrib.get("type")
+            attrName = child.attrib.get("name")
+            attrId = child.attrib.get("id")
+            wf.write(f'    <public type="{attrType}" name="{attrName}" id="{attrId}" />\n')
+        wf.write('</resources>')
 
 
 def save2File(dataList, fpath):
@@ -32,7 +91,7 @@ def save2File(dataList, fpath):
 
 
 def filterNoRegisterAttrs(from_dir):
-    filePathlist = glob.glob(f"{from_dir}/res/values*-v1/*.xml", recursive=True)
+    filePathlist = glob.glob(f"{from_dir}/res/values-v1/*.xml", recursive=True)
     for fpath in filePathlist:
         fname = os.path.basename(fpath)
         attrType = typeList.get(fname)
@@ -165,5 +224,6 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
-    registerValues(from_dir)
+    from_dir = "/Users/shareit/work/GBWorke/gbwhatsapp_2.23.13.76/DecodeCode/Whatsapp_2.23.13.76"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
+    registerValues(from_dir, to_dir)

@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<LinearLayout android:orientation=\"vertical\" android:id=\"@id/newsletter_item\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\""
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.WrapIconTextView android:ellipsize=\"end\" android:gravity=\"center_vertical\" android:id=\"@id/newsletter_message\""
+  }
+]
