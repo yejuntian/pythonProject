@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <LinearLayout android:orientation=\"horizontal\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\">\n        <com.gbwhatsapp.components.button.ThumbnailButton android:id=\"@id/contact_photo\""
+  },
+  {
+    "matchStr": "<LinearLayout android:gravity=\"center_vertical\" android:orientation=\"vertical\""
   }
 ]

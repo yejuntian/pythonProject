@@ -38,9 +38,13 @@ def registerValues(from_dir, to_dir):
 def copyValuesV1Folder(from_dir, to_dir):
     filePathList = glob.glob(f"{from_dir}/res/values*-v1/*.xml", recursive=True)
     for fpath in filePathList:
+        relativePath = fpath[fpath.index('/res/') + 5:]
+        folderName = relativePath[0:relativePath.index('/')]
+        folderDir = f"{to_dir}/res/{folderName}"
         tPath = f"{to_dir}{fpath[fpath.index('/res/'):]}"
-        if not os.path.exists(tPath):
-            shutil.copy(fpath, tPath)
+        if not os.path.exists(folderDir):
+            os.makedirs(folderDir)
+        shutil.copy(fpath, tPath)
 
 
 def insertResPublic(fpath, resType, resNameList):
@@ -224,6 +228,6 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/GBWorke/gbwhatsapp_2.23.13.76/DecodeCode/Whatsapp_2.23.13.76"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
     registerValues(from_dir, to_dir)

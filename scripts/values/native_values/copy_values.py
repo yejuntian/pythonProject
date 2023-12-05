@@ -22,21 +22,22 @@ extends = ["xml"]
 extendsType = ["plural"]
 # 需要copy的type类型集合
 typeList = ["array", "attr", "bool", "color", "dimen", "id",
-            "integer", "string", "style", "plurals", "fraction"]
+            "integer", "string", "style", "plurals", "fraction",
+            "drawable"]
 # 文件名列表
 fileNameList = ["arrays.xml", "attrs.xml", "bools.xml", "colors.xml",
                 "dimens.xml", "ids.xml", "integers.xml", "strings.xml",
-                "styles.xml", "plurals.xml", "fractions.xml"]
+                "styles.xml", "plurals.xml", "fractions.xml", "drawables.xml"]
 # 需要copy的映射关系
 copy_dict = {}
 # 需要copy的属性name字典
 diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
-reSExtends = ["png", "xml", "jpg", "webp", "ttf"]
+reSExtends = ["png", "xml", "jpg", "webp", "ttf", "json", "js"]
 resTypeList = ["color", "anim", "drawable", "mipmap", "animator",
                "layout", "xml", "interpolator", "menu", "transition",
-               "font"]
+               "font", "raw"]
 # 需要注册的资源集合
 insertResDict = {}
 # *******************用于校验注入的属性****************************
@@ -67,6 +68,7 @@ def startCopyValues(from_dir, to_dir):
     for attrType in typeList:
         insertPublic(publicFilePath, attrType, publicDict)
     # 执行拷贝资源操作
+    publicDict = parserPublicXML(publicFilePath)
     copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict)
     print(f"程序执行结束，结果保存在{to_dir}")
     print("*****************不存在的属性名称如下*****************")
@@ -85,14 +87,20 @@ def copyRes(from_dir, to_dir, mappingData, publicFilePath, publicDict):
         transFolderCopy(from_dir, to_dir, resMappingData, insertResDict, publicDict)
         for attrType, resNameList in insertResDict.items():
             insertResPublic(publicFilePath, attrType, resNameList, publicDict)
-        # 添加没有copy的res资源属性
+        # 获取最新的注册清单
+        publicDict = parserPublicXML(publicFilePath)
         for attrType, resNameList in resMappingData.items():
             publicNameList = publicDict.get(attrType)
             if notFindAttrDict.get(attrType) is None:
                 notFindAttrDict[attrType] = []
+            # 未发现的属性进行添加到notFindAttrDict，已添加的属性在notFindAttrDict列表进行删除
             for resName in resNameList:
-                if resName not in publicNameList and resName not in notFindAttrDict.get(attrType):
-                    notFindAttrDict[attrType].append(resName)
+                if resName not in publicNameList:
+                    if resName not in notFindAttrDict.get(attrType):
+                        notFindAttrDict[attrType].append(resName)
+                else:
+                    if resName in notFindAttrDict.get(attrType):
+                        notFindAttrDict[attrType].remove(resName)
 
 
 # 遍历整个项目复制资源文件到目标项目
@@ -126,11 +134,6 @@ def transFolderCopy(from_dir, to_dir, resMappingData, insertResDict, publicDict)
                                 insertResDict[folderName] = []
                             if fileName not in insertResDict.get(folderName) and fileName not in publicDict.get(folderName):
                                 insertResDict[folderName].append(fileName)
-                                # 删除未发现的属性
-                                notFoundList = notFindAttrDict.get(folderName)
-                                if notFoundList is not None and fileName in notFoundList:
-                                    # print(f"remove fileName = {fileName}")
-                                    notFindAttrDict.get(folderName).pop()
 
 
 # 获取需要copy的数据列表集合
@@ -155,7 +158,7 @@ def getNameMappingList(fpath):
                     continue
                 attrName = attrNameTuple[0]
                 # 去重操作
-                if not attrName.startswith("APKTOOL_DUMMYVAL_0x7f") and attrName not in temDict[attrType]:
+                if not attrName.startswith("APKTOOL_DUMMYVAL") and attrName not in temDict[attrType]:
                     temDict[attrType].append(attrName)
     return temDict
 

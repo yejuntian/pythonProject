@@ -3,6 +3,6 @@
     "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<FrameLayout android:id=\"@id/eula_layout\" android:background"
   },
   {
-    "matchStr": "<com.gbwhatsapp.TextEmojiLabel android:gravity=\"center\" android:id=\"@id/eula_manage_data\" android:paddingLeft=\"20.0dip\" android:paddingRight=\"20.0dip\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:layout_marginTop=\"24.0dip\" android:layout_marginBottom=\"24.0dip\" android:text"
+    "matchStr": "<com.gbwhatsapp.TextEmojiLabel android:gravity=\"center\" android:id=\"@id/eula_manage_data\" android:paddingLeft=\"20.0dip\" android:paddingRight=\"20.0dip\""
   }
 ]

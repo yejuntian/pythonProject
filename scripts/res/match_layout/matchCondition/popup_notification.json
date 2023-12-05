@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.KeyboardPopupLayout android:id=\"@id/root_layout\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <RelativeLayout android:clipChildren=\"false\" android:layout_width=\"480.0dip\" android:layout_height=\"wrap_content\" android:layout_marginLeft=\"12.0dip\" android:layout_marginRight=\"12.0dip\" android:layout_centerInParent=\"true\">\n        <LinearLayout android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_alignParentTop=\"true\" android:layout_alignParentRight=\"true\">\n            <View android:id=\"@id/prev_btn_ext\" android:layout_width=\"40.0dip\" android:layout_height=\"48.0dip\" />\n            <View android:id=\"@id/next_btn_ext\" android:layout_width=\"40.0dip\" android:layout_height=\"48.0dip\" />\n        </LinearLayout>"
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.KeyboardPopupLayout android:id=\"@id/root_layout\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
+  },
+  {
+    "matchStr": "<View android:id=\"@id/proximity_overlay\""
   }
 ]

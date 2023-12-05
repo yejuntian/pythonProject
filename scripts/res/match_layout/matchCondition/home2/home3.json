@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<LinearLayout android:orientation=\"horizontal\" android:id=\"@id/main_container\" android:fitsSystemWindows=\"true\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <ViewStub android:layout_gravity=\"start\" android:id=\"@id/navigation_rail_stub\" android:visibility=\"visible\""
+  },
+  {
+    "matchStr": "<LinearLayout android:layout_gravity=\"bottom\" android:orientation=\"vertical\" android:id=\"@id/bottom_controls_container\""
+  }
+]

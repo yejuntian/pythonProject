@@ -97,8 +97,7 @@ def parserPublicXml(fpath):
         else:
             publicTypeDic[attrType].append(attrName)
         # 保存name和type的对应关系
-        if attrName.startswith("APKTOOL_DUMMYVAL_0x7f"):
-            publicIdDic[attrName] = attrType
+        publicIdDic[attrName] = attrType
 
 
 if __name__ == '__main__':

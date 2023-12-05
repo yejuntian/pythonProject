@@ -46,7 +46,7 @@ def setAllAttr(file_path, public_map):
     with open(file_path, encoding="utf-8", mode="r") as rf:
         lines = rf.readlines()
         for line in lines:
-            if line.startswith(".field public static final"):
+            if line.startswith(".field public static"):
                 attr_name = line.split(":")[0].split(" ")[-1]
                 attr_value = line.split("=")[-1].strip()
                 newId = attrList.get(attr_name)

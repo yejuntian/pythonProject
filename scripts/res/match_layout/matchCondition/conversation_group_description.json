@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<merge\n  xmlns:android=\"http://schemas.android.com/apk/res/android\" xmlns:app=\"http://schemas.android.com/apk/res-auto\">\n    <LinearLayout android:layout_gravity=\"center_vertical\" android:orientation=\"vertical\" android:paddingLeft=\"16.0dip\" android:paddingTop=\"8.0dip\" android:paddingRight=\"48.0dip\" android:paddingBottom=\"8.0dip\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:elevation=\"4.0dip\">"
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.WaTextView android:paddingBottom=\"2.0dip\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\""
   }
 ]

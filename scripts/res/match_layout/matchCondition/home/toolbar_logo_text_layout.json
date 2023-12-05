@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<com.gbwhatsapp.WaTextView android:textSize=\"23.5sp\" android:textColor"
+  },
+  {
+    "matchStr": "android:id=\"@id/toolbar_logo_text\" android:paddingBottom=\"13.0dip"
+  }
+]

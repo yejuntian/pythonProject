@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textColor=\"@color/white\" android:id=\"@id/info_tooltip\" android:visibility=\"gone\""
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textColor"
+  },
+  {
+    "matchStr": "android:id=\"@id/info_tooltip\" android:visibility=\"gone\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\""
   }
 ]

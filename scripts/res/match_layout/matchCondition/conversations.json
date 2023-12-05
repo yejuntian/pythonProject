@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.conversationslist.ConversationsContainer android:orientation=\"vertical\" android:id=\"@id/conversation_container\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">"
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.conversation.ui.ConversationsContainer android:orientation=\"vertical\" android:id=\"@id/conversation_container\""
+  },
+  {
+    "matchStr": "<FrameLayout android:id=\"@id/conversations_empty_nux\" android:visibility=\"gone\""
   }
 ]
