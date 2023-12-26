@@ -14,7 +14,7 @@ def copyConversation(from_dir):
     xmlPath = f"{mCurrentPath}/scripts/repalce_layout/conversation/conversation.xml"
     layoutList = loadFileList(xmlPath)
     if not isCopyConversation2:
-        data = getConversationData(f"{from_dir}/res/layout/conversation.xml")
+        data = getConversationData(f"{from_dir}/res/layout/conversation2.xml")
         transFolderCopy(f"{from_dir}/res/layout", layoutList, data)
     else:
         layoutList = [item.replace(".xml", "2.xml") for item in layoutList]

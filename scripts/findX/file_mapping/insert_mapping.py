@@ -4,9 +4,9 @@ import json
 import os
 
 # base版本号
-baseVersion = "2.23.15.81"
+baseVersion = "2.23.20.76"
 # 插入版本号
-insertVersion = "2.23.20.76"
+insertVersion = "2.23.25.76"
 # 是否插入plus
 isInsertPlus = False
 
@@ -26,15 +26,26 @@ def replace_X(tpath):
     newJson = getJsonData(tpath)
     oldJson = getJsonData(curPath)
     for newItem in newJson:
+        # 是否包含->
+        isContains = False
         new_item_value = newItem[baseVersion]
+        if new_item_value.__contains__("->"):
+            isContains = True
+            new_item_value = new_item_value.split("->")[0]
         isFind = False
         for oldItem in oldJson:
             old_item_value = oldItem[baseVersion]
             if old_item_value == new_item_value:
                 isFind = True
-                newItem[insertVersion] = oldItem[insertVersion]
+                if isContains:
+                    newItem[insertVersion] = f"{oldItem[insertVersion]}->"
+                else:
+                    newItem[insertVersion] = oldItem[insertVersion]
         if not isFind:
-            newItem[insertVersion] = ""
+            if isContains:
+                newItem[insertVersion] = "->"
+            else:
+                newItem[insertVersion] = ""
     save2File(tpath, newJson)
 
 

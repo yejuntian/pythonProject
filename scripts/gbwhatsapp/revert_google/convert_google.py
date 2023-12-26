@@ -123,5 +123,5 @@ def convertGoogleFolder(from_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.77/DecodeCode/Whatsapp_v2.23.20.77"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
     convertGoogleFolder(from_dir)

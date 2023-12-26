@@ -4,12 +4,13 @@
     <comment>home.xml</comment>
     <comment>about.xml</comment>
     <comment>conversation_entry.xml</comment>
+    <comment>conversation_entry_component.xml</comment>
     <comment>conversations_row.xml</comment>
     <comment>conversation_row_text_left.xml</comment>
     <comment>conversation_row_text_right.xml</comment>
     <comment>wallpaper_preview_default.xml</comment>
     <comment>conversation_actionbar.xml</comment>
-    <!-- styles.xml样式还原属性-->
+    <!-- styles.xml样式-->
     <comment>"Theme.Base"</comment>
 </properties>
 

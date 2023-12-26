@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!--需要手动还原ConstraintLayout资源属性-->
+
+    <!--水平和垂直方向的定位-->
+    <comment>layout_constraintLeft_toLeftOf</comment>
+    <comment>layout_constraintLeft_toRightOf</comment>
+    <comment>layout_constraintRight_toLeftOf</comment>
+    <comment>layout_constraintRight_toRightOf</comment>
+    <comment>layout_constraintTop_toTopOf</comment>
+    <comment>layout_constraintTop_toBottomOf</comment>
+    <comment>layout_constraintBottom_toTopOf</comment>
+    <comment>layout_constraintBottom_toBottomOf</comment>
+    <comment>layout_constraintStart_toStartOf</comment>
+    <comment>layout_constraintStart_toEndOf</comment>
+    <comment>layout_constraintEnd_toStartOf</comment>
+    <comment>layout_constraintEnd_toEndOf</comment>
+    <comment>layout_constraintBaseline_toBaselineOf</comment>
+
+    <!--Bias（偏移）-->
+    <comment>layout_constraintHorizontal_bias</comment>
+    <comment>layout_constraintVertical_bias</comment>
+
+    <!--百分比尺寸-->
+    <comment>layout_constraintWidth_percent</comment>
+    <comment>layout_constraintHeight_percent</comment>
+
+    <!--宽高比例-->
+    <comment>layout_constraintDimensionRatio</comment>
+
+    <!--引导线-->
+    <comment>layout_constraintGuide_begin</comment>
+    <comment>layout_constraintGuide_end</comment>
+    <comment>layout_constraintGuide_percent</comment>
+
+    <!--GONE 状态下的边距-->
+    <!--<comment>layout_goneMarginLeft</comment>-->
+    <comment>layout_goneMarginTop</comment>
+    <comment>layout_goneMarginRight</comment>
+    <comment>layout_goneMarginBottom</comment>
+
+    <!--链式布局-->
+    <comment>layout_constraintHorizontal_chainStyle</comment>
+    <comment>layout_constraintVertical_chainStyle</comment>
+    <comment>layout_constraintHorizontal_weight</comment>
+    <!--<comment>layout_constraintVertical_weight</comment>-->
+
+    <!--圆-->
+    <comment>layout_constraintCircle</comment>
+    <comment>layout_constraintCircleRadius</comment>
+    <comment>layout_constraintCircleAngle</comment>
+
+    <!--最小和最大尺寸-->
+    <!--<comment>layout_constraintWidth_min</comment>-->
+    <comment>layout_constraintHeight_min</comment>
+    <comment>layout_constraintWidth_max</comment>
+    <!--<comment>layout_constraintHeight_max</comment>-->
+
+    <!--指定视图的高度约束的默认行为，默认值为 wrap_content，这表示视图的高度会根据其内容自动调整-->
+    <comment>layout_constraintHeight_default</comment>
+    <comment>layout_constraintWidth_default</comment>
+
+</properties>

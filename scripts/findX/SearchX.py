@@ -81,17 +81,18 @@ if __name__ == "__main__":
                "LX/\w*;->.*\(.*?\).+"
                "|Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->.*\(.*?\).+"
                "|Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->.*\(.*?\).+"
-               "|Lcom/gbwhatsapp/HomeActivity;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/status/StatusesFragment;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/Conversation;->A\w+\(.*?\).+"
-               "|Landroidy/recyclerview/widget/LinearLayoutManager;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+\(.*?\).+"
-               "|Lcom/airbnb/lottie/LottieAnimationView;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/MuteDialogFragment;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A\w+\(.*?\).+"
-               "|Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->A\w+\(.*?\).+"
-               "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/HomeActivity;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/status/StatusesFragment;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/Conversation;->\w+\(.*?\).+"
+               "|Landroidy/recyclerview/widget/LinearLayoutManager;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/RequestPermissionActivity;->\w+\(.*?\).+"
+               "|Lcom/airbnb/lottie/LottieAnimationView;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/MuteDialogFragment;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/status/ContactStatusThumbnail;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+\(.*?\).+"
+               "|Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->\w+\(.*?\).+"
+               "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->\w+\(.*?\).+"
+               "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+\(.*?\).+"
                )
     # 查找属性
     findXClass(foldPath,
@@ -104,6 +105,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/profile/ViewProfilePhoto;->\w+:.*"
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
+               "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+:.*"
                )
     save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

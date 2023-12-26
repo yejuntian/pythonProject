@@ -43,5 +43,5 @@ def matchRes(fpath, regex, resultDict):
 
 
 if __name__ == "__main__":
-    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76/res/layout/home.xml"
+    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76/res/layout/conversation_actionbar_views.xml"
     findAllDimens(from_path)

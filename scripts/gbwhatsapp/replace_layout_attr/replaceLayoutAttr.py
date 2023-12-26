@@ -130,6 +130,6 @@ def save2File(dataList, folder_path, fileName):
 
 if __name__ == "__main__":
     mCurrentPath = os.getcwd()
-    from_dir = "/Users/shareit/work/GBWorke/whatsapp_d"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/whatsapp_1"
+    from_dir = "/Users/shareit/work/GBWorke/2.23.11.77"
+    to_dir = "/Users/shareit/work/shareit/whatsapp_monitor/DecodeCode/Whatsapp_v2.23.11.77"
     replaceMatchLayoutAttrs(f"{from_dir}/app/src/main/res", f"{to_dir}/res")

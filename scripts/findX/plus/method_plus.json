@@ -1,75 +1,79 @@
 [
   {
     "2.23.20.76": "LX/679;->B0E()LX/1YZ;",
-    "2.23.15.81": "LX/6ED;->Awh()LX/1LG;"
+    "2.23.25.76": "LX/6Aa;->B7X()LX/1ZD;"
   },
   {
     "2.23.20.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1H:LX/2ty;",
-    "2.23.15.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A16:LX/2if;"
+    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1N:LX/31p;"
   },
   {
     "2.23.20.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2Z:LX/3Ov;",
-    "2.23.15.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2I:LX/3AM;"
+    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2i:LX/1Mu;"
   },
   {
     "2.23.20.76": "LX/2ty;->A0B(LX/3Ov;)Ljava/util/List;",
-    "2.23.15.81": "LX/2if;->A0B(LX/3AM;)Ljava/util/List;"
+    "2.23.25.76": "LX/31p;->A0A(LX/1Mu;)Ljava/util/List;"
   },
   {
     "2.23.20.76": "LX/2ty;->A08()Ljava/util/List;",
-    "2.23.15.81": "LX/2if;->A08()Ljava/util/List;"
+    "2.23.25.76": "LX/31p;->A08()Ljava/util/List;"
   },
   {
     "2.23.20.76": "LX/4sq;-><init>(LX/1YZ;I)V",
-    "2.23.15.81": "LX/4jx;-><init>(LX/1LG;I)V"
+    "2.23.25.76": "LX/503;-><init>(LX/1ZD;I)V"
   },
   {
     "2.23.20.76": "LX/3TL;->A0Q:Ljava/lang/String;",
-    "2.23.15.81": "LX/3Dg;->A0O:Ljava/lang/String;"
+    "2.23.25.76": "LX/3ep;->A0Q:Ljava/lang/String;"
   },
   {
     "2.23.20.76": "LX/3TL;->A0I:LX/1YZ;",
-    "2.23.15.81": "LX/3Dg;->A0G:LX/1LG;"
+    "2.23.25.76": "LX/3ep;->A0I:LX/1ZD;"
   },
   {
     "2.23.20.76": "LX/3TL;->A0J(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;",
-    "2.23.15.81": "LX/3Dg;->A0D(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;"
+    "2.23.25.76": "LX/3ep;->A0J(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;"
   },
   {
     "2.23.20.76": "LX/2u9;->A21()LX/2u9;",
-    "2.23.15.81": "LX/2im;->A21()LX/2im;"
+    "2.23.25.76": "LX/3J5;->A21()LX/3J5;"
   },
   {
     "2.23.20.76": "LX/2u9;->A07(LX/1YZ;)LX/3TL;",
-    "2.23.15.81": "LX/2im;->A08(LX/1LG;)LX/3Dg;"
+    "2.23.25.76": "LX/3J5;->A06(LX/1ZD;)LX/3ep;"
   },
   {
     "2.23.20.76": "LX/2zx;->A05(LX/1YZ;)Ljava/lang/String;",
-    "2.23.15.81": "LX/2oQ;->A03(LX/1LG;)Ljava/lang/String;"
+    "2.23.25.76": "LX/37z;->A05(LX/1ZD;)Ljava/lang/String;"
   },
   {
     "2.23.20.76": "LX/2ld;->A04(LX/1YZ;)I",
-    "2.23.15.81": "LX/2aU;->A03(LX/1LG;)I"
+    "2.23.25.76": "LX/2ss;->A03(LX/1ZD;)I"
   },
   {
     "2.23.20.76": "LX/2yE;->A0s()LX/1YZ;",
-    "2.23.15.81": "LX/2mo;->A0e()LX/1LG;"
+    "2.23.25.76": "LX/36P;->A0m()LX/1ZD;"
   },
   {
     "2.23.20.76": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A1E:LX/3TL;",
-    "2.23.15.81": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A12:LX/3Dg;"
+    "2.23.25.76": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A19:LX/3ep;"
   },
   {
     "2.23.20.76": "LX/0Ya;->A03(Landroid/content/Context;I)I",
-    "2.23.15.81": "LX/0S7;->A03(Landroid/content/Context;I)I"
+    "2.23.25.76": "LX/0ZW;->A03(Landroid/content/Context;I)I"
   },
   {
     "2.23.20.76": "LX/0dM;->A0F(LX/0dy;Ljava/lang/String;II)V",
-    "2.23.15.81": "LX/0Wv;->A0D(LX/0XX;Ljava/lang/String;II)V"
+    "2.23.25.76": "LX/0ee;->A0F(LX/0fI;Ljava/lang/String;II)V"
+  },
+  {
+    "2.23.20.76": "LX/03m;->A03:LX/0JB;",
+    "2.23.25.76": " LX/03u;->A04:LX/0L6;"
   },
   {
     "2.23.20.76": "A0n(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
-    "2.23.15.81": "A0m(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
+    "2.23.25.76": "A16(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
     "location": "Lcom/OM7753/SideBar/quick/QuickFragment;"
   }
 ]
