@@ -55,10 +55,10 @@ def save2File(dataList, fileName):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with codecs.open(fileName, "w", "utf-8") as wf:
         wf.write(jsonStr)
-    print(f"执行程序结束，没有找到的ID保存在:{os.path.join(os.getcwd(), fileName)}")
+    print(f"执行程序结束，映射结果保存在:{os.path.join(os.getcwd(), fileName)}")
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
+    from_dir = "/Users/shareit/work/shareit/wagb-shell/app-gb-release"
     to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
     matchPublicId(from_dir, to_dir)
