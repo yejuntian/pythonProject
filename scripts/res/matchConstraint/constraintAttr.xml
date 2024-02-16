@@ -60,4 +60,7 @@
     <comment>layout_constraintHeight_default</comment>
     <comment>layout_constraintWidth_default</comment>
 
+    <!--layout_constrainedHeight 属性被设置为 true 时，它表示该视图的高度应该受到某些约束的限制，而不是自由地扩展到所需的高度。这些约束可能来自于父级容器的大小限制，或者是通过布局系统中的其他方式定义的-->
+    <comment>layout_constrainedHeight</comment>
+
 </properties>

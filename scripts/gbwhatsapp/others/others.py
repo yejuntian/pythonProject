@@ -12,7 +12,11 @@ blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', "res",
 android_scheme = "http://schemas.android.com/apk/res/android"
 strDict = {"market://details?id=com.gbwhatsapp.w4b&utm_source="
            : "market://details?id=com.whatsapp.w4b&utm_source=",
-           "com.gbwhatsapp.sticker.READ": "com.whatsapp.sticker.READ"}
+           "com.gbwhatsapp.sticker.READ"
+           : "com.whatsapp.sticker.READ",
+           "https://play.google.com/store/apps/details?id=com.gbwhatsapp.w4b&utm_source="
+           : "https://play.google.com/store/apps/details?id=com.whatsapp.w4b&utm_source="
+           }
 pattern = re.compile(r'smali_classes(\d+)')
 
 """

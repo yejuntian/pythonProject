@@ -10,6 +10,7 @@
     <comment>conversation_row_text_right.xml</comment>
     <comment>wallpaper_preview_default.xml</comment>
     <comment>conversation_actionbar.xml</comment>
+    <comment>conversation_actionbar_views.xml</comment>
     <!-- styles.xml样式-->
     <comment>"Theme.Base"</comment>
 </properties>

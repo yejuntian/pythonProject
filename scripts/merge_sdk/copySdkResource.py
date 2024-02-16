@@ -47,7 +47,7 @@ def transFolderCopy(from_dir, to_dir, mappingData):
                 elif folderName in typeList:
                     otherFileList = mappingData.get(folderName)
                     # 在copy列表中，并且目标文件夹不存在则进行copy操作
-                    if fileName in otherFileList and not fname in folderList:
+                    if otherFileList is not None and fileName in otherFileList and not fname in folderList:
                         shutil.copy(fpath, tpath)
 
 
@@ -66,6 +66,6 @@ def loadData(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.23.2.76"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
     copyResource(from_dir, to_dir)

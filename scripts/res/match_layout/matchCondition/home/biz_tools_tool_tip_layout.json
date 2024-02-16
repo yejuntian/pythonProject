@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textSize="
+  },
+  {
+    "matchStr": "android:layout_gravity=\"center|left|top\" android:id=\"@id/biz_tools_tool_tip\" android:paddingLeft"
+  }
+]

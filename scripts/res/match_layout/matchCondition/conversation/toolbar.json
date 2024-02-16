@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidy.appcompat.widget.Toolbar android:id=\"@id/toolbar\" android:background=\"?"
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.wds.components.topbar.WDSToolbar android:id=\"@id/toolbar\" android:background"
   }
 ]

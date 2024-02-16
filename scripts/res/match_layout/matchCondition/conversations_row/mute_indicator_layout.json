@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaImageView android:layout_gravity=\"center_vertical\" android:id=\"@id/mute_indicator\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\""
+  }
+]

@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaImageView android:gravity=\"left\" android:layout_gravity=\"center|left\" android:id=\"@id/status_reply_indicator\""
+  }
+]

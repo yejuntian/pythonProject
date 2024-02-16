@@ -4,6 +4,7 @@ import os
 import re
 
 resultDict = {}
+newResultDict = {}
 regexList = [r"\"@(\w+)/(APKTOOL_DUMMYVAL_(\w+))\"", r"(whatsapp|app):(APKTOOL_DUMMYVAL\w+)=",
              r"\"@(\w+)\/(.*?)\"", r"\"([?])(APKTOOL_DUMMYVAL\w+)\""]
 """
@@ -15,7 +16,14 @@ regexList = [r"\"@(\w+)/(APKTOOL_DUMMYVAL_(\w+))\"", r"(whatsapp|app):(APKTOOL_D
 def findAllDimens(fpath):
     for regex in regexList:
         matchRes(fpath, regex, resultDict)
-    save2File(os.getcwd(), resultDict, "result.json")
+
+    for type, attrList in resultDict.items():
+        if newResultDict.get(type) is None:
+            newResultDict[type] = {}
+        for attr in attrList:
+            if attr.startswith("APKTOOL_DUMMYVAL_"):
+                newResultDict[type][attr] = ""
+        save2File(os.getcwd(), newResultDict, "result.json")
     # save2File(f"{os.getcwd()}/scripts/values/matchStyles/findAlldimen", resultDict, "result.json")
 
 
@@ -43,5 +51,5 @@ def matchRes(fpath, regex, resultDict):
 
 
 if __name__ == "__main__":
-    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76/res/layout/conversation_actionbar_views.xml"
+    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81/res/layout/home.xml"
     findAllDimens(from_path)

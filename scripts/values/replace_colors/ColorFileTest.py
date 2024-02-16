@@ -23,6 +23,7 @@ def correctColorFile():
     loadNewColorData(fColorNightPath, True, oldColorList)
     correctColorData(False)
     correctColorData(True)
+    print("**********程序执行结束*************")
 
 
 def loadOldColorData(fpath):
@@ -100,7 +101,7 @@ def correctColorData(isNightColor):
 
 
 if __name__ == '__main__':
-    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
+    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
     fColorPath = f"{from_path}/res/values/colors.xml"
     fColorNightPath = f"{from_path}/res/values-night/colors.xml"
     correctColorFile()

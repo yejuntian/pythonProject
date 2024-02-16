@@ -6,20 +6,21 @@ from scripts.insertcode.CommonInsert import *
 
 versionCode = getParam(
     "WhatsAppLibLoader",
-    regexList=["const\-string\/jumbo v\d\, \"whatsapplibloader\/usable jniVersion\: \""],
-    rowOffSet=4,
+    regexList=["const\-string v\d\, \"whatsapplibloader\/usable jniVersion\: \""],
+    rowOffSet=12,
     matchRex=r"const\-string v\d\, (.*)",
     isFindX=False)
 
-baseLongVer = getParam(
-    "ProfiloUploadService",
-    regexList=[
-        ["const\-string .*\, \"build_id\"",
-         "const\-wide\/32 \w+\, (.*)"
-         ]
-    ],
-    isFindX=False
-)
+# baseLongVer = getParam(
+#     "ProfiloUploadService",
+#     regexList=[
+#         ["const\-string .*\, \"build_id\"",
+#          "const\-wide\/32 \w+\, (.*)"
+#          ]
+#     ],
+#     isFindX=False
+# )
+baseLongVer = "0x21caee95"
 
 
 # 获取版本号参数

@@ -57,7 +57,7 @@ def loadXmlAttr():
 
 if __name__ == "__main__":
     # 指定XML文件目录
-    xml_directory = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
+    xml_directory = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
     # xml_directory = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
     # xml_directory = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
 

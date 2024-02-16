@@ -50,4 +50,10 @@
 
     <!-- wallpaper_preview_default.xml-->
     <!--    <comment>yogallery_wallpaper_preview.xml</comment>-->
+
+    <!-- conversation_row_text_left.xml-->
+    <!--    <comment>conversation_row_text_leftp.xml</comment>-->
+
+    <!-- conversation_row_text_right.xml-->
+    <!--    <comment>conversation_row_text_rightp.xml</comment>-->
 </properties>

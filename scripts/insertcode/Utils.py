@@ -8,10 +8,10 @@ from scripts.insertcode.config import baseProjectPath, newProjectPath, baseVersi
 from scripts.insertcode.file_mapping import fileMapping
 
 # 文件夹列表
-folderList = ["smali", "smali_classes2", "smali_classes3", "smali_classes4", "smali_classes5"]
+folderList = ["smali", "smali_classes2", "smali_classes3", "smali_classes4", "smali_classes5", "smali_classes6"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.yml',
-             "smali_classes6", "smali_classes7", "smali_classes8", ]
+blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original',
+             'apktool.yml', "smali_classes7", "smali_classes8", ]
 # 只匹配下面的文件类型
 extends = ["smali"]
 # 映射文件集合

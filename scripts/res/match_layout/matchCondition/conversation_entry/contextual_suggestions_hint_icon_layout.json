@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.whatsapp.stickers.StickerView android:layout_gravity=\"bottom\" android:id=\"@id/contextual_suggestions_hint_icon_layout\""
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "matchStr": "xmlns:android=\"http://schemas.android.com/apk/res/android\" xmlns:app=\"http://schemas.android.com/apk/res-auto\">\n    <com.gbwhatsapp.wds.components.button.WDSButton android:id=\"@id/delete_button_blocked_chat_footer\""
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.wds.components.button.WDSButton android:id=\"@id/unblock_button_blocked_chat_footer\""
+  }
+]

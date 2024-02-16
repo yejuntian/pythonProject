@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ProgressBar android:layout_gravity=\"center\" android:id=\"@id/progressbar_small\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\""
+  }
+]

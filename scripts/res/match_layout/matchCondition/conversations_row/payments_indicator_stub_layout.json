@@ -1,0 +1,5 @@
+[
+  {
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:gravity=\"left\" android:id=\"@id/payments_indicator\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
+  }
+]
