@@ -11,8 +11,7 @@
     "2.24.3.81": "LX/027;->getBehavior()LX/0A2;",
     "class": [
       "smali_classes6/rc/whatsapp/home/HomeActivity/OnPageSelected.smali"
-    ],
-    "TODO": "需要自己实现改方法，或者修改调用处；LX/027;->getBehavior()LX/0A2;"
+    ]
   },
   {
     "2.23.25.76": "LX/03u;->getSupportFragmentManager()LX/0eh;",
@@ -259,8 +258,7 @@
     "2.24.3.81": "LX/0eS;->A21()LX/0eS;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "自己实现"
+    ]
   },
   {
     "2.23.25.76": "LX/1ZD;->user:Ljava/lang/String;",
@@ -351,8 +349,7 @@
     "2.24.3.81": "LX/0rL;->A21()LX/0rL;",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ],
-    "TODO": "需要检查是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/1uz;->A02:LX/1uz;",
@@ -401,8 +398,7 @@
     "2.24.3.81": "LX/0sj;->A21()LX/0sj;",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
-    ],
-    "TODO": "检查是否实现该方法"
+    ]
   },
   {
     "2.23.25.76": "LX/2gU;->A02(Lorg/whispersystems/jobqueue/Job;)V",
@@ -423,8 +419,7 @@
     "2.24.3.81": "LX/1A0;->A21()LX/1A0;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/a1.smali"
-    ],
-    "TODO": "检查是否实现该方法"
+    ]
   },
   {
     "2.23.25.76": "LX/2nj;->A00(LX/1ZD;IZZ)V",
@@ -460,8 +455,7 @@
     "2.24.3.81": "LX/0Wo;->A21()LX/0Wo;",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ],
-    "TODO": "检查是否实现该方法"
+    ]
   },
   {
     "2.23.25.76": "LX/2rn;->A00(LX/3ep;)Ljava/io/File;",
@@ -560,8 +554,7 @@
     "class": [
       "smali_classes6/z/i.smali",
       "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
-    ],
-    "TODO": "检查是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/30N;->A00:LX/1ZD;",
@@ -607,8 +600,7 @@
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali",
       "smali_classes6/z/i.smali"
-    ],
-    "TODO": "检查是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/33Q;->A03(Ljava/lang/String;)LX/1ZD;",
@@ -623,8 +615,7 @@
     "2.24.3.81": "LX/0NU;->A21()LX/0NU;",
     "class": [
       "smali_classes6/z/i.smali"
-    ],
-    "TODO": "检查是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/34x;->A0C(I)Ljava/lang/String;",
@@ -638,8 +629,7 @@
     "2.24.3.81": "LX/13L;->A03(LX/3NG;LX/3DS;LX/305;LX/32D;LX/2qD;LX/0rd;LX/61K;LX/46i;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)Ljava/util/List;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "参数个数增加"
+    ]
   },
   {
     "2.23.25.76": "LX/350;->A0H(LX/1ZD;I)V",
@@ -667,8 +657,7 @@
     "2.24.3.81": "LX/13L;->A21()LX/13L;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "检查方法是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/352;->A0I(LX/3ep;)Ljava/lang/String;",
@@ -777,8 +766,7 @@
     "2.24.3.81": "LX/6Gt;->YoEndCall()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "检查是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/38Z;->A07(Ljava/lang/Object;)V",
@@ -903,8 +891,7 @@
     "2.24.3.81": "LX/0o2;->A21()LX/0o2;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "检查代码是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/3J5;->A08(LX/1ZD;)LX/3ep;",
@@ -920,8 +907,7 @@
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali",
       "smali_classes6/com/gbwhatsapp/yo/u0.smali"
-    ],
-    "TODO": "检查代码是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/3Us;-><init>(LX/2qa;Lcom/whatsapp/Mp4Ops;LX/7Y2;LX/2iX;LX/1Pl;LX/38A;LX/454;Ljava/io/File;Ljava/io/File;IIJJ)V",
@@ -1051,8 +1037,7 @@
     "2.24.3.81": "LX/4JQ;->A10:Landroid/content/Context;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/o.smali"
-    ],
-    "TODO": "检查代码是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/4IO;->setContentView(Landroid/view/View;)V",
@@ -1359,8 +1344,7 @@
     "2.24.3.81": "LX/3L4;->funcConvoActionMenu(Landroid/view/MenuItem;LX/3L4;)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/z1.smali"
-    ],
-    "TODO": "检查funcConvoActionMenu方法是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/5kU;->A2f:Lcom/gbwhatsapp/conversation/ConversationListView;",
@@ -1395,8 +1379,7 @@
     "2.24.3.81": "LX/0qk;->A21()LX/0qk;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ],
-    "TODO": "检查方法是否实现"
+    ]
   },
   {
     "2.23.25.76": "LX/6A2;->getContact()LX/3ep;",
@@ -1529,7 +1512,7 @@
   },
   {
     "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A1i:LX/8oN;",
-    "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A1v:LX/0IS;",
+    "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A1g:LX/0IS;",
     "class": [
       "smali_classes7/zoo/user/UserAdapter.smali"
     ]
@@ -1705,7 +1688,7 @@
   },
   {
     "2.23.25.76": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
-    "2.24.3.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid",
+    "2.24.3.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SS.smali"
     ]
@@ -1739,8 +1722,7 @@
     "2.24.3.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BW0()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
-    ],
-    "TODO": "确认是否为BW0()V方法，如果不是则为A1H()V方法"
+    ]
   },
   {
     "2.23.25.76": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BZd()V",
@@ -1761,8 +1743,7 @@
     "2.24.3.81": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->BW0()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
-    ],
-    "TODO": "新版本已经删除该类，检查并删除代码调用处"
+    ]
   },
   {
     "2.23.25.76": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A0z()Z",
