@@ -911,11 +911,10 @@
   },
   {
     "2.23.25.76": "LX/3Us;-><init>(LX/2qa;Lcom/whatsapp/Mp4Ops;LX/7Y2;LX/2iX;LX/1Pl;LX/38A;LX/454;Ljava/io/File;Ljava/io/File;IIJJ)V",
-    "2.24.3.81": "LX/8oE;-><init>(Landroid/graphics/RectF;LX/0L8;Lcom/whatsapp/Mp4Ops;LX/0d8;LX/0eY;LX/0L1;LX/0Ms;LX/0hY;LX/0LF;Ljava/io/File;Ljava/io/File;IIIIJJ)V",
+    "2.24.30.81": "LX/8oE;-><init>(Landroid/graphics/RectF;LX/0L8;Lcom/whatsapp/Mp4Ops;LX/0d8;LX/0eY;LX/0L1;LX/0Ms;LX/0hY;LX/0LF;Ljava/io/File;Ljava/io/File;IIIIJJ)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/h0.smali"
-    ],
-    "TODO": "参数个数发生改变"
+    ]
   },
   {
     "2.23.25.76": "LX/3Us;->A0G()V",

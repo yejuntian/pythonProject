@@ -7,7 +7,7 @@ matchId_dict = {}
 # 添加所有没有匹配的ID
 allNotFindId = {}
 # 16进制正则表达式
-regexStr = r"0x7f[0-9a-f]{6}"
+regex_str = r"0x7f[0-9a-f]{6}(?![0-9a-f])"
 
 """
     主要作用：反编译smali代码中,我们新增的代码使用findViewById(I)形式查找的ID值，替换为目标项目public.xml对应的属性ID值
@@ -60,5 +60,5 @@ def save2File(dataList, fileName):
 
 if __name__ == "__main__":
     from_dir = "/Users/shareit/work/shareit/wagb-shell/app-gb-release"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
     matchPublicId(from_dir, to_dir)

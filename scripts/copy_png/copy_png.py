@@ -6,7 +6,7 @@ import argparse
 blacklist = ['.idea', '.git', 'build', 'kotlin', 'lib', 'META-INF', 'original', 'smali',
              'smali_classes2', 'smali_classes3', 'smali_classes4', 'smali_classes5',
              'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9',
-             'smali_classes10','smali_classes11', 'gen', "raw", "font"]
+             'smali_classes10', 'smali_classes11', 'smali_classes12', 'gen', "raw", "font"]
 
 
 def copy_png(from_dir, to_dir):

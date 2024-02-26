@@ -5,11 +5,14 @@ import re
 import lxml.etree as ET
 
 # 定义正则表达式和替换映射
-regex_str = r"0x7f[0-9a-f]{6}"
+# (?<![0-9a-f]) :确保匹配的部分不会超过八位数
+regex_str = r"0x7f[0-9a-f]{6}(?![0-9a-f])"
+
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes5', 'AndroidManifest.xml', 'apktool.yml']
+             'smali_classes4', 'smali_classes5', 'smali_classes6',
+             'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]
 # 源项目public.xml字典
@@ -19,7 +22,7 @@ notFoundDic = {}
 # 用来存放没有找打的id
 allNotFindId = set()
 # 排除的资源id集合
-excludeIds = ['0x7fffffff', '0x7fc00000', '0x7f7fffff']
+excludeIds = ['0x7fffffff', '0x7fc00000', '0x7f7fffff', '0x7fff0000']
 
 
 def replace_strings_in_smali_file(file_path, replacement_map):
@@ -106,7 +109,7 @@ def save2File(dataList, fpath):
     jsonStr = json.dumps(dataList, ensure_ascii=False, indent=2)
     with codecs.open(fpath, "w", "utf-8") as wf:
         wf.write(jsonStr)
-    print(f"执行程序结束，文件保存在:{fpath}")
+    print(f"文件保存在:{fpath}")
 
 
 # 注册到public.xml
@@ -155,6 +158,7 @@ def replace_strings_in_directory(fromPath, toPath, mappingPath):
     parsePublicXml(f"{fromPath}/res/values/public.xml")
     replaceId(toPath, replacement_map)
     if len(notFoundDic) > 0:
+        print("执行程序结束，没有找到的资源保存到：")
         fpath = "/Users/shareit/work/pythonProject/scripts/values/native_values/GBNeedToFind.json"
         save2File(notFoundDic, fpath)
         # 注册public.xml
@@ -162,12 +166,11 @@ def replace_strings_in_directory(fromPath, toPath, mappingPath):
         # if idsNameList is not None and len(idsNameList) > 0:
         #     toPublicXmlPath = toPath[0:(toPath.index("smali_")) - 1]
         #     insertPublic(f"{toPublicXmlPath}/res/values/public.xml", "id", idsNameList)
+    # 删除标记
+    if os.path.isdir(toPath):
+        replaceStr(toPath)
     else:
-        # 删除标记
-        if os.path.isdir(toPath):
-            replaceStr(toPath)
-        else:
-            replaceFileStr(toPath)
+        replaceFileStr(toPath)
 
     # 打印没有查到的ID
     print(f"没有找到的资源ID如下：\n")
@@ -176,7 +179,7 @@ def replace_strings_in_directory(fromPath, toPath, mappingPath):
 
 if __name__ == "__main__":
     from_path = "/Users/shareit/work/shareit/wagb-shell/app-gb-release"
-    to_path = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76/smali_classes8/androidx"
+    to_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81/smali_classes9/androidx"
     mappingPath = "/Users/shareit/work/pythonProject/scripts/matchPublicId.json"
     # 执行替换操作
     replace_strings_in_directory(from_path, to_path, mappingPath)
