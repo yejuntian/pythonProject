@@ -1,124 +1,14 @@
 [
   {
-    "2.23.25.76": "LX/02h;->A01(LX/0Vk;)V",
-    "2.24.3.81": "LX/027;->A00(LX/0A2;)V",
-    "class": [
-      "smali_classes6/rc/whatsapp/home/HomeActivity/OnPageSelected.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/02h;->getBehavior()LX/0Vk;",
-    "2.24.3.81": "LX/027;->getBehavior()LX/0A2;",
-    "class": [
-      "smali_classes6/rc/whatsapp/home/HomeActivity/OnPageSelected.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/03u;->getSupportFragmentManager()LX/0eh;",
-    "2.24.3.81": "LX/0Tl;->getSupportFragmentManager()LX/0Uq;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/080;->A01:Landroid/content/Context;",
-    "2.24.3.81": "LX/0Uo;->A01:Landroid/content/Context;",
-    "class": [
-      "smali_classes7/cow/ad/AdUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0NA;->A03:Ljava/lang/Object;",
-    "2.24.3.81": "LX/0tm;->A03:Ljava/lang/Object;",
-    "class": [
-      "smali_classes7/zoo/update/UpdateAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;-><init>()V",
-    "2.24.3.81": "LX/1D9;-><init>()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A02(II)V",
-    "2.24.3.81": "LX/1D9;->A01(II)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A03(III)V",
-    "2.24.3.81": "LX/1D9;->A04(III)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A04(Ljava/lang/Object;II)V",
-    "2.24.3.81": "LX/1D9;->A05(Ljava/lang/Object;II)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A05()V",
-    "2.24.3.81": "LX/1D9;->A00()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A06(II)V",
-    "2.24.3.81": "LX/1D9;->A02(II)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Rb;->A07(II)V",
-    "2.24.3.81": "LX/1D9;->A03(II)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0Ry;->A04(Ljava/lang/Object;)Ljava/lang/Object;",
     "2.24.3.81": "LX/00B;->A04(Ljava/lang/Object;)Ljava/lang/Object;",
+    "2.24.7.81": "LX/00w;->A04(Ljava/lang/Object;)Ljava/lang/Object;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0S8;-><init>()V",
-    "2.24.3.81": "LX/1Dx;-><init>()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/autoschedreply/AutoMessageAdapter.smali",
-      "smali_classes6/com/gbwhatsapp/yo/chatgen/d.smali",
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali",
-      "smali_classes7/zoo/hotapp/recommend/adapter/RecomGameAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0S8;->A05()V",
-    "2.24.3.81": "LX/1Dx;->A02()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/autoschedreply/Auto_message.smali",
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali",
-      "smali_classes7/zoo/hotapp/recommend/adapter/RecomGameAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0S8;->Bh6(LX/0Rb;)V",
-    "2.24.3.81": "LX/1Dx;->Bif(LX/1D9;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0SA;->A0D(Landroid/graphics/drawable/Drawable;)V",
     "2.24.3.81": "LX/01c;->A0D(Landroid/graphics/drawable/Drawable;)V",
+    "2.24.7.81": "LX/07L;->A0K(Landroid/graphics/drawable/Drawable;)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali",
       "smali_classes6/com/gbwhatsapp/yo/j.smali",
@@ -127,32 +17,888 @@
     ]
   },
   {
-    "2.23.25.76": "LX/0SA;->A0I(Ljava/lang/CharSequence;)V",
     "2.24.3.81": "LX/01c;->A0I(Ljava/lang/CharSequence;)V",
+    "2.24.7.81": "LX/07L;->A0P(Ljava/lang/CharSequence;)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0SA;->A0J(Ljava/lang/CharSequence;)V",
     "2.24.3.81": "LX/01c;->A0J(Ljava/lang/CharSequence;)V",
+    "2.24.7.81": "LX/07L;->A0Q(Ljava/lang/CharSequence;)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0V9;->A02(LX/0S8;)V",
-    "2.24.3.81": "LX/68p;->A01(LX/1E7;)V",
+    "2.24.3.81": "LX/027;->A00(LX/0A2;)V",
+    "2.24.7.81": "LX/0Ar;->A00(LX/0Y2;)V",
     "class": [
-      "smali_classes7/com/cow/channel/ChannelUtil.smali"
-    ],
-    "AD": ""
+      "smali_classes6/rc/whatsapp/home/HomeActivity/OnPageSelected.smali"
+    ]
   },
   {
-    "2.23.25.76": "LX/0Ve;-><init>(Landroid/view/View;)V",
-    "2.24.3.81": "LX/1Fc;-><init>(Landroid/view/View;)V",
+    "2.24.3.81": "LX/027;->A0A:LX/0A2;",
+    "2.24.7.81": "LX/0Ar;->A0B:LX/0Y2;",
     "class": [
-      "smali_classes6/com/gbwhatsapp/updates/ui/adapter/NewYearViewHolder.smali",
+      "smali_classes6/rc/whatsapp/home/HomeActivity/OnPageSelected.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/02q;->dismiss()V",
+    "2.24.7.81": "LX/0Dr;->dismiss()V",
+    "class": [
+      "smali_classes7/zoo/comeback/ComebackDialog2.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/02q;->findViewById(I)Landroid/view/View;",
+    "2.24.7.81": "LX/0Dr;->findViewById(I)Landroid/view/View;",
+    "class": [
+      "smali_classes7/zoo/comeback/ComebackDialog2.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0IC;->A06(Ljava/lang/Object;)V",
+    "2.24.7.81": "LX/0uQ;->A06(Ljava/lang/Object;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0IP;->A08(I)Ljava/lang/String;",
+    "2.24.7.81": "LX/0uY;->A0B(I)Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0IS;->get()Ljava/lang/Object;",
+    "2.24.7.81": "LX/006;->get()Ljava/lang/Object;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
+      "smali_classes7/zoo/comeback/ComebackUtil.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0JY;->A00(Landroid/content/Context;I)I",
+    "2.24.7.81": "LX/00G;->A00(Landroid/content/Context;I)I",
+    "class": [
+      "smali_classes10/com/gbwhatsapp/youbasha/store/ColorStore.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0JY;->A01(Landroid/content/Context;Ljava/lang/String;)I",
+    "2.24.7.81": "LX/00G;->A01(Landroid/content/Context;Ljava/lang/String;)I",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/task/utils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LB;->A00:Lcom/gbwhatsapp/Me;",
+    "2.24.7.81": "LX/0x8;->A00:Lcom/gbwhatsapp/Me;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali",
+      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LB;->A0A()V",
+    "2.24.7.81": "LX/0x8;->A0G()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LB;->A0C:LX/0LT;",
+    "2.24.7.81": "LX/0x8;->A0A:LX/0xP;",
+    "class": [
+      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LB;->A0E:LX/0Ss;",
+    "2.24.7.81": "LX/0x8;->A0E:LX/14j;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LR;->A00(Ljava/lang/String;)Landroid/content/SharedPreferences;",
+    "2.24.7.81": "LX/0xO;->A00(Ljava/lang/String;)Landroid/content/SharedPreferences;",
+    "class": [
+      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LR;->A21()LX/0LR;",
+    "2.24.7.81": "LX/0xO;->A21()LX/0xO;",
+    "class": [
+      "smali_classes6/z/i.smali",
+      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0LT;->A02()Ljava/lang/String;",
+    "2.24.7.81": "LX/0xP;->A02()Ljava/lang/String;",
+    "class": [
+      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Mg;->A03(Ljava/io/File;Z)V",
+    "2.24.7.81": "LX/0yh;->A07(Ljava/io/File;Z)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Mg;->A03:LX/0IS;",
+    "2.24.7.81": "LX/0yh;->A04:LX/006;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Mg;->A04()LX/2qP;",
+    "2.24.7.81": "LX/0yh;->A08()LX/66X;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Mg;->A0S(Ljava/lang/String;)Ljava/io/File;",
+    "2.24.7.81": "LX/0yh;->A0X(Ljava/lang/String;)Ljava/io/File;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0NU;->A21()LX/0NU;",
+    "2.24.7.81": "LX/0zI;->A21()LX/0zI;",
+    "class": [
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Py;->user:Ljava/lang/String;",
+    "2.24.7.81": "LX/11w;->user:Ljava/lang/String;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali",
+      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0RX;->A06(LX/0Py;Ljava/lang/Integer;Z)V",
+    "2.24.7.81": "LX/13Z;->A08(LX/11w;Ljava/lang/Integer;Z)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sg;->A01(Ljava/lang/String;)LX/0Py;",
+    "2.24.7.81": "LX/14X;->A01(Ljava/lang/String;)LX/11w;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;-><init>(LX/0Py;)V",
+    "2.24.7.81": "LX/14i;-><init>(LX/11w;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;->A0E()Z",
+    "2.24.7.81": "LX/14i;->A0G()Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/a1.smali",
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;->A0H:LX/0Py;",
+    "2.24.7.81": "LX/14i;->A0I:LX/11w;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes7/zoo/web/dialog/ActivityGuideDialog.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;->A0P:Ljava/lang/String;",
+    "2.24.7.81": "LX/14i;->A0Q:Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;->A0X:Ljava/lang/String;",
+    "2.24.7.81": "LX/14i;->A0Y:Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Sr;->A10:Z",
+    "2.24.7.81": "LX/14i;->A0z:Z",
+    "class": [
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0St;->A00(Lcom/whatsapp/jid/Jid;)LX/0Py;",
+    "2.24.7.81": "LX/14k;->A00(Lcom/whatsapp/jid/Jid;)LX/11w;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0St;->A08(Ljava/lang/Class;Ljava/lang/Iterable;)Ljava/util/List;",
+    "2.24.7.81": "LX/14k;->A06(Ljava/lang/Class;Ljava/lang/Iterable;)Ljava/util/ArrayList;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Tl;->getSupportFragmentManager()LX/0Uq;",
+    "2.24.7.81": "LX/01P;->getSupportFragmentManager()LX/026;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Tt;->A04:LX/0Mg;",
+    "2.24.7.81": "LX/16O;->A04:LX/0yh;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Tt;->A05:LX/0Xu;",
+    "2.24.7.81": "LX/16O;->A05:LX/18A;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Tt;->setSupportActionBar(Landroidy/appcompat/widget/Toolbar;)V",
+    "2.24.7.81": "LX/16O;->setSupportActionBar(Landroidy/appcompat/widget/Toolbar;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Tw;->A01:LX/0LB;",
+    "2.24.7.81": "LX/16l;->A02:LX/0x8;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
+      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Uo;->A01:Landroid/content/Context;",
+    "2.24.7.81": "LX/025;->A01:Landroid/content/Context;",
+    "class": [
+      "smali_classes7/cow/ad/AdUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Uq;->A07:LX/0Uo;",
+    "2.24.7.81": "LX/026;->A07:LX/025;",
+    "class": [
+      "smali_classes7/cow/ad/AdUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0V4;->A06:Landroid/os/Bundle;",
+    "2.24.7.81": "LX/02L;->A0A:Landroid/os/Bundle;",
+    "class": [
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0V4;->A0G()LX/0Tl;",
+    "2.24.7.81": "LX/02L;->A0n()LX/01P;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0V4;->A0H()LX/0Uq;",
+    "2.24.7.81": "LX/02L;->A0p()LX/026;",
+    "class": [
+      "smali_classes7/cow/ad/AdUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0V4;->A0a()Z",
+    "2.24.7.81": "LX/02L;->A17()Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Vs;->A01(Lorg/whispersystems/jobqueue/Job;)V",
+    "2.24.7.81": "LX/15v;->A01(Lorg/whispersystems/jobqueue/Job;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0W1;->A07(LX/0Py;)LX/0Sr;",
+    "2.24.7.81": "LX/165;->A0A(LX/11w;)LX/14i;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/u0.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0W1;->A21()LX/0W1;",
+    "2.24.7.81": "LX/165;->A21()LX/165;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/u0.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0W6;->A00(LX/0Sr;)Ljava/io/File;",
+    "2.24.7.81": "LX/16E;->A00(LX/14i;)Ljava/io/File;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0W6;->A01(LX/0Sr;)Ljava/io/File;",
+    "2.24.7.81": "LX/16E;->A01(LX/14i;)Ljava/io/File;",
+    "class": [
+      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
+      "smali_classes7/zoo/comeback/ComebackUtil.smali",
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali",
+      "smali_classes7/zoo/user/UserAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0W7;->A02()LX/0q0;",
+    "2.24.7.81": "LX/16G;->A02()LX/1TC;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0WX;->A00()Z",
+    "2.24.7.81": "LX/178;->A00()Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/ezz.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Wm;->A0D(LX/0Sr;)Ljava/lang/String;",
+    "2.24.7.81": "LX/17M;->A0G(LX/14i;)Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Wo;->A00(J)LX/0rd;",
+    "2.24.7.81": "LX/17Y;->A01(J)LX/1ii;",
+    "class": [
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Wo;->A21()LX/0Wo;",
+    "2.24.7.81": "LX/17Y;->A21()LX/17Y;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0Xu;->A05(II)V",
+    "2.24.7.81": "LX/18A;->A06(II)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0eS;->A0I(Ljava/lang/String;)LX/1Fy;",
+    "2.24.7.81": "LX/1D9;->A02(LX/1D9;Ljava/lang/String;)LX/1id;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ],
+    "": "方法参数发生变化"
+  },
+  {
+    "2.24.3.81": "LX/0eS;->A21()LX/0eS;",
+    "2.24.7.81": "LX/1D9;->A21()LX/1D9;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0hj;->A0N(Landroid/content/Context;Landroid/net/Uri;)V",
+    "2.24.7.81": "LX/1HM;->A0O(Landroid/content/Context;Landroid/net/Uri;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0iD;->A21()LX/0iD;",
+    "2.24.7.81": "LX/1Hs;->A21()LX/1Hs;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0o1;->Bps(Landroid/content/Context;LX/0Sr;IZ)I",
+    "2.24.7.81": "LX/1Mt;->Bsb(Landroid/content/Context;LX/14i;IZ)I",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0o2;->A21()LX/0o1;",
+    "2.24.7.81": "LX/1Mu;->A21()LX/1Mt;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0oi;->A07Yo(LX/0Py;)V",
+    "2.24.7.81": "LX/1Nj;->A07Yo(LX/11w;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0pk;->A09:[Ljava/lang/String;",
+    "2.24.7.81": "LX/1Ov;->A09:[Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/eyy.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0q0;->A02:LX/0q1;",
+    "2.24.7.81": "LX/1PE;->A02:LX/1PF;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0qk;->A05:LX/0W6;",
+    "2.24.7.81": "LX/1Pi;->A05:LX/16E;",
+    "class": [
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0qk;->A06(Landroid/content/Context;Ljava/lang/String;)LX/0yo;",
+    "2.24.7.81": "LX/1Pi;->A05(Landroid/content/Context;Ljava/lang/String;)LX/1Rv;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0qk;->A21()LX/0qk;",
+    "2.24.7.81": "LX/1Pi;->A21()LX/1Pi;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rL;->A0C(Landroid/view/View;LX/0rd;LX/46j;Ljava/lang/Object;)V",
+    "2.24.7.81": "LX/1T8;->A05(Landroid/view/View;LX/1ii;LX/4dp;LX/1T8;Ljava/lang/Object;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rL;->A0G(Landroid/view/View;LX/0rd;LX/46j;Z)V",
+    "2.24.7.81": "LX/1T8;->A0G(Landroid/view/View;LX/1ii;LX/4dp;Z)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rL;->A21()LX/0rL;",
+    "2.24.7.81": "LX/1T8;->A21()LX/1T8;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A07()LX/0Py;",
+    "2.24.7.81": "LX/1ii;->A08()LX/11w;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/SS.smali",
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A0P()Ljava/lang/String;",
+    "2.24.7.81": "LX/1ii;->A0T()Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A0y:Ljava/lang/String;",
+    "2.24.7.81": "LX/1ii;->A0l:Ljava/lang/String;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A1J:LX/0s3;",
+    "2.24.7.81": "LX/1ii;->A1K:LX/1in;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/i.smali",
+      "smali_classes6/com/gbwhatsapp/yo/w.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
+      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A1Q()Ljava/lang/String;",
+    "2.24.7.81": "LX/1ii;->A0V()Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rg;->A16Yo()Ljava/lang/Object;",
+    "2.24.7.81": "LX/1jq;->A16Yo()Ljava/lang/Object;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rz;->A02:Ljava/lang/String;",
+    "2.24.7.81": "LX/1jy;->A02:Ljava/lang/String;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0rz;->A1J:LX/0s3;",
+    "2.24.7.81": "LX/1ii;->A1K:LX/1in;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s2;->A01(Landroid/content/Context;Ljava/io/File;)Landroid/net/Uri;",
+    "2.24.7.81": "LX/6er;->A01(Landroid/content/Context;Ljava/io/File;)Landroid/net/Uri;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
+      "smali_classes7/com/cow/share/ShareUtils.smali",
+      "smali_classes7/zoo/update/UpdateAdapter.smali",
+      "smali_classes7/zoo/web/DownloadFinishReceiver.smali",
+      "smali_classes7/zoo/web/dialog/ShareDialog.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s2;->A0C(LX/0XH;Ljava/io/File;Ljava/io/File;)V",
+    "2.24.7.81": "LX/6er;->A0B(LX/1Bo;Ljava/io/File;Ljava/io/File;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s2;->A0J(Ljava/io/InputStream;Ljava/io/OutputStream;)V",
+    "2.24.7.81": "LX/6er;->A0J(Ljava/io/InputStream;Ljava/io/OutputStream;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s3;->A00:LX/0Py;",
+    "2.24.7.81": "LX/1in;->A00:LX/11w;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
+      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s3;->A01:Ljava/lang/String;",
+    "2.24.7.81": "LX/1in;->A01:Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/i.smali",
+      "smali_classes6/com/gbwhatsapp/yo/w.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0s3;->A02:Z",
+    "2.24.7.81": "LX/1in;->A02:Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
+      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali",
+      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0sR;->A07:Ljava/lang/String;",
+    "2.24.7.81": "LX/1k3;->A07:Ljava/lang/String;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0sR;->A1J:LX/0s3;",
+    "2.24.7.81": "LX/1k3;->A1K:LX/1in;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0sj;->A06:LX/0sk;",
+    "2.24.7.81": "LX/1TF;->A06:LX/1TG;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0sj;->A21()LX/0sj;",
+    "2.24.7.81": "LX/1TF;->A21()LX/1TF;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0sk;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
+    "2.24.7.81": "LX/1TG;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0t0;-><init>()V",
+    "2.24.7.81": "LX/1BA;-><init>()V",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0t0;->A0R(Landroid/content/Context;LX/3DS;Ljava/lang/Integer;Ljava/lang/String;)Landroid/content/Intent;",
+    "2.24.7.81": "LX/1BA;->A0R(Landroid/content/Context;LX/3g5;Ljava/lang/Integer;Ljava/lang/String;)Landroid/content/Intent;",
+    "class": [
+      "smali_classes7/zoo/web/dialog/ShareDialog.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0t0;->A1Q(Landroid/content/Context;LX/0Py;)Landroid/content/Intent;",
+    "2.24.7.81": "LX/1BA;->A1V(Landroid/content/Context;LX/11w;)Landroid/content/Intent;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0tm;->A03:Ljava/lang/Object;",
+    "2.24.7.81": "LX/05j;->A00:Ljava/lang/Object;",
+    "class": [
+      "smali_classes7/zoo/update/UpdateAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0wW;->A01()Landroid/view/View;",
+    "2.24.7.81": "LX/1Rm;->A01()Landroid/view/View;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/others.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0yo;->A06:LX/0qk;",
+    "2.24.7.81": "LX/1Rv;->A06:LX/1Pi;",
+    "class": [
+      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/0yo;->A08(Landroid/widget/ImageView;LX/0Sr;)V",
+    "2.24.7.81": "LX/1Rv;->A08(Landroid/widget/ImageView;LX/14i;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/13J;->A03(Landroid/content/Context;LX/0Tr;LX/46U;LX/3DS;Ljava/lang/String;Ljava/util/List;Ljava/util/List;IZZ)V",
+    "2.24.7.81": "LX/1aK;->A03(Landroid/content/Context;LX/16I;LX/4da;LX/3g5;Ljava/lang/String;Ljava/util/List;Ljava/util/List;IIZZ)V",
+    "class": [
+      "smali_classes7/zoo/view/share/CsShareManager.smali"
+    ],
+    "": "参数增加"
+  },
+  {
+    "2.24.3.81": "LX/13L;->A03(LX/3NG;LX/3DS;LX/305;LX/32D;LX/2qD;LX/0rd;LX/61K;LX/46i;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)Ljava/util/List;",
+    "2.24.7.81": "LX/1Xl;->A0E(LX/3q9;LX/3g5;LX/3RX;LX/3SH;LX/3Tx;LX/3KI;LX/1ii;LX/6MD;LX/4do;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)Ljava/util/ArrayList;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ],
+    "TODO": "参数个数增加"
+  },
+  {
+    "2.24.3.81": "LX/13L;->A0F(LX/0Py;I)V",
+    "2.24.7.81": "LX/1Xl;->A0N(LX/11w;I)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/13L;->A0Y(Ljava/util/Collection;ZZ)V",
+    "2.24.7.81": "LX/1Xl;->A0g(Ljava/util/Collection;ZZ)V",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/13L;->A0a(LX/0rd;Ljava/lang/String;Z)Z",
+    "2.24.7.81": "LX/1Xl;->A0i(LX/1ii;Ljava/lang/String;Z)Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/13L;->A21()LX/13L;",
+    "2.24.7.81": "LX/1Xl;->A21()LX/1Xl;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/147;->A00(LX/0Py;IZZ)V",
+    "2.24.7.81": "LX/1Y9;->A01(LX/11w;IZZ)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/147;->A02(LX/0Py;Z)V",
+    "2.24.7.81": "LX/1Y9;->A03(LX/11w;Z)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1A0;->A00(LX/0Sr;)Ljava/lang/String;",
+    "2.24.7.81": "LX/1df;->A00(LX/14i;)Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1A0;->A21()LX/1A0;",
+    "2.24.7.81": "LX/1df;->A21()LX/1df;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;-><init>()V",
+    "2.24.7.81": "LX/0Bz;-><init>()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A00()V",
+    "2.24.7.81": "LX/0Bz;->A01()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A01(II)V",
+    "2.24.7.81": "LX/0Bz;->A02(II)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A02(II)V",
+    "2.24.7.81": "LX/0Bz;->A03(II)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A03(II)V",
+    "2.24.7.81": "LX/0Bz;->A04(II)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A04(III)V",
+    "2.24.7.81": "LX/0Bz;->A05(III)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1D9;->A05(Ljava/lang/Object;II)V",
+    "2.24.7.81": "LX/0Bz;->A06(Ljava/lang/Object;II)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView$1.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Dx;-><init>()V",
+    "2.24.7.81": "LX/0Cg;-><init>()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/autoschedreply/AutoMessageAdapter.smali",
+      "smali_classes6/com/gbwhatsapp/yo/chatgen/d.smali",
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali",
+      "smali_classes7/zoo/hotapp/recommend/adapter/RecomGameAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Dx;->A02()V",
+    "2.24.7.81": "LX/0Cg;->A06()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/autoschedreply/Auto_message.smali",
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali",
+      "smali_classes7/zoo/hotapp/recommend/adapter/RecomGameAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Dx;->Bif(LX/1D9;)V",
+    "2.24.7.81": "LX/0Cg;->Bl4(LX/0Bz;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Fc;-><init>(Landroid/view/View;)V",
+    "2.24.7.81": "LX/0D1;-><init>(Landroid/view/View;)V",
+    "class": [
       "smali_classes6/com/gbwhatsapp/yo/autoschedreply/AutoMessageView.smali",
       "smali_classes6/com/gbwhatsapp/yo/chatgen/e.smali",
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/m.smali",
@@ -161,74 +907,88 @@
     ]
   },
   {
-    "2.23.25.76": "LX/0Ve;->A05(Z)V",
     "2.24.3.81": "LX/1Fc;->A05(Z)V",
+    "2.24.7.81": "LX/0D1;->A08(Z)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0Ve;->A0H:Landroid/view/View;",
     "2.24.3.81": "LX/1Fc;->A0H:Landroid/view/View;",
+    "2.24.7.81": "LX/0D1;->A0H:Landroid/view/View;",
     "class": [
       "smali_classes7/com/cow/channel/AdViewHolder.smali",
       "smali_classes7/com/cow/channel/ChannelUtil.smali",
       "smali_classes7/zoo/hotapp/recommend/adapter/RecomGameAdapter.smali"
-    ],
-    "AD": ""
-  },
-  {
-    "2.23.25.76": "LX/0ZW;->A03(Landroid/content/Context;I)I",
-    "2.24.3.81": "LX/0JY;->A00(Landroid/content/Context;I)I",
-    "class": [
-      "smali_classes10/com/gbwhatsapp/youbasha/store/ColorStore.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0ZW;->A04(Landroid/content/Context;Ljava/lang/String;)I",
-    "2.24.3.81": "LX/0JY;->A01(Landroid/content/Context;Ljava/lang/String;)I",
+    "2.24.3.81": "LX/1Ft;->A0E:LX/0zG;",
+    "2.24.7.81": "LX/2Ry;->A0D:LX/1SY;",
     "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/task/utils.smali"
+      "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0eh;->A07:LX/080;",
-    "2.24.3.81": "LX/0Uq;->A07:LX/0Uo;",
+    "2.24.3.81": "LX/1Fy;->A0J:Z",
+    "2.24.7.81": "LX/1id;->A0L:Z",
     "class": [
-      "smali_classes7/cow/ad/AdUtils.smali"
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0fI;->A06:Landroid/os/Bundle;",
-    "2.24.3.81": "LX/0V4;->A06:Landroid/os/Bundle;",
+    "2.24.3.81": "LX/1Ga;->A02:Lcom/gbwhatsapp/TextData;",
+    "2.24.7.81": "LX/1jH;->A02:Lcom/gbwhatsapp/TextData;",
     "class": [
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Ip;->A01:Ljava/lang/String;",
+    "2.24.7.81": "LX/1lc;->A01:Ljava/lang/String;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1Kz;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
+    "2.24.7.81": "LX/1oT;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1LP;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/0iD;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+    "2.24.7.81": "LX/1o8;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/1Hs;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1OM;->A0P(LX/0IN;)LX/0LB;",
+    "2.24.7.81": "LX/0uZ;->AjD(LX/0uZ;)LX/005;",
+    "class": [
+      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1OM;->A0Z(LX/0IN;)LX/0IP;",
+    "2.24.7.81": "LX/1qy;->A0a(LX/0uZ;)LX/0uY;",
+    "class": [
+      "smali_classes7/zoo/hotapp/recommend/itemview/UpdateRecomItemView.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/1ON;->A0o(LX/0Sr;)Lcom/whatsapp/jid/UserJid;",
+    "2.24.7.81": "LX/1qz;->A0h(LX/14i;)Lcom/whatsapp/jid/UserJid;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/adapter/InviteAdapter.smali",
       "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/0fI;->A0R()LX/03u;",
-    "2.24.3.81": "LX/0V4;->A0G()LX/0Tl;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0fI;->A0T()LX/0eh;",
-    "2.24.3.81": "LX/0V4;->A0H()LX/0Uq;",
-    "class": [
-      "smali_classes7/cow/ad/AdUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0fI;->A0z()Z",
-    "2.24.3.81": "LX/0V4;->A0a()Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/0yS;->A05(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
     "2.24.3.81": "LX/1OP;->A09(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
+    "2.24.7.81": "LX/1r1;->A0D(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali",
@@ -247,949 +1007,115 @@
     ]
   },
   {
-    "2.23.25.76": "LX/1Mu;->A0K(Ljava/lang/String;)LX/2se;",
-    "2.24.3.81": "LX/0eS;->A0I(Ljava/lang/String;)LX/1Fy;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1Mu;->A21()LX/1Mu;",
-    "2.24.3.81": "LX/0eS;->A21()LX/0eS;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1ZD;->user:Ljava/lang/String;",
-    "2.24.3.81": "LX/0Py;->user:Ljava/lang/String;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali",
-      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1ey;->A01:Ljava/lang/String;",
-    "2.24.3.81": "LX/1Ip;->A01:Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1f1;->A16Yo()Ljava/lang/Object;",
-    "2.24.3.81": "LX/0rg;->A16Yo()Ljava/lang/Object;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
-      "smali_classes6/z/i.smali"
-    ],
-    "TODO": "****需要具体实现****"
-  },
-  {
-    "2.23.25.76": "LX/1f2;->A02:Lcom/gbwhatsapp/TextData;",
-    "2.24.3.81": "LX/1Ga;->A02:Lcom/gbwhatsapp/TextData;",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1fa;->A02:Ljava/lang/String;",
-    "2.24.3.81": "LX/0rz;->A02:Ljava/lang/String;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1fa;->A1J:LX/30N;",
-    "2.24.3.81": "LX/0rz;->A1J:LX/0s3;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1fl;->A07:Ljava/lang/String;",
-    "2.24.3.81": "LX/0sR;->A07:Ljava/lang/String;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1fl;->A1J:LX/30N;",
-    "2.24.3.81": "LX/0sR;->A1J:LX/0s3;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1li;->A02:LX/11D;",
-    "2.24.3.81": "LX/0q0;->A02:LX/0q1;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1lj;->A0B(Landroid/view/View;LX/36P;LX/44P;Ljava/lang/Object;)V",
-    "2.24.3.81": "LX/0rL;->A0C(Landroid/view/View;LX/0rd;LX/46j;Ljava/lang/Object;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1lj;->A0F(Landroid/view/View;LX/36P;LX/44P;Z)V",
-    "2.24.3.81": "LX/0rL;->A0G(Landroid/view/View;LX/0rd;LX/46j;Z)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1lj;->A21()LX/1lj;",
-    "2.24.3.81": "LX/0rL;->A21()LX/0rL;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/1uz;->A02:LX/1uz;",
-    "2.24.3.81": "LX/2Tp;->A02:LX/2Tp;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2ST;->A0G:Ljava/io/File;",
-    "2.24.3.81": "LX/2qP;->A0G:Ljava/io/File;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2W5;->A00()Z",
-    "2.24.3.81": "LX/0WX;->A00()Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/ezz.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2Zx;-><init>(LX/1ZD;LX/1ZD;[Ljava/lang/Long;[Ljava/lang/String;)V",
-    "2.24.3.81": "LX/5pi;-><init>(LX/0Py;LX/0Py;[Ljava/lang/Long;[Ljava/lang/String;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2a7;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
-    "2.24.3.81": "LX/0sk;->A00(Lcom/whatsapp/jid/UserJid;Z)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2bq;->A07:LX/2a7;",
-    "2.24.3.81": "LX/0sj;->A06:LX/0sk;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2bq;->A21()LX/2bq;",
-    "2.24.3.81": "LX/0sj;->A21()LX/0sj;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2gU;->A02(Lorg/whispersystems/jobqueue/Job;)V",
-    "2.24.3.81": "LX/0Vs;->A01(Lorg/whispersystems/jobqueue/Job;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2mp;->A00(LX/3ep;)Ljava/lang/String;",
-    "2.24.3.81": "LX/1A0;->A00(LX/0Sr;)Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2mp;->A21()LX/2mp;",
-    "2.24.3.81": "LX/1A0;->A21()LX/1A0;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2nj;->A00(LX/1ZD;IZZ)V",
-    "2.24.3.81": "LX/147;->A00(LX/0Py;IZZ)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2nj;->A02(LX/1ZD;Z)V",
-    "2.24.3.81": "LX/147;->A02(LX/0Py;Z)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2oI;->A02()Ljava/lang/String;",
-    "2.24.3.81": "LX/0LT;->A02()Ljava/lang/String;",
-    "class": [
-      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2pU;->A02(J)LX/36P;",
-    "2.24.3.81": "LX/0Wo;->A00(J)LX/0rd;",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2pU;->A21()LX/2pU;",
-    "2.24.3.81": "LX/0Wo;->A21()LX/0Wo;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2rn;->A00(LX/3ep;)Ljava/io/File;",
-    "2.24.3.81": "LX/0W6;->A00(LX/0Sr;)Ljava/io/File;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2rn;->A01(LX/3ep;)Ljava/io/File;",
-    "2.24.3.81": "LX/0W6;->A01(LX/0Sr;)Ljava/io/File;",
-    "class": [
-      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sA;->A06(LX/1ZD;Ljava/lang/Integer;Z)V",
-    "2.24.3.81": "LX/0RX;->A06(LX/0Py;Ljava/lang/Integer;Z)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sR;->A03(Landroid/content/Context;LX/456;LX/448;LX/5dD;Ljava/lang/String;Ljava/util/List;Ljava/util/List;IZZ)V",
-    "2.24.3.81": "LX/13J;->A03(Landroid/content/Context;LX/0Tr;LX/46U;LX/3DS;Ljava/lang/String;Ljava/util/List;Ljava/util/List;IZZ)V",
-    "class": [
-      "smali_classes7/zoo/view/share/CsShareManager.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2se;->A0J:Z",
-    "2.24.3.81": "LX/1Fy;->A0J:Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sr;->A00:Lcom/gbwhatsapp/Me;",
-    "2.24.3.81": "LX/0LB;->A00:Lcom/gbwhatsapp/Me;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali",
-      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sr;->A01:LX/1NK;",
-    "2.24.3.81": "LX/0LB;->A0E:LX/0Ss;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sr;->A0D:LX/2oI;",
-    "2.24.3.81": "LX/0LB;->A0C:LX/0LT;",
-    "class": [
-      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2sr;->A0O()V",
-    "2.24.3.81": "LX/0LB;->A0A()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2tc;->A01(LX/1uz;Ljava/util/Collection;)Lcom/gbwhatsapp/mute/ui/MuteDialogFragment;",
-    "2.24.3.81": "LX/33g;->A01(LX/2Tp;Ljava/util/Collection;)Lcom/gbwhatsapp/mute/ui/MuteDialogFragment;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2tf;->A00(Landroid/content/Intent;Ljava/lang/String;)V",
-    "2.24.3.81": "LX/33i;->A01(Landroid/content/Intent;Ljava/lang/String;)V",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2yj;->A03(Ljava/lang/String;)Landroid/content/SharedPreferences;",
-    "2.24.3.81": "LX/0LR;->A00(Ljava/lang/String;)Landroid/content/SharedPreferences;",
-    "class": [
-      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/2yj;->A21()LX/2yj;",
-    "2.24.3.81": "LX/0LR;->A21()LX/0LR;",
-    "class": [
-      "smali_classes6/z/i.smali",
-      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/30N;->A00:LX/1ZD;",
-    "2.24.3.81": "LX/0s3;->A00:LX/0Py;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
-      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/30N;->A01:Ljava/lang/String;",
-    "2.24.3.81": "LX/0s3;->A01:Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/i.smali",
-      "smali_classes6/com/gbwhatsapp/yo/w.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/30N;->A02:Z",
-    "2.24.3.81": "LX/0s3;->A02:Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali",
-      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/30q;->A02()LX/1li;",
-    "2.24.3.81": "LX/0W7;->A02()LX/0q0;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/31E;->A21()LX/31E;",
-    "2.24.3.81": "LX/0iD;->A21()LX/0iD;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/33Q;->A03(Ljava/lang/String;)LX/1ZD;",
-    "2.24.3.81": "LX/0Sg;->A01(Ljava/lang/String;)LX/0Py;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/34w;->A21()LX/34w;",
-    "2.24.3.81": "LX/0NU;->A21()LX/0NU;",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/34x;->A0C(I)Ljava/lang/String;",
-    "2.24.3.81": "LX/0IP;->A08(I)Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/350;->A05(LX/3QX;LX/5dD;LX/2pZ;LX/2S8;LX/36P;LX/2qP;LX/44O;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)Ljava/util/List;",
-    "2.24.3.81": "LX/13L;->A03(LX/3NG;LX/3DS;LX/305;LX/32D;LX/2qD;LX/0rd;LX/61K;LX/46i;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;ZZZ)Ljava/util/List;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/350;->A0H(LX/1ZD;I)V",
-    "2.24.3.81": "LX/13L;->A0F(LX/0Py;I)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/350;->A0a(Ljava/util/Collection;ZZ)V",
-    "2.24.3.81": "LX/13L;->A0Y(Ljava/util/Collection;ZZ)V",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/350;->A0c(LX/36P;Ljava/lang/String;Z)Z",
-    "2.24.3.81": "LX/13L;->A0a(LX/0rd;Ljava/lang/String;Z)Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/350;->A21()LX/350;",
-    "2.24.3.81": "LX/13L;->A21()LX/13L;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/352;->A0I(LX/3ep;)Ljava/lang/String;",
-    "2.24.3.81": "LX/0Wm;->A0D(LX/0Sr;)Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/368;->A09:[Ljava/lang/String;",
-    "2.24.3.81": "LX/0pk;->A09:[Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/eyy.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36J;->A00:I",
-    "2.24.3.81": "LX/39h;->A00:I",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36J;->A01:I",
-    "2.24.3.81": "LX/39h;->A01:I",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36J;->A04:J",
-    "2.24.3.81": "LX/39h;->A04:J",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36J;->A08:LX/36P;",
-    "2.24.3.81": "LX/39h;->A08:LX/0rd;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36J;->A0A:Lcom/whatsapp/jid/UserJid;",
-    "2.24.3.81": "LX/39h;->A0A:Lcom/whatsapp/jid/UserJid;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36P;->A0m()LX/1ZD;",
-    "2.24.3.81": "LX/0rd;->A07()LX/0Py;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/SS.smali",
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36P;->A0y:Ljava/lang/String;",
-    "2.24.3.81": "LX/0rd;->A0y:Ljava/lang/String;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36P;->A11()Ljava/lang/String;",
-    "2.24.3.81": "LX/0rd;->A0P()Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36P;->A14()Ljava/lang/String;",
-    "2.24.3.81": "LX/0rd;->A1Q()Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/36P;->A1J:LX/30N;",
-    "2.24.3.81": "LX/0rd;->A1J:LX/0s3;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/i.smali",
-      "smali_classes6/com/gbwhatsapp/yo/w.smali",
-      "smali_classes6/com/gbwhatsapp/yo/yo.smali",
-      "smali_classes7/com/gbwhatsapp/animalview/MessageInsertSuccessDataObserver$1.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/382;->A12:Ljava/util/concurrent/ScheduledThreadPoolExecutor;",
-    "2.24.3.81": "LX/6Gt;->A15:Ljava/util/concurrent/ScheduledThreadPoolExecutor;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/382;->YoEndCall()V",
-    "2.24.3.81": "LX/6Gt;->YoEndCall()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38Z;->A07(Ljava/lang/Object;)V",
-    "2.24.3.81": "LX/0IC;->A06(Ljava/lang/Object;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38f;->A01(Lcom/whatsapp/jid/Jid;)LX/1ZD;",
-    "2.24.3.81": "LX/0St;->A00(Lcom/whatsapp/jid/Jid;)LX/0Py;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38f;->A09(Ljava/lang/Class;Ljava/lang/Iterable;)Ljava/util/List;",
-    "2.24.3.81": "LX/0St;->A08(Ljava/lang/Class;Ljava/lang/Iterable;)Ljava/util/List;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38h;->A0W(Landroid/content/Context;Landroid/net/Uri;)V",
-    "2.24.3.81": "LX/0hj;->A0N(Landroid/content/Context;Landroid/net/Uri;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38j;->A01(Landroid/content/Context;Ljava/io/File;)Landroid/net/Uri;",
-    "2.24.3.81": "LX/0s2;->A01(Landroid/content/Context;Ljava/io/File;)Landroid/net/Uri;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
-      "smali_classes7/com/cow/share/ShareUtils.smali",
-      "smali_classes7/zoo/update/UpdateAdapter.smali",
-      "smali_classes7/zoo/web/DownloadFinishReceiver.smali",
-      "smali_classes7/zoo/web/dialog/ShareDialog.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38j;->A0D(LX/30k;Ljava/io/File;Ljava/io/File;)V",
-    "2.24.3.81": "LX/0s2;->A0C(LX/0XH;Ljava/io/File;Ljava/io/File;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38j;->A0J(Ljava/io/InputStream;Ljava/io/OutputStream;)V",
-    "2.24.3.81": "LX/0s2;->A0J(Ljava/io/InputStream;Ljava/io/OutputStream;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38u;-><init>()V",
-    "2.24.3.81": "LX/0t0;-><init>()V",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38u;->A0K(Landroid/content/Context;LX/5dD;Ljava/lang/Integer;Ljava/lang/String;)Landroid/content/Intent;",
-    "2.24.3.81": "LX/0t0;->A0R(Landroid/content/Context;LX/3DS;Ljava/lang/Integer;Ljava/lang/String;)Landroid/content/Intent;",
-    "class": [
-      "smali_classes7/zoo/web/dialog/ShareDialog.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/38u;->A1L(Landroid/content/Context;LX/1ZD;)Landroid/content/Intent;",
-    "2.24.3.81": "LX/0t0;->A1Q(Landroid/content/Context;LX/0Py;)Landroid/content/Intent;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3GZ;->A04(LX/3GZ;)LX/2sr;",
-    "2.24.3.81": "LX/1OM;->A0P(LX/0IN;)LX/0LB;",
-    "class": [
-      "smali_classes7/zoo/web/javascriptInterface/BrowserJavascriptInterface.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3GZ;->A2s(LX/3GZ;)LX/34x;",
-    "2.24.3.81": "LX/1OM;->A0Z(LX/0IN;)LX/0IP;",
-    "class": [
-      "smali_classes7/zoo/hotapp/recommend/itemview/UpdateRecomItemView.smali"
-    ],
-    "AD": ""
-  },
-  {
-    "2.23.25.76": "LX/3HW;->A03:LX/8oN;",
-    "2.24.3.81": "LX/0Mg;->A03:LX/0IS;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3HW;->A07(Ljava/io/File;Z)V",
-    "2.24.3.81": "LX/0Mg;->A03(Ljava/io/File;Z)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3HW;->A08()LX/2ST;",
-    "2.24.3.81": "LX/0Mg;->A04()LX/2qP;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3HW;->A0K(Ljava/lang/String;)Ljava/io/File;",
-    "2.24.3.81": "LX/0Mg;->A0S(Ljava/lang/String;)Ljava/io/File;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3IP;->A21()LX/6Do;",
-    "2.24.3.81": "LX/0o2;->A21()LX/0o2;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3J5;->A08(LX/1ZD;)LX/3ep;",
-    "2.24.3.81": "LX/0W1;->A07(LX/0Py;)LX/0Sr;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/u0.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3J5;->A21()LX/3J5;",
-    "2.24.3.81": "LX/0W1;->A21()LX/0W1;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes6/com/gbwhatsapp/yo/u0.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3Us;-><init>(LX/2qa;Lcom/whatsapp/Mp4Ops;LX/7Y2;LX/2iX;LX/1Pl;LX/38A;LX/454;Ljava/io/File;Ljava/io/File;IIJJ)V",
-    "2.24.30.81": "LX/8oE;-><init>(Landroid/graphics/RectF;LX/0L8;Lcom/whatsapp/Mp4Ops;LX/0d8;LX/0eY;LX/0L1;LX/0Ms;LX/0hY;LX/0LF;Ljava/io/File;Ljava/io/File;IIIIJJ)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/h0.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3Us;->A0G()V",
-    "2.24.3.81": "LX/8oE;->A0I()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/h0.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3Wk;->A07Yo(LX/1ZD;)V",
-    "2.24.3.81": "LX/0oi;->A07Yo(LX/0Py;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/a1.smali"
-    ],
-    "TODO": "检查方法是否实现"
-  },
-  {
-    "2.23.25.76": "LX/3by;->A0M(II)V",
-    "2.24.3.81": "LX/0Xu;->A05(II)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3c4;-><init>(Landroid/content/Context;)V",
-    "2.24.3.81": "LX/3Uo;-><init>(Landroid/content/Context;)V",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;-><init>(LX/1ZD;)V",
-    "2.24.3.81": "LX/0Sr;-><init>(LX/0Py;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A06(LX/3ep;)Lcom/whatsapp/jid/UserJid;",
-    "2.24.3.81": "LX/1ON;->A0o(LX/0Sr;)Lcom/whatsapp/jid/UserJid;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/adapter/InviteAdapter.smali",
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A0I:LX/1ZD;",
-    "2.24.3.81": "LX/0Sr;->A0H:LX/0Py;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes7/zoo/web/dialog/ActivityGuideDialog.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A0Q:Ljava/lang/String;",
-    "2.24.3.81": "LX/0Sr;->A0P:Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali",
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A0V()Z",
-    "2.24.3.81": "LX/0Sr;->A0E()Z",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/a1.smali",
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A0Y:Ljava/lang/String;",
-    "2.24.3.81": "LX/0Sr;->A0X:Ljava/lang/String;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/3ep;->A11:Z",
-    "2.24.3.81": "LX/0Sr;->A10:Z",
-    "class": [
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4A0;->A0s()Ljava/lang/Integer;",
     "2.24.3.81": "LX/1OV;->A0m()Ljava/lang/Integer;",
+    "2.24.7.81": "LX/1r5;->A0s()Ljava/lang/Integer;",
     "class": [
       "smali_classes7/zoo/web/dialog/ShareDialog.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4Ap;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/34w;LX/31E;LX/2yj;Ljava/lang/String;)V",
-    "2.24.3.81": "LX/4Fa;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/0NU;LX/0iD;LX/0LR;Ljava/lang/String;)V",
-    "class": [
-      "smali_classes6/z/i.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4EH;->fakeItems:Ljava/util/Set;",
     "2.24.3.81": "LX/1SN;->fakeItems:Ljava/util/Set;",
+    "2.24.7.81": "LX/1uM;->fakeItems:Ljava/util/Set;",
     "class": [
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4IO;-><init>(Landroid/content/Context;I)V",
-    "2.24.3.81": "LX/4JQ;-><init>(Landroid/content/Context;I)V",
-    "class": [
-      "smali_classes6/a0/a.smali",
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
-      "smali_classes6/com/gbwhatsapp/yo/v.smali",
-      "smali_classes6/com/gbwhatsapp/yo/w.smali",
-      "smali_classes6/rc/whatsapp/dialog/DialogAdd.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4IO;->A10:Landroid/content/Context;",
-    "2.24.3.81": "LX/4JQ;->A10:Landroid/content/Context;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/o.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4IO;->setContentView(Landroid/view/View;)V",
-    "2.24.3.81": "LX/4JQ;->setContentView(Landroid/view/View;)V",
-    "class": [
-      "smali_classes6/a0/a.smali",
-      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
-      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
-      "smali_classes6/com/gbwhatsapp/yo/v.smali",
-      "smali_classes6/com/gbwhatsapp/yo/w.smali",
-      "smali_classes6/rc/whatsapp/dialog/DialogAdd.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4Oe;->A01:Ljava/util/List;",
     "2.24.3.81": "LX/1b2;->A01:Ljava/util/List;",
+    "2.24.7.81": "LX/23i;->A01:Ljava/util/List;",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4PQ;-><init>(LX/34x;I)V",
     "2.24.3.81": "LX/1bb;-><init>(LX/0IP;I)V",
+    "2.24.7.81": "LX/24D;-><init>(LX/0uY;I)V",
     "class": [
       "smali_classes7/zoo/hotapp/recommend/itemview/UpdateRecomItemView.smali"
-    ],
-    "AD": ""
-  },
-  {
-    "2.23.25.76": "LX/4TVV;-><init>(Lcom/gbwhatsapp/Conversation;)V",
-    "2.24.3.81": "LX/4TVV;-><init>(Lcom/gbwhatsapp/Conversation;)V",
-    "class": [
-      "smali_classes7/zoo/view/share/CsShareManager.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4TVV;->A00:Lcom/gbwhatsapp/Conversation;",
-    "2.24.3.81": "LX/4TVV;->A00:Lcom/gbwhatsapp/Conversation;",
-    "class": [
-      "smali_classes6/x/4TVV.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4V3;->A00(I)V",
     "2.24.3.81": "LX/1fv;->A00(I)V",
+    "2.24.7.81": "LX/55e;->A00(I)V",
     "class": [
       "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4Zi;->A01:LX/2sr;",
-    "2.24.3.81": "LX/0Tw;->A01:LX/0LB;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
-      "smali_classes7/com/github/fission/base/adapter/RegisterAdapter.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4Zk;->A04:LX/3HW;",
-    "2.24.3.81": "LX/0Tt;->A04:LX/0Mg;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4Zk;->A05:LX/3by;",
-    "2.24.3.81": "LX/0Tt;->A05:LX/0Xu;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4Zk;->setSupportActionBar(Landroidy/appcompat/widget/Toolbar;)V",
-    "2.24.3.81": "LX/0Tt;->setSupportActionBar(Landroidy/appcompat/widget/Toolbar;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4ae;->A02()V",
     "2.24.3.81": "LX/1ln;->A02()V",
+    "2.24.7.81": "LX/2Fi;->A00()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/exx.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A03()V",
     "2.24.3.81": "LX/1ln;->A03()V",
+    "2.24.7.81": "LX/2Fi;->A01()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/ezz.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A03:LX/07x;",
+    "2.24.3.81": "LX/1ln;->A04()V",
+    "2.24.7.81": "LX/2Fi;->A02()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/edd.smali"
+    ]
+  },
+  {
     "2.24.3.81": "LX/1ln;->A04:LX/00O;",
+    "2.24.7.81": "LX/2Fi;->A06:LX/01S;",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali",
       "smali_classes6/com/gbwhatsapp/ezz.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A04()V",
-    "2.24.3.81": "LX/1ln;->A04()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/edd.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/4ae;->A05()V",
     "2.24.3.81": "LX/1ln;->A05()V",
+    "2.24.7.81": "LX/2Fi;->A03()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A08()V",
     "2.24.3.81": "LX/1ln;->A08()V",
+    "2.24.7.81": "LX/2Fi;->A06()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/gnn.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A09(I)V",
     "2.24.3.81": "LX/1ln;->A09(I)V",
+    "2.24.7.81": "LX/2Fi;->A0F(Ljava/lang/Integer;III)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/igg.smali"
-    ]
+    ],
+    "": "参数个数发生变化"
   },
   {
-    "2.23.25.76": "LX/4ae;->A0J:LX/2W5;",
     "2.24.3.81": "LX/1ln;->A0K:LX/0WX;",
+    "2.24.7.81": "LX/2Fi;->A0G:LX/178;",
     "class": [
       "smali_classes6/com/gbwhatsapp/ezz.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A0Q:LX/34r;",
     "2.24.3.81": "LX/1ln;->A0R:LX/0Mu;",
+    "2.24.7.81": "LX/2Fi;->A0J:LX/0yv;",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4ae;->A0R:LX/354;",
     "2.24.3.81": "LX/1ln;->A0S:LX/0Jk;",
+    "2.24.7.81": "LX/2Fi;->A0K:LX/0vi;",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/4mo;->getFMessage()LX/36P;",
-    "2.24.3.81": "LX/1wx;->getFMessage()LX/0rd;",
+    "2.24.3.81": "LX/1wv;->getFMessage()LX/0rd;",
+    "2.24.7.81": "LX/2PR;->getFMessage()LX/1ii;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
       "smali_classes6/com/gbwhatsapp/yo/dep.smali",
@@ -1197,266 +1123,374 @@
     ]
   },
   {
-    "2.23.25.76": "LX/4ok;->A0E:LX/6Dp;",
-    "2.24.3.81": "LX/1Ft;->A0E:LX/0zG;",
-    "class": [
-      "smali_classes7/zoo/update/UpdateAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/52w;->A01:LX/36J;",
     "2.24.3.81": "LX/2Lb;->A01:LX/39h;",
+    "2.24.7.81": "LX/2qP;->A02:LX/3bp;",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/535;-><init>()V",
-    "2.24.3.81": "LX/2Lj;-><init>()V",
+    "2.24.3.81": "LX/2Lp;->ad:Lcow/ad/base/BaseNativeAd;",
+    "2.24.7.81": "LX/2qd;->ad:Lcow/ad/base/BaseNativeAd;",
     "class": [
       "smali_classes7/com/cow/channel/ChannelUtil.smali"
-    ],
-    "AD": ""
+    ]
   },
   {
-    "2.23.25.76": "LX/535;->ad:Lcow/ad/base/BaseNativeAd;",
-    "2.24.3.81": "LX/2Lj;->ad:Lcow/ad/base/BaseNativeAd;",
+    "2.24.3.81": "LX/2Tp;->A02:LX/2Tp;",
+    "2.24.7.81": "LX/2yR;->A02:LX/2yR;",
     "class": [
-      "smali_classes7/com/cow/channel/ChannelUtil.smali"
-    ],
-    "AD": "检查是否实现"
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
   },
   {
-    "2.23.25.76": "LX/5If;->A00:Ljava/util/List;",
     "2.24.3.81": "LX/2ig;->A00:Ljava/util/List;",
+    "2.24.7.81": "LX/3DY;->A00:Ljava/util/List;",
     "class": [
       "smali_classes7/com/github/fission/sport/adapter/InviteAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5Pe;-><init>(Landroid/content/Context;)V",
-    "2.24.3.81": "LX/2vN;-><init>(Landroid/content/Context;)V",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A01()Landroid/content/Intent;",
-    "2.24.3.81": "LX/2vN;->A01()Landroid/content/Intent;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A01:I",
-    "2.24.3.81": "LX/2vN;->A01:I",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A02:I",
-    "2.24.3.81": "LX/2vN;->A02:I",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A04:J",
-    "2.24.3.81": "LX/2vN;->A04:J",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A0F:Ljava/util/ArrayList;",
-    "2.24.3.81": "LX/2vN;->A0F:Ljava/util/ArrayList;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A0G:Ljava/util/ArrayList;",
-    "2.24.3.81": "LX/2vN;->A0G:Ljava/util/ArrayList;",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A0J:Z",
-    "2.24.3.81": "LX/2vN;->A0J:Z",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Pe;->A0K:Z",
-    "2.24.3.81": "LX/2vN;->A0K:Z",
-    "class": [
-      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Uv;->A06:LX/5lF;",
-    "2.24.3.81": "LX/0yo;->A06:LX/0qk;",
-    "class": [
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5Uv;->A08(Landroid/widget/ImageView;LX/3ep;)V",
-    "2.24.3.81": "LX/0yo;->A08(Landroid/widget/ImageView;LX/0Sr;)V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5ZG;->A0g:LX/350;",
-    "2.24.3.81": "LX/392;->A0i:LX/13L;",
-    "class": [
-      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5ah;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/31E;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-    "2.24.3.81": "LX/1LP;->A03(Landroid/content/Context;Landroid/graphics/Paint;LX/0iD;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5ao;->A02(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
-    "2.24.3.81": "LX/1Kz;->A01(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;",
+    "2.24.3.81": "LX/2qP;->A0G:Ljava/io/File;",
+    "2.24.7.81": "LX/66X;->A0F:Ljava/io/File;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5jj;->A00:LX/3ep;",
+    "2.24.3.81": "LX/2vN;-><init>(Landroid/content/Context;)V",
+    "2.24.7.81": "LX/6CX;-><init>(Landroid/content/Context;)V",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A01()Landroid/content/Intent;",
+    "2.24.7.81": "LX/6CX;->A00()Landroid/content/Intent;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A01:I",
+    "2.24.7.81": "LX/6CX;->A01:I",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A02:I",
+    "2.24.7.81": "LX/6CX;->A02:I",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A04:J",
+    "2.24.7.81": "LX/6CX;->A05:J",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A0F:Ljava/util/ArrayList;",
+    "2.24.7.81": "LX/6CX;->A0G:Ljava/util/ArrayList;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A0G:Ljava/util/ArrayList;",
+    "2.24.7.81": "LX/6CX;->A0H:Ljava/util/ArrayList;",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A0J:Z",
+    "2.24.7.81": "LX/6CX;->A0M:Z",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/2vN;->A0K:Z",
+    "2.24.7.81": "LX/6CX;->A0N:Z",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/33g;->A01(LX/2Tp;Ljava/util/Collection;)Lcom/gbwhatsapp/mute/ui/MuteDialogFragment;",
+    "2.24.7.81": "LX/3a3;->A02(LX/2yR;Ljava/util/Collection;)Lcom/gbwhatsapp/mute/ui/MuteDialogFragment;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/33i;->A01(Landroid/content/Intent;Ljava/lang/String;)V",
+    "2.24.7.81": "LX/3Ux;->A01(Landroid/content/Intent;Ljava/lang/String;)V",
+    "class": [
+      "smali_classes7/com/github/fission/sport/share/ShareAdapter.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/392;->A0i:LX/13L;",
+    "2.24.7.81": "LX/6eh;->A1H:LX/1Xl;",
+    "class": [
+      "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/39h;->A00:I",
+    "2.24.7.81": "LX/3bp;->A00:I",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/39h;->A01:I",
+    "2.24.7.81": "LX/3bp;->A01:I",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/39h;->A04:J",
+    "2.24.7.81": "LX/3bp;->A04:J",
+    "class": [
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/39h;->A08:LX/0rd;",
+    "2.24.7.81": "LX/3bp;->A08:LX/1ii;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/o.smali",
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/39h;->A0A:Lcom/whatsapp/jid/UserJid;",
+    "2.24.7.81": "LX/3bp;->A0A:Lcom/whatsapp/jid/UserJid;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
+    ]
+  },
+  {
     "2.24.3.81": "LX/3KK;->A00:LX/0Sr;",
+    "2.24.7.81": "LX/3nD;->A00:LX/14i;",
     "class": [
       "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5kL;->funcConvoActionMenu(Landroid/view/MenuItem;LX/5kL;)V",
+    "2.24.3.81": "LX/3KK;->getContact()LX/0Sr;",
+    "2.24.7.81": "LX/3nD;->getContact()LX/14i;",
+    "class": [
+      "smali_classes7/zoo/comeback/ComebackUtil.smali"
+    ]
+  },
+  {
     "2.24.3.81": "LX/3L4;->funcConvoActionMenu(Landroid/view/MenuItem;LX/3L4;)V",
+    "2.24.7.81": "LX/3o0;->funcConvoActionMenu(Landroid/view/MenuItem;LX/3o0;)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/z1.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5kU;->A2f:Lcom/gbwhatsapp/conversation/ConversationListView;",
     "2.24.3.81": "LX/3LE;->A2e:Lcom/gbwhatsapp/conversation/ConversationListView;",
+    "2.24.7.81": "LX/3oC;->A2Y:Lcom/gbwhatsapp/conversation/ConversationListView;",
     "class": [
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5kU;->A5p:LX/5ZG;",
     "2.24.3.81": "LX/3LE;->A5x:LX/392;",
+    "2.24.7.81": "LX/3oC;->A5f:LX/6eh;",
     "class": [
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5lF;->A05:LX/2rn;",
-    "2.24.3.81": "LX/0qk;->A05:LX/0W6;",
+    "2.24.3.81": "LX/3Uo;-><init>(Landroid/content/Context;)V",
+    "2.24.7.81": "LX/3xu;-><init>(Landroid/content/Context;)V",
     "class": [
-      "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
+      "smali_classes6/z/i.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/5lF;->A06(Landroid/content/Context;Ljava/lang/String;)LX/5Uv;",
-    "2.24.3.81": "LX/0qk;->A06(Landroid/content/Context;Ljava/lang/String;)LX/0yo;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/5lF;->A21()LX/5lF;",
-    "2.24.3.81": "LX/0qk;->A21()LX/0qk;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "LX/6A2;->getContact()LX/3ep;",
     "2.24.3.81": "LX/41H;->getContact()LX/0Sr;",
+    "2.24.7.81": "LX/4Yu;->getContact()LX/14i;",
     "class": [
       "smali_classes7/com/github/fission/sport/adapter/InviteAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/6Do;->BoC(Landroid/content/Context;LX/3ep;IZ)I",
-    "2.24.3.81": "LX/0o1;->Bps(Landroid/content/Context;LX/0Sr;IZ)I",
+    "2.24.3.81": "LX/4Fa;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/0NU;LX/0iD;LX/0LR;Ljava/lang/String;)V",
+    "2.24.7.81": "LX/1s6;-><init>(Landroid/content/Context;Landroid/graphics/Typeface;Lcom/gbwhatsapp/TextData;LX/0zI;LX/1Hs;LX/0xO;LX/2xE;Ljava/lang/String;)V",
+    "class": [
+      "smali_classes6/z/i.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/4JQ;-><init>(Landroid/content/Context;I)V",
+    "2.24.7.81": "LX/0Fp;-><init>(Landroid/content/Context;I)V",
+    "class": [
+      "smali_classes6/a0/a.smali",
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
+      "smali_classes6/com/gbwhatsapp/yo/v.smali",
+      "smali_classes6/com/gbwhatsapp/yo/w.smali",
+      "smali_classes6/rc/whatsapp/dialog/DialogAdd.smali",
+      "smali_classes7/zoo/comeback/ComebackDialog2.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/4JQ;->A10:Landroid/content/Context;",
+    "2.24.7.81": "LX/0Fp;->A10:Landroid/content/Context;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/o.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/4JQ;->setContentView(Landroid/view/View;)V",
+    "2.24.7.81": "LX/0Fp;->setContentView(Landroid/view/View;)V",
+    "class": [
+      "smali_classes6/a0/a.smali",
+      "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
+      "smali_classes6/com/gbwhatsapp/yo/j0.smali",
+      "smali_classes6/com/gbwhatsapp/yo/v.smali",
+      "smali_classes6/com/gbwhatsapp/yo/w.smali",
+      "smali_classes6/rc/whatsapp/dialog/DialogAdd.smali",
+      "smali_classes7/zoo/comeback/ComebackDialog2.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/4TVV;-><init>(Lcom/gbwhatsapp/Conversation;)V",
+    "2.24.7.81": "LX/4TVV;-><init>(Lcom/gbwhatsapp/Conversation;)V",
+    "class": [
+      "smali_classes7/zoo/view/share/CsShareManager.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/4TVV;->A00:Lcom/gbwhatsapp/Conversation;",
+    "2.24.7.81": "LX/4TVV;->A00:Lcom/gbwhatsapp/Conversation;",
+    "class": [
+      "smali_classes6/x/4TVV.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/5pi;-><init>(LX/0Py;LX/0Py;[Ljava/lang/Long;[Ljava/lang/String;)V",
+    "2.24.7.81": "LX/9cH;-><init>(LX/11w;LX/11w;[Ljava/lang/Long;[Ljava/lang/String;)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/n.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/68p;->A01(LX/1E7;)V",
+    "2.24.7.81": "LX/0Xl;->A01(LX/0Cl;)V",
+    "class": [
+      "smali_classes7/com/cow/channel/ChannelUtil.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/6Gt;->A15:Ljava/util/concurrent/ScheduledThreadPoolExecutor;",
+    "2.24.7.81": "LX/6ee;->A1E:Ljava/util/concurrent/ScheduledThreadPoolExecutor;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   },
   {
-    "2.23.25.76": "LX/6Hi;->A00:Ljava/lang/Object;",
-    "2.24.3.81": "LX/4B7;->A00:Ljava/lang/Object;",
+    "2.24.3.81": "LX/6Gt;->YoEndCall()V",
+    "2.24.7.81": "LX/6ee;->YoEndCall()V",
     "class": [
-      "smali_classes7/com/cow/channel/ChannelUtil.smali"
-    ],
-    "AD": ""
-  },
-  {
-    "2.23.25.76": "LX/8oN;->get()Ljava/lang/Object;",
-    "2.24.3.81": "LX/0IS;->get()Ljava/lang/Object;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali",
-      "smali_classes7/zoo/user/UserAdapter.smali"
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   },
   {
-    "2.23.25.76": "Landroidy/recyclerview/widget/LinearLayoutManager;->A1X(I)V",
+    "2.24.3.81": "LX/6Hi;->A00:Ljava/lang/Object;",
+    "2.24.7.81": "LX/4hn;->A00:Ljava/lang/Object;",
+    "class": [
+      "smali_classes7/com/cow/channel/ChannelUtil.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/535;-><init>()V",
+    "2.24.7.81": "LX/2qX;-><init>()V",
+    "class": [
+      "smali_classes7/com/cow/channel/ChannelUtil.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/535;->ad:Lcow/ad/base/BaseNativeAd;",
+    "2.24.7.81": "LX/2qX;->ad:Lcow/ad/base/BaseNativeAd;",
+    "class": [
+      "smali_classes7/com/cow/channel/ChannelUtil.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "LX/8oE;-><init>(Landroid/graphics/RectF;LX/0L8;Lcom/whatsapp/Mp4Ops;LX/0d8;LX/0eY;LX/0L1;LX/0Ms;LX/0hY;LX/0LF;Ljava/io/File;Ljava/io/File;IIIIJJ)V",
+    "2.24.7.81": "LX/72b;-><init>(Landroid/graphics/RectF;LX/0x5;Lcom/whatsapp/Mp4Ops;LX/9wm;LX/1Bc;LX/1DE;LX/0wy;LX/0yt;LX/1HB;LX/0xC;Ljava/io/File;Ljava/io/File;IIIIJJZ)V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/h0.smali"
+    ],
+    "TODO": "方法参数变化"
+  },
+  {
+    "2.24.3.81": "LX/8oE;->A0I()V",
+    "2.24.7.81": "LX/72b;->A0K()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/h0.smali"
+    ]
+  },
+  {
     "2.24.3.81": "Landroidy/recyclerview/widget/LinearLayoutManager;->A1T(I)V",
+    "2.24.7.81": "Landroidy/recyclerview/widget/LinearLayoutManager;->A1f(I)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/IGStatusesView.smali",
       "smali_classes7/zoo/hotapp/recommend/itemview/UpdateRecomItemView.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/airbnb/lottie/LottieAnimationView;->A01()V",
     "2.24.3.81": "Lcom/airbnb/lottie/LottieAnimationView;->A01()V",
+    "2.24.7.81": "Lcom/airbnb/lottie/LottieAnimationView;->A03()V",
     "class": [
       "smali_classes7/com/cow/s/n/NotifyGuideActivity$2.smali",
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->A02:LX/5kU;",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->A02:LX/3LE;",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->A03:LX/3oC;",
     "class": [
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->A11:LX/2sR;",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->A11:LX/13J;",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->A11:LX/1aK;",
     "class": [
       "smali_classes7/zoo/view/share/CsShareManager.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->A1e:Lcom/gbwhatsapp/conversation/ConversationListView;",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->A1e:Lcom/gbwhatsapp/conversation/ConversationListView;",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->A1e:Lcom/gbwhatsapp/conversation/ConversationListView;",
     "class": [
       "smali_classes7/zoo/view/share/CsShareManager.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->ALp_cpy(LX/3ep;Z)V",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->ALp_cpy(LX/0Sr;Z)V",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->ALp_cpy(LX/14i;Z)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/v0.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/4ae;",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/1ln;",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->getA1Z:LX/2Fi;",
     "class": [
       "smali_classes6/b0/a.smali",
       "smali_classes6/com/gbwhatsapp/igg.smali",
@@ -1464,8 +1498,8 @@
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/1ZD;",
     "2.24.3.81": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/0Py;",
+    "2.24.7.81": "Lcom/gbwhatsapp/Conversation;->getA2q:LX/11w;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/Conversation.smali",
       "smali_classes7/com/gbwhatsapp/animalview/EmojiRainUtils.smali",
@@ -1473,236 +1507,273 @@
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A00:I",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A00:I",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A00:I",
     "class": [
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A02:I",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A02:I",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A01:I",
     "class": [
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A06:I",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A06:I",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A03:I",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A0P:Landroidy/appcompat/widget/Toolbar;",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A0S:Landroidy/appcompat/widget/Toolbar;",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A0M:Landroidy/appcompat/widget/Toolbar;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali",
       "smali_classes6/com/gbwhatsapp/yo/yo.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A0k:Lcom/gbwhatsapp/HomeActivity$TabsPager;",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A0n:Lcom/gbwhatsapp/HomeActivity$TabsPager;",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A0i:Lcom/gbwhatsapp/HomeActivity$TabsPager;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/yo.smali",
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A1i:LX/8oN;",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A1g:LX/0IS;",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A1T:LX/006;",
     "class": [
+      "smali_classes7/zoo/comeback/ComebackUtil.smali",
       "smali_classes7/zoo/user/UserAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A2c:Ljava/lang/Runnable;",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A2Z:Ljava/lang/Runnable;",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A2T:Ljava/lang/Runnable;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/HomeActivity;->A2d:Ljava/lang/Runnable;",
     "2.24.3.81": "Lcom/gbwhatsapp/HomeActivity;->A2a:Ljava/lang/Runnable;",
+    "2.24.7.81": "Lcom/gbwhatsapp/HomeActivity;->A2U:Ljava/lang/Runnable;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/HomeUI.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0V(Landroid/app/Activity;III)V",
     "2.24.3.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0i(Landroid/app/Activity;III)V",
+    "2.24.7.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0F(Landroid/app/Activity;III)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0W(Landroid/app/Activity;IIZ)V",
     "2.24.3.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0j(Landroid/app/Activity;IIZ)V",
+    "2.24.7.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0G(Landroid/app/Activity;Z)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/ezz.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0g(Landroid/app/Activity;LX/34r;III)Z",
     "2.24.3.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0t(Landroid/app/Activity;LX/0Mu;III)Z",
+    "2.24.7.81": "LX/3cy;->A0H(Landroid/app/Activity;LX/0yv;III)Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0i(Landroid/app/Activity;[Ljava/lang/String;)Z",
     "2.24.3.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0v(Landroid/app/Activity;[Ljava/lang/String;)Z",
+    "2.24.7.81": "LX/3cy;->A09(Landroid/app/Activity;[Ljava/lang/String;)Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0m(LX/354;[Ljava/lang/String;)Z",
     "2.24.3.81": "Lcom/gbwhatsapp/RequestPermissionActivity;->A0z(LX/0Jk;[Ljava/lang/String;)Z",
+    "2.24.7.81": "LX/3cy;->A0A(LX/0vi;[Ljava/lang/String;)Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/eyy.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A04:I",
     "2.24.3.81": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A04:I",
+    "2.24.7.81": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A04:I",
     "class": [
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A09:LX/68B;",
     "2.24.3.81": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A09:LX/0UE;",
+    "2.24.7.81": "Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->A07:LX/175;",
     "class": [
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A15:LX/5Uv;",
     "2.24.3.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A14:LX/0yo;",
+    "2.24.7.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A0s:LX/1Rv;",
     "class": [
       "smali_classes7/zoo/fission/base/FissionBaseManager$LinkAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A1r(LX/5If;)V",
     "2.24.3.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A1e(LX/2ig;)V",
+    "2.24.7.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A1x(LX/3DY;)V",
     "class": [
       "smali_classes7/com/github/fission/sport/adapter/InviteAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A2y:Ljava/util/ArrayList;",
     "2.24.3.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A30:Ljava/util/ArrayList;",
+    "2.24.7.81": "Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->A2l:Ljava/util/ArrayList;",
     "class": [
       "smali_classes7/com/cow/share/ShareUtils.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0E:Landroid/widget/ListView;",
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0F:Landroid/widget/ListView;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0A:Landroid/widget/ListView;",
     "class": [
       "smali_classes7/zoo/update/UpdateAdapter.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0n:LX/350;",
-    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0m:LX/13L;",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0z()Z",
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0a()Z",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A17()Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1M:LX/2nj;",
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0m:LX/13L;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A0k:LX/1Xl;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
+    ]
+  },
+  {
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1J:LX/147;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1G:LX/1Y9;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1q:LX/2sA;",
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1o:LX/0RX;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1p:LX/13Z;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/YoSwipeActions.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A33:Ljava/util/LinkedHashSet;",
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A38:Ljava/util/LinkedHashSet;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A3B:Ljava/util/LinkedHashSet;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/yo.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->BUe()V",
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->BW0()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->BYB(II)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali",
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/u.smali"
+    ],
+    "": "方法参数改变  const/16 v1, 0x23  const/16 v0, 0x9  invoke-interface {v2, v1, v0}, LX/1Rn;->BYB(II)V"
+  },
+  {
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->Bb9()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->Bdn()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A03:LX/30q;",
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->isShowOpenAi()Z",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->isShowOpenAi()Z",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A0x:LX/0wW;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A0R:LX/1Rm;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/others.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A0y:LX/0wW;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A0S:LX/1Rm;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/others.smali"
+    ]
+  },
+  {
+    "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A10:LX/0wW;",
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ViewHolder;->A0U:LX/1Rm;",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/youbasha/others.smali"
+    ]
+  },
+  {
     "2.24.3.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A03:LX/0W7;",
+    "2.24.7.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A03:LX/16G;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A05:LX/352;",
     "2.24.3.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A05:LX/0Wm;",
+    "2.24.7.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A05:LX/17M;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A06:LX/2rn;",
     "2.24.3.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A06:LX/0W6;",
+    "2.24.7.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A06:LX/16E;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A09:LX/3ep;",
     "2.24.3.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A09:LX/0Sr;",
+    "2.24.7.81": "Lcom/gbwhatsapp/profile/ViewProfilePhoto;->A09:LX/14i;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SavePhoto.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A09(II)V",
     "2.24.3.81": "Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A06(II)V",
+    "2.24.7.81": "Lcom/gbwhatsapp/status/ContactStatusThumbnail;->A05(II)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/youbasha/ui/views/n.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
     "2.24.3.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
+    "2.24.7.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0R:Lcom/whatsapp/jid/UserJid;",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/SS.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0c()V",
     "2.24.3.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0s()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A1P()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/j0.smali",
       "smali_classes6/com/gbwhatsapp/yo/o.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0d()V",
     "2.24.3.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A0t()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->A1Q()V",
     "class": [
       "smali_classes6/c/d.smali",
       "smali_classes6/com/gbwhatsapp/yo/i0.smali",
@@ -1710,52 +1781,54 @@
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->A0z()Z",
     "2.24.3.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->A0a()Z",
+    "2.24.7.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->A17()Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BUe()V",
     "2.24.3.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BW0()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BYB(II)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
-    ]
+    ],
+    "": "方法参数改变"
   },
   {
-    "2.23.25.76": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->BZd()V",
     "2.24.3.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->Bb9()V",
+    "2.24.7.81": "Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->Bdn()V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->A0z()Z",
-    "2.24.3.81": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->A0a()Z",
+    "2.24.3.81": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->deleteCalls()V",
+    "2.24.7.81": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->deleteCalls()V",
     "class": [
-      "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->BUe()V",
-    "2.24.3.81": "Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->BW0()V",
-    "class": [
-      "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
-    ]
-  },
-  {
-    "2.23.25.76": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A0z()Z",
     "2.24.3.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A0a()Z",
+    "2.24.7.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->A17()Z",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
     ]
   },
   {
-    "2.23.25.76": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->BUe()V",
     "2.24.3.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->BW0()V",
+    "2.24.7.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->BYB(II)V",
     "class": [
       "smali_classes6/com/gbwhatsapp/yo/WaFabClick.smali"
+    ],
+    "": "方法参数改变 const/16 v1, 0x23  const/16 v0, 0x9"
+  },
+  {
+    "2.24.3.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->deleteCalls()V",
+    "2.24.7.81": "Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->deleteCalls()V",
+    "class": [
+      "smali_classes6/com/gbwhatsapp/yo/dep.smali"
     ]
   }
 ]

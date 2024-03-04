@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<com.gbwhatsapp.emoji.search.EmojiSearchContainer android:id=\"@id/emoji_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />\n            <include layout=\"@layout"
+    "matchStr": "<com.gbwhatsapp.emoji.search.EmojiSearchContainer android:id=\"@id/emoji_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />"
+  },
+  {
+    "matchStr": "<ViewStub android:id=\"@id/recipient_name_layout\""
   }
 ]

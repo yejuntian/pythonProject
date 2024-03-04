@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.TextEmojiLabel android:layout_gravity=\"center|left\" android:id=\"@id/conversation_row_label\""
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.TextEmojiLabel android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\""
   }
 ]

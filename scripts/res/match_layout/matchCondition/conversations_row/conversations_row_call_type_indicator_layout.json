@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaImageView android:id=\"@id/conversations_row_call_type_indicator\""
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaImageView android:background=\"@drawable/selector_orange_gradient_round_bg\""
   }
 ]

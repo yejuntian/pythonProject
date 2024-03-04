@@ -3,6 +3,6 @@
     "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.KeyboardPopupLayout android:id=\"@id/root_layout\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
   },
   {
-    "matchStr": "<View android:id=\"@id/proximity_overlay\""
+    "matchStr": "<View android:id=\"@id/prev_btn_ext\" android:layout_width=\"40.0dip\" android:layout_height=\"48.0dip\" />"
   }
 ]

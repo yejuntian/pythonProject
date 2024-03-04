@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textSize=\"12.0sp\" android:textColor=\"@color/archived\" android:layout_gravity=\"center_vertical\""
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:textSize=\"12.0sp\" android:textColor=\"?"
+  },
+  {
+    "matchStr": "android:background=\"@drawable/archived_background\""
   }
 ]

@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<FrameLayout android:layout_gravity=\"bottom\" android:id=\"@id/payment_button_holder\" android:visibility=\"gone\" android:clipChildren=\"false\" android:layout_width"
+    "matchStr": "<FrameLayout android:layout_gravity=\"bottom\" android:id=\"@id/payment_button_holder\""
   }
 ]

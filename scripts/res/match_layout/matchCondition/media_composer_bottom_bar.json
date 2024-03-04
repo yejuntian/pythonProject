@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "<View android:background=\"@drawable/media_view_footer_gradient\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:layout_alignTop=\"@id/caption_layout\" android:layout_alignParentLeft=\"true\" android:layout_alignParentRight=\"true\" android:layout_alignParentBottom=\"true\" />\n    <androidy.recyclerview.widget.RecyclerView android:layout_gravity=\"bottom\" android:id=\"@id/thumbnails\""
+  },
+  {
+    "matchStr": "<ViewStub android:layout_gravity=\"bottom\" android:id=\"@id/media_recipients_stub\""
   }
 ]

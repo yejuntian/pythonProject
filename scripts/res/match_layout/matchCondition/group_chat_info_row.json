@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<com.gbwhatsapp.wds.components.profilephoto.WDSProfilePhoto android:layout_gravity=\"center\" android:id=\"@id/wdsProfilePicture\" android:visibility=\"gone\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\" android:layout_marginLeft"
+    "matchStr": "<com.gbwhatsapp.wds.components.profilephoto.WDSProfilePhoto android:layout_gravity=\"center\" android:id=\"@id/wdsProfilePicture\" android:visibility=\"gone\" android:layout_width=\"wrap_content\" android:layout_height=\"wrap_content\""
   }
 ]

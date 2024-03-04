@@ -1,2 +1,2 @@
-baseVersion = "2.23.25.76"
-newVersion = "2.24.3.81"
+baseVersion = "2.24.3.81"
+newVersion = "2.24.7.81"

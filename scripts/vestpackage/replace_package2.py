@@ -1,17 +1,16 @@
-import argparse
 import codecs
 import glob
 import os
-import xml.etree.ElementTree as ET
 import shutil
+import xml.etree.ElementTree as ET
 
 # 只匹配下面的文件类型
 extends = ["smali", "xml", "html"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'apktool.yml']
 # 默认包名集合列表
-default_package_list = ["com.gbwhatsapp", "com.bello", "com.universe.messenger",
-                        "com.obwhatsapp", "com.WhatsApp2Plus", "com.whatsapp"]
+default_package_list = ["com.gbwhatsapp", "com.telpro.messenger", "com.universe.messenger",
+                        "com.obwhatsapp", "com.WhatsApp2Plus", "com.bello", "com.whatsapp"]
 # 新包名集合列表
 new_package_list = default_package_list.copy()
 appList = ["GBWhatsApp", "OBWhatsApp", "WhatsAppPlus"]
@@ -37,7 +36,7 @@ def execute_path(folder_path, black_list, extends, mapping_string):
         if tmp not in black_list:
             fpath = os.path.join(cwd, tmp)
             if os.path.isfile(fpath):
-                print('fpath=', fpath)
+                # print('fpath=', fpath)
                 # 只extends的文件类型
                 if fpath.split('.')[-1] in extends:
                     with codecs.open(fpath, "r", "utf-8") as rfile:
@@ -47,7 +46,7 @@ def execute_path(folder_path, black_list, extends, mapping_string):
                         for key, value in mapping_string.items():
                             replace_times += data.count(key)
                             data = data.replace(key, value)
-                        print(r'替换次数：', replace_times)
+                        # print(r'替换次数：', replace_times)
                         wfile.write(data)
             # 如果是文件夹，递归
             elif os.path.isdir(fpath):
@@ -129,30 +128,13 @@ def loadData(file_path, mapping_string):
                     mapping_string[strs[0].strip()] = strs[1].strip()
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("folder_path")
-    args = parser.parse_args()
-    folder_path = args.folder_path
-
-    default_package = input(
-        '请输入默认包名对应的数字：\n"1->com.gbwhatsapp", "2->com.bello",'
-        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-        '"6->com.whatsapp","7->其他包名"\n')
-    if default_package.strip() == "7":
-        user_default_package = input('请输入默认包名：\n')
-        default_package_list.append(user_default_package.strip())
-
-    new_package = input(
-        '请输入新包名对应的数字：\n"1->com.gbwhatsapp", "2->com.bello",'
-        ' "3->com.universe.messenger",\n"4->com.obwhatsapp", "5->com.WhatsApp2Plus", '
-        '"6->com.whatsapp","7->其他包名"\n')
-    if new_package.strip() == "7":
-        user_new_package = input('请输入新包名：\n')
-        new_package_list.append(user_new_package.strip())
-
-    default_index = int(default_package) - 1
-    new_index = int(new_package) - 1
+def main(package, baseVersionName):
+    # folder_path = f"{os.getcwd()}/DecodeCode/Whatsapp_v{baseVersionName}"
+    folder_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.81/DecodeCode/Whatsapp_v2.24.7.81"
+    print(f"************ 由com.gbwhatsapp-->{package}开始 ************")
+    print(f"project_path = {folder_path}")
+    default_index = 0
+    new_index = new_package_list.index(package.strip())
     # 包名
     defaultPackage = default_package_list[default_index]
     newPackage = new_package_list[new_index]
@@ -171,8 +153,8 @@ def main():
         rename_directory(folder_path, oldPackage, newPackage)
     else:
         print("******* 检测到包名一致，无需遍历替换包名 ********")
-    print(f"执行完毕，输出结果保存到{folder_path}")
+    print(f"************ 由com.gbwhatsapp-->{package}结束 ************")
 
 
 if __name__ == '__main__':
-    main()
+    main("com.bello", "2.23.15.81")

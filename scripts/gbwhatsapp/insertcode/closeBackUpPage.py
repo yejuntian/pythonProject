@@ -11,7 +11,7 @@ code = """
     """
 # 关闭备份弹框code2
 targetStr2 = "com.google.android.gms.availability"
-regexStr = "\.method public static final A\d+\(Landroid\/content\/Context\;Landroid\/content\/DialogInterface\$OnCancelListener\;LX\/\w+\;I\)Landroid\/app\/Dialog\;"
+regexStr = "\.method public static final A\d+\(Landroid\/content\/Context\;Landroid\/content\/DialogInterface\$OnCancelListener\;LX\/\w+\;I\)Landroid\/app\/AlertDialog\;"
 code2 = """    const/4 v0, 0x0
     
     return-object v0"""

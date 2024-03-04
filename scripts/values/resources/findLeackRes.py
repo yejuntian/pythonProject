@@ -14,7 +14,7 @@ resDict = {}
 def findLeackRes(from_dir, to_dir):
     publicResDic = parserPublic(f"{to_dir}/res/values/public.xml")
     setJsonData(from_dir, publicResDic)
-    save2File(resDict, os.getcwd(), "scripts/values/resources/diff.json")
+    save2File(resDict, os.getcwd(), "diff.json")
 
 
 def setJsonData(fpath, publicResDic):
@@ -55,11 +55,7 @@ def save2File(dataList, folder_path, fileName):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("from_dir")
-    parser.add_argument("to_dir")
-    args = parser.parse_args()
-    from_dir = args.from_dir
-    to_dir = args.to_dir
-    # from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/whatsapp.json"
-    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.8.76/DecodeCode/Whatsapp_v2.23.8.76"
+    # from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/gb_needcopy_res.json"
+    from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/whatsapp.json"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
     findLeackRes(from_dir, to_dir)

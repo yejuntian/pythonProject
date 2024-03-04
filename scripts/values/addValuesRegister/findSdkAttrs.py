@@ -20,10 +20,12 @@ checkAttrDict = {}
 notFindAttrDict = {}
 # 需要特殊处理的样式
 spacialTypeList = ["style", "dimen"]
-attrType = ["style", "drawable", "string", "attr", "bool", "dimen"]
+attrType = ["style", "drawable", "color", "attr", "bool", "dimen"]
 
 """
     主要作用:查找所有sdk中attrType集合中所有未注册的属性，保存到addValuesRegister/sdkAttr.json文件中。
+    from_dir:参考项目
+    to_dir:目标项目
 """
 
 
@@ -66,7 +68,7 @@ def filterAttrs(from_dir):
         with codecs.open(fpath, encoding="utf-8", mode="r") as rf:
             lines = rf.readlines()
             for line in lines:
-                if line.startswith(".field public static final"):
+                if line.startswith(".field public static"):
                     attrName = line.split(":")[0].split(" ")[-1]
                     # style/dimen样式特殊处理，进行重命名操作
                     attrName = getSpecialTypeName(fileType, attrName, styleNameList, dimenNameList)
@@ -121,6 +123,6 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.20.76/DecodeCode/Whatsapp_v2.23.20.76"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.23.25.76/DecodeCode/Whatsapp_v2.23.25.76"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
     findAllAttrs(from_dir, to_dir)

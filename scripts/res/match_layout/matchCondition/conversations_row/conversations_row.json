@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<RelativeLayout android:id=\"@id/contact_row_container\""
+    "matchStr": "<ViewStub android:layout_gravity=\"center\" android:id=\"@id/parent_stack_photo\""
   }
 ]

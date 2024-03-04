@@ -87,7 +87,7 @@ def rename_directory(oldFolderName, newFolderName):
 
 # 获取App名称
 def getAppName(project_dir):
-    stringPath = f"{project_dir}/res/values/strings.xml"
+    stringPath = f"{project_dir}/res/values-v1/strings.xml"
     parser = ET.parse(stringPath)
     root = parser.getroot()
     for child in root:

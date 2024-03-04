@@ -1,8 +1,8 @@
 [
   {
-    "matchStr": "<FrameLayout android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:id=\"@id/see_all_container\" android:paddingTop"
+    "matchStr": "<androidy.recyclerview.widget.RecyclerView android:orientation=\"horizontal\" android:id=\"@id/recommended_list\""
   },
   {
-    "matchStr": "<com.gbwhatsapp.collections.ObservableRecyclerView android:id=\"@id/recommended_list\""
+    "matchStr": "<com.gbwhatsapp.wds.components.button.WDSButton android:id=\"@id/find_channels_btn\""
   }
 ]

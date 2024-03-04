@@ -185,6 +185,7 @@
     "Tamil",
     "Bengali",
     "Marathi",
-    "Telugu"
+    "Telugu",
+    "permission_location_access_on_sending_location_request"
   ]
 }

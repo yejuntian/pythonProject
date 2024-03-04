@@ -1,79 +1,97 @@
 [
   {
     "2.24.3.81": "LX/1Cc;->B9n()LX/0Py;",
-    "2.23.25.76": "LX/6Aa;->B7X()LX/1ZD;"
+    "2.24.7.81": "LX/1gH;->BAo()LX/11w;"
   },
   {
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1K:LX/0c2;",
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1N:LX/31p;"
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A1H:LX/1AW;"
   },
   {
     "2.24.3.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2j:LX/0eS;",
-    "2.23.25.76": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2i:LX/1Mu;"
+    "2.24.7.81": "Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->A2k:LX/1D9;"
   },
   {
     "2.24.3.81": "LX/0c2;->A0A(LX/0eS;)Ljava/util/List;",
-    "2.23.25.76": "LX/31p;->A0A(LX/1Mu;)Ljava/util/List;"
+    "2.24.7.81": "LX/1AW;->A0B(LX/1D9;)Ljava/util/ArrayList;"
   },
   {
     "2.24.3.81": "LX/0c2;->A08()Ljava/util/List;",
-    "2.23.25.76": "LX/31p;->A08()Ljava/util/List;"
+    "2.24.7.81": "LX/1AW;->A08()Ljava/util/ArrayList;"
   },
   {
     "2.24.3.81": "LX/1Cd;-><init>(LX/0Py;I)V",
-    "2.23.25.76": "LX/503;-><init>(LX/1ZD;I)V"
+    "2.24.7.81": "LX/1gI;-><init>(LX/11w;I)V"
   },
   {
     "2.24.3.81": "LX/0Sr;->A0P:Ljava/lang/String;",
-    "2.23.25.76": "LX/3ep;->A0Q:Ljava/lang/String;"
+    "2.24.7.81": "LX/14i;->A0Q:Ljava/lang/String;"
   },
   {
     "2.24.3.81": "LX/0Sr;->A0H:LX/0Py;",
-    "2.23.25.76": "LX/3ep;->A0I:LX/1ZD;"
+    "2.24.7.81": "LX/14i;->A0I:LX/11w;"
   },
   {
     "2.24.3.81": "LX/0Sr;->A04(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;",
-    "2.23.25.76": "LX/3ep;->A0J(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;"
+    "2.24.7.81": "LX/14i;->A06(Ljava/lang/Class;)Lcom/whatsapp/jid/Jid;"
   },
   {
     "2.24.3.81": "LX/0W1;->A21()LX/0W1;",
-    "2.23.25.76": "LX/3J5;->A21()LX/3J5;"
+    "2.24.7.81": "LX/165;->A21()LX/165;"
   },
   {
     "2.24.3.81": "LX/0W1;->A05(LX/0Py;)LX/0Sr;",
-    "2.23.25.76": "LX/3J5;->A06(LX/1ZD;)LX/3ep;"
+    "2.24.7.81": "LX/165;->A08(LX/11w;)LX/14i;"
   },
   {
     "2.24.3.81": "LX/1KR;->A04(LX/0Py;)Ljava/lang/String;",
-    "2.23.25.76": "LX/37z;->A05(LX/1ZD;)Ljava/lang/String;"
+    "2.24.7.81": "LX/1nD;->A04(LX/11w;)Ljava/lang/String;"
   },
   {
     "2.24.3.81": "LX/0RV;->A01(LX/0Py;)I",
-    "2.23.25.76": "LX/2ss;->A03(LX/1ZD;)I"
+    "2.24.7.81": "LX/13X;->A0T(LX/11w;)I"
   },
   {
     "2.24.3.81": "LX/0rd;->A07()LX/0Py;",
-    "2.23.25.76": "LX/36P;->A0m()LX/1ZD;"
+    "2.24.7.81": "LX/1ii;->A08()LX/11w;"
+  },
+  {
+    "2.24.3.81": "LX/0rd;->A02:I",
+    "2.24.7.81": "LX/1ii;->A02:I"
   },
   {
     "2.24.3.81": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A18:LX/0Sr;",
-    "2.23.25.76": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A19:LX/3ep;"
+    "2.24.7.81": "Lcom/gbwhatsapp/group/GroupChatInfoActivity;->A0z:LX/14i;"
   },
   {
     "2.24.3.81": "LX/0JY;->A00(Landroid/content/Context;I)I",
-    "2.23.25.76": "LX/0ZW;->A03(Landroid/content/Context;I)I"
+    "2.24.7.81": "LX/00G;->A00(Landroid/content/Context;I)I"
   },
   {
     "2.24.3.81": "LX/189;->A0G(LX/0V4;Ljava/lang/String;II)V",
-    "2.23.25.76": "LX/0ee;->A0F(LX/0fI;Ljava/lang/String;II)V"
+    "2.24.7.81": "LX/09f;->A0G(LX/02L;Ljava/lang/String;II)V"
   },
   {
     "2.24.3.81": "LX/0Tl;->A04:LX/0V2;",
-    "2.23.25.76": "LX/03u;->A04:LX/0L6;"
+    "2.24.7.81": "LX/01P;->A04:LX/02K;"
+  },
+  {
+    "2.24.3.81": "LX/37z;->A05(LX/1ZD;)Ljava/lang/String;",
+    "2.24.7.81": "LX/1nD;->A04(LX/11w;)Ljava/lang/String;"
+  },
+  {
+    "2.24.3.81": "LX/2ss;->A03(LX/1ZD;)I",
+    "2.24.7.81": "LX/13X;->A01(LX/11w;)I"
   },
   {
     "2.24.3.81": "A0o(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
-    "2.23.25.76": "A16(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
+    "2.24.7.81": "A1L(Landroid/os/Bundle;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;",
     "location": "Lcom/OM7753/SideBar/quick/QuickFragment"
+  },
+  {
+    "2.24.3.81": "Lcom/OM7753/SideBar/utils/ContactHelper;->getUnreadCount()I",
+    "2.24.7.81": "Lcom/OM7753/SideBar/utils/ContactHelper;->getUnreadCount()I",
+    "location1": "查看该方法是否正确，Lcom/OM7753/SideBar/utils/ContactHelper;->getUnreadCount()I;",
+    "location2": "查看该方法是否正确，Lcom/OM7753/GOLD;->ShowToast(Ljava/lang/String;)V"
   }
 ]
