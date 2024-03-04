@@ -4,6 +4,7 @@ import os
 import re
 import shutil
 import lxml.etree as ET
+from CorrectManifest import matchManifest
 
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', "res",
@@ -188,6 +189,7 @@ def deleteProjectEmptyFolder(from_dir):
 
 def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
+    matchManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
     createNewFolderAndCopyFile(from_dir, mCurrentPath)

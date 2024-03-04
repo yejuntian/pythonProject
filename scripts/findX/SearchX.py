@@ -108,6 +108,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/collections/observablelistview/ObservableListView;->\w+:.*"
                "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/conversationslist/ViewHolder;->A\w+:.*"
+               "|Landroidy/recyclerview/widget/RecyclerView;->A\w+:.*"
                )
     save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")
