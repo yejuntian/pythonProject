@@ -17,12 +17,23 @@ blacklist = ['.idea', '.git', 'build', 'assets', 'lib', 'META-INF',
 extends = ["smali"]
 # 源项目public.xml字典
 from_publicDic = {}
+# 源项目public.xml id集合
+from_publicIds = []
 # 用来保存没有找到的属性集合
 notFoundDic = {}
 # 用来存放没有找打的id
 allNotFindId = set()
+# 用来存放颜色值或switch case语句的常量值
+constList = set()
 # 排除的资源id集合
-excludeIds = ['0x7fffffff', '0x7fc00000', '0x7f7fffff', '0x7fff0000']
+excludeIds = ['0x7fffffff', '0x7fc00000', '0x7f7fffff', '0x7fff0000',
+              '0x7feafd65']
+
+"""
+    主要作用：反编译smali代码中,我们新增的代码使用findViewById(I)形式查找的ID值，替换为目标项目public.xml对应的属性ID值
+    from_dir：参考项目地址
+    to_dir：目标项目地址
+"""
 
 
 def replace_strings_in_smali_file(file_path, replacement_map):
@@ -49,8 +60,12 @@ def replace_strings_in_smali_file(file_path, replacement_map):
                 if attrName not in notFoundDic.get(attrType):
                     notFoundDic[attrType].append(attrName)
             else:
-                if fromPublicId not in excludeIds:
+                # 证明该id是被注册public.xml的
+                if fromPublicId in from_publicIds:
                     allNotFindId.add(fromPublicId)
+                else:
+                    if fromPublicId not in excludeIds:
+                        constList.add(fromPublicId)
 
     # 将替换后的内容写回文件
     with open(file_path, 'w', encoding='utf-8') as file:
@@ -68,6 +83,7 @@ def parsePublicXml(fpath):
         if attrType is None or attrName is None or attrId is None:
             continue
         from_publicDic[attrId] = f"{attrType}#{attrName}"
+        from_publicIds.append(attrId)
 
 
 def replaceId(folder_path, mappingData):
@@ -171,10 +187,19 @@ def replace_strings_in_directory(fromPath, toPath, mappingPath):
         replaceStr(toPath)
     else:
         replaceFileStr(toPath)
+    print("****************执行结果结束****************\n")
+    # 打印替换结果
+    printResult()
 
+
+def printResult():
     # 打印没有查到的ID
-    print(f"没有找到的资源ID如下：\n")
-    print(allNotFindId)
+    if len(allNotFindId) > 0:
+        print(f"****************没有找到的资源ID如下：****************\n")
+        print(allNotFindId)
+    if len(constList) > 0:
+        print(f"****************smali文件使用的常量值如下：****************\n")
+        print(constList)
 
 
 if __name__ == "__main__":

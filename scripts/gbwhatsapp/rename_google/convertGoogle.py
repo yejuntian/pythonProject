@@ -10,20 +10,14 @@ import xml.etree.ElementTree as ET
 extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
-             'META-INF', 'original', 'apktool.yml',
-             'smali_classes6', 'smali_classes7', 'smali_classes8',
-             'smali_classes9', 'smali_classes10', 'smali_classes11',
-             'smali_classes12', 'smali_classes13', 'smali_classes14', 'smali_classes15']
+             'META-INF', 'original', 'apktool.yml']
 # 用于保存类对应关系集合
 data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
 regex = r"/smali.*?/(.+)"
 # 排除路径集合
 excludePathList = ["com/google/android/exoplayer2/ext",
-                   "com/google/android/exoplayer2/decoder",
-                   "com/google/android/gms/common/api/ApiException.smali", "com/google/android/gms/tasks/NativeOnCompleteListener.smali",
-                   "com/google/android/gms/tasks/OnCompleteListener.smali",
-                   "com/google/android/gms/tasks/Task.smali"]
+                   "com/google/android/exoplayer2/decoder"]
 
 """
     主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
@@ -43,7 +37,7 @@ def change_googleFolder(from_dir, mCurrentPath, isConsole=True):
             if isExcludePath(file_path):
                 continue
             from_file_path = file_path
-            to_file_path = file_path.replace(configPath, configPath[:-1])
+            to_file_path = file_path.replace(configPath, f"{configPath}2")
             file_dir = os.path.dirname(to_file_path)
             if not os.path.exists(file_dir):
                 os.makedirs(file_dir, exist_ok=True)
@@ -56,7 +50,9 @@ def change_googleFolder(from_dir, mCurrentPath, isConsole=True):
 # 是否为排除的目录
 def isExcludePath(file_path):
     for fpath in excludePathList:
-        return file_path.__contains__(fpath)
+        if file_path.__contains__(fpath):
+            return True
+    return False
 
 
 # 根据fpath路径，获取xml配置内容
@@ -130,5 +126,5 @@ def convertGoogleFolder(from_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.81/DecodeCode/Whatsapp_v2.24.7.81"
+    from_dir = "/Users/shareit/work/GBWorke/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
     convertGoogleFolder(from_dir)

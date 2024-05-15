@@ -16,7 +16,11 @@ data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
 regex = r"/smali.*?/(.+)"
 # 排除路径集合
-excludePathList = ["com/google/android/exoplayer2/ext", "com/google/android/exoplayer2/decoder"]
+excludePathList = ["com/google/android/exoplayer2/ext",
+                   "com/google/android/exoplayer2/decoder",
+                   "com/google/android/gms/common/api/ApiException.smali", "com/google/android/gms/tasks/NativeOnCompleteListener.smali",
+                   "com/google/android/gms/tasks/OnCompleteListener.smali",
+                   "com/google/android/gms/tasks/Task.smali"]
 
 """
     主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
@@ -53,6 +57,7 @@ def isExcludePath(file_path):
             return True
     return False
 
+
 # 根据fpath路径，获取xml配置内容
 def getConfigData(fpath):
     parse = ET.parse(fpath)
@@ -74,7 +79,7 @@ def set_data_map(from_file_path, to_file_path):
     new_class_path1 = newPathList[0]
     new_class_path2 = newPathList[1]
     # 原来路径和新路径的对应关系
-    data_map[old_class_path1] = new_class_path1
+    data_map[f"{old_class_path1};"] = f"{new_class_path1};"
     data_map[old_class_path2] = new_class_path2
 
 
@@ -124,5 +129,5 @@ def convertGoogleFolder(from_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
+    from_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
     convertGoogleFolder(from_dir)

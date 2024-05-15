@@ -15,53 +15,29 @@ data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
 regex = r"/smali.*?/(.+)"
 # 排除路径集合
-revertPathList = ['androidx/appcompat/app/AppCompatActivity.smali',
-                  'androidx/appcompat/app/AppCompatActivity$a.smali',
-                  'androidx/appcompat/app/AppCompatActivity$b.smali',
-                  'androidx/core/view/MotionEventCompat.smali']
+excludePathList = ['androidx/core/app/ComponentActivity.smali',
+                   'androidx/core/view/MotionEventCompat.smali']
+
 """
     主要作用：androidx变为androidy
 """
 
 
-# 由anroidx目录 变为 androidy
+# 由androidx目录 变为 androidy
 def change_androidx_2_androidy(from_dir):
     file_list = glob.glob(f"{from_dir}/smali*/androidx/**/*.smali", recursive=True)
     for file_path in file_list:
+        # 排除路径
+        if isExcludePath(file_path):
+            continue
+        from_file_path = file_path
         to_file_path = file_path.replace("androidx", "androidy")
         file_dir = os.path.dirname(to_file_path)
         if not os.path.exists(file_dir):
             os.makedirs(file_dir, exist_ok=True)
         shutil.move(file_path, to_file_path)
-
-
-# 遍历文件，字符串"androidx"替换为"androidy"
-def traverse_folder(from_dir, data_map):
-    listdir = os.listdir(from_dir)
-    for filename in listdir:
-        file_path = str(os.path.join(from_dir, filename))
-        print(file_path)
-        if filename not in blacklist:
-            if os.path.isdir(file_path):
-                traverse_folder(file_path, data_map)
-            elif os.path.isfile(file_path):
-                if file_path.split(".")[-1] in extends:
-                    save_2_file(file_path, data_map)
-
-
-# 由androidy目录 变为 androidx
-def change_androidy_2_androidx(from_dir):
-    file_list = glob.glob(f"{from_dir}/smali*/androidy/**/*.smali", recursive=True)
-    for file_path in file_list:
-        from_file_path = file_path
-        to_file_path = file_path.replace("androidy", "androidx")
-        if isRevertPath(to_file_path):
-            file_dir = os.path.dirname(to_file_path)
-            if not os.path.exists(file_dir):
-                os.makedirs(file_dir, exist_ok=True)
-            shutil.move(file_path, to_file_path)
-            # 设置类名的对应关系
-            set_data_map(from_file_path, to_file_path)
+        # 设置类名的对应关系
+        set_data_map(from_file_path, to_file_path)
 
 
 # 设置类名的对应关系
@@ -88,12 +64,26 @@ def getResultPath(from_file_path):
         return from_path1, from_path2
 
 
-# 还原路径
-def isRevertPath(file_path):
-    for fpath in revertPathList:
+# 是否为排除的目录
+def isExcludePath(file_path):
+    for fpath in excludePathList:
         if file_path.__contains__(fpath):
             return True
     return False
+
+
+# 遍历文件，字符串"androidx"替换为"androidy"
+def traverse_folder(from_dir, data_map):
+    listdir = os.listdir(from_dir)
+    for filename in listdir:
+        file_path = str(os.path.join(from_dir, filename))
+        print(file_path)
+        if filename not in blacklist:
+            if os.path.isdir(file_path):
+                traverse_folder(file_path, data_map)
+            elif os.path.isfile(file_path):
+                if file_path.split(".")[-1] in extends:
+                    save_2_file(file_path, data_map)
 
 
 # 保存到文件中
@@ -112,10 +102,8 @@ def save_2_file(fpath, package_map_data):
 def convertAndroidY(from_dir):
     before_time = time.time()
     change_androidx_2_androidy(from_dir)
-    traverse_folder(from_dir, {"androidx": "androidy"})
-    if len(revertPathList) > 0:
-        change_androidy_2_androidx(from_dir)
-        traverse_folder(from_dir, data_map)
+    traverse_folder(from_dir, data_map)
+    print(data_map)
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{from_dir} 共耗时{after_time - before_time} 秒")
 

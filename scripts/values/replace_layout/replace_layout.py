@@ -16,6 +16,8 @@ publicTypeDic = {}
 publicIdDic = {}
 # 用于存放重复的属性名称
 repeatName = {}
+# 用于存放重复的属性value
+repeatValue = {}
 """
     主要作用：根据layout.json中对应关系，
     替换项目所涉及的res/layout目录下的xml布局文件名
@@ -24,12 +26,27 @@ repeatName = {}
 
 def load_replace_keys(dataPath):
     temp = {}
+    replateAttr = {}
     with codecs.open(dataPath, "r", "utf-8") as rfile:
         data = json.loads(rfile.read())
         for key, value in data.items():
-            if key.startswith("APKTOOL_DUMMYVAL_"):
-                temp[key] = value
+            if isinstance(value, dict):
+                for subKey, subValue in value.items():
+                    combineData(subKey, subValue, temp, replateAttr)
+            else:
+                combineData(key, value, temp, replateAttr)
     return temp
+
+
+def combineData(key, value, temp, replateAttr):
+    if key.startswith("APKTOOL_DUMMYVAL_"):
+        temp[key] = value
+        if value not in replateAttr.values():
+            temp[key] = value
+            replateAttr[key] = value
+        else:
+            temp.pop(key)
+            repeatValue[key] = value
 
 
 def execute_folder(from_dir, blacklist, extends, mapping_string):
@@ -79,6 +96,9 @@ def main(mCurrentPath, from_dir):
     if len(repeatName) > 0:
         print("****************重复的属性名称如下：****************")
         print(repeatName)
+    if len(repeatValue) > 0:
+        print("****************重复的values属性名称如下：****************")
+        print(repeatValue)
 
 
 # 解析public.xml

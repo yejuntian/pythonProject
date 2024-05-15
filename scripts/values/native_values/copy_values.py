@@ -57,9 +57,12 @@ spacialTypeList = ["style", "dimen"]
 """
 
 
-def startCopyValues(from_dir, to_dir):
+def startCopyValues(from_dir, to_dir,isConsole):
     getCheckAttrDic(f"{from_dir}/res")
-    jsonPath = "scripts/values/native_values/GBNeedToFind.json"
+    if isConsole:
+        jsonPath = "GBNeedToFind.json"
+    else:
+        jsonPath = "scripts/values/native_values/GBNeedToFind.json"
     mappingData = getNameMappingList(jsonPath)
     publicFilePath = os.path.join(to_dir, "res/values/public.xml")
     publicDict = parserPublicXML(publicFilePath)
@@ -394,7 +397,8 @@ def insertPublic(fpath, type, publicDict):
             if attrId >= maxId:
                 maxId = attrId
                 maxChild = child
-
+    if maxChild is None:
+        return
     pos = to_root.index(maxChild)
     enableInsertNameList = enableInsertNameDict.get(type)
     checkTypeList = checkAttrDict.get(type)
@@ -482,10 +486,12 @@ def isFilterRegisterAttrName(itemName, type, checkTypeList):
 
 
 if __name__ == "__main__":
-    # from_dir = "/Users/shareit/work/shareit/wagb/DecodeCode/WhatsApp_v2.22.22.80"
-    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp/DecodeCode/Whatsapp_v2.22.24.78"
     parser = argparse.ArgumentParser()
     parser.add_argument("from_dir")
     parser.add_argument("to_dir")
     args = parser.parse_args()
-    startCopyValues(args.from_dir, args.to_dir)
+    startCopyValues(args.from_dir, args.to_dir,False)
+
+    # from_dir = "/Users/shareit/work/androidProjects/EmptyProject/app-debug"
+    # to_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
+    # startCopyValues(from_dir, to_dir,True)

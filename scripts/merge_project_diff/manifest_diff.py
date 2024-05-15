@@ -1,4 +1,3 @@
-import argparse
 import codecs
 import os
 import xml.etree.ElementTree as ET
@@ -41,8 +40,11 @@ def parse_old_manifest(from_dir):
 
         nameSpace = "{" + android_scheme + "}"
         if child_tag != "application":
-            child_name = child.attrib[f"{nameSpace}name"]
-            permission_data_list.append(child_name)
+            child_name = child.attrib.get(f"{nameSpace}name")
+            if child_name is not None:
+                permission_data_list.append(child_name)
+            else:
+                permission_data_list.append(child_tag)
         else:
             for sub_child in child:
                 sub_child_name = sub_child.attrib[f"{nameSpace}name"]
@@ -63,10 +65,10 @@ def parse_new_manifest(to_dir):
             continue
 
         nameSpace = "{" + android_scheme + "}"
-        child_name = child.attrib[f"{nameSpace}name"]
-        # 过滤更换包名导致的diff
-        new_child_name = child_name.replace("whatsapp", "gbwhatsapp")
+
         if child_tag != "application":
+            child_name = child.attrib.get(f"{nameSpace}name")
+            new_child_name = child_name.replace("whatsapp", "gbwhatsapp")
             if child_name not in permission_data_list and new_child_name not in permission_data_list:
                 permission_list_diff.append(child)
         else:
@@ -106,8 +108,6 @@ def save_2_file(to_dir):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("fro_dir")
-    parser.add_argument("to_dir")
-    args = parser.parse_args()
-    merge_manifest_diff(args.fro_dir, args.to_dir)
+    fro_dir = "/Users/shareit/work/androidProjects/EmptyProject/app-debug_base/AndroidManifest.xml"
+    to_dir = "/Users/shareit/work/androidProjects/EmptyProject/app-debug/AndroidManifest.xml"
+    merge_manifest_diff(fro_dir, to_dir)

@@ -2,7 +2,6 @@ import codecs
 import glob
 import re
 import argparse
-from Utils import getXFilePath
 
 # 关闭备份页面code
 targetStr = "gdrive-new-user-setup/create no need to display GoogleDriveNewUserSetupActivity, exiting."
@@ -43,6 +42,16 @@ def closeBackUpAlertWindow(from_dir):
             with codecs.open(fpath, 'w', "utf-8") as wf:
                 wf.write("\n".join(lines))
                 print("写入" + fpath)
+
+
+# 根据regex查找文件路径
+def getXFilePath(from_dir, regex):
+    filePathList = glob.glob(from_dir + "/smali*/X/*.smali", recursive=True)
+    for fpath in filePathList:
+        with codecs.open(fpath, "r", 'utf-8') as rf:
+            data = rf.read()
+            if re.search(regex, data, re.MULTILINE):
+                return fpath
 
 
 def closeCloudBackUpPage(from_dir):

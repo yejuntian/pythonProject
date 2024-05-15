@@ -5,6 +5,7 @@
     <comment>com/google/android/gms/tasks</comment>
     <comment>com/google/android/gms/dynamic</comment>
     <comment>com/google/android/gms/dynamite</comment>
+    <comment>com/google/android/gms/appset</comment>
     <comment>com/google/android/exoplayer2</comment>
 </properties>
 

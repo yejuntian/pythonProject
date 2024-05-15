@@ -94,14 +94,18 @@ def getFolderName(packageName):
 
 def readConfigFile(newPackage, vestConfigPath, to_dir, mapping_string):
     productList = ["gb", "ob", "plus"]
-    productIndex = appList.index(getProductName(to_dir))
-    propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}/{productList[productIndex]}.properties'
-    loadData(propertiesPath, mapping_string)
+    product_name = getProductName(to_dir)
+    if product_name is not None:
+        productIndex = appList.index(product_name)
+        propertiesPath = f'{vestConfigPath}/{newPackage.split(".")[-1]}/{productList[productIndex]}.properties'
+        loadData(propertiesPath, mapping_string)
 
 
 # 获取兜底产品名称
 def getProductName(project_dir):
     stringPath = f"{project_dir}/res/values-v1/strings.xml"
+    if not os.path.exists(stringPath):
+        return
     parser = ET.parse(stringPath)
     root = parser.getroot()
     for child in root:
