@@ -34,17 +34,22 @@ def convertWA(from_dir, mCurrentPath, isConsole=True):
     global project_path, configPathList
     project_path = from_dir
     before_time = time.time()
-    # smali_classes4下的除了一级目录X目录，以外的其他目录或文件移动到smali目录下
-    move_except_one_folder(f"{project_path}/smali_classes4", f"{project_path}/smali", "X")
-    # 删除smali_classes4空文件夹目录
-    deleteEmptyFolder(f"{project_path}/smali_classes4")
+    for folderIndex in range(4, 7):
+        moveFolder(project_path, folderIndex)
     if isConsole:
         configPathList = getConfigData(f"{mCurrentPath}/scripts/makeGBDiff/config.xml")
     else:
-        configPathList = getConfigData(f"{mCurrentPath}/makeGBDiff/config.xml")
+        configPathList = getConfigData(f"{mCurrentPath}/config.xml")
     convert_2_whatsapp()
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{project_path} 共耗时{after_time - before_time} 秒")
+
+
+def moveFolder(project_path, folderIndex):
+    # smali_classes4下的除了一级目录X目录，以外的其他目录或文件移动到smali目录下
+    move_except_one_folder(f"{project_path}/smali_classes{folderIndex}", f"{project_path}/smali", "X")
+    # 删除smali_classes4空文件夹目录
+    deleteEmptyFolder(f"{project_path}/smali_classes{folderIndex}")
 
 
 # 根据fpath路径，获取xml配置内容
@@ -190,5 +195,5 @@ def move_except_one_folder(source_folder, destination_folder, excluded_folder):
 
 if __name__ == "__main__":
     mCurrentPath = os.getcwd()
-    from_dir = "/Users/shareit/work/GBWorke/gbwhatsapp_2.23.13.76/DecodeCode/Whatsapp_2.23.13.76"
-    convertWA(from_dir, mCurrentPath)
+    from_dir = "/Users/shareit/work/shareit/gbdiff_2.24.2.76/DecodeCode/Whatsapp_v2.24.2.76"
+    convertWA(from_dir, mCurrentPath, isConsole=False)

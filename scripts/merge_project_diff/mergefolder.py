@@ -38,11 +38,28 @@ def merge_smali_files(project_path, target_dir):
                     shutil.copy2(source_file, target_file)
 
     print("********** Smali files merged end **********")
+    traverse_and_replace(target_dir, "const-string/jumbo", "const-string")
     print(f"*********** 移除{project_path} 所有行号开始 ************")
     os.chdir(project_path)
     os.system("find . -name '*.smali' | xargs sed -i '' -E '/\.line[[:space:]][0-9]+/d'")
     print(f"*********** 移除{project_path} 所有行号结束 ************")
     print(f"*********** 程序执行结束 ************")
+
+
+def traverse_and_replace(from_dir, old_string, new_string):
+    for root, dirs, files in os.walk(from_dir):
+        for file in files:
+            if file.endswith('.smali'):
+                file_path = os.path.join(root, file)
+                replace_string_in_file(file_path, old_string, new_string)
+
+
+def replace_string_in_file(file_path, old_string, new_string):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        file_data = file.read()
+    file_data = file_data.replace(old_string, new_string)
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(file_data)
 
 
 if __name__ == "__main__":

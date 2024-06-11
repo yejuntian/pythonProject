@@ -21,7 +21,7 @@ def main():
     before = time.time()
     print(f"*********** 移除{from_dir} 所有行号开始 ************")
     os.chdir(from_dir)
-    os.system("find . -name '*.smali' | xargs sed -i '' -E '/\.line[[:space:]][0-9]+/d'")
+    # os.system("find . -name '*.smali' | xargs sed -i '' -E '/\.line[[:space:]][0-9]+/d'")
     print(f"*********** 移除{from_dir} 所有行号结束 ************")
     # 换包名
     print("*********** 由com.gbwhatsapp---->com.whatsapp 开始 ************")

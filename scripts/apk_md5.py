@@ -61,5 +61,5 @@ def get_md5(path):
 
 
 if __name__ == "__main__":
-    fpath = "/Users/shareit/work/shareit/gbwhatsapp_2.23.15.81/DecodeCode/Whatsapp_2.23.19.84.apk"
+    fpath = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/Doc/RawApk/WhatsApp_2.24.11.79/Whatsapp_2.24.11.79-241179004(arm64-v8a).apk"
     get_base64(fpath)

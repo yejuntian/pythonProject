@@ -4,7 +4,8 @@ import os
 import re
 import shutil
 import lxml.etree as ET
-from CorrectManifest import matchManifest
+import yaml
+# from CorrectManifest import matchManifest
 
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', "res",
@@ -83,41 +84,54 @@ def write_2_file(file_path, data_str):
 
 # 替换apktool.yml特定字符
 def replaceApktool(fpath):
-    with codecs.open(fpath, "r", "utf-8") as rf:
-        lines = rf.readlines()
-    with codecs.open(fpath, "w", "utf-8") as wf:
-        result = ""
-        global pos
-        size = len(lines)
-        for index in range(size):
-            line = lines[index]
-            if line.__contains__("- resources.arsc"):
-                newLine = line + "- png\n- webp\n- ogg\n- m4a\n- mp4\n"
-                result += newLine
-            elif line.__contains__("- png") or line.__contains__("- ogg") \
-                    or line.__contains__("- m4a") or line.__contains__("- mp4") \
-                    or line.__contains__("- webp"):
-                continue
-            elif line.__contains__("targetSdkVersion"):
-                newLine = "  targetSdkVersion: '33'\n"
-                result += newLine
-            elif line.__contains__("unknownFiles:"):
-                newLine = "unknownFiles: {}\n"
-                result += newLine
-                pos = index
-                break
+    with open(fpath, 'r') as file:
+        data = yaml.safe_load(file)
+        apkFileName = getFormatData('apkFileName', data.get('apkFileName', {}))
+        isFrameworkApk = getFormatData('isFrameworkApk', data.get('isFrameworkApk', {}))
+        packageInfo = getFormatData('packageInfo', data.get('packageInfo', {}))
+        resourcesAreCompressed = getFormatData('resourcesAreCompressed', data.get('resourcesAreCompressed', {}))
+        sdkInfo = getFormatData('sdkInfo', data.get('sdkInfo', {}))
+        lines = sdkInfo.splitlines()
+        sdkInfo = ""
+        for line in lines:
+            if line.__contains__("targetSdkVersion"):
+                line = "  targetSdkVersion: 33"
+            sdkInfo += f"{line}\n"
+
+        sharedLibrary = getFormatData('sharedLibrary', data.get('sharedLibrary', {}))
+        sparseResources = getFormatData('sparseResources', data.get('sparseResources', {}))
+        unknownFiles = getFormatData('unknownFiles', {})
+        usesFramework = getFormatData('usesFramework', data.get('usesFramework', {}))
+        version = getFormatData('version', data.get('version', {}))
+        versionInfo = getFormatData('versionInfo', data.get('versionInfo', {}))
+
+        doNotCompress = getFormatData('doNotCompress', data.get('doNotCompress', {}))
+        lines = doNotCompress.splitlines()
+        assetsStr = ""
+        newStr = ""
+        for line in lines:
+            if line.__contains__("assets"):
+                if line.__contains__("arm64-v8a"):
+                    line = line + "\n- assets/compressed/armeabi-v7a/libs.spo"
+                assetsStr += f"{line}\n"
             else:
-                result += line
-        # 找到usesFramework:位置
-        for index in range(pos, len(lines)):
-            line = lines[index]
-            if line.__contains__("usesFramework:"):
-                pos = index
-                break
-        for index in range(pos, len(lines)):
-            line = lines[index]
-            result += line
-        wf.write(result)
+                if line.__contains__("- png"):
+                    newStr += f"#{line}\n"
+                else:
+                    newStr += f"{line}\n"
+        resultStr = apkFileName + newStr + assetsStr + isFrameworkApk + packageInfo + resourcesAreCompressed \
+                    + sdkInfo + sharedLibrary + sparseResources + unknownFiles + usesFramework + version + versionInfo
+    with open(fpath, encoding='utf-8', mode='w') as wf:
+        wf.write(resultStr)
+
+
+def getFormatData(attrName, attrStr):
+    return yaml.dump(
+        {attrName: attrStr},
+        default_flow_style=False,
+        sort_keys=False,
+        indent=2
+    )
 
 
 # 删除unknown文件夹(包括子文件),并替换特定字符串
@@ -189,7 +203,7 @@ def deleteProjectEmptyFolder(from_dir):
 
 def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
-    matchManifest(f"{from_dir}/AndroidManifest.xml")
+    # matchManifest(f"{from_dir}/AndroidManifest.xml")
     replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
     createNewFolderAndCopyFile(from_dir, mCurrentPath)

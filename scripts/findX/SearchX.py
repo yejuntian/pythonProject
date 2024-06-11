@@ -8,7 +8,7 @@ foldPath = ""
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes5',
+             'smali_classes4', 'smali_classes5','smali_classes6',
              'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]
@@ -110,6 +110,9 @@ if __name__ == "__main__":
                "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/conversationslist/ViewHolder;->A\w+:.*"
                "|Landroidy/recyclerview/widget/RecyclerView;->A\w+:.*"
+               "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+:.*"
+               "|Landroidy/viewpager/widget/ViewPager;->A\w+:.*"
+               "|Landroidy/fragment/app/ListFragment;->A\w+:.*"
                )
     save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

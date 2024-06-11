@@ -4,5 +4,8 @@
   },
   {
     "matchStr": "<com.gbwhatsapp.wds.components.button.WDSButton android:id=\"@id/find_channels_btn\""
+  },
+  {
+    "matchStr": "<FrameLayout android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:id=\"@id/see_all_container\""
   }
 ]

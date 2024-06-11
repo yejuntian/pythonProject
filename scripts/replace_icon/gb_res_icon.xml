@@ -7,35 +7,35 @@
     <comment>ic_wa_background.png</comment>
     <comment>ic_wa_foreground.png</comment>
     <comment>notify_p/img_1.png</comment>
-    <comment>background.jpg</comment>
-    <comment>default_wallpaper.jpg</comment>
-    <comment>default_wallpaper.png</comment>
+<!--    <comment>background.jpg</comment>-->
+<!--    <comment>default_wallpaper.jpg</comment>-->
+<!--    <comment>default_wallpaper.png</comment>-->
     <!--copy GBWhatsapp 所用资源-->
-    <comment>call_out.png</comment>
-    <comment>exo_icon_pause.png</comment>
-    <comment>exo_icon_stop.png</comment>
-    <comment>ic_action_compose.png</comment>
-    <comment>ic_format_strikethrough.png</comment>
-    <comment>ic_info.png</comment>
-    <comment>btn_edit.png</comment>
-    <comment>ic_action_sort.png</comment>
-    <comment>ic_browse_documents.png</comment>
-    <comment>ic_facebook.png</comment>
-    <comment>ic_format_monospace.png</comment>
-    <comment>ic_format_strikethrough.png</comment>
-    <comment>anim_phone.png</comment>
-    <comment>contact_address.png</comment>
-    <comment>contact_email.png</comment>
-    <comment>exo_controls_fullscreen_enter.png</comment>
-    <comment>exo_controls_fullscreen_exit.png</comment>
-    <comment>googleg_disabled_color_18.png</comment>
-    <comment>group_info_chevron_right.png</comment>
-    <comment>ic_help.png</comment>
-    <comment>ic_share.png</comment>
-    <comment>ic_more_vertical.png</comment>
-    <comment>design_bottom_sheet_slide_in.xml</comment>
-    <comment>design_bottom_sheet_slide_out.xml</comment>
-    <comment>rounded_rect.xml</comment>
+<!--    <comment>call_out.png</comment>-->
+<!--    <comment>exo_icon_pause.png</comment>-->
+<!--    <comment>exo_icon_stop.png</comment>-->
+<!--    <comment>ic_action_compose.png</comment>-->
+<!--    <comment>ic_format_strikethrough.png</comment>-->
+<!--    <comment>ic_info.png</comment>-->
+<!--    <comment>btn_edit.png</comment>-->
+<!--    <comment>ic_action_sort.png</comment>-->
+<!--    <comment>ic_browse_documents.png</comment>-->
+<!--    <comment>ic_facebook.png</comment>-->
+<!--    <comment>ic_format_monospace.png</comment>-->
+<!--    <comment>ic_format_strikethrough.png</comment>-->
+<!--    <comment>anim_phone.png</comment>-->
+<!--    <comment>contact_address.png</comment>-->
+<!--    <comment>contact_email.png</comment>-->
+<!--    <comment>exo_controls_fullscreen_enter.png</comment>-->
+<!--    <comment>exo_controls_fullscreen_exit.png</comment>-->
+<!--    <comment>googleg_disabled_color_18.png</comment>-->
+<!--    <comment>group_info_chevron_right.png</comment>-->
+<!--    <comment>ic_help.png</comment>-->
+<!--    <comment>ic_share.png</comment>-->
+<!--    <comment>ic_more_vertical.png</comment>-->
+<!--    <comment>design_bottom_sheet_slide_in.xml</comment>-->
+<!--    <comment>design_bottom_sheet_slide_out.xml</comment>-->
+<!--    <comment>rounded_rect.xml</comment>-->
 </properties>
 <!--    <comment>splash.xml</comment>-->
 <!--    <comment>splash_logo.xml</comment>-->

@@ -67,5 +67,5 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
     checkProjectDrawableExit(from_dir)

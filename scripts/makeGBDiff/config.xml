@@ -23,9 +23,11 @@
     <comment>com/gbwhatsapp/AbstractConsumerAppShell.smali</comment>
     <comment>com/gbwhatsapp/GifHelper.smali</comment>
     <comment>com/gbwhatsapp/MediaData.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops$AudioStreamInfo.smali</comment>
     <comment>com/gbwhatsapp/Mp4Ops$LibMp4CheckAndRepairResult.smali</comment>
     <comment>com/gbwhatsapp/Mp4Ops$LibMp4OperationResult.smali</comment>
     <comment>com/gbwhatsapp/Mp4Ops$LibMp4StreamCheckResult.smali</comment>
+    <comment>com/gbwhatsapp/Mp4Ops$VideoStreamInfo.smali</comment>
     <comment>com/gbwhatsapp/Mp4Ops.smali</comment>
     <comment>com/gbwhatsapp/NativeMediaHandler.smali</comment>
     <comment>com/gbwhatsapp/SqliteShell.smali</comment>

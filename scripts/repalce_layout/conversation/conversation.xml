@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <properties>
+    <comment>conversation.xml</comment>
     <comment>yowa_mood_conversation.xml</comment>
     <comment>theme_conversation_stock.xml</comment>
     <comment>theme_conversation_old_stock.xml</comment>

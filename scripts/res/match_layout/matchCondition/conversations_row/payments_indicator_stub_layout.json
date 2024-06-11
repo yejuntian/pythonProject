@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:gravity=\"left\" android:id=\"@id/payments_indicator\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.WaTextView android:gravity=\"left\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\" />"
   }
 ]

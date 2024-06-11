@@ -47,7 +47,8 @@
     "Theme.App.NoActionBar",
     "Theme.Design.BottomSheetDialog",
     "Theme.App.StatusPlayback",
-    "Theme.Design.BottomSheetDialog"
+    "Theme.Design.BottomSheetDialog",
+    "Theme.App.Home"
   ],
   "string": [
     "identity_change_verify",

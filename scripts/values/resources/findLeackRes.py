@@ -57,5 +57,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/gb_needcopy_res.json"
     from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/whatsapp.json"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
     findLeackRes(from_dir, to_dir)

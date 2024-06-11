@@ -101,6 +101,9 @@ if __name__ == "__main__":
                "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+:.*"
                "|Lcom/gbwhatsapp/conversationslist/ViewHolder;->A\w+:.*"
                "|Landroidy/recyclerview/widget/RecyclerView;->A\w+:.*"
+               "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+:.*"
+               "|Landroidy/viewpager/widget/ViewPager;->A\w+:.*"
+               "|Landroidy/fragment/app/ListFragment;->A\w+:.*"
                )
     save2File(mCurPath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

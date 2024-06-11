@@ -123,6 +123,6 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.79/DecodeCode/Whatsapp_v2.24.7.79"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.7.81/DecodeCode/Whatsapp_v2.24.7.81"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
     findAllAttrs(from_dir, to_dir)

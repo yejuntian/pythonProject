@@ -23,7 +23,7 @@ def findAllDimens(fpath):
         for attr in attrList:
             if attr.startswith("APKTOOL_DUMMYVAL_"):
                 newResultDict[type][attr] = ""
-        save2File(os.getcwd(), newResultDict, "result.json")
+    save2File(os.getcwd(), newResultDict, "result.json")
     # save2File(f"{os.getcwd()}/scripts/values/matchStyles/findAlldimen", resultDict, "result.json")
 
 
@@ -42,7 +42,7 @@ def matchRes(fpath, regex, resultDict):
         matches = re.finditer(regex, data, re.MULTILINE)
         for matchNum, match in enumerate(matches, start=0):
             matchType = str(match.group(1))
-            print(match)
+            # print(match)
             matchValue = match.group(2)
             if resultDict.get(matchType) is None:
                 resultDict[matchType] = []

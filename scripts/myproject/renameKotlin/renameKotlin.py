@@ -2,7 +2,6 @@ import codecs
 import glob
 import os
 import re
-import shutil
 import time
 import xml.etree.ElementTree as ET
 
@@ -11,41 +10,37 @@ extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
              'META-INF', 'original', 'apktool.yml',
-             'smali_classes6','smali_classes7','smali_classes8','smali_classes9']
+             'smali_classes6', 'smali_classes7', 'smali_classes8',
+             'smali_classes9', 'smali_classes10', 'smali_classes11',
+             'smali_classes12', 'smali_classes13', 'smali_classes14']
 # 用于保存类对应关系集合
 data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
-regex = r"/smali.*?/(.+)"
+regex = r"smali.*?/(.+)"
 # 排除路径集合
-excludePathList = ["com/google/android/exoplayer2/ext",
-                   "com/google/android/exoplayer2/decoder"]
+excludePathList = []
 
 """
-    主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
+    主要作用：读取renameKotlin/config.xml配置文件，重命名文件夹名。
 """
 
 
-# 由support目录 变为 supporty,并设置类名的对应关系
-def change_googleFolder(from_dir, mCurrentPath, isConsole=True):
+def changeFolder(from_dir, mCurrentPath, isConsole=True):
     if isConsole:
         configPathList = getConfigData(f"{mCurrentPath}/config.xml")
     else:
-        configPathList = getConfigData(f"{mCurrentPath}/gbwhatsapp/rename_google/config.xml")
-    for configPath in configPathList:
-        file_list = glob.glob(f"{from_dir}/smali*/{configPath}/**/*.smali", recursive=True)
-        for file_path in file_list:
+        configPathList = getConfigData(f"{mCurrentPath}/myproject/renameKotlin/config.xml")
+    file_list = glob.glob(f"{from_dir}/**/*.smali", recursive=True)
+    for file_path in configPathList:
+        if f"{from_dir}/{file_path}" in file_list:
             # 排除路径
             if isExcludePath(file_path):
                 continue
             from_file_path = file_path
-            to_file_path = file_path.replace(configPath, f"{configPath}2")
-            file_dir = os.path.dirname(to_file_path)
-            if not os.path.exists(file_dir):
-                os.makedirs(file_dir, exist_ok=True)
-            shutil.move(file_path, to_file_path)
+            to_file_path = file_path.replace(".smali", "2.smali")
             # 设置类名的对应关系
             set_data_map(from_file_path, to_file_path)
-    # print(data_map)
+    print(data_map)
 
 
 # 是否为排除的目录
@@ -71,14 +66,14 @@ def set_data_map(from_file_path, to_file_path):
     # 原来路径
     oldPathList = getResultPath(from_file_path)
     old_class_path1 = oldPathList[0]
-    old_class_path2 = oldPathList[1]
+    # old_class_path2 = oldPathList[1]
     # 新路径
     newPathList = getResultPath(to_file_path)
     new_class_path1 = newPathList[0]
-    new_class_path2 = newPathList[1]
+    # new_class_path2 = newPathList[1]
     # 原来路径和新路径的对应关系
     data_map[f"{old_class_path1};"] = f"{new_class_path1};"
-    data_map[old_class_path2] = new_class_path2
+    data_map[f"\\n{old_class_path1}\\n"] = f"\\n{new_class_path1}\\n"
 
 
 # 获取文件夹smali*/后面的path相对地址
@@ -104,6 +99,44 @@ def traverse_folder(from_dir, data_map):
                     save_2_file(file_path, data_map)
 
 
+def renameSmaliFile(from_dir, mCurrentPath, isConsole=True):
+    if isConsole:
+        configPathList = getConfigData(f"{mCurrentPath}/config.xml")
+    else:
+        configPathList = getConfigData(f"{mCurrentPath}/myproject/renameKotlin/config.xml")
+    for folderPath in configPathList:
+        rename_smali_files(f"{from_dir}/{folderPath}")
+
+
+def rename_smali_files(directory):
+    if os.path.isfile(directory):
+        # 获取不包含后缀的文件名
+        base_name = directory[:-6]  # 去掉 .smali 后缀
+        new_file_path = f"{base_name}2.smali"
+
+        # 排除路径
+        if isExcludePath(directory):
+            return
+        # Rename the file
+        os.rename(directory, new_file_path)
+        # print(f"Renamed {old_file_path} to {new_file_path}")
+    else:
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                if file.endswith(".smali"):
+                    old_file_path = os.path.join(root, file)
+                    # 获取不包含后缀的文件名
+                    base_name = file[:-6]  # 去掉 .smali 后缀
+                    new_file_path = os.path.join(root, f"{base_name}2.smali")
+
+                    # 排除路径
+                    if isExcludePath(old_file_path):
+                        continue
+                    # Rename the file
+                    os.rename(old_file_path, new_file_path)
+                    # print(f"Renamed {old_file_path} to {new_file_path}")
+
+
 # 保存到文件中
 def save_2_file(fpath, package_map_data):
     with codecs.open(fpath, "r", "utf-8") as rfile:
@@ -117,15 +150,16 @@ def save_2_file(fpath, package_map_data):
         wfile.write(data)
 
 
-def convertGoogleFolder(from_dir):
+def renameFolder(from_dir):
     before_time = time.time()
     mCurrentPath = os.getcwd()
-    change_googleFolder(from_dir, mCurrentPath, isConsole=True)
+    changeFolder(from_dir, mCurrentPath, isConsole=True)
     traverse_folder(from_dir, data_map)
+    renameSmaliFile(from_dir, mCurrentPath, isConsole=True)
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{from_dir} 共耗时{after_time - before_time} 秒")
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
-    convertGoogleFolder(from_dir)
+    from_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
+    renameFolder(from_dir)

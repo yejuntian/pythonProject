@@ -52,7 +52,7 @@ def merge_diff(from_path, to_path):
             to_child_attr = to_child.attrib
             to_attr_name = to_child_attr.get("name")
             if to_attr_name is not None:
-                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr,to_attr_name):
+                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr, to_attr_name):
                     continue
                 else:
                     if fromFileName == "public.xml":
@@ -68,7 +68,7 @@ def merge_diff(from_path, to_path):
             from_child_attr = from_child.attrib
             from_attr_name = from_child_attr.get("name")
             if from_attr_name is not None:
-                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr,from_attr_name):
+                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr, from_attr_name):
                     continue
                 else:
                     if fromFileName == "public.xml":
@@ -113,7 +113,7 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
             to_child_attr = to_child.attrib
             to_attr_name = to_child_attr.get("name")
             if to_attr_name is not None:
-                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr,to_attr_name):
+                if to_attr_name.__contains__("APKTOOL") and not re.match(reStr, to_attr_name):
                     continue
                 else:
                     if fromFileName == "public.xml":
@@ -129,7 +129,7 @@ def merge_diff_attrs(from_path, to_path, target_project_path):
             from_child_attr = from_child.attrib
             from_attr_name = from_child_attr.get("name")
             if from_attr_name is not None:
-                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr,from_attr_name):
+                if from_attr_name.__contains__("APKTOOL") and not re.match(reStr, from_attr_name):
                     continue
                 else:
                     if fromFileName == "public.xml":
@@ -163,7 +163,8 @@ def convert_str(to_root):
             xml_content += '\n'
 
     xml_content += '\n</resources>\n'
-    return xml_content
+    # style.xml中子标签中">"会被转移为'&gt'
+    return xml_content.replace('&gt;', '>')
 
 
 def save_2_file(data_str, target_file_path):

@@ -1,7 +1,7 @@
+import argparse
 import codecs
 import glob
 import os
-import re
 import shutil
 import time
 
@@ -10,66 +10,20 @@ extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
              'META-INF', 'original', 'apktool.yml']
-# 用于保存类对应关系集合
-data_map = {}
-# 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
-regex = r"/smali.*?/(.+)"
-# 排除路径集合
-excludePathList = ['androidx/core/app/ComponentActivity.smali',
-                   'androidx/core/view/MotionEventCompat.smali']
-
 """
     主要作用：androidx变为androidy
 """
 
 
-# 由androidx目录 变为 androidy
+# 由anroidx目录 变为 androidy
 def change_androidx_2_androidy(from_dir):
     file_list = glob.glob(f"{from_dir}/smali*/androidx/**/*.smali", recursive=True)
     for file_path in file_list:
-        # 排除路径
-        if isExcludePath(file_path):
-            continue
-        from_file_path = file_path
         to_file_path = file_path.replace("androidx", "androidy")
         file_dir = os.path.dirname(to_file_path)
         if not os.path.exists(file_dir):
             os.makedirs(file_dir, exist_ok=True)
         shutil.move(file_path, to_file_path)
-        # 设置类名的对应关系
-        set_data_map(from_file_path, to_file_path)
-
-
-# 设置类名的对应关系
-def set_data_map(from_file_path, to_file_path):
-    # 原来路径
-    oldPathList = getResultPath(from_file_path)
-    old_class_path1 = oldPathList[0]
-    old_class_path2 = oldPathList[1]
-    # 新路径
-    newPathList = getResultPath(to_file_path)
-    new_class_path1 = newPathList[0]
-    new_class_path2 = newPathList[1]
-    # 原来路径和新路径的对应关系
-    data_map[f"{old_class_path1};"] = f"{new_class_path1};"
-    data_map[old_class_path2] = new_class_path2
-
-
-# 获取文件夹smali*/后面的path相对地址
-def getResultPath(from_file_path):
-    matches = re.finditer(regex, from_file_path, re.MULTILINE)
-    for matchNum, match in enumerate(matches, start=1):
-        from_path1 = match.group(1).split(".smali")[0]
-        from_path2 = from_path1.replace("/", ".")
-        return from_path1, from_path2
-
-
-# 是否为排除的目录
-def isExcludePath(file_path):
-    for fpath in excludePathList:
-        if file_path.__contains__(fpath):
-            return True
-    return False
 
 
 # 遍历文件，字符串"androidx"替换为"androidy"
@@ -102,12 +56,13 @@ def save_2_file(fpath, package_map_data):
 def convertAndroidY(from_dir):
     before_time = time.time()
     change_androidx_2_androidy(from_dir)
-    traverse_folder(from_dir, data_map)
-    print(data_map)
+    traverse_folder(from_dir, {"androidx": "androidy"})
     after_time = time.time()
     print(f"执行完毕，输出结果保存到：{from_dir} 共耗时{after_time - before_time} 秒")
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
-    convertAndroidY(from_dir)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("from_dir")
+    args = parser.parse_args()
+    convertAndroidY(args.from_dir)
