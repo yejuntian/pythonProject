@@ -10,7 +10,8 @@ import xml.etree.ElementTree as ET
 extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
-             'META-INF', 'original', 'apktool.yml']
+             'META-INF', 'original', 'apktool.yml',
+             'smali_classes6','smali_classes7','smali_classes8','smali_classes9']
 # 用于保存类对应关系集合
 data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
