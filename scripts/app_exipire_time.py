@@ -5,8 +5,8 @@ import time
 """
 
 # whatsapp 构建时间
-baseTime = 1717439931000 / 1000
-day = 175
+baseTime = 1722258432000 / 1000
+day = 270
 # whatsapp 内置过期时间
 waExpireDay = 90
 print(f'1、WhatsApp基础版本更新时间:{time.strftime("%Y年%m月%d日 %H时:%M分:%S秒", time.localtime(baseTime))}')

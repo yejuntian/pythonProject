@@ -59,5 +59,5 @@ def write_2_file(file_path, data_str):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.15.78/DecodeCode/Whatsapp_v2.24.15.78"
     matchAttrColor(from_dir)

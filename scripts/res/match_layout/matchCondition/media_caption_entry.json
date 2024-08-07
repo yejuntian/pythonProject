@@ -3,6 +3,9 @@
     "matchStr": "<LinearLayout android:layout_gravity=\"bottom\" android:orientation=\"vertical\" android:id=\"@id/input_container\""
   },
   {
-    "matchStr": "<com.gbwhatsapp.mediacomposer.bottombar.recipients.DefaultRecipientsView android:layout_gravity=\"bottom\" android:id=\"@id/media_recipients\""
+    "matchStr": "<com.gbwhatsapp.WaImageButton android:layout_gravity=\"bottom|center|right\" android:id=\"@id/send\""
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.emoji.search.EmojiSearchContainer android:id=\"@id/emoji_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />"
   }
 ]

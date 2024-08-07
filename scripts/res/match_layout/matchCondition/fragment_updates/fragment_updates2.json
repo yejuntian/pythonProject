@@ -3,6 +3,6 @@
     "matchStr": "<ViewStub android:id=\"@id/updates_list_container\" android:layout"
   },
   {
-    "matchStr": "<ViewStub android:layout_gravity=\"end\" android:id=\"@id/view_stub_see_all_tooltip\""
+    "matchStr": "android:inflatedId=\"@id/updates_list_container\""
   }
 ]

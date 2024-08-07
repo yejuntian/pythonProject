@@ -85,6 +85,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/contact/picker/ContactPickerFragment;->\w+\(.*?\).+"
                "|Lcom/gbwhatsapp/updates/ui/UpdatesFragment;->\w+\(.*?\).+"
                "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragmentV2;->\w+\(.*?\).+"
+               "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragment;->\w+\(.*?\).+"
                "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+\(.*?\).+"
                )
     # 查找属性
@@ -104,6 +105,13 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+:.*"
                "|Landroidy/viewpager/widget/ViewPager;->A\w+:.*"
                "|Landroidy/fragment/app/ListFragment;->A\w+:.*"
+               "|Lcom/gbwhatsapp/conversationslist/ViewHolder;->A\w+:.*"
+               "|Landroidy/recyclerview/widget/RecyclerView;->A\w+:.*"
+               "|Lcom/gbwhatsapp/RequestPermissionActivity;->A\w+:.*"
+               "|Landroidy/viewpager/widget/ViewPager;->A\w+:.*"
+               "|Landroidy/fragment/app/ListFragment;->A\w+:.*"
+               "|Lcom/gbwhatsapp/textstatuscomposer/TextStatusComposerActivity;->A\w+:.*"
+               "|Lcom/gbwhatsapp/statuscomposer/composer/TextStatusComposerFragment;->A\w+:.*"
                )
     save2File(mCurPath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

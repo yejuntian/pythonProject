@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.TextEmojiLabel android:textSize=\"16.0sp\" android:textColor=\"@color/"
+    "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<com.gbwhatsapp.TextEmojiLabel android:textSize=\"16.0sp\" android:textColor=\""
+  },
+  {
+    "matchStr": "android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:lineSpacingExtra=\"5.0sp\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\" />"
   }
 ]

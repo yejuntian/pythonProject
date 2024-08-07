@@ -145,7 +145,7 @@ def main(package, baseVersionName):
         vestConfigPath = f'{folder_path[0:folder_path.rindex("/DecodeCode")]}/vestConfig'
     readConfigFile(newPackage, vestConfigPath, folder_path, mapping_string)
     # 只有包名不同，才替换包名
-    if new_index != default_index:
+    if new_index != default_index or new_index == 6:
         execute_path(folder_path, blacklist, extends, mapping_string)
         # 重命名文件夹
         oldPackage = getFolderName(defaultPackage)

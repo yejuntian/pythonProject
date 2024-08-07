@@ -1,5 +1,11 @@
 [
   {
     "matchStr": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidy.constraintlayout.widget.ConstraintLayout android:id=\"@id/root_view\" android:background"
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.wds.components.fab.WDSFab android:id=\"@id/fab\""
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.wds.components.fab.WDSFab android:id=\"@id/fab_second\""
   }
 ]

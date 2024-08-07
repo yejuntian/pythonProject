@@ -7,8 +7,9 @@
     <comment>com/gbwhatsapp/fieldstats</comment>
     <comment>com/gbwhatsapp/filter</comment>
     <comment>com/gbwhatsapp/jid</comment>
-    <comment>com/gbwhatsapp/media/transcode</comment>
+    <comment>com/gbwhatsapp/media/attachment</comment>
     <comment>com/gbwhatsapp/media/magi</comment>
+    <comment>com/gbwhatsapp/media/transcode</comment>
     <comment>com/gbwhatsapp/nativelibloader</comment>
     <comment>com/gbwhatsapp/protocol</comment>
     <comment>com/gbwhatsapp/pytorch</comment>
@@ -17,9 +18,14 @@
     <comment>com/gbwhatsapp/util</comment>
     <comment>com/gbwhatsapp/voipcalling</comment>
     <comment>com/gbwhatsapp/aborthooks</comment>
+    <!--<comment>com/gbwhatsapp/executorch</comment>-->
+
+    <!--有上级目录的单独文件-->
+    <comment>com/gbwhatsapp/wamsys/JniBridge.smali</comment>
+    <comment>com/gbwhatsapp/unity/UnityLib.smali</comment>
+    <comment>com/gbwhatsapp/voicetranscription/opus/OpusLib.smali</comment>
 
     <!--移动单独具体文件-->
-    <comment>com/gbwhatsapp/wamsys/JniBridge.smali</comment>
     <comment>com/gbwhatsapp/AbstractConsumerAppShell.smali</comment>
     <comment>com/gbwhatsapp/GifHelper.smali</comment>
     <comment>com/gbwhatsapp/MediaData.smali</comment>

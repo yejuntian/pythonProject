@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<com.gbwhatsapp.emoji.search.EmojiSearchContainer android:id=\"@id/emoji_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />\n            <com.gbwhatsapp.emoji.search.EmojiSearchKeyboardContainer android:id=\"@id/expressions_emoji_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" />\n            <com.gbwhatsapp.gifsearch.GifSearchContainer android:id=\"@id/gif_search_container\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\" android:minHeight"
+    "matchStr": "<LinearLayout android:gravity=\"bottom\" android:orientation=\"vertical\" android:id=\"@id/status_input\""
+  },
+  {
+    "matchStr": "<com.gbwhatsapp.emoji.search.EmojiSearchKeyboardContainer android:id=\"@id/expressions_emoji_search_container\""
   }
 ]
