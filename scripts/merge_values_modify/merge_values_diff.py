@@ -104,7 +104,7 @@ def convert_str(to_root):
             xml_content += '\n'
 
     xml_content += '\n</resources>\n'
-    return xml_content
+    return xml_content.replace('&gt;', '>')
 
 
 def write_2_file(file_path, data_str):
