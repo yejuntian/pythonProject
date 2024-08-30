@@ -23,6 +23,10 @@ typeMapping = {"arrays.xml": "array", "attrs.xml": "attr", "bools.xml": "bool",
 sdkDict = {}
 # 是否排除sdk属性方便APKTOOL_DUMMYVAL_xxx 属性的还原操作
 excludeSDKAttr = False
+# 保存所有public属性对应关系
+publicAttrList = []
+# 用来保存重命名中冲突的属性Name集合
+repeatAttrName = set()
 
 """
     主要作用：加载scripts/values/replace_layout/mapping.json文件，
@@ -32,6 +36,7 @@ excludeSDKAttr = False
 
 def replaceRes(from_dir):
     beforeTime = time.time()
+    parserPublicXML(f"{from_dir}/res/values/public.xml")
     # 排除sdk中的属性，不需要重命名
     attrDict = getSmaliAttr()
     mappingData = loadData(f"{mCurrentPath}/scripts/values/replace_layout/mapping.json")
@@ -40,8 +45,11 @@ def replaceRes(from_dir):
     # print(newMappingData)
     transFolder(from_dir, blacklist, newMappingData)
     if len(sdkDict) > 0:
-        print("\n****************不需要混淆的属性如下****************")
+        print("\n****************不需要混淆的sdk属性如下****************")
         print(sdkDict)
+    if len(repeatAttrName) > 0:
+        print("\n****************重命名中冲突的属性如下****************")
+        print(repeatAttrName)
     afterTime = time.time()
     print(f"\n程序执行完毕，输出结果保存到：{from_dir} 共耗时{afterTime - beforeTime} 秒")
 
@@ -67,6 +75,19 @@ def getFilterMappingData(attrDict, mappingData):
                             if attrNameDict not in sdkDict[attrType]:
                                 sdkDict[attrType].append(attrNameDict)
     return newMappingData
+
+
+def parserPublicXML(fpath):
+    parse = ET.parse(fpath)
+    root = parse.getroot()
+    for child in root:
+        attrib = child.attrib
+        attrName = attrib.get("name")
+        attrType = attrib.get("type")
+        if attrName is not None and attrType is not None:
+            newAttrName = f"{attrName}#{attrType}"
+            if newAttrName not in publicAttrList:
+                publicAttrList.append(newAttrName)
 
 
 # 获取smali文件所有属性
@@ -181,7 +202,7 @@ def getReplaceXMLContent(mappingData, data):
         name = match.group(2)
         key = f"{name}#{type}"
         value = mappingData.get(key)
-        if not value is None:
+        if value is not None:
             replaceValue = f'"@{type}/{value.split("#")[0]}"'
             # print(f"replaceKey = {replaceKey} replaceValue = {replaceValue}")
             data = data.replace(replaceKey, replaceValue)
@@ -194,7 +215,7 @@ def getReplaceXMLContent(mappingData, data):
         name2 = match2.group(2)
         key2 = f"{name2}#attr"
         value2 = mappingData.get(key2)
-        if not value2 is None:
+        if value2 is not None:
             replaceKey2 = f'{type2}:{name2}='
             replaceValue2 = f'{type2}:{value2.split("#")[0]}='
             # print(f"replaceKey2 = {replaceKey2} replaceValue2 = {replaceValue2}")
@@ -207,7 +228,7 @@ def getReplaceXMLContent(mappingData, data):
         name3 = match3.group(1)
         key3 = f"{name3}#attr"
         value3 = mappingData.get(key3)
-        if not value3 is None:
+        if value3 is not None:
             replaceKey3 = f'"?{name3}"'
             replaceValue3 = f'"?{value3.split("#")[0]}"'
             # print(f"replaceKey3 = {replaceKey3} replaceValue3 = {replaceValue3}")
@@ -221,7 +242,7 @@ def getReplaceXMLContent(mappingData, data):
         name4 = match4.group(2)
         key4 = f"{name4}#{type4}"
         value4 = mappingData.get(key4)
-        if not value4 is None:
+        if value4 is not None:
             replaceKey4 = f'"?{type4}/{name4}"'
             replaceValue4 = f'"?{type4}/{value4.split("#")[0]}"'
             # print(f"replaceKey4 = {replaceKey4} replaceValue4 = {replaceValue4}")
@@ -273,20 +294,20 @@ def replaceStyles(mappingData, fpath, attrType):
             continue
         # 属性name重命名
         newAttrName = mappingData.get(f"{attrName}#{attrType}")
-        if not newAttrName is None:
+        if newAttrName is not None:
             # print(f"attrName = {attrName} newAttrName = {newAttrName}")
             attrib["name"] = newAttrName.split("#")[0]
         # 属性parent重命名
-        if not attrParent is None:
+        if attrParent is not None:
             replaceStyleParent(attrParent, child, mappingData)
         for subChild in child:
             subChildAttrib = subChild.attrib
             subChildAttrName = subChildAttrib.get("name")
             regex = r"\"android:.*?\""
-            if not subChildAttrName is None and not re.match(regex, subChildAttrName):
+            if subChildAttrName is not None and not re.match(regex, subChildAttrName):
                 # 属性name重命名
                 newSubChildAttrName = mappingData.get(f"{subChildAttrName}#attr")
-                if not newSubChildAttrName is None:
+                if newSubChildAttrName is not None:
                     subChildAttrib["name"] = newSubChildAttrName.split("#")[0]
             replaceText(subChild.text, subChild, mappingData)
     xml_content = convert_str(root)
@@ -305,7 +326,7 @@ def replaceStyleParent(xmlText, child, mappingData):
             attrTxt = match.group(3)
             attrText = mappingData.get(f"{attrTxt}#{attrType}")
             # print(f"{attrTxt}#{attrType}")
-            if not attrText is None:
+            if attrText is not None:
                 newTxt = f'@{attrType}/{attrText.split("#")[0]}'
                 child.attrib["parent"] = str(xmlText).replace(xmlText, newTxt)
 
@@ -322,7 +343,7 @@ def replaceNameAndText(mappingData, fpath, attrType):
             continue
             # 属性name重命名
         newAttrName = mappingData.get(f"{attrName}#{attrType}")
-        if not newAttrName is None:
+        if newAttrName is not None:
             # print(f"attrName = {attrName} newAttrName = {newAttrName}")
             attrib["name"] = newAttrName.split("#")[0]
         # 替换xml内容
@@ -343,16 +364,36 @@ def replaceName(mappingData, fpath, attrType=None, isPublicXml=False):
             continue
         if isPublicXml:  # public.xml
             type = attrib.get("type")
-            newAttrName = mappingData.get(f"{attrName}#{type}")
-            if not newAttrName is None:
-                attrib["name"] = newAttrName.split("#")[0]
+            oldAttrName = f"{attrName}#{type}"
+            newAttrName = mappingData.get(oldAttrName)
+            if newAttrName is not None:
+                # 判断public.xml是否存在重复属性，不存在则重命名
+                if not isRepeatAttrName(newAttrName):
+                    print(f"newAttrName1 = {newAttrName}")
+                    attrib["name"] = newAttrName.split("#")[0]
         else:
             newAttrName = mappingData.get(f"{attrName}#{attrType}")
-            if not newAttrName is None:
+            if newAttrName is not None:
+                print(f"newAttrName2 = {newAttrName}")
                 attrib["name"] = newAttrName.split("#")[0]
     xml_content = convert_str(root)
     # 合并其他string.xml
     save_2_file(xml_content, fpath)
+
+
+# 判断 public.xml是否存在重名的属性，如果重名则添加到repeatAttrName集合中,否则添加到publicAttrSet集合中
+def isRepeatAttrName(attrName):
+    print("tt_wriggle_union#drawable" in publicAttrList)
+    isRepeatName = attrName in publicAttrList
+    if isRepeatName:
+        # 防止重复添加属性Name
+        if attrName not in repeatAttrName:
+            repeatAttrName.add(attrName)
+        return True
+    else:
+        # publicAttrSet集合中添加public.xml重命名的属性
+        publicAttrList.append(attrName)
+        return False
 
 
 # 替换arrays.xml
@@ -366,7 +407,7 @@ def replaceArrays(mappingData, fpath, attrType):
             continue
         # 属性name重命名
         newAttrName = mappingData.get(f"{attrName}#{attrType}")
-        if not newAttrName is None:
+        if newAttrName is not None:
             # print(f"attrName = {attrName} newAttrName = {newAttrName}")
             attrib["name"] = newAttrName.split("#")[0]
         for subChild in child:
@@ -380,25 +421,25 @@ def replaceArrays(mappingData, fpath, attrType):
 def replaceText(xmlText, child, mappingData):
     # 匹配符合@drawable/ic_menu格式的字符串
     regex = r"(@(\w+)/([\w.]+).*)"
-    if not xmlText is None and re.match(regex, xmlText):
+    if xmlText is not None and re.match(regex, xmlText):
         matches = re.finditer(regex, xmlText, re.MULTILINE)
         for matchNum, match in enumerate(matches, start=1):
             attrType = match.group(2)
             attrTxt = match.group(3)
             attrText = mappingData.get(f"{attrTxt}#{attrType}")
             # print(f"{attrTxt}#{attrType}")
-            if not attrText is None:
+            if attrText is not None:
                 newTxt = f'@{attrType}/{attrText.split("#")[0]}'
                 child.text = str(xmlText).replace(xmlText, newTxt)
     # 匹配符合?settingsTitleTextColor格式的字符串，排除以 "android:" 开头的情况
     regex2 = r"\?(?!android:)(\w+)"
-    if not xmlText is None and re.match(regex2, xmlText):
+    if xmlText is not None and re.match(regex2, xmlText):
         matches = re.finditer(regex2, xmlText, re.MULTILINE)
         for matchNum, match2 in enumerate(matches, start=1):
             name = match2.group(1)
             attrText2 = mappingData.get(f"{name}#attr")
             # print(f"{attrText2}#attr")
-            if not attrText2 is None:
+            if attrText2 is not None:
                 newTxt2 = f'?{attrText2.split("#")[0]}'
                 child.text = str(xmlText).replace(xmlText, newTxt2)
 
