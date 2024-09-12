@@ -11,7 +11,9 @@ extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
              'META-INF', 'original', 'apktool.yml',
-             'smali_classes6','smali_classes7','smali_classes8','smali_classes9']
+             'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9']
+# 遍历 smali、smali_classes2 到 smali_classes5 目录
+smali_dirs = ["smali", "smali_classes2", "smali_classes3", "smali_classes4", "smali_classes5"]
 # 用于保存类对应关系集合
 data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
@@ -32,7 +34,10 @@ def change_googleFolder(from_dir, mCurrentPath, isConsole=True):
     else:
         configPathList = getConfigData(f"{mCurrentPath}/gbwhatsapp/rename_google/config.xml")
     for configPath in configPathList:
-        file_list = glob.glob(f"{from_dir}/smali*/{configPath}/**/*.smali", recursive=True)
+        file_list = []
+        # 遍历所有 smali 目录
+        for smali_dir in smali_dirs:
+            file_list.extend(glob.glob(f"{from_dir}/{smali_dir}/{configPath}/**/*.smali", recursive=True))
         for file_path in file_list:
             # 排除路径
             if isExcludePath(file_path):
@@ -127,5 +132,5 @@ def convertGoogleFolder(from_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
+    from_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
     convertGoogleFolder(from_dir)
