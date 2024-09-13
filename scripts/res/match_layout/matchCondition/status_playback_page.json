@@ -1,5 +1,5 @@
 [
   {
-    "matchStr": "<FrameLayout android:id=\"@id/content_sheet\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <FrameLayout android:id=\"@id/content\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />\n        <com.gbwhatsapp.WaTextView android:textSize=\"22.0sp\" android:textColor"
+    "matchStr": "<RelativeLayout android:id=\"@id/content_sheet\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <FrameLayout android:id=\"@id/content\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />\n        <com.gbwhatsapp.WaTextView android:textSize=\"22.0sp\""
   }
 ]

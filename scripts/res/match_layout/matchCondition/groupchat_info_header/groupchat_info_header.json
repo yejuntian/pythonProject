@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "<LinearLayout android:orientation=\"vertical\" android:id=\"@id/add_participant_layout\" android:background"
+  },
+  {
+    "matchStr": "<LinearLayout android:gravity=\"center_vertical\" android:id=\"@id/pending_participants_list_item\""
   }
 ]

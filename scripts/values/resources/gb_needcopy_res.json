@@ -220,7 +220,6 @@
     "ic_action_download",
     "ic_back_gray",
     "avatar_group",
-    "customactivityoncrash_error_image",
     "yo_ic_key",
     "yo_ic_settings",
     "ic_delete_sweep_white_24dp",
@@ -238,7 +237,6 @@
     "ic_bubble_status",
     "transition_background_drawable",
     "new_messages_indicator",
-    "conversation_contact_photo",
     "avatar_contact",
     "balloon_incoming_normal",
     "balloon_outgoing_normal",
@@ -261,6 +259,8 @@
     "cv_ios_call_sel",
     "update_progress_error",
     "update_progress_bar_progress",
-    "update_progress_bar_anim_progress"
+    "update_progress_bar_anim_progress",
+    "ic_action_unmute",
+    "ic_action_new_call"
   ]
 }

@@ -55,7 +55,7 @@ def save2File(dataList, folder_path, fileName):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/gb_needcopy_res.json"
-    from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/whatsapp.json"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
+    from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/gb_needcopy_res.json"
+    # from_dir = "/Users/shareit/work/pythonProject/scripts/values/resources/whatsapp.json"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.19.86/DecodeCode/Whatsapp_v2.24.19.86"
     findLeackRes(from_dir, to_dir)

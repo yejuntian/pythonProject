@@ -1,5 +1,8 @@
 [
   {
-    "matchStr": "<merge android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\"\n  xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <FrameLayout android:id=\"@id/status_reactions_new_grid\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">\n        <LinearLayout android:layout_gravity=\"center_vertical\" android:orientation=\"vertical\" android:layout_width=\"fill_parent\" android:layout_height=\"wrap_content\">\n            <include android:id=\"@id/status_reactions_type_toggle_container\" android:visibility=\"gone\""
+    "matchStr": "<FrameLayout android:id=\"@id/status_reactions_new_grid\" android:visibility=\"gone\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\">"
+  },
+  {
+    "matchStr": "<GridLayout android:layout_gravity=\"center\" android:orientation=\"horizontal\" android:id=\"@id/new_emoji_grid\""
   }
 ]

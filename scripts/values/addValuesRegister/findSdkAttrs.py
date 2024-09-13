@@ -20,7 +20,8 @@ checkAttrDict = {}
 notFindAttrDict = {}
 # 需要特殊处理的样式
 spacialTypeList = ["style", "dimen"]
-attrType = ["style", "drawable", "color", "attr", "bool", "dimen"]
+attrType = ["style", "drawable", "color", "attr", "bool",
+            "dimen", "id", "raw", "font"]
 
 """
     主要作用:查找所有sdk中attrType集合中所有未注册的属性，保存到addValuesRegister/sdkAttr.json文件中。
@@ -123,6 +124,6 @@ def parserPublic(fpath):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
-    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.15.78/DecodeCode/Whatsapp_v2.24.15.78"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.15.78/DecodeCode/Whatsapp_v2.24.15.78"
+    to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.19.86/DecodeCode/Whatsapp_v2.24.19.86"
     findAllAttrs(from_dir, to_dir)

@@ -2,7 +2,6 @@
 <properties>
     <!--需要手动还原资源属性的layout.xml-->
     <comment>home.xml</comment>
-    <comment>about.xml</comment>
     <comment>conversation_entry.xml</comment>
     <comment>conversation_entry_component.xml</comment>
     <comment>conversations_row.xml</comment>

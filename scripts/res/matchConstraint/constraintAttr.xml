@@ -68,5 +68,9 @@
     <comment>constraint_referenced_ids</comment>
     <!--用于指定 Barrier 控件的方向-->
     <comment>barrierDirection</comment>
+    <!--这个属性用于设置视图的圆角半径，使视图的角变得圆滑。它通常与背景一起使用，可以提升界面的视觉效果-->
+    <comment>radius</comment>
+    <!--这个属性用于设置一个指导线的位置，表示该指导线在其父布局宽度或高度的百分比位置-->
+    <comment>layout_constraintGuide_percent</comment>
 
 </properties>

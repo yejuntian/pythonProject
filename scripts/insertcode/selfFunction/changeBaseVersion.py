@@ -20,15 +20,13 @@ versionCode = getParam(
 #     ],
 #     isFindX=False
 # )
-baseLongVer = "0x25667569"
+baseLongVer = "0x26816b3f"
+baseVersionCode = "2.24.19.86"
 
 
 # 获取版本号参数
 def getVersionCode():
-    if versionCode is None:
-        return versionCode
-    else:
-        return fr"const\-string (.*)\, {re.escape(versionCode)}"
+    return fr'const\-string (.*)\, "{baseVersionCode}"'
 
 
 # 获取build_id
@@ -41,7 +39,7 @@ def getBaseLongVer():
 
 def changeWAVersion():
     return [
-        CommonInsert(filePathList=getTransFileList(getVersionCode(), []),
+        CommonInsert(filePathList=getTransFileList(baseVersionCode, []),
                      codeFilePath="smali/Utils/getBaseStrVer",
                      regexList=[getVersionCode()],
                      rowOffSet=0, ),

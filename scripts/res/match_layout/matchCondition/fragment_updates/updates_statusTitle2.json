@@ -1,0 +1,6 @@
+[
+  {
+    "matchStr": "<com.gbwhatsapp.collections.ObservableRecyclerView android:id=\"@id/status_list\" android:paddingBottom=\"0.0dip\"",
+    "notContainsStr": "<com.google.android.material.tabs.TabLayout"
+  }
+]

@@ -39,7 +39,7 @@ def load_replace_keys(dataPath):
 
 
 def combineData(key, value, temp, replateAttr):
-    if key.startswith("APKTOOL_DUMMYVAL_"):
+    if key.startswith("APKTOOL_DUMMYVAL_") and not value.startswith("APKTOOL_DUMMYVAL_") and not value == "":
         temp[key] = value
         if value not in replateAttr.values():
             temp[key] = value

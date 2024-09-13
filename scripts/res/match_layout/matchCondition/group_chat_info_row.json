@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "<com.gbwhatsapp.wds.components.profilephoto.WDSProfilePhoto android:layout_gravity=\"center\" android:id=\"@id/wdsProfilePicture\""
+  },
+  {
+    "matchStr": "<ViewStub android:layout_gravity=\"center_vertical\" android:id=\"@id/group_chat_info_pin_indicator\""
   }
 ]

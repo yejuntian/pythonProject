@@ -57,5 +57,5 @@ def write_2_file(file_path, data_str):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81"
+    from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.19.86/DecodeCode/Whatsapp_v2.24.19.86"
     matchManifest(from_dir)

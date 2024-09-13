@@ -34,7 +34,7 @@ copy_dict = {}
 diffNameDict = {}
 
 # 文件拷贝，只匹配下面的文件类型
-reSExtends = ["png", "xml", "jpg", "webp", "ttf", "json", "js"]
+reSExtends = ["png", "xml", "jpg", "webp", "ttf", "json", "js", "crt"]
 resTypeList = ["color", "anim", "drawable", "mipmap", "animator",
                "layout", "xml", "interpolator", "menu", "transition",
                "font", "raw"]
@@ -57,7 +57,7 @@ spacialTypeList = ["style", "dimen"]
 """
 
 
-def startCopyValues(from_dir, to_dir,isConsole):
+def startCopyValues(from_dir, to_dir, isConsole):
     getCheckAttrDic(f"{from_dir}/res")
     if isConsole:
         jsonPath = "GBNeedToFind.json"
@@ -490,7 +490,7 @@ if __name__ == "__main__":
     parser.add_argument("from_dir")
     parser.add_argument("to_dir")
     args = parser.parse_args()
-    startCopyValues(args.from_dir, args.to_dir,False)
+    startCopyValues(args.from_dir, args.to_dir, False)
 
     # from_dir = "/Users/shareit/work/androidProjects/EmptyProject/app-debug"
     # to_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
