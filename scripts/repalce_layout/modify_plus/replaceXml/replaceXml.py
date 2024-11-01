@@ -18,7 +18,7 @@ def loadFileList(fpath):
     layoutList = []
     for child in root:
         layoutName = child.text
-        if not layoutName is None:
+        if layoutName is not None:
             layoutList.append(layoutName.strip())
     return layoutList
 
@@ -72,10 +72,11 @@ if __name__ == "__main__":
     to_dir = parser.add_argument("to_dir")
     args = parser.parse_args()
 
-    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.15.78/DecodeCode/Whatsapp_v2.24.15.78"
-    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.11.79/DecodeCode/Whatsapp_v2.24.11.79"
+    # from_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.19.86/DecodeCode/Whatsapp_v2.24.19.86"
+    # to_dir = "/Users/shareit/work/shareit/gbwhatsapp_2.24.15.78/DecodeCode/Whatsapp_v2.24.15.78"
     files_to_replace = loadFileList(f"{mCurrentPath}/scripts/repalce_layout/modify_plus/replaceXml/config.xml")
     failed = delete_and_replace_files(f"{args.from_dir}/res/xml", f"{args.to_dir}/res/xml", files_to_replace)
+    delete_and_replace_files(f"{args.from_dir}/res/layout", f"{args.to_dir}/res/layout", ["yo_settings.xml"])
     if failed:
         print("Failed operations:", failed)
     print("***************程序执行结束******************")

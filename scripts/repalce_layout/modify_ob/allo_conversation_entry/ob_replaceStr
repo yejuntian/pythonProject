@@ -1,0 +1,1 @@
+<ImageView n1:layout_gravity="center_vertical" n1:id="@id/translator_ic_id" n1:visibility="gone" n1:layout_width="44.0dip" n1:layout_height="47.0dip" n1:src="@drawable/ic_translator" n1:scaleType="center" n1:layout_marginEnd="3.0dip" style="@style/ActionBarButtonStyle" />

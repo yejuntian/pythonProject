@@ -1,0 +1,1 @@
+<ViewStub n1:layout_gravity="bottom" n1:id="@id/input_attach_button_start" n1:visibility="gone" n1:layout="@layout/input_attach_button_layout" n1:inflatedId="@id/input_attach_button_start" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
