@@ -41,7 +41,7 @@ def merge_smali_files(project_path, target_dir):
     traverse_and_replace(target_dir, "const-string/jumbo", "const-string")
     print(f"*********** 移除{project_path} 所有行号开始 ************")
     os.chdir(project_path)
-    os.system("find . -name '*.smali' | xargs sed -i '' -E '/\.line[[:space:]][0-9]+/d'")
+    os.system("find . -name '*.smali' | xargs sed -i '' -E '/\.source[[:space:]]""/d; /\.line[[:space:]][0-9]+/d'")
     print(f"*********** 移除{project_path} 所有行号结束 ************")
     print(f"*********** 程序执行结束 ************")
 
