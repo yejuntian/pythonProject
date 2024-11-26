@@ -19,6 +19,7 @@
     <comment>com/gbwhatsapp/voipcalling</comment>
     <comment>com/gbwhatsapp/aborthooks</comment>
     <!--<comment>com/gbwhatsapp/executorch</comment>-->
+    <!--<comment>gbwhatsapp/ohai</comment>-->
 
     <!--有上级目录的单独文件-->
     <comment>com/gbwhatsapp/wamsys/JniBridge.smali</comment>

@@ -8,7 +8,7 @@ foldPath = ""
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'kotlin', 'lib', 'META-INF',
              'original', 'res', 'smali', 'smali_classes2', 'smali_classes3',
-             'smali_classes4', 'smali_classes5','smali_classes6',
+             'smali_classes4', 'smali_classes5', 'smali_classes6',
              'AndroidManifest.xml', 'apktool.yml']
 # 只匹配下面的文件类型
 extends = ["smali"]

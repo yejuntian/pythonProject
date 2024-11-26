@@ -204,7 +204,7 @@ def deleteProjectEmptyFolder(from_dir):
 def other(from_dir, mCurrentPath):
     replaceManifest(f"{from_dir}/AndroidManifest.xml")
     # matchManifest(f"{from_dir}/AndroidManifest.xml")
-    replaceApktool(f"{from_dir}/apktool.yml")
+    # replaceApktool(f"{from_dir}/apktool.yml")
     transFolderReplaceStr(from_dir)
     createNewFolderAndCopyFile(from_dir, mCurrentPath)
     deleteProjectEmptyFolder(from_dir)

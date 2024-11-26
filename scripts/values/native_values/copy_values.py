@@ -14,7 +14,8 @@ enableInsertNameDict = {}
 blacklist = ['.idea', '.git', 'build', 'lib', 'META-INF', 'original', 'smali',
              'smali_classes2', 'smali_classes3', 'smali_classes4', 'smali_classes5',
              'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9',
-             'smali_classes10', 'smali_classes11', 'gen', 'AndroidManifest.xml', 'apktool.yml']
+             'smali_classes10', 'smali_classes11', 'smali_classes12', 'smali_classes13',
+             'smali_classes14', 'smali_classes15', 'gen', 'AndroidManifest.xml', 'apktool.yml']
 
 # 只匹配下面的文件类型
 extends = ["xml"]

@@ -19,7 +19,7 @@ import re
 extends = ["smali"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'assets', 'lib', 'META-INF', 'original',
-             'res', 'unknown', 'apktool.yml', 'AndroidManifest.xml', 'smali_classes6',
+             'res', 'unknown', 'apktool.yml', 'AndroidManifest.xml',
              'smali_classes7', 'smali_classes8', 'smali_classes9']
 # 用于存放查到的目标文件集合
 find_file_list = []
