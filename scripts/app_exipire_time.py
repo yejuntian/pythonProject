@@ -5,7 +5,7 @@ import time
 """
 
 # whatsapp 构建时间
-baseTime = 1722258432000 / 1000
+baseTime = 1731954976000 / 1000
 day = 270
 # whatsapp 内置过期时间
 waExpireDay = 90

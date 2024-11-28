@@ -203,8 +203,8 @@ def printResult():
 
 
 if __name__ == "__main__":
-    from_path = "/Users/shareit/work/shareit/wagb-shell/app-gb-release"
-    to_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.3.81/DecodeCode/Whatsapp_v2.24.3.81/smali_classes9/androidx"
+    from_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.19.86/DecodeCode/Whatsapp_v2.24.19.86"
+    to_path = "/Users/shareit/work/shareit/gbwhatsapp_2.24.23.78/DecodeCode/Whatsapp_v2.24.23.78"
     mappingPath = "/Users/shareit/work/pythonProject/scripts/matchPublicId.json"
     # 执行替换操作
     replace_strings_in_directory(from_path, to_path, mappingPath)

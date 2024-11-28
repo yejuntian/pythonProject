@@ -261,6 +261,8 @@
     "update_progress_bar_progress",
     "update_progress_bar_anim_progress",
     "ic_action_unmute",
-    "ic_action_new_call"
+    "ic_action_new_call",
+    "ic_action_cancel",
+    "temp_img"
   ]
 }

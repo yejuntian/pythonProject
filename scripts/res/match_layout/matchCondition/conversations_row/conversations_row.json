@@ -1,5 +1,8 @@
 [
   {
     "matchStr": "<ViewStub android:layout_gravity=\"center\" android:id=\"@id/parent_stack_photo\""
+  },
+  {
+    "matchStr": "<LinearLayout android:orientation=\"horizontal\" android:id=\"@id/bottom_row\""
   }
 ]

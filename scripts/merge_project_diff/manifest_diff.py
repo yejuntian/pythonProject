@@ -68,9 +68,10 @@ def parse_new_manifest(to_dir):
 
         if child_tag != "application":
             child_name = child.attrib.get(f"{nameSpace}name")
-            new_child_name = child_name.replace("whatsapp", "gbwhatsapp")
-            if child_name not in permission_data_list and new_child_name not in permission_data_list:
-                permission_list_diff.append(child)
+            if child_name is not None:
+                new_child_name = child_name.replace("whatsapp", "gbwhatsapp")
+                if child_name not in permission_data_list and new_child_name not in permission_data_list:
+                    permission_list_diff.append(child)
         else:
             for sub_child in child:
                 sub_child_name = sub_child.attrib[f"{nameSpace}name"]

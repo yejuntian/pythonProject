@@ -1,8 +1,5 @@
 [
   {
-    "matchStr": "<androidy.recyclerview.widget.RecyclerView android:orientation=\"vertical\" android:id=\"@id/community_recycler_view\" android:background"
-  },
-  {
-    "matchStr": "android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\" />\n</LinearLayout>"
+    "matchStr": "<androidy.recyclerview.widget.RecyclerView android:orientation=\"vertical\" android:id=\"@id/community_recycler_view\""
   }
 ]

@@ -7,6 +7,7 @@ from baseVersion import baseVersion, newVersion
 
 # 定义正则表达式模式
 pattern = r"LX/\w*;"
+isPlus = False
 
 
 def load_json_data(file_path):
@@ -108,12 +109,18 @@ if __name__ == "__main__":
     from_dir = args.from_dir
     mCurPath = os.getcwd()
 
-    method_data = load_json_data(f"{mCurPath}/scripts/findX/field_method.json")
+    methodPath = f"{mCurPath}/scripts/findX/field_method.json"
+    if isPlus:
+        methodPath = f"{mCurPath}/scripts/findX/plus/method_plus.json"
+    method_data = load_json_data(methodPath)
     method_data = getOrderData(method_data, isMethod=True)
     replace_x(from_dir, method_data)
     print("************LX相关属性和方法全部替换完成************")
 
-    class_data = load_json_data(f"{mCurPath}/scripts/findX/class.json")
+    classPath = f"{mCurPath}/scripts/findX/class.json"
+    if isPlus:
+        classPath = f"{mCurPath}/scripts/findX/plus/class_plus.json"
+    class_data = load_json_data(classPath)
     class_data = getOrderData(class_data)
     replace_x(from_dir, class_data)
     print("************LX相关的类替换完成************")

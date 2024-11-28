@@ -1,7 +1,8 @@
 import re
+import os
 
 # 只匹配下面的文件类型
-extends = ["smali","xml"]
+extends = ["smali", "xml"]
 # 排除哪些文件夹
 blacklist = ['.idea', '.git', 'build', 'lib', 'assets',
              'META-INF', 'original', 'res', 'unknown',
@@ -16,7 +17,6 @@ regex = r"/(smali.*?)/(.*)"
 主要作用：检查项目中是否出现重复的文件路径，如果出现重复的文件路径则说明文件出现冲突，需要进行重命名操作。
         from_dir:项目地址
 """
-import os
 
 
 def main(from_dir):

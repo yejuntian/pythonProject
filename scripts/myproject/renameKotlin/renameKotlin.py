@@ -86,6 +86,8 @@ def set_data_map(from_file_path, to_file_path):
     data_map[f'"{old_class_path2}"'] = f'"{new_class_path2}"'
     # xml类对应路径eg:<androidx.appcompat.view.menu.ActionMenuItemView
     data_map[f'<{old_class_path2} '] = f'<{new_class_path2} '
+    # eg:</androidx.appcompat.view.menu.ActionMenuItemView>
+    data_map[f'</{old_class_path2}'] = f'</{new_class_path2}'
     # kotlin类对应路径eg:\nkotlin/collections/CollectionsKt___CollectionsKt2\n
     data_map[f"\\n{old_class_path1}\\n"] = f"\\n{new_class_path1}\\n"
 

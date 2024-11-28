@@ -1,5 +1,6 @@
 [
   {
-    "matchStr": "<com.gbwhatsapp.HoverAwareRecyclerView android:id=\"@id/calls_recyclerView\" android:scrollbars=\"vertical\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\""
+    "matchStr": "<com.gbwhatsapp.HoverAwareRecyclerView android:id=\"@id/calls_recyclerView\" android:scrollbars=\"vertical\" android:layout_width=\"fill_parent\" android:layout_height=\"fill_parent\"",
+    "notContainsStr": "<LinearLayout android:orientation=\"vertical\" android:id=\"@android:id/content\" android:background"
   }
 ]

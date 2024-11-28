@@ -98,5 +98,6 @@ if __name__ == "__main__":
 
     replaceLayout(to_dir)
     delete_and_replace_files(f"{to_dir}/res/xml", f"{from_dir}/res/xml", ["GoldenApps.xml", "yo_widget_style.xml"])
-    delete_and_replace_files(f"{to_dir}/res/layout", f"{from_dir}/res/layout", ["yo_settings.xml"])
+    delete_and_replace_files(f"{to_dir}/res/layout", f"{from_dir}/res/layout",
+                             ["yo_settings.xml", "yowidget_layout.xml"])
     print("*******程序执行结束！*******")

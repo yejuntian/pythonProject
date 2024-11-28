@@ -1,16 +1,25 @@
 {
-  "id": [],
-  "dimen": [],
-  "integer": [],
-  "color": [],
-  "drawable": [],
-  "layout": [],
-  "attr": [],
-  "style": [],
   "string": [],
-  "menu": [],
-  "animator": [],
+  "layout": [],
+  "dimen": [],
+  "id": [],
+  "style": [],
+  "attr": [
+    "keep"
+  ],
+  "color": [],
+  "font": [],
+  "drawable": [],
+  "integer": [],
+  "xml": [],
+  "array": [],
   "anim": [],
+  "animator": [],
+  "interpolator": [],
+  "raw": [],
   "bool": [],
-  "interpolator": []
+  "mipmap": [],
+  "menu": [],
+  "fraction": [],
+  "transition": []
 }

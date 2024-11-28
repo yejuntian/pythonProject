@@ -21,6 +21,8 @@ excludePathList = ["com/google/android/exoplayer2/ext",
                    "com/google/android/gms/common/api/ApiException.smali", "com/google/android/gms/tasks/NativeOnCompleteListener.smali",
                    "com/google/android/gms/tasks/OnCompleteListener.smali",
                    "com/google/android/gms/tasks/Task.smali"]
+# 使用旧命名方式(多个版本确认新命名方式没问题后,废弃旧命名方式)
+isUseOldStyle = True
 
 """
     主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
@@ -78,9 +80,31 @@ def set_data_map(from_file_path, to_file_path):
     newPathList = getResultPath(to_file_path)
     new_class_path1 = newPathList[0]
     new_class_path2 = newPathList[1]
-    # 原来路径和新路径的对应关系
-    data_map[f"{old_class_path1};"] = f"{new_class_path1};"
-    data_map[old_class_path2] = new_class_path2
+    if isUseOldStyle:
+        # 原来路径和新路径的对应关系
+        data_map[f"{old_class_path1};"] = f"{new_class_path1};"
+        """
+        重命名会有问题，应该保持重命名前的才对
+        
+        例如：
+        类名Lcom/google/android/gms/auth2/api/signin/RevocationBoundService;
+        重命名前：const-string v0, "com.google.android.gms.auth.api.signin.RevocationBoundService.disconnect"
+        重命名后：const-string v0, "com.google.android.gms.auth2.api.signin.RevocationBoundService.disconnect"
+        """
+        data_map[old_class_path2] = new_class_path2
+    else:
+        # 原来路径和新路径的对应关系
+        # smali类对应路径eg:Landroidx/appcompat/view/menu/ActionMenuItemView;
+        data_map[f"L{old_class_path1};"] = f"L{new_class_path1};"
+        # smali类和AndroidManifest.xml对应路径eg:"androidx.appcompat.view.menu.ActionMenuItemView"
+        data_map[f'"{old_class_path2}"'] = f'"{new_class_path2}"'
+        # xml类对应路径
+        # eg:<androidy.appcompat.widget.Toolbar
+        data_map[f'<{old_class_path2} '] = f'<{new_class_path2} '
+        # eg:</androidy.appcompat.widget.Toolbar
+        data_map[f'</{old_class_path2}'] = f'</{new_class_path2}'
+        # kotlin类对应路径eg:\nkotlin/collections/CollectionsKt___CollectionsKt2\n
+        data_map[f"\\n{old_class_path1}\\n"] = f"\\n{new_class_path1}\\n"
 
 
 # 获取文件夹smali*/后面的path相对地址

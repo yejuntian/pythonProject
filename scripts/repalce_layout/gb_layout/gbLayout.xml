@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <!--    参考conversation_entry.xml-->
+    <comment>dribble_conversation_entry.xml</comment>
+    <comment>dribblev2_conversation_entry.xml</comment>
+    <comment>fbmess_conversation_entry.xml</comment>
+    <comment>rounded_conversation_entry.xml</comment>
+    <comment>theme_conversation_old_stock_entry.xml</comment>
+    <comment>theme_conversation_stock_entry.xml</comment>
+    <comment>theme_ios11_conversation_entry.xml</comment>
+    <comment>theme_ios14_conversation_entry.xml</comment>
+    <comment>theme_msggoogle_conversation_entry.xml</comment>
+    <comment>theme_rcline_conversation_entry.xml</comment>
+    <comment>theme_rcmess_conversation_entry.xml</comment>
+    <comment>theme_telegramxios_conversation_entry.xml</comment>
+    <comment>yowa_aran_conversation_entry.xml</comment>
+    <comment>yowa_concept_conversation_entry.xml</comment>
+    <comment>yowa_hangouts_conversation_entry.xml</comment>
+    <comment>yowa_hangoutsv2_conversation_entry.xml</comment>
+    <comment>yowa_mood_conversation_entry.xml</comment>
+    <comment>yowa_simple_conversation_entry.xml</comment>
+    <comment>yowa_wamod_conversation_entry.xml</comment>
+    <comment>yowa_wanh_conversation_entry.xml</comment>
+    <comment>allo_conversation_entry.xml</comment>
+    <comment>rcig_conversation_entry.xml</comment>
+
+    <!--参考conversations_row.xml-->
+    <comment>yowa_conversations_row.xml</comment>
+    <comment>telegram_conversations_row.xml</comment>
+    <comment>wamod_conversations_row.xml</comment>
+    <comment>waca_conversations_row.xml</comment>
+    <comment>wanh_conversations_row.xml</comment>
+    <comment>nlmods_conversations_row.xml</comment>
+    <comment>wamd_conversations_row.xml</comment>
+    <comment>stock_conversations_row.xml</comment>
+
+    <!--参考home.xml-->
+    <comment>home.xml</comment>
+    <comment>home_ig.xml</comment>
+    <comment>home_stock.xml</comment>
+    <comment>home_stock_ig.xml</comment>
+    <comment>homebot.xml</comment>
+    <comment>homebot_ig.xml</comment>
+
+    <!-- 参考conversation_actionbar.xml-->
+    <comment>yowa_style_stock_conversation_actionbar.xml</comment>
+    <comment>yowa_style_stockcentered_conversation_actionbar.xml</comment>
+    <comment>yowa_style_wamod_conversation_actionbar.xml</comment>
+    <comment>yowa_style_wamodcentered_conversation_actionbar.xml</comment>
+
+    <!-- wallpaper_preview_default.xml-->
+    <comment>yogallery_wallpaper_preview.xml</comment>
+
+    <!-- conversation_row_text_left.xml-->
+    <comment>conversation_row_text_leftp.xml</comment>
+
+    <!-- conversation_row_text_right.xml-->
+    <comment>conversation_row_text_rightp.xml</comment>
+
+    <!-- other-->
+    <comment>yo_settings_convobubbleticks.xml</comment>
+    <comment>yo_settings_yowawidget.xml</comment>
+    <comment>chatgen.xml</comment>
+    <comment>color_pref.xml</comment>
+    <comment>yo_settings_homeheader.xml</comment>
+    <comment>autoscheduler_add.xml</comment>
+    <comment>yoswipeable_conversations_row.xml</comment>
+    <comment>yo_settings_homestatus.xml</comment>
+    <comment>dialog_new_version2.xml</comment>
+    <comment>cs_share_guide_view.xml</comment>
+    <comment>yo_settings.xml</comment>
+    <comment>readlogrow.xml</comment>
+    <comment>readlog.xml</comment>
+    <comment>yo_settings_support.xml</comment>
+    <comment>chatgen_item_left.xml</comment>
+    <comment>dialog_new_version.xml</comment>
+    <comment>automessage_item.xml</comment>
+    <comment>rc_night_dialog.xml</comment>
+    <comment>cs_share_dialog.xml</comment>
+    <comment>automessage_add.xml</comment>
+    <comment>yo_settings_homefab.xml</comment>
+    <comment>li_row_textview.xml</comment>
+    <comment>autoscheduler_item.xml</comment>
+    <comment>yo_settings_home.xml</comment>
+    <comment>yo_settings_yothemes.xml</comment>
+    <comment>rc_statusoptions_dialog.xml</comment>
+    <comment>yo_bubbletickpreview_right.xml</comment>
+    <comment>automessging_list.xml</comment>
+    <comment>yo_bubbletickpreview_left.xml</comment>
+    <comment>yo_settings_convoactionbar.xml</comment>
+    <comment>yo_settings_backuprestore.xml</comment>
+    <comment>yo_update_hint.xml</comment>
+    <comment>update_single_layout.xml</comment>
+    <comment>autoscheduler_list.xml</comment>
+    <comment>dialog_home_image_ad.xml</comment>
+    <comment>activity_browser.xml</comment>
+    <comment>yo_settings_prefsview.xml</comment>
+    <comment>activity_ad_start.xml</comment>
+    <comment>activity_customcrash.xml</comment>
+    <comment>yo_settings_universalstyles.xml</comment>
+    <comment>rc_tab_oneui.xml</comment>
+    <comment>activity_ad_status.xml</comment>
+    <comment>massmsgr_add.xml</comment>
+    <comment>yo_settings_homerows.xml</comment>
+    <comment>seek_bar_preference.xml</comment>
+    <comment>yo_settings_convo.xml</comment>
+    <comment>yo_fab_update.xml</comment>
+    <comment>yo_settings_updates.xml</comment>
+    <comment>activity_customlist.xml</comment>
+    <comment>search_guide_fm_view.xml</comment>
+    <comment>rc_attachment.xml</comment>
+    <comment>yo_settings_secprivacy.xml</comment>
+    <comment>yo_settings_universal.xml</comment>
+    <comment>yo_settings_convoentry.xml</comment>
+    <comment>yo_imgpref.xml</comment>
+    <comment>hot_app_item.xml</comment>
+    <comment>conversation_list_row_header.xml</comment>
+    <comment>rc_create_dialog.xml</comment>
+    <comment>style_stories_stock.xml</comment>
+    <comment>hot_app_layout.xml</comment>
+    <comment>rc_airplane_dialog.xml</comment>
+    <comment>dialog_guide.xml</comment>
+    <comment>yo_bottom_basic.xml</comment>
+    <comment>yo_bottom_bubble.xml</comment>
+    <comment>yo_bottom_ios.xml</comment>
+    <comment>yo_igstories_layout.xml</comment>
+    <comment>yo_igstories_storyview.xml</comment>
+    <comment>yo_toolbar.xml</comment>
+</properties>

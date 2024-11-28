@@ -1,3 +1,4 @@
+import os
 import xml.etree.ElementTree as ET
 import argparse
 
@@ -9,7 +10,7 @@ import argparse
 def loadXmlAttr():
     key_attributes = set()
     # 加载XML文件
-    tree = ET.parse('constraintAttr.xml')  # 替换为你的XML文件路径
+    tree = ET.parse(f'{os.getcwd()}/scripts/res/matchConstraint/constraintAttr.xml')  # 替换为你的XML文件路径
     root = tree.getroot()
     # 遍历XML文档的元素
     for element in root:

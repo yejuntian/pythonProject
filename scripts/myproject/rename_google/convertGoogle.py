@@ -9,18 +9,22 @@ import xml.etree.ElementTree as ET
 # 只匹配下面的文件类型
 extends = ["smali", "xml"]
 # 排除哪些文件夹
-blacklist = ['.idea', '.git', 'build', 'assets', 'lib',
-             'META-INF', 'original', 'apktool.yml',
-             'smali_classes6', 'smali_classes7', 'smali_classes8', 'smali_classes9']
+blacklist = ['.idea', '.git', 'build', 'assets', 'lib', 'META-INF', 'original', 'apktool.yml', 'smali_classes9']
 # 遍历 smali、smali_classes2 到 smali_classes5 目录
-smali_dirs = ["smali", "smali_classes2", "smali_classes3", "smali_classes4", "smali_classes5"]
+smali_dirs = ["smali", "smali_classes2", "smali_classes3", "smali_classes4", "smali_classes5",
+              'smali_classes6', 'smali_classes7', 'smali_classes8']
 # 用于保存类对应关系集合
 data_map = {}
 # 匹配smali*/后面的path地址。(eg:smali_classes5/android/support 输出结果为：android/support)
 regex = r"/smali.*?/(.+)"
 # 排除路径集合
 excludePathList = ["com/google/android/exoplayer2/ext",
-                   "com/google/android/exoplayer2/decoder"]
+                   "com/google/android/exoplayer2/decoder",
+                   "com/google/android/gms/common/internal/IAccountAccessor",
+                   "com/google/android/gms/common/internal/IGmsCallbacks",
+                   "com/google/android/gms/common/internal/IGmsServiceBroker"]
+# 使用旧命名方式(多个版本确认新命名方式没问题后,废弃旧命名方式)
+isUseOldStyle = True
 
 """
     主要作用：读取rename_google/config.xml配置文件，重命名config.xml配置路径的文件夹名。
@@ -81,9 +85,31 @@ def set_data_map(from_file_path, to_file_path):
     newPathList = getResultPath(to_file_path)
     new_class_path1 = newPathList[0]
     new_class_path2 = newPathList[1]
-    # 原来路径和新路径的对应关系
-    data_map[f"{old_class_path1};"] = f"{new_class_path1};"
-    data_map[old_class_path2] = new_class_path2
+    if isUseOldStyle:
+        # 原来路径和新路径的对应关系
+        data_map[f"{old_class_path1};"] = f"{new_class_path1};"
+        """
+        重命名会有问题，应该保持重命名前的才对
+
+        例如：
+        类名Lcom/google/android/gms/auth2/api/signin/RevocationBoundService;
+        重命名前：const-string v0, "com.google.android.gms.auth.api.signin.RevocationBoundService.disconnect"
+        重命名后：const-string v0, "com.google.android.gms.auth2.api.signin.RevocationBoundService.disconnect"
+        """
+        data_map[old_class_path2] = new_class_path2
+    else:
+        # 原来路径和新路径的对应关系
+        # smali类对应路径eg:Landroidx/appcompat/view/menu/ActionMenuItemView;
+        data_map[f"L{old_class_path1};"] = f"L{new_class_path1};"
+        # smali类和AndroidManifest.xml对应路径eg:"androidx.appcompat.view.menu.ActionMenuItemView"
+        data_map[f'"{old_class_path2}"'] = f'"{new_class_path2}"'
+        # xml类对应路径
+        # eg:<androidy.appcompat.widget.Toolbar
+        data_map[f'<{old_class_path2} '] = f'<{new_class_path2} '
+        # eg:</androidy.appcompat.widget.Toolbar
+        data_map[f'</{old_class_path2}'] = f'</{new_class_path2}'
+        # kotlin类对应路径eg:\nkotlin/collections/CollectionsKt___CollectionsKt2\n
+        data_map[f"\\n{old_class_path1}\\n"] = f"\\n{new_class_path1}\\n"
 
 
 # 获取文件夹smali*/后面的path相对地址
@@ -132,5 +158,5 @@ def convertGoogleFolder(from_dir):
 
 
 if __name__ == "__main__":
-    from_dir = "/Users/shareit/work/shareit/Snaptube_v72050310/DecodeCode/Snaptube_v72050310"
+    from_dir = "/Users/shareit/work/shareit/instapro_278.0.0.21.117/DecodeCode/instagram_278.0.0.21.117"
     convertGoogleFolder(from_dir)

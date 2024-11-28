@@ -96,6 +96,7 @@ if __name__ == "__main__":
                "|Lcom/whatsapp/calling/callhistory/view/CallsHistoryFragment;->\w+\(.*?\).+"
                "|Lcom/whatsapp/calling/callhistory/CallsHistoryFragment;->\w+\(.*?\).+"
                "|Landroidy/fragment/app/DialogFragment;->\w+\(.*?\).+"
+               "|Landroidy/fragment/app/Fragment;->\w+\(.*?\).+"
                )
     # 查找属性
     findXClass(foldPath,
@@ -116,6 +117,7 @@ if __name__ == "__main__":
                "|Landroidy/fragment/app/ListFragment;->A\w+:.*"
                "|Lcom/gbwhatsapp/textstatuscomposer/TextStatusComposerActivity;->A\w+:.*"
                "|Lcom/gbwhatsapp/statuscomposer/composer/TextStatusComposerFragment;->A\w+:.*"
+               "|Landroidy/fragment/app/Fragment;->A\w+:.*"
                )
     save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")

@@ -20,8 +20,8 @@ versionCode = getParam(
 #     ],
 #     isFindX=False
 # )
-baseLongVer = "0x26816b3f"
-baseVersionCode = "2.24.19.86"
+baseLongVer = "0x27a25afe"
+baseVersionCode = "2.24.23.78"
 
 
 # 获取版本号参数
