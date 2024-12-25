@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <properties>
-    <comment>smali_classes4/kotlin/collections/CollectionsKt___CollectionsKt.smali</comment>
-    <comment>smali_classes4/kotlin/collections/ArraysKt___ArraysKt.smali</comment>
-    <comment>smali_classes4/kotlin/SynchronizedLazyImpl.smali</comment>
+    <!--<comment>smali_classes10/com/google/android/gms/common/GooglePlayServicesMissingManifestValueException.smali</comment>-->
+
 </properties>
 
