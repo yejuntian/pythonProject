@@ -82,7 +82,7 @@ def set_data_map(from_file_path, to_file_path):
     new_class_path2 = newPathList[1]
     if isUseOldStyle:
         # 原来路径和新路径的对应关系
-        data_map[f"{old_class_path1};"] = f"{new_class_path1};"
+        data_map[f"L{old_class_path1};"] = f"L{new_class_path1};"
         """
         重命名会有问题，应该保持重命名前的才对
         
