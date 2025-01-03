@@ -73,13 +73,13 @@ if __name__ == "__main__":
 
     foldPath = args.foldPath
     # 查找类
-    findXClass(foldPath, "LX/\w*;")
+    findXClass(foldPath, "LX/(?!LX)\w{3};")
     save2File(savePath, package_data(setList), "class.json")
     # 清空搜索到的class数据
     setList.clear()
     # 查找方法
     findXClass(foldPath,
-               "LX/\w*;->.*\(.*?\).+"
+               "LX/(?!LX)\w{3};->.*\(.*?\).+"
                "|Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->.*\(.*?\).+"
                "|Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->.*\(.*?\).+"
                "|Lcom/gbwhatsapp/HomeActivity;->A\w+\(.*?\).+"
@@ -100,7 +100,7 @@ if __name__ == "__main__":
                )
     # 查找属性
     findXClass(foldPath,
-               "LX/\w+;->.*:.*"
+               "LX/(?!LX)\w{3};->.*:.*"
                "|Lcom/gbwhatsapp/conversationslist/ConversationsFragment;->.*:.*"
                "|Lcom/gbwhatsapp/status/playback/fragment/StatusPlaybackContactFragment;->.*:.*"
                "|Lcom/gbwhatsapp/HomeActivity;->A\w+:.*"
@@ -118,6 +118,7 @@ if __name__ == "__main__":
                "|Lcom/gbwhatsapp/textstatuscomposer/TextStatusComposerActivity;->A\w+:.*"
                "|Lcom/gbwhatsapp/statuscomposer/composer/TextStatusComposerFragment;->A\w+:.*"
                "|Landroidy/fragment/app/Fragment;->A\w+:.*"
+               "|Lcom/gbwhatsapp/updates/ui/adapter/UpdatesAdapter;->A\w+:.*"
                )
     save2File(savePath, package_data(sorted(setList)), "field_method.json")
     print("****************查询完毕****************")
